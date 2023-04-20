@@ -1,6 +1,6 @@
 const App = () => {
   return (
-    <div>
+    <div className='text-2xl'>
       <h1>
         Hello, world!
       </h1>
