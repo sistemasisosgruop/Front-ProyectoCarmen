@@ -1,10 +1,11 @@
-const App = () => {
+import { BrowserRouter } from 'react-router-dom'
+import Routing from './routes/Routing'
+
+const App = (): JSX.Element => {
   return (
-    <div className='text-2xl'>
-      <h1>
-        Hello, world!
-      </h1>
-    </div>
+    <BrowserRouter>
+      <Routing />
+    </BrowserRouter>
   )
 }
 
