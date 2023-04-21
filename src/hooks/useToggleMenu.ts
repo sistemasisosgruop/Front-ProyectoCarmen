@@ -1,6 +1,10 @@
 import { useState } from 'react'
 
-export const useToggleMenu = () => {
+export const useToggleMenu = (): {
+  isOpenMenu: boolean
+  openMenu: () => void
+  closeMenu: () => void
+} => {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
 
   const openMenu = (): void => {
