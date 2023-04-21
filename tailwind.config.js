@@ -5,7 +5,12 @@ export default {
     './src/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        green: '#335F28',
+        orange: '#D47D16'
+      }
+    },
     container: {
       center: true
     }
