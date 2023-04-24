@@ -1,0 +1,4 @@
+.card:hover .card-description {
+  top: 380px;
+  transition: all ease-in-out 500ms cubic-bezier(0.5, 0, 0, 1);
+}
