@@ -14,7 +14,7 @@ const LayoutPage = ({ children, title }: Props): JSX.Element => {
   return (
     <>
       <Header />
-      <div>
+      <div className='pb-20 mt-[154px]'>
         {children}
       </div>
     </>
