@@ -8,11 +8,11 @@ const Tabs = ({ children }: Props): JSX.Element => {
   const [activeTab, setActiveTab] = useState<number>(0)
   return (
     <div className='flex flex-col'>
-      <div>
+      <div className='bg-green flex justify-between md:justify-start md:bg-transparent'>
         {children.map((child, index) => (
           <button
             key={index}
-            className={`inline-flex justify-start items-center gap-2 py-2 px-8 border-t-2 border-t-green font-bold ${activeTab === index ? 'bg-white text-green' : 'bg-green text-white'}`}
+            className={`inline-flex justify-center items-center gap-2 py-2 px-4 border-t-2 border-t-green font-bold ${activeTab === index ? 'bg-white text-green' : 'bg-green text-white'} md:px-8`}
             onClick={() => { setActiveTab(index) }}
           >
             {child.props.icon}
@@ -22,7 +22,7 @@ const Tabs = ({ children }: Props): JSX.Element => {
           </button>
         ))}
       </div>
-      <div>
+      <div className='bg-white'>
         {children[activeTab]}
       </div>
     </div>
