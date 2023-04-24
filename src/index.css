@@ -2,6 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  background: red;
-}
