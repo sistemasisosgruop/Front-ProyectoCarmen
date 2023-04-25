@@ -18,7 +18,7 @@ const NavigationMenu = (): JSX.Element => {
           <NavLink path='/paquetes' text='Paquetes' customClass='flex-row md:flex-col' icon={<BiBriefcaseAlt />} />
         </li>
         <li>
-          <NavLink path='/contacto' text='Contacto' customClass='flex-row md:flex-col' icon={<BiHelpCircle />} />
+          <NavLink path='/contactanos' text='Contacto' customClass='flex-row md:flex-col' icon={<BiHelpCircle />} />
         </li>
         <li>
           <NavLink path='/sobre-nosotros' text='Sobre Nosotros' customClass='flex-row md:flex-col' icon={<MdSupervisedUserCircle />} />

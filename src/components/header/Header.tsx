@@ -21,17 +21,17 @@ const Header = (): JSX.Element => {
   }
 
   return (
-    <header className='relative flex justify-between items-start py-6 px-6 md:px-0'>
+    <header className='fixed top-0 z-50 bg-white w-full flex justify-between items-center py-6 px-6 xl:items-start md:pr-16 xl:pr-8 xl:px-0'>
       <Logo />
 
       <button
         onClick={openMenu}
-        className='flex justify-center items-center p-1 text-green border border-green rounded-md md:hidden'
+        className='flex justify-center items-center p-1 text-green border border-green rounded-md hover:bg-green hover:text-white hover:transition-colors xl:hidden'
       >
-        <AiOutlineMenu />
+        <AiOutlineMenu size={18} />
       </button>
 
-      <div className='hidden md:flex md:flex-col md:justify-end md:gap-4'>
+      <div className='hidden xl:flex xl:flex-col xl:justify-end md:gap-4'>
         <HeaderActions />
         <NavigationMenu />
       </div>
