@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import Footer from '../Footer'
 import Header from '../header/Header'
 
 interface Props {
@@ -14,9 +15,10 @@ const LayoutPage = ({ children, title }: Props): JSX.Element => {
   return (
     <>
       <Header />
-      <div className='pb-20 mt-[154px]'>
+      <div className='mt-[154px]'>
         {children}
       </div>
+      <Footer />
     </>
   )
 }
