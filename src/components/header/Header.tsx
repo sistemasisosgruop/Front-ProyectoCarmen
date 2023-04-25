@@ -21,7 +21,7 @@ const Header = (): JSX.Element => {
   }
 
   return (
-      <header className='fixed top-0 z-50 bg-white w-full flex justify-between items-center py-6 px-6 xl:items-start md:pr-16'>
+    <header className='fixed top-0 z-50 bg-white w-full flex justify-between items-center py-6 px-6 xl:items-start md:pr-16 xl:pr-8 xl:px-0'>
       <Logo />
 
       <button
