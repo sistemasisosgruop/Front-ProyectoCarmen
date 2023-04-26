@@ -4,9 +4,13 @@ import { BsAirplane } from 'react-icons/bs'
 import { BiHelpCircle, BiBriefcaseAlt } from 'react-icons/bi'
 import { MdSupervisedUserCircle } from 'react-icons/md'
 
-const NavigationMenu = (): JSX.Element => {
+interface Props {
+  isScrolled?: boolean | null
+}
+
+const NavigationMenu = ({ isScrolled }: Props): JSX.Element => {
   return (
-    <nav className='pt-4 grid place-content-center md:absolute md:bottom-4 md:left-1/2 md:-translate-x-1/2 z-20'>
+    <nav className={`pt-4 grid place-content-center ${isScrolled ? '' : 'md:absolute md:bottom-4 md:left-1/2 md:-translate-x-1/2 z-20 '}`}>
       <ul className='flex flex-col justify-start items-start gap-4 md:flex-row'>
         <li>
           <NavLink path='/habitaciones' text='Habitaciones' customClass='flex-row md:flex-col' icon={<GrHomeRounded />} />

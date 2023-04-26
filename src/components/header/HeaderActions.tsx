@@ -2,9 +2,13 @@ import { Link } from 'react-router-dom'
 import { AiOutlineWhatsApp } from 'react-icons/ai'
 import { FaUser, FaShoppingBag } from 'react-icons/fa'
 
-const HeaderActions = (): JSX.Element => {
+interface Props {
+  isScrolled?: boolean
+}
+
+const HeaderActions = ({ isScrolled }: Props): JSX.Element => {
   return (
-    <section className='bg-green grid place-content-center py-3 px-8 md:place-content-end md:rounded-l-full'>
+    <section className={`bg-green grid place-content-center py-3 px-8 md:place-content-end md:rounded-l-full ${isScrolled ? 'mb-2' : ''}`}>
       <div className='flex flex-col justify-start gap-8 md:flex-row'>
         <article className='flex justify-content items-center gap-2'>
           <AiOutlineWhatsApp size={18} className='text-white' />
