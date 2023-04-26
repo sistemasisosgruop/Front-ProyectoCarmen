@@ -1,0 +1,11 @@
+{
+  "header": {
+    "rooms": "Habitaciones",
+    "flights": "Vuelos",
+    "packages": "Paquetes",
+    "contact": "Contacto",
+    "aboutUs": "Sobre nosotros",
+    "logIn": "Iniciar sesion",
+    "myShop": "Mis compras"
+  }
+}
