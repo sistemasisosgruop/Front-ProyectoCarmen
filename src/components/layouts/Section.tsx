@@ -1,10 +1,11 @@
 interface Props {
   children: JSX.Element[] | JSX.Element
+  className?: string | undefined
 }
 
-const Section = ({ children }: Props): JSX.Element => {
+const Section = ({ children, className }: Props): JSX.Element => {
   return (
-    <section className='px-32 bg-gray-200 pt-32'>
+    <section className={`px-32 pt-32 ${className}`}>
       {children}
     </section>
   )
