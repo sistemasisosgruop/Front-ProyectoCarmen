@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useToggleMenu } from '../../hooks/useToggleMenu'
+import { useScrollPageY } from '../../hooks/useScrollPageY'
 import Logo from './Logo'
 import HeaderActions from './HeaderActions'
 import NavigationMenu from './NavigationMenu'
 import { AiOutlineMenu } from 'react-icons/ai'
+import { useLang } from '../../hooks/useLang'
 
 const VARIANTS_MENU = {
   exit: {
@@ -20,23 +21,8 @@ const VARIANTS_MENU = {
 
 const Header = (): JSX.Element => {
   const { isOpenMenu, openMenu, closeMenu } = useToggleMenu()
-  const [isScrolled, setIsScrolled] = useState<boolean>(false)
-
-  useEffect(() => {
-    const handleScroll = (): void => {
-      if (window.pageYOffset > 0) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+  const { isScrolled } = useScrollPageY()
+  const { t, toggleLang } = useLang()
 
   return (
     <AnimatePresence>
@@ -52,9 +38,13 @@ const Header = (): JSX.Element => {
 
         <div className={`hidden xl:flex xl:flex-col xl:justify-end md:gap-4 ${isScrolled ? 'mr-32' : ''}`}>
           {!isScrolled && (
-            <HeaderActions />
+            <HeaderActions
+              isScrolled={isScrolled}
+              t={t}
+              toggleLang={toggleLang}
+            />
           )}
-          <NavigationMenu isScrolled={isScrolled} />
+          <NavigationMenu isScrolled={isScrolled} t={t} />
         </div>
 
         {isOpenMenu && (
@@ -69,8 +59,12 @@ const Header = (): JSX.Element => {
             <button onClick={closeMenu} className='flex justify-end text-green py-4 px-6'>
               <AiOutlineMenu size={18} />
             </button>
-            <HeaderActions />
-            <NavigationMenu />
+            <HeaderActions
+              isScrolled={isScrolled}
+              t={t}
+              toggleLang={toggleLang}
+            />
+            <NavigationMenu t={t} />
           </motion.div>
         )}
       </header>
