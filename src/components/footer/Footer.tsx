@@ -3,15 +3,17 @@ import NavigationLinks from './NavigationLinks'
 import { BsBook } from 'react-icons/bs'
 import { TbPointFilled } from 'react-icons/tb'
 import SocialNetwork from './SocialNetwork'
+import { useLang } from '../../hooks/useLang'
 
 const Footer = (): JSX.Element => {
+  const { t } = useLang()
   return (
     <footer className='bg-green flex flex-col justify-center items-center gap-16 xl:px-32 xl:pb-8'>
       <article className='bg-orange inline-flex flex-wrap justify-center items-start gap-16 px-8 py-4'>
         <div>
           <p className='flex flex-col'>
             <span className='font-bold text-white'>
-              Dirección
+              {t('footer.address')}
             </span>
             <span className='text-sm text-white'>
               Av. El Sol, Galerías UNSAAC (Oficina 3)
@@ -21,7 +23,7 @@ const Footer = (): JSX.Element => {
         <div>
           <p className='flex flex-col'>
             <span className='font-bold text-white'>
-              Teléfono
+              {t('footer.phone')}
             </span>
             <span className='text-sm text-white'>
               +51 984 748 106
@@ -31,7 +33,7 @@ const Footer = (): JSX.Element => {
         <div>
           <p className='flex flex-col'>
             <span className='font-bold text-white'>
-              Correo
+              {t('footer.email')}
             </span>
             <span className='text-sm text-white'>
               agtcarmen@hotmail.com
@@ -48,31 +50,26 @@ const Footer = (): JSX.Element => {
 
         <article className='flex flex-col items-center gap-2'>
           <p className='uppercase text-sm text-white flex flex-col justify-center items-center'>
-            <span>
-              Libro de
-            </span>
-            <span className='font-bold'>
-              reclamaciones
-            </span>
+            {t('footer.complainstBook')}
           </p>
           <BsBook size={64} className='text-white' />
         </article>
       </section>
       <section className='w-full flex justify-between items-center'>
         <p className='text-white'>
-          © 2023 Todos los derechos reservados
+          © 2023 {t('footer.copyright')}
         </p>
         <article className='flex justify-center items-center gap-2 text-white'>
           <Link to='/aviso-legal'>
-            Aviso legal
+            {t('footer.legalWarning')}
           </Link>
           <TbPointFilled />
           <Link to='/politicas-de-privacidad'>
-            Politicas de privacidad
+            {t('footer.privacyPolicies')}
           </Link>
           <TbPointFilled />
           <Link to='/politicas-de-cookies'>
-            Politicas de Cookies
+            {t('footer.cookiePolicies')}
           </Link>
         </article>
 
