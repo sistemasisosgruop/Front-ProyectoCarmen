@@ -8,6 +8,21 @@
     "logIn": "Log in",
     "myShop": "My shopping"
   },
+  "footer": {
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "rooms": "Rooms",
+    "tourPackages": "Tour packages",
+    "flights": "Flights",
+    "contact": "Contact",
+    "aboutUs": "About us",
+    "complainstBook": "Complaints book",
+    "copyright": "All rights reserved",
+    "legalWarning": "Legal warning",
+    "privacyPolicies": "Privacy policies",
+    "cookiePolicies": "Cookie policies"
+  },
   "masthead": {
     "title": "Book now and enjoy a perfect stay",
     "description": "Take advantage of this unique opportunity and book now to live an unforgettable experience in our cozy rooms!"

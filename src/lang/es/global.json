@@ -8,6 +8,21 @@
     "logIn": "Iniciar sesion",
     "myShop": "Mis compras"
   },
+  "footer": {
+    "address": "Direccion",
+    "phone": "Telefono",
+    "email": "Correo",
+    "rooms": "Habitaciones",
+    "tourPackages": "Paquetes turisticos",
+    "flights": "Vuelos",
+    "contact": "Contacto",
+    "aboutUs": "Sobre nosotros",
+    "complainstBook": "Libro de reclamaciones",
+    "copyright": "Todos los derechos reservados",
+    "legalWarning": "Aviso legal",
+    "privacyPolicies": "Politicas de privacidad",
+    "cookiePolicies": "Politicas de Cookies"
+  },
   "masthead": {
     "title": "Reserva ahora y disfruta de una estadía perfecta",
     "description": "¡Aprovecha esta oportunidad única y reserva ahora para vivir una experiencia inolvidable en nuestra acogedoras habitaciones!"
