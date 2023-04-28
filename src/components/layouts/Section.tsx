@@ -5,7 +5,7 @@ interface Props {
 
 const Section = ({ children, className }: Props): JSX.Element => {
   return (
-    <section className={`px-32 pt-32 ${className}`}>
+    <section className={`px-8 pt-32 sm:px-16 md:px-24 xl:px-32 ${className}`}>
       {children}
     </section>
   )
