@@ -1,5 +1,6 @@
 import { Autoplay, EffectFade } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { useLang } from '../hooks/useLang'
 import 'swiper/css'
 import 'swiper/css/autoplay'
 import 'swiper/css/effect-fade'
@@ -13,6 +14,8 @@ const sliderImages = [
 ]
 
 const Masthead = (): JSX.Element => {
+  const { t } = useLang()
+
   return (
     <section className='w-full overflow-hidden relative'>
       <Swiper
@@ -31,12 +34,12 @@ const Masthead = (): JSX.Element => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <article className='absolute top-0 left-0 w-full h-full px-64 py-4 z-10 grid place-content-center'>
-        <h2 className='text-6xl font-bold text-white'>
-          Reserva ahora y disfruta de una estadía perfecta
+      <article className='absolute top-0 left-0 w-full h-full px-8 py-4 z-10 grid place-content-center xl:px-64'>
+        <h2 className='text-4xl text-center font-bold text-white xl:text-6xl'>
+          {t('masthead.title')}
         </h2>
         <p className='text-white text-center text-lg font-semibold'>
-          ¡Aprovecha esta oportunidad única y reserva ahora para vivir una experiencia inolvidable en nuestra acogedoras habitaciones!
+          {t('masthead.description')}
         </p>
       </article>
     </section>
