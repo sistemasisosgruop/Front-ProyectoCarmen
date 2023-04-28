@@ -7,5 +7,24 @@
     "aboutUs": "About Us",
     "logIn": "Log in",
     "myShop": "My shopping"
+  },
+  "masthead": {
+    "title": "Book now and enjoy a perfect stay",
+    "description": "Take advantage of this unique opportunity and book now to live an unforgettable experience in our cozy rooms!"
+  },
+  "home": {
+    "popularRooms": "Popular rooms",
+    "popularDestinations": "Popular destinations",
+    "popularFlights": "Popular flights",
+    "seeCatalog": "See catalog",
+    "commentsSection": {
+      "theCommentOf": "The comments of",
+      "ourClients": "our clients",
+      "description": "Check out some reviews from our customers",
+      "qualification": "General rating",
+      "seeMore": "See more"
+    }
+
   }
+
 }

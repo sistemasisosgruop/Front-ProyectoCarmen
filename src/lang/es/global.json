@@ -7,5 +7,23 @@
     "aboutUs": "Sobre nosotros",
     "logIn": "Iniciar sesion",
     "myShop": "Mis compras"
+  },
+  "masthead": {
+    "title": "Reserva ahora y disfruta de una estadía perfecta",
+    "description": "¡Aprovecha esta oportunidad única y reserva ahora para vivir una experiencia inolvidable en nuestra acogedoras habitaciones!"
+  },
+  "home": {
+    "popularRooms": "Habitaciones populares",
+    "popularDestinations": "Destinos populares",
+    "popularFlights": "Vuelos populares",
+    "seeCatalog": "Ver catalogo",
+    "commentsSection": {
+      "theCommentOf": "Los comentarios de",
+      "ourClients": "nuestros clientes",
+      "description": "Mira algunas opiniones de nuestros cliente",
+      "qualification": "Calificacion general",
+      "seeMore": "Ver más"
+    }
+
   }
 }
