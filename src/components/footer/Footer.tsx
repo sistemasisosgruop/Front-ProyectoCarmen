@@ -8,7 +8,7 @@ import { useLang } from '../../hooks/useLang'
 const Footer = (): JSX.Element => {
   const { t } = useLang()
   return (
-    <footer className='bg-green flex flex-col justify-center items-center gap-16 xl:px-32 xl:pb-8'>
+    <footer className='bg-blue flex flex-col justify-center items-center gap-16 xl:px-32 xl:pb-8'>
       <article className='bg-orange inline-flex flex-wrap justify-center items-start gap-16 px-8 py-4'>
         <div>
           <p className='flex flex-col'>
