@@ -9,7 +9,9 @@ export default {
       colors: {
         green: '#335F28',
         orange: '#D47D16',
-	dark: '#1b2631 '
+        turquoise: '#0EA888',
+        blue: '#0072A9',
+        dark: '#1b2631 '
       }
     },
     container: {
@@ -18,4 +20,3 @@ export default {
   },
   plugins: []
 }
-
