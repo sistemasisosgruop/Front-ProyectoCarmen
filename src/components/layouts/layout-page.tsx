@@ -9,7 +9,7 @@ interface Props {
 
 const LayoutPage = ({ children, title }: Props): JSX.Element => {
   useEffect(() => {
-    document.title = title
+    document.title = `${title} - Carmen: Agencia de Viajes Y Turismo`
   }, [title])
 
   return (
