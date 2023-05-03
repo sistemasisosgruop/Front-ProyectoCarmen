@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import LayoutPage from '../../../components/layouts/LayoutPage'
-import Section from '../../../components/layouts/Section'
+import LayoutPage from '../../../components/layouts/layout-page'
+import Section from '../../../components/layouts/section'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 import { IoIosAddCircleOutline } from 'react-icons/io'
 import HorizontalCard from '../../../components/horizontal-card'

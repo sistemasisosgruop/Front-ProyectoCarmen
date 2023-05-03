@@ -1,4 +1,4 @@
-import LayoutPage from '../../components/layouts/LayoutPage'
+import LayoutPage from '../../components/layouts/layout-page'
 
 const PageNotFound = (): JSX.Element => {
   return (
@@ -13,4 +13,3 @@ const PageNotFound = (): JSX.Element => {
 }
 
 export default PageNotFound
-

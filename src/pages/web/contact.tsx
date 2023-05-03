@@ -1,4 +1,4 @@
-import LayoutPage from '../../components/layouts/LayoutPage'
+import LayoutPage from '../../components/layouts/layout-page'
 
 const Contact = (): JSX.Element => {
   return (
@@ -11,4 +11,3 @@ const Contact = (): JSX.Element => {
 }
 
 export default Contact
-
