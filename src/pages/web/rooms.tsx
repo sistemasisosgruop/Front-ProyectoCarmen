@@ -133,7 +133,7 @@ const Rooms = (): JSX.Element => {
           title='Departamento completo'
           description='sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra'
         />
-        <section className='grid grid-cols-6 grid-rows-2 gap-4 lg:bg-red-700'>
+        <section className='grid grid-cols-6 grid-rows-2 gap-4'>
           {IMAGES_DEPARTAMENT.map((image, index) => (
             <DepartmentCard
               key={index}
@@ -152,7 +152,7 @@ const Rooms = (): JSX.Element => {
           {IMAGES.map((image, index) => (
             <div
               key={index}
-              className='bg-white rounded-md overflow-hidden'
+              className='bg-white rounded-xl overflow-hidden border border-white'
             >
               <img
                 src={image.imagePath}
@@ -179,7 +179,7 @@ const Rooms = (): JSX.Element => {
         <div className='my-8 flex justify-center items-center'>
           <button
             type='button'
-            className='bg-green text-white flex justify-center items-center gap-2 rounded-md font-bold px-6 py-2'
+            className='bg-turquoise text-white flex justify-center items-center gap-2 rounded-xl font-bold px-6 py-2'
           >
             <span>
               Ver catalogo
