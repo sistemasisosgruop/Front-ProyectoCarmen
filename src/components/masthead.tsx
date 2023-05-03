@@ -47,4 +47,3 @@ const Masthead = (): JSX.Element => {
 }
 
 export default Masthead
-

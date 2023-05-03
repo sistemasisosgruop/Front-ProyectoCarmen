@@ -1,11 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useToggleMenu } from '../../hooks/useToggleMenu'
 import { useScrollPageY } from '../../hooks/useScrollPageY'
-import Logo from './Logo'
-import HeaderActions from './HeaderActions'
-import NavigationMenu from './NavigationMenu'
-import { AiOutlineMenu } from 'react-icons/ai'
 import { useLang } from '../../hooks/useLang'
+import Logo from './logo'
+import HeaderActions from './header-actions'
+import NavigationMenu from './navigation-menu'
+import { AiOutlineMenu } from 'react-icons/ai'
 
 const VARIANTS_MENU = {
   exit: {
@@ -26,7 +26,7 @@ const Header = (): JSX.Element => {
 
   return (
     <AnimatePresence>
-      <header className={`fixed top-0 z-50 bg-white w-full flex justify-between items-center py-6 px-6 ${isScrolled ? 'xl:items-center' : 'xl:items-start'} md:pr-16 xl:pr-8 xl:px-0`}>
+      <header className={`fixed top-0 z-50 bg-white w-full flex justify-between items-center py-6 px-6 ${isScrolled ? 'xl:items-center' : 'xl:items-start'} md:pr-16 xl:pr-0 xl:px-0`}>
         <Logo isScrolled={isScrolled} />
 
         <button
@@ -73,4 +73,3 @@ const Header = (): JSX.Element => {
 }
 
 export default Header
-

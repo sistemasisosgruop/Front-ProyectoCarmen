@@ -173,4 +173,3 @@ const SearchFlights = (): JSX.Element => {
 }
 
 export default SearchFlights
-

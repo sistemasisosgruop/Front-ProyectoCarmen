@@ -7,7 +7,7 @@ interface Props {
 
 const Card = ({ imagePath, alt }: Props): JSX.Element => {
   return (
-    <div className='relative group/description cursor-pointer transition-all overflow-hidden'>
+    <div className='relative w-full group/description cursor-pointer transition-all overflow-hidden'>
       <img
         src={imagePath}
         alt={alt}
@@ -17,7 +17,7 @@ const Card = ({ imagePath, alt }: Props): JSX.Element => {
         <p className='text-dark font-bold'>5.0</p>
       </div>
 
-      <article className='invisible absolute z-20 bg-white bottom-0 left-0 px-4 py-4 w-full group-hover/description:visible rounded-b-md'>
+      <article className='md:invisible absolute z-20 bg-white bottom-0 left-0 px-4 py-4 w-full md:group-hover/description:visible rounded-b-md'>
         <div className='flex justify-between items-start'>
           <span className='uppercase text-sm text-gray-600'>
             Alojamiento

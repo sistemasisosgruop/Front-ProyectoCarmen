@@ -53,4 +53,3 @@ const SearchLodging = (): JSX.Element => {
 }
 
 export default SearchLodging
-

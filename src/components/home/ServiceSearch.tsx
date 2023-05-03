@@ -1,5 +1,5 @@
-import Tabs from '../Tabs'
-import TabItem from '../TabItem'
+import Tabs from '../tabs'
+import TabItem from '../tab-item'
 import SearchLodging from './SearchLodging'
 import SearchFlights from './SearchFlights'
 import { FiHome } from 'react-icons/fi'
@@ -26,4 +26,3 @@ const ServiceSearch = (): JSX.Element => {
 }
 
 export default ServiceSearch
-

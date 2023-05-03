@@ -6,6 +6,7 @@ interface Props {
 
 const Tabs = ({ children }: Props): JSX.Element => {
   const [activeTab, setActiveTab] = useState<number>(0)
+
   return (
     <div className='flex flex-col'>
       <div className='bg-green flex justify-between md:justify-start md:bg-transparent'>
@@ -22,7 +23,7 @@ const Tabs = ({ children }: Props): JSX.Element => {
           </button>
         ))}
       </div>
-      <div className='bg-white'>
+      <div>
         {children[activeTab]}
       </div>
     </div>
@@ -30,4 +31,3 @@ const Tabs = ({ children }: Props): JSX.Element => {
 }
 
 export default Tabs
-

@@ -73,4 +73,3 @@ const SearchTourPackage = (): JSX.Element => {
 }
 
 export default SearchTourPackage
-

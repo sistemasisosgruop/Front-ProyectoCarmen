@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import NavigationLinks from './NavigationLinks'
+import NavigationLinks from './navigation-links'
 import { BsBook } from 'react-icons/bs'
 import { TbPointFilled } from 'react-icons/tb'
-import SocialNetwork from './SocialNetwork'
+import SocialNetwork from './social-network'
 import { useLang } from '../../hooks/useLang'
 
 const Footer = (): JSX.Element => {
