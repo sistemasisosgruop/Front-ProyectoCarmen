@@ -14,7 +14,7 @@ const PopularRoomCard = ({ image, index }: Props): JSX.Element => {
   return (
     <div
       className={`
-        relative rounded-md overflow-hidden bg-white w-full flex flex-col
+        relative rounded-xl border border-white overflow-hidden bg-white w-full flex flex-col
         ${index === 0 ? 'col-span-12 md:col-span-6 lg:row-span-2 xl:col-span-3 xl:row-span-1' : ''}
         ${index === 1 ? 'col-span-12 md:col-span-6 lg:row-span-2 xl:col-span-4 xl:row-span-2' : ''} 
         ${index === 2 ? 'col-span-12 sm:col-span-12 lg:row-span-2 xl:col-span-5 xl:row-span-1' : ''}
