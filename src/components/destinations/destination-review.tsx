@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { BsStarFill } from 'react-icons/bs'
-import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
+import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
 const DestinationReview = (): JSX.Element => {
   const [selectedStar, setSelectedStar] = useState<number>(0)
@@ -11,7 +11,7 @@ const DestinationReview = (): JSX.Element => {
 
   return (
     <form>
-      <h4 className='text-dark text-2xl font-bold'>
+      <h4 className='text-dark text-center text-2xl font-bold'>
         Agregar una reseña
       </h4>
       <p className='text-dark text-center'>
