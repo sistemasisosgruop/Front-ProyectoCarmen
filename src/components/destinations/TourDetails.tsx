@@ -1,5 +1,5 @@
-import TabItem from './tab-item'
-import Tabs from './tabs'
+import TabItem from './TabItem'
+import Tabs from './Tabs'
 import { BiUniversalAccess } from 'react-icons/bi'
 import { BsCardChecklist, BsCheckCircle } from 'react-icons/bs'
 import { TbPaperBag } from 'react-icons/tb'

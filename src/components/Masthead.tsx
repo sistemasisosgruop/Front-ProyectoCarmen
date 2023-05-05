@@ -1,6 +1,6 @@
 import { Autoplay, EffectFade } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { useLang } from '../hooks/use-lang'
+import { useLang } from '../hooks/useLang'
 import 'swiper/css'
 import 'swiper/css/autoplay'
 import 'swiper/css/effect-fade'

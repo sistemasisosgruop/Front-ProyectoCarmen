@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import { useLang } from '../../hooks/use-lang'
-import NavigationLinks from './navigation-links'
-import SocialNetwork from './social-network'
+import { useLang } from '../../hooks/useLang'
+import NavigationLinks from './NavigationLinks'
+import SocialNetwork from './SocialNetwork'
 import { BsBook } from 'react-icons/bs'
 import { TbPointFilled } from 'react-icons/tb'
 

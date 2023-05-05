@@ -1,4 +1,4 @@
-import LayoutPage from '../../components/layouts/layout-page'
+import LayoutPage from '../../components/layouts/LayoutPage'
 
 const AboutUs = (): JSX.Element => {
   return (

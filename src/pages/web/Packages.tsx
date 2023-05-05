@@ -1,12 +1,11 @@
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
-import Card from '../../components/card'
-import Related from '../../components/destinations/related'
-import Heading from '../../components/heading'
-import LayoutPage from '../../components/layouts/layout-page'
-import Section from '../../components/layouts/section'
-import Masthead from '../../components/masthead'
-import { useLang } from '../../hooks/use-lang'
+import Card from '../../components/Card'
+import Heading from '../../components/Heading'
+import LayoutPage from '../../components/layouts/LayoutPage'
+import Section from '../../components/layouts/Section'
+import Masthead from '../../components/Masthead'
+import { useLang } from '../../hooks/useLang'
 
 const Packages = (): JSX.Element => {
   const { t } = useLang()

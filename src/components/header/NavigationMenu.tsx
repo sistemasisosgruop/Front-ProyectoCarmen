@@ -1,5 +1,5 @@
 import type { TFunction } from 'i18next'
-import NavLink from './nav-link'
+import NavLink from './NavLink'
 import { BsAirplane } from 'react-icons/bs'
 import { BiHelpCircle, BiBriefcaseAlt } from 'react-icons/bi'
 import { MdSupervisedUserCircle } from 'react-icons/md'

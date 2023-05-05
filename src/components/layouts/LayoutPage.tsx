@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import Footer from '../footer/footer'
-import Header from '../header/header'
+import Footer from '../footer/Footer'
+import Header from '../header/Header'
 
 interface Props {
   children: React.ReactNode

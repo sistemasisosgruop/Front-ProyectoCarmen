@@ -1,10 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { useToggleMenu } from '../../hooks/use-toggle-menu'
-import { useScrollPageY } from '../../hooks/use-scroll-page-y'
-import { useLang } from '../../hooks/use-lang'
-import Logo from './logo'
-import HeaderActions from './header-actions'
-import NavigationMenu from './navigation-menu'
+import { useToggleMenu } from '../../hooks/useToggleMenu'
+import { useScrollPageY } from '../../hooks/useScrollPageY'
+import { useLang } from '../../hooks/useLang'
+import Logo from './Logo'
+import HeaderActions from './HeaderActions'
+import NavigationMenu from './NavigationMenu'
 import { AiOutlineMenu } from 'react-icons/ai'
 
 const VARIANTS_MENU = {

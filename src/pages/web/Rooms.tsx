@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
-import LayoutPage from '../../components/layouts/layout-page'
-import Section from '../../components/layouts/section'
-import Masthead from '../../components/masthead'
-import Heading from '../../components/heading'
-import Card from '../../components/card'
+import LayoutPage from '../../components/layouts/LayoutPage'
+import Section from '../../components/layouts/Section'
+import Masthead from '../../components/Masthead'
+import Heading from '../../components/Heading'
+import Card from '../../components/Card'
+import PopularRoomCard from '../../components/PopularRoomCard'
+import DepartmentCard from '../../components/DepartmentCard'
 import { AiOutlineArrowRight } from 'react-icons/ai'
-import PopularRoomCard from '../../components/popular-room-card'
-import DepartmentCard from '../../components/department-card'
 
 const IMAGES = [
   {

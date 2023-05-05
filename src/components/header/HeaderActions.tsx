@@ -1,7 +1,7 @@
 import type { ChangeEvent } from 'react'
 import type { TFunction } from 'i18next'
 import { useEffect } from 'react'
-import { useLocalStorage } from '../../hooks/use-local-storage'
+import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { Link } from 'react-router-dom'
 import { AiOutlineWhatsApp } from 'react-icons/ai'
 import { FaUser, FaShoppingBag } from 'react-icons/fa'

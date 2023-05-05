@@ -1,7 +1,7 @@
 import ContactForm from '../../components/flights/ContactForm'
-import LayoutPage from '../../components/layouts/layout-page'
-import Section from '../../components/layouts/section'
-import Masthead from '../../components/masthead'
+import LayoutPage from '../../components/layouts/LayoutPage'
+import Section from '../../components/layouts/Section'
+import Masthead from '../../components/Masthead'
 import Tabs from '../../components/flights/Tabs'
 import TabItem from '../../components/flights/TabItem'
 
