@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useLang } from '../../hooks/useLang'
+import { useLang } from '../../hooks/use-lang'
 import LayoutPage from '../../components/layouts/layout-page'
 import Section from '../../components/layouts/section'
 import Heading from '../../components/heading'
