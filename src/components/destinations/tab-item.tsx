@@ -1,5 +1,5 @@
 interface Props {
-  children: JSX.Element
+  children: JSX.Element | JSX.Element[]
   icon: JSX.Element
   label: string
 }

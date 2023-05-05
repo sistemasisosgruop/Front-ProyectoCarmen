@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
+import { useLang } from '../../hooks/use-lang'
 import NavigationLinks from './navigation-links'
+import SocialNetwork from './social-network'
 import { BsBook } from 'react-icons/bs'
 import { TbPointFilled } from 'react-icons/tb'
-import SocialNetwork from './social-network'
-import { useLang } from '../../hooks/useLang'
 
 const Footer = (): JSX.Element => {
   const { t } = useLang()
