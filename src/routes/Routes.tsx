@@ -8,6 +8,7 @@ import Contact from '../pages/web/Contact'
 import AboutUs from '../pages/web/AboutUs'
 import DestinationsCatalog from '../pages/web/destination/DestinationsCatalog'
 import DestinationDetail from '../pages/web/destination/DestinationDetail'
+import ShoppingCart from '../pages/web/ShoppingCart'
 import PageNotFound from '../pages/web/PageNotFound'
 
 const Routing = (): JSX.Element => {
@@ -22,6 +23,7 @@ const Routing = (): JSX.Element => {
       <Route path='/sobre-nosotros' element={<AboutUs />} />
       <Route path='/destinos-populares' element={<DestinationsCatalog />} />
       <Route path='/destinos-populares/detalle' element={<DestinationDetail />} />
+      <Route path='/carrito-de-compras' element={<ShoppingCart />} />
       <Route path='*' element={<PageNotFound />} />
     </Routes>
   )
