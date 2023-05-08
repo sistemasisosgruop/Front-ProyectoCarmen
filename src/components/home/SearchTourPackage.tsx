@@ -14,7 +14,7 @@ const SearchTourPackage = (): JSX.Element => {
               Destino del Perú
             </span>
           </p>
-          <select className='bg-white text-gray-600 py-[2px] px-2 border-b-2 border-b-gray-400 focus:border-b-orange'>
+          <select className='bg-white text-gray-600 py-1 px-2 border-b border-b-gray-400 focus:border-b-blue'>
             <option value='origen'>¿Que parte del Perú desea visitar?</option>
             <option value='cusco'>Cusco</option>
             <option value='arequipa'>Arequipa</option>
@@ -30,7 +30,7 @@ const SearchTourPackage = (): JSX.Element => {
               Paquetes turísticos
             </span>
           </p>
-          <select className='bg-white text-gray-600 py-[2px] px-2 border-b-2 border-b-gray-400 focus:border-b-orange'>
+          <select className='bg-white text-gray-600 py-1 px-2 border-b border-b-gray-400 focus:border-b-blue'>
             <option value='destino'>Selecciona un paquete</option>
             <option value='cusco'>Valle sagrado del Cusco</option>
             <option value='arequipa'>Montaña 7 colores</option>
@@ -50,17 +50,17 @@ const SearchTourPackage = (): JSX.Element => {
             <div>
               <input
                 type='date'
-                className='border border-gray-600 rounded-md text-base text-gray-600 px-4 py-[2px] focus:border-none'
+                className='border border-gray-600 rounded-md text-base text-gray-600 px-6 py-1 focus:outline-none focus:border-blue'
               />
             </div>
             <div>
               <input
                 type='date'
-                className='border border-gray-600 rounded-md text-base text-gray-600 px-4 py-[2px] focus:border-none focus:no-underline'
+                className='border border-gray-600 rounded-md text-base text-gray-600 px-6 py-1 focus:border-none focus:outline-none focus:border-blue'
               />
             </div>
             <button
-              className='bg-orange px-6 py-2 rounded-md flex justify-center items-center gap-2 text-white font-bold hover:bg-opacity-90'
+              className='bg-blue px-6 py-2 rounded-xl flex justify-center items-center gap-2 text-white font-bold hover:bg-opacity-90'
             >
               <span>Buscar</span>
               <AiOutlineSearch size={18} />
