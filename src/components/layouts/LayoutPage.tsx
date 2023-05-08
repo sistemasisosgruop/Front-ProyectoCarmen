@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Footer from '../footer/Footer'
 import Header from '../header/Header'
 
@@ -8,9 +9,12 @@ interface Props {
 }
 
 const LayoutPage = ({ children, title }: Props): JSX.Element => {
+  const { pathname } = useLocation()
+
   useEffect(() => {
     document.title = `${title} - Carmen: Agencia de Viajes Y Turismo`
-  }, [title])
+    window.scrollTo(0, 0)
+  }, [title, pathname])
 
   return (
     <>
