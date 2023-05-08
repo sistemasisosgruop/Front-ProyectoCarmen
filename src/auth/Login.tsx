@@ -10,14 +10,14 @@ const Login = ({ toggleShowLogin }: Props): JSX.Element => {
   return createPortal(
     <div className='fixed top-0 left-0 z-50 w-screen h-screen bg-dark bg-opacity-90 grid place-content-center'>
       <section className='bg-white rounded-xl overflow-hidden px-8'>
-        <header className='relative w-full border-b border-b-gray-400 px-16 py-2'>
+        <header className='w-full border-b border-b-gray-400 px-2 py-2 flex justify-between items-center gap-8'>
           <h4 className='text-xl text-dark text-center font-bold'>
             Datos del usuario principal
           </h4>
           <button
             type='button'
             onClick={toggleShowLogin}
-            className='absolute top-0 rigth-2'
+            className=''
           >
             <IoIosClose size={32} />
           </button>
@@ -33,13 +33,13 @@ const Login = ({ toggleShowLogin }: Props): JSX.Element => {
                 type='text'
                 name='email'
                 placeholder='Por ejemplo: carmen@gmail.com'
-                className='w-full rounded-xl'
+                className='w-full px-4 py-2 rounded-xl border border-gray-400 focus:border-blue focus:outline-none'
               />
             </div>
             <div className='mb-4'>
               <button
                 type='button'
-                className='w-full bg-blue px-6 py-2 text-white font-bold rounded-lg'
+                className='w-full bg-blue px-6 py-2 text-white font-bold rounded-lg hover:bg-opacity-90'
               >
                 Continuar con correo
               </button>
