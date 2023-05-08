@@ -1,5 +1,6 @@
-import { ChangeEvent, useState, useEffect } from 'react'
 import type { TFunction } from 'i18next'
+import type { ChangeEvent } from 'react'
+import { useState, useEffect } from 'react'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { Link } from 'react-router-dom'
 import { AiOutlineWhatsApp } from 'react-icons/ai'
@@ -49,7 +50,7 @@ const HeaderActions = ({ isScrolled, t, toggleLang }: Props): JSX.Element => {
               {t('header.logIn')}
             </span>
           </button>
-          <Link to='mis-compras' className='flex justify-content items-center gap-2'>
+          <Link to='/carrito-de-compras' className='flex justify-content items-center gap-2'>
             <FaShoppingBag size={18} className='text-white' />
             <p className='text-white'>
               {t('header.myShop')}
