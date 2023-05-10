@@ -9,8 +9,17 @@ import AboutUs from '../pages/web/AboutUs'
 import DestinationsCatalog from '../pages/web/destination/DestinationsCatalog'
 import DestinationDetail from '../pages/web/destination/DestinationDetail'
 import ShoppingCart from '../pages/web/ShoppingCart'
-import PageNotFound from '../pages/web/PageNotFound'
+
 import Main from '../pages/dashboard/Main'
+import Calendar from '../pages/dashboard/Calendar'
+import AdminFlights from '../pages/dashboard/AdminFlights'
+import Beds from '../pages/dashboard/Beds'
+import TouristPackages from '../pages/dashboard/TouristPackages'
+import Users from '../pages/dashboard/Users'
+import Statistics from '../pages/dashboard/Statistics'
+import Settings from '../pages/dashboard/Settings'
+
+import PageNotFound from '../pages/web/PageNotFound'
 
 const Routing = (): JSX.Element => {
   return (
@@ -26,6 +35,14 @@ const Routing = (): JSX.Element => {
       <Route path='/destinos-populares/detalle' element={<DestinationDetail />} />
       <Route path='/carrito-de-compras' element={<ShoppingCart />} />
       <Route path='/admin' element={<Main />} />
+      <Route path='/admin/calendario' element={<Calendar />} />
+      <Route path='/admin/vuelos' element={<AdminFlights />} />
+      <Route path='/admin/camas' element={<Beds />} />
+      <Route path='/admin/paquetes-turisticos' element={<TouristPackages />} />
+      <Route path='/admin/usuarios' element={<Users />} />
+      <Route path='/admin/estadisticas' element={<Statistics />} />
+      <Route path='/admin/configuracion' element={<Settings />} />
+
       <Route path='*' element={<PageNotFound />} />
     </Routes>
   )
