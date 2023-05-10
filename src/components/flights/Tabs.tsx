@@ -25,6 +25,9 @@ const Tabs = ({ children }: Props): JSX.Element => {
           </button>
         ))}
       </div>
+      <div>
+        {children[activeTab]}
+      </div>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 const ContactForm = (): JSX.Element => {
   return (
-    <div className='bg-orange py-4 px-8 rounded-md'>
+    <div className='bg-turquoise py-4 px-8 rounded-md'>
       <h2 className='text-5xl font-bold uppercase mb-6 text-center text-white'>
         Contactanos
       </h2>
@@ -84,7 +84,7 @@ const ContactForm = (): JSX.Element => {
         <div className='flex justify-center items-center'>
           <button
             type='submit'
-            className='bg-green px-8 py-2 text-white font-bold rounded-md hover:bg-opacity-90'
+            className='bg-blue px-8 py-2 text-white font-bold rounded-md hover:bg-opacity-90'
           >
             Enviar
           </button>
