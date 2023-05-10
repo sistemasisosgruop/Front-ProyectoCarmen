@@ -15,7 +15,7 @@ const Logo = ({ isScrolled }: Props): JSX.Element => {
         transition={isScrolled ? { duration: 2.7 } : { duration: 0 }}
         src='/logo.png'
         alt='logo carmen - agencia de viajes y turismo'
-        className={isScrolled ? 'h-24 xl:h-24' : 'h-24 xl:h-18'}
+        className={isScrolled ? 'h-16 xl:h-16' : 'h-24 xl:h-24'}
       />
     </Link>
   )
