@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fullcalendar/core": "6.1.7",
+    "@fullcalendar/daygrid": "6.1.7",
+    "@fullcalendar/interaction": "6.1.7",
     "framer-motion": "10.12.4",
     "i18next": "22.4.15",
     "react": "18.2.0",
