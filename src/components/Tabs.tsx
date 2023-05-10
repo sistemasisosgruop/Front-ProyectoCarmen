@@ -31,13 +31,18 @@ const Tabs = ({
             className={`flex justify-center items-center gap-2 ${tabStyle} ${activeTab === index ? activeTabStyle : inactiveTabStyle} hover:bg-opacity-90`}
             onClick={() => { setActiveTab(index) }}
           >
-            {child.props.text !== undefined && (
+            {child.props?.text !== undefined && (
               <div className={`w-10 h-10 rounded-full grid place-content-center ${textTabStyle}`}>
-                {child.props.text}
+                {child.props?.text}
               </div>
             )}
+            {child.props?.icon !== undefined && (
+              <>
+                {child.props?.icon}
+              </>
+            )}
             <span>
-              {child.props.label}
+              {child.props?.label}
             </span>
           </button>
         ))}
