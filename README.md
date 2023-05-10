@@ -10,25 +10,32 @@ Página web
 ## Estructura
 
 ```
-|-- public
-|---- Imágenes y recursos públicos
-|-- src
-|---- components
-|------ layouts
-|-------- Componentes genereales
-|---- pages
-|------ web
-|-------- Páginas de la web
-|------ dashboard
-|-------- Páginas del panel administrativo
-|---- routes
-|-----hooks
-|
-|
-|
-|
-|
-|
-|
-|
+|--- /public
+|------ Imágenes y recursos públicos
+|--- /src
+|------ /components
+|--------- /layouts
+|------------ Layout o plantillas para la web y el dashboard
+|------ /pages
+|--------- /web
+|------------ Páginas
+|--------- /dashboard
+|------------ Páginas del panel administrativo
+|------ /routes
+|--------- Rutas
+|------ /hooks
+|--------- Hooks personalizados
+|------ /lang
+|--------- Idiomas ES / EN
 ```
+
+## Librerias utilizadas
+- **[tailwindcss](https://tailwindcss.com):**
+- **[react-router-dom](https://reactrouter.com):**
+- **[framer-motion](https://www.framer.com/motion/):**
+- **[i18next](https://www.i18next.com/):**
+- **[react-i18next]():**
+- **[react-icons](https://react-icons.github.io/react-icons/):**
+- **[react-datepicker]():**
+- **[swiper](https://swiperjs.com/react):**
+
