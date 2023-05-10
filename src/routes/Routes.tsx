@@ -13,7 +13,9 @@ import ShoppingCart from '../pages/web/ShoppingCart'
 import Main from '../pages/dashboard/Main'
 import AdminCalendar from '../pages/dashboard/AdminCalendar'
 import AdminFlights from '../pages/dashboard/AdminFlights'
-import Beds from '../pages/dashboard/Beds'
+import SelectOptionBeds from '../pages/dashboard/beds/SelectOptionBeds'
+import BedReservation from '../pages/dashboard/beds/BedReservation'
+import BedRegistration from '../pages/dashboard/beds/BedRegistration'
 import TouristPackages from '../pages/dashboard/TouristPackages'
 import Users from '../pages/dashboard/Users'
 import Statistics from '../pages/dashboard/Statistics'
@@ -37,7 +39,9 @@ const Routing = (): JSX.Element => {
       <Route path='/admin' element={<Main />} />
       <Route path='/admin/calendario' element={<AdminCalendar />} />
       <Route path='/admin/vuelos' element={<AdminFlights />} />
-      <Route path='/admin/camas' element={<Beds />} />
+      <Route path='/admin/camas' element={<SelectOptionBeds />} />
+      <Route path='/admin/camas/registro' element={<BedRegistration />} />
+      <Route path='/admin/camas/reservas' element={<BedReservation />} />
       <Route path='/admin/paquetes-turisticos' element={<TouristPackages />} />
       <Route path='/admin/usuarios' element={<Users />} />
       <Route path='/admin/estadisticas' element={<Statistics />} />
