@@ -1,8 +1,10 @@
+import AdminLayout from '../../components/layouts/AdminLayout'
+
 const Main = (): JSX.Element => {
   return (
-    <div>
+    <AdminLayout title = 'Panel administrativo'>
       Admin main page
-    </div>
+    </AdminLayout>
   )
 }
 
