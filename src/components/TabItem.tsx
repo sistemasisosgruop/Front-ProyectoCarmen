@@ -1,14 +1,15 @@
 interface Props {
-  children: React.ReactNode
-  icon: JSX.Element
+  children: JSX.Element | JSX.Element[]
   label: string
+  icon?: JSX.Element
+  text?: string | number
 }
 
-const TabItem = ({ children, icon, label }: Props): JSX.Element => {
+const TabItem = ({ children, label, icon, text }: Props): JSX.Element => {
   return (
-    <div className='bg-white px-8 py-4'>
+    <>
       {children}
-    </div>
+    </>
   )
 }
 
