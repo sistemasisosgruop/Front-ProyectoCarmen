@@ -11,7 +11,7 @@ import DestinationDetail from '../pages/web/destination/DestinationDetail'
 import ShoppingCart from '../pages/web/ShoppingCart'
 
 import Main from '../pages/dashboard/Main'
-import Calendar from '../pages/dashboard/Calendar'
+import AdminCalendar from '../pages/dashboard/AdminCalendar'
 import AdminFlights from '../pages/dashboard/AdminFlights'
 import Beds from '../pages/dashboard/Beds'
 import TouristPackages from '../pages/dashboard/TouristPackages'
@@ -35,7 +35,7 @@ const Routing = (): JSX.Element => {
       <Route path='/destinos-populares/detalle' element={<DestinationDetail />} />
       <Route path='/carrito-de-compras' element={<ShoppingCart />} />
       <Route path='/admin' element={<Main />} />
-      <Route path='/admin/calendario' element={<Calendar />} />
+      <Route path='/admin/calendario' element={<AdminCalendar />} />
       <Route path='/admin/vuelos' element={<AdminFlights />} />
       <Route path='/admin/camas' element={<Beds />} />
       <Route path='/admin/paquetes-turisticos' element={<TouristPackages />} />
