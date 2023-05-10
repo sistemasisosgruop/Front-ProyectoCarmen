@@ -33,7 +33,7 @@ const AdminLayout = ({ children, title }: Props): JSX.Element => {
         <Sidebar />
       </div>
 
-      <div className='max-w-full h-full bg-gray-300'>
+      <div className='w-full h-full bg-gray-300'>
         <Header
           openSidebar={openSidebar}
         />
