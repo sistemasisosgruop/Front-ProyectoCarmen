@@ -7,7 +7,7 @@ interface Props {
 
 const Header = ({ openSidebar }: Props): JSX.Element => {
   return (
-    <header className='w-full bg-turquoise px-6 py-4 flex justify-between items-center xl:justify-end'>
+    <header className='w-full h-[50px] bg-turquoise px-6 py-4 flex justify-between items-center xl:justify-end'>
       <button
         type='button'
         onClick={openSidebar}
