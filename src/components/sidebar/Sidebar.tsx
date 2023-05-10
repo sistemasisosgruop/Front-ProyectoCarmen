@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import NavLink from './NavLink'
 import { FiSettings } from 'react-icons/fi'
 import { HiOutlineUsers } from 'react-icons/hi'
@@ -18,14 +17,9 @@ interface Props {
 
 const Sidebar = ({ closeSidebar }: Props): JSX.Element => {
   return (
-    <motion.aside
-      initial={{ height: 0, x: -120, y: -150, opacity: 0 }}
-      animate={{ height: 'auto', x: 0, y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className='w-full bg-white fixed top-0 left-0 px-6 py-4 flex justify-between items-center border-b border-b-gray-200 shadow xl:relative xl:w-80'
-    >
+    <aside className='w-full bg-white fixed top-0 left-0 px-6 py-4 flex justify-between items-center border-b border-b-gray-200 shadow xl:relative xl:w-80 xl:h-screen xl:items-start'>
       <nav className='w-full flex flex-col justify-center items-center gap-8'>
-        <article className='w-full flex justify-between items-center gap-4'>
+        <article className='w-full flex justify-between items-center gap-4 xl:justify-center xl:items-center'>
           <Link to='/admin' className=''>
             <img
               src='/logo.png'
@@ -45,7 +39,7 @@ const Sidebar = ({ closeSidebar }: Props): JSX.Element => {
         <ul className='w-full'>
           <hr className='w-full border-none bg-gray-200 py-[0.5px] my-4' />
           <li>
-            <NavLink href='' label='Calendario' icon={<BiCalendar size={18} />} />
+            <NavLink href='/admin/calendario' label='Calendario' icon={<BiCalendar size={18} />} />
           </li>
           <hr className='w-full border-none bg-gray-200 py-[0.5px] my-4' />
           <li>
@@ -69,7 +63,7 @@ const Sidebar = ({ closeSidebar }: Props): JSX.Element => {
           </li>
         </ul>
       </nav>
-    </motion.aside>
+    </aside>
   )
 }
 
