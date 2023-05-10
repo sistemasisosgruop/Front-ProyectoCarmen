@@ -3,7 +3,7 @@ import { FaFacebookF, FaTiktok } from 'react-icons/fa'
 
 const SocialNetwork = (): JSX.Element => {
   return (
-    <ul className='flex justify-center items-center gap-2'>
+    <ul className='flex justify-center items-center gap-2 mt-4 md:mt-0'>
       <li>
         <a href='' target='_blank' className='text-white'>
           <AiOutlineWhatsApp size={22} />
