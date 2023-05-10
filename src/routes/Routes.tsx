@@ -10,6 +10,7 @@ import DestinationsCatalog from '../pages/web/destination/DestinationsCatalog'
 import DestinationDetail from '../pages/web/destination/DestinationDetail'
 import ShoppingCart from '../pages/web/ShoppingCart'
 import PageNotFound from '../pages/web/PageNotFound'
+import Main from '../pages/dashboard/Main'
 
 const Routing = (): JSX.Element => {
   return (
@@ -24,6 +25,7 @@ const Routing = (): JSX.Element => {
       <Route path='/destinos-populares' element={<DestinationsCatalog />} />
       <Route path='/destinos-populares/detalle' element={<DestinationDetail />} />
       <Route path='/carrito-de-compras' element={<ShoppingCart />} />
+      <Route path='/admin' element={<Main />} />
       <Route path='*' element={<PageNotFound />} />
     </Routes>
   )
