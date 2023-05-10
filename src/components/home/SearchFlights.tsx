@@ -36,7 +36,7 @@ const SearchFlights = (): JSX.Element => {
         <div className='flex flex-col gap-2'>
           <p className='flex justify-start items-center gap-2'>
             <MdFlightLand size={18} className='text-gray-400' />
-            <span className='text-lg font-bold text-gray-800'>
+            <span className='text-base font-bold text-gray-800 lg:text-lg'>
               Tipo de vuelo
             </span>
           </p>
@@ -49,7 +49,7 @@ const SearchFlights = (): JSX.Element => {
         <div className='flex flex-col justify-center items-center gap-2'>
           <p className='flex justify-start items-center gap-2'>
             <HiUserGroup size={18} className='text-gray-400' />
-            <span className='text-lg font-bold text-gray-800'>
+            <span className='text-base font-bold text-gray-800 lg:text-lg'>
               N° de pasajeros adultos
             </span>
           </p>
@@ -76,7 +76,7 @@ const SearchFlights = (): JSX.Element => {
         <div className='flex flex-col justify-center items-center gap-2'>
         <p className='flex justify-start items-start gap-2 sm:items-center'>
             <HiUserGroup size={18} className='text-gray-400' />
-            <span className='flex flex-wrap justify-start items-center gap-2 text-lg font-bold textgray-800'>
+            <span className='flex flex-wrap justify-start items-center gap-2 text-base font-bold textgray-800 lg:text-lg'>
               <span>
                 N° de pasajeros niños
               </span>
@@ -110,7 +110,7 @@ const SearchFlights = (): JSX.Element => {
         <div className='flex flex-col gap-2'>
           <p className='flex justify-start items-center gap-2'>
             <IoMdWalk size={18} className='text-gray-400' />
-            <span className='text-lg font-bold text-gray-800'>
+            <span className='text-base font-bold text-gray-800 lg:text-lg'>
               Origen
             </span>
           </p>
@@ -126,7 +126,7 @@ const SearchFlights = (): JSX.Element => {
         <div className='flex flex-col justify-center items-start gap-2'>
           <p className='flex justify-start items-center gap-2'>
             <GiPerson size={18} className='text-gray-400' />
-            <span className='text-lg font-bold text-gray-800'>
+            <span className='text-base font-bold text-gray-800 lg:text-lg'>
               Destino del Perú
             </span>
           </p>
@@ -142,7 +142,7 @@ const SearchFlights = (): JSX.Element => {
         <div className='flex flex-col justify-center items-start gap-2'>
           <p className='flex justify-start items-center gap-2'>
             <FaCalendarAlt size={18} className='text-gray-400' />
-            <span className='text-lg font-bold text-gray-800'>
+            <span className='text-base font-bold text-gray-800 lg:text-lg'>
               Fechas deseadas
             </span>
           </p>

@@ -8,7 +8,7 @@ const SearchLodging = (): JSX.Element => {
       <article className='flex flex-col justify-start items-start gap-1'>
         <div className='flex justify-start items-center gap-2'>
           <BiDoorOpen size={24} className='text-gray-500' />
-          <p className='text-2xl font-bold'>
+          <p className='text-xl font-bold lg:text-2xl'>
             Habitación
           </p>
         </div>
@@ -20,7 +20,7 @@ const SearchLodging = (): JSX.Element => {
         <div className='flex flex-col justify-start items-start gap-2'>
           <div className='flex items-center gap-2'>
             <MdOutlineEditCalendar size={22} className='text-gray-500' />
-            <p className='text-xl font-bold'>
+            <p className='text-base font-bold lg:text-lg'>
               Fecha de inicio
             </p>
           </div>
@@ -32,7 +32,7 @@ const SearchLodging = (): JSX.Element => {
         <div className='flex flex-col justify-start items-start gap-2'>
           <div className='flex items-center gap-2'>
             <MdOutlineEditCalendar size={22} className='text-gray-500' />
-            <p className='text-xl font-bold'>
+            <p className='text-base font-bold lg:text-lg'>
               Fecha de fin
             </p>
           </div>
