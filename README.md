@@ -38,4 +38,5 @@ Página web
 - **[react-icons](https://react-icons.github.io/react-icons/):**
 - **[react-datepicker]():**
 - **[swiper](https://swiperjs.com/react):**
+- **npm install [@fullcalendar/core @fullcalendar/interaction @fullcalendar/daygrid]()**
 
