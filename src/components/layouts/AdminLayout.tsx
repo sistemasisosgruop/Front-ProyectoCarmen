@@ -38,7 +38,7 @@ const AdminLayout = ({ children, title }: Props): JSX.Element => {
           openSidebar={openSidebar}
         />
 
-        <div className='max-w-full overflow-y-scroll p-4' style={{ height: 'calc(100vh - 50px)', width: 'calc(100vw - 320px)' }}>
+        <div className='max-w-full flex flex-col justify-start items-center overflow-y-scroll px-4 pt-8 pb-4' style={{ height: 'calc(100vh - 50px)', width: 'calc(100vw - 320px)' }}>
           {children}
         </div>
       </div>
