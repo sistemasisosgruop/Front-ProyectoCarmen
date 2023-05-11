@@ -29,7 +29,7 @@ Página web
 |--------- Idiomas ES / EN
 ```
 
-## Librerias utilizadas
+## Dependencias
 - **[tailwindcss](https://tailwindcss.com):**
 - **[react-router-dom](https://reactrouter.com):**
 - **[framer-motion](https://www.framer.com/motion/):**
@@ -40,4 +40,4 @@ Página web
 - **[swiper](https://swiperjs.com/react):**
 - **[@fullcalendar/core @fullcalendar/interaction @fullcalendar/daygrid]()**
 - **[chart.js](https://www.chartjs.org/)**
-
+- **[react-chartjs-2](https://react-chartjs-2.js.org)**
