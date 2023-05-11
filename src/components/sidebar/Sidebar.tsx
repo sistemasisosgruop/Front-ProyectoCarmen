@@ -17,7 +17,7 @@ interface Props {
 
 const Sidebar = ({ closeSidebar }: Props): JSX.Element => {
   return (
-    <aside className='w-full bg-white fixed top-0 left-0 px-6 py-4 flex justify-between items-center border-b border-b-gray-200 shadow xl:relative xl:w-80 xl:h-screen xl:items-start'>
+    <aside className='w-full bg-white fixed top-0 left-0 z-10 px-6 py-4 flex justify-between items-center border-b border-b-gray-200 shadow xl:relative xl:w-80 xl:h-screen xl:items-start'>
       <nav className='w-full flex flex-col justify-center items-center gap-8'>
         <article className='w-full flex justify-between items-center gap-4 xl:justify-center xl:items-center'>
           <Link to='/admin' className=''>

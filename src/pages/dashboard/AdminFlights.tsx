@@ -16,12 +16,12 @@ const AdminFlights = (): JSX.Element => {
       <HeadingText text='Reservas de vuelos' />
 
       <AdminSection>
-        <div className='w-full flex justify-between items-center gap-2 mb-4'>
-          <article className='flex justify-start items-center gap-4'>
+        <div className='w-full flex flex-col justify-between items-center gap-2 mb-4 md:flex-row'>
+          <article className='w-full grid grid-cols-1 justify-start items-center gap-4 sm:grid-cols-3 md:w-auto'>
             <input
               type='search'
               name='search'
-              className='px-4 py-2 text-base text-gray-600 border border-gray-200 rounded-xl focus:outline-none focus:border-blue'
+              className='w-full px-4 py-2 text-base text-gray-600 border border-gray-200 rounded-xl focus:outline-none focus:border-blue'
               placeholder='Buscar...'
             />
             <select className='px-4 py-2 text-base text-gray-600 bg-transparent border border-gray-200 rounded-xl focus:outline-none focus:border-blue'>
@@ -31,7 +31,7 @@ const AdminFlights = (): JSX.Element => {
               selected={startDate}
               onChange={(date: Date) => { setStartDate(date) }}
               showIcon={true}
-              className='px-4 py-2 text-base text-gray-600 border border-gray-200 rounded-xl focus:outline-none focus:border-blue'
+              className='w-full px-4 py-2 text-base text-gray-600 border border-gray-200 rounded-xl focus:outline-none focus:border-blue'
             />
           </article>
           <button

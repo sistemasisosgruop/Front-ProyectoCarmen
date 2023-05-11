@@ -2,7 +2,6 @@ import HeadingText from '../../../components/HeadingText'
 import AdminLayout from '../../../components/layouts/AdminLayout'
 import AdminSection from '../../../components/layouts/AdminSection'
 import { AiFillCheckCircle, AiFillCloseCircle, AiOutlineSearch } from 'react-icons/ai'
-import { IoMdAdd } from 'react-icons/io'
 import THead from '../../../components/THead'
 
 const Comments = (): JSX.Element => {
@@ -12,7 +11,7 @@ const Comments = (): JSX.Element => {
 
       <AdminSection>
         <article className='flex justify-between items-center gap-4 mb-8'>
-          <div className='relative'>
+          <div className='w-full relative'>
             <label
               htmlFor='searchClient'
               className='absolute left-2 top-1/2 -translate-y-1/2 text-gray-600'
@@ -23,7 +22,7 @@ const Comments = (): JSX.Element => {
               type='search'
               name='searchClient'
               placeholder='Buscar comentarios...'
-              className='pl-8 pr-6 py-2 rounded-xl border border-gray-200 text-base text-gray-600 focus:outline-none focus:border-blue focus:text-blue'
+              className='w-full pl-8 pr-6 py-2 rounded-xl border border-gray-200 text-base text-gray-600 focus:outline-none focus:border-blue focus:text-blue sm:w-auto'
             />
           </div>
         </article>

@@ -8,7 +8,7 @@ import { MdComment, MdMessage } from 'react-icons/md'
 const Settings = (): JSX.Element => {
   return (
     <AdminLayout title='Configuraciones'>
-      <div className='w-full h-full flex justify-center items-center'>
+      <div className='w-full h-full flex justify-center items-center h-options-settings'>
         <Options
           options={[
             { label: 'Roles', path: '/admin/configuracion/roles', icon: <HiUsers size={80} /> },

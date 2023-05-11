@@ -12,8 +12,8 @@ const BedRegistration = (): JSX.Element => {
       <HeadingText text='Camas' />
 
       <AdminSection>
-        <article className='flex justify-between items-center gap-4 mb-8'>
-          <div className='relative'>
+        <article className='flex flex-col justify-between items-end gap-4 mb-8 sm:flex-row'>
+          <div className='relative w-full'>
             <label
               htmlFor='searchClient'
               className='absolute left-2 top-1/2 -translate-y-1/2 text-gray-600'
@@ -24,7 +24,7 @@ const BedRegistration = (): JSX.Element => {
               type='search'
               name='searchClient'
               placeholder='Buscar cliente...'
-              className='pl-8 pr-6 py-2 rounded-xl border border-gray-200 text-base text-gray-600 focus:outline-none focus:border-blue focus:text-blue'
+              className='w-full pl-8 pr-6 py-2 rounded-xl border border-gray-200 text-base text-gray-600 focus:outline-none focus:border-blue focus:text-blue sm:w-auto'
             />
           </div>
 
