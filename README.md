@@ -34,9 +34,10 @@ Página web
 - **[react-router-dom](https://reactrouter.com):**
 - **[framer-motion](https://www.framer.com/motion/):**
 - **[i18next](https://www.i18next.com/):**
-- **[react-i18next]():**
+- **[react-i18next](https://react.i18next.com/):**
 - **[react-icons](https://react-icons.github.io/react-icons/):**
-- **[react-datepicker]():**
+- **[react-datepicker](https://github.com/Hacker0x01/react-datepicker):**
 - **[swiper](https://swiperjs.com/react):**
-- **npm install [@fullcalendar/core @fullcalendar/interaction @fullcalendar/daygrid]()**
+- **[@fullcalendar/core @fullcalendar/interaction @fullcalendar/daygrid]()**
+- **[chart.js](https://www.chartjs.org/)**
 
