@@ -36,7 +36,7 @@ const Sidebar = ({ closeSidebar }: Props): JSX.Element => {
           </button>
         </article>
 
-        <ul className='w-full'>
+        <ul className='w-full space-y-2'>
           <hr className='w-full border-none bg-gray-200 py-[0.5px] my-4' />
           <li>
             <NavLink href='/admin/calendario' label='Calendario' icon={<BiCalendar size={18} />} />
