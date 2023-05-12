@@ -5,6 +5,7 @@ interface Props {
   isIcon?: boolean
   icon?: JSX.Element
   position?: string
+  onClick?: () => void
 }
 
 const Button = ({
@@ -13,12 +14,14 @@ const Button = ({
   textColor = 'text-white',
   isIcon,
   icon,
-  position = 'right'
+  position = 'right',
+  onClick
 }: Props): JSX.Element => {
   return (
     <button
       type='button'
-      className={`${background} ${textColor} px-6 py-2 rounded-xl text-center font-bold flex justify-center items-center gap-2 hover:bg-opacity-90`}
+      onClick={onClick}
+      className={`w-full ${background} ${textColor} px-6 py-2 rounded-xl text-center font-bold flex justify-center items-center gap-2 hover:bg-opacity-90 sm:w-auto`}
     >
       {isIcon !== undefined && position === 'left' && icon}
       <span>
