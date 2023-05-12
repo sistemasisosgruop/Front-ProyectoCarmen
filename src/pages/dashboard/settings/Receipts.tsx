@@ -1,9 +1,8 @@
-import HeadingText from '../../../components/HeadingText'
 import AdminLayout from '../../../components/layouts/AdminLayout'
 import AdminSection from '../../../components/layouts/AdminSection'
-import { AiOutlineSearch } from 'react-icons/ai'
-import { IoMdAdd } from 'react-icons/io'
+import HeadingText from '../../../components/HeadingText'
 import THead from '../../../components/THead'
+import { AiOutlineSearch } from 'react-icons/ai'
 import { BiDownload } from 'react-icons/bi'
 
 const Receipts = (): JSX.Element => {
@@ -27,16 +26,6 @@ const Receipts = (): JSX.Element => {
               className='w-full pl-8 pr-6 py-2 rounded-xl border border-gray-200 text-base text-gray-600 focus:outline-none focus:border-blue focus:text-blue sm:w-auto'
             />
           </div>
-
-          <button
-            type='button'
-            className='bg-orange px-6 py-2 rounded-xl text-white font-bold flex justify-center items-center gap-2 hover:bg-opacity-90'
-          >
-            <span>
-              Agregar
-            </span>
-            <IoMdAdd size={18} />
-          </button>
         </article>
 
         <div className='overflow-x-scroll rounded-xl'>
