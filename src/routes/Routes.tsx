@@ -1,34 +1,34 @@
 import { Routes, Route } from 'react-router-dom'
-import Home from '../pages/web/Home'
-import Rooms from '../pages/web/Rooms'
-import RoomCatalog from '../pages/web/RoomCatalog'
-import Packages from '../pages/web/Packages'
-import Flights from '../pages/web/Flights'
-import Contact from '../pages/web/Contact'
-import AboutUs from '../pages/web/AboutUs'
-import DestinationsCatalog from '../pages/web/destination/DestinationsCatalog'
-import DestinationDetail from '../pages/web/destination/DestinationDetail'
-import ShoppingCart from '../pages/web/ShoppingCart'
+import Home from '@web/Home'
+import Rooms from '@web/Rooms'
+import RoomCatalog from '@web/RoomCatalog'
+import Packages from '@web/Packages'
+import Flights from '@web/Flights'
+import Contact from '@web/Contact'
+import AboutUs from '@web/AboutUs'
+import DestinationsCatalog from '@web/destination/DestinationsCatalog'
+import DestinationDetail from '@web/destination/DestinationDetail'
+import MyPurchases from '@web/MyPurchases'
+import ShoppingCart from '@web/shopping-cart/ShoppingCart'
+import PageNotFound from '@web/PageNotFound'
 
 // import Main from '../pages/dashboard/Main'
-import AdminCalendar from '../pages/dashboard/AdminCalendar'
-import AdminFlights from '../pages/dashboard/AdminFlights'
-import SelectOptionBeds from '../pages/dashboard/beds/SelectOptionBeds'
-import BedReservation from '../pages/dashboard/beds/BedReservation'
-import BedRegistration from '../pages/dashboard/beds/BedRegistration'
-import OptionsTouristPackages from '../pages/dashboard/tourist-packages/OptionsTouristPackages'
-import TouristpackagesRegistration from '../pages/dashboard/tourist-packages/TouristPackagesRegistration'
-import TouristPackagesReservation from '../pages/dashboard/tourist-packages/TouristPackagesReservation'
-import Users from '../pages/dashboard/Users'
-import Statistics from '../pages/dashboard/Statistics'
-import OptionSettings from '../pages/dashboard/settings/OptionSettings'
-import Roles from '../pages/dashboard/settings/Roles'
-import Coupons from '../pages/dashboard/settings/Coupons'
-import Receipts from '../pages/dashboard/settings/Receipts'
-import Messages from '../pages/dashboard/settings/Messages'
-import Comments from '../pages/dashboard/settings/Comments'
-
-import PageNotFound from '../pages/web/PageNotFound'
+import AdminCalendar from '@dashboard/AdminCalendar'
+import AdminFlights from '@dashboard/AdminFlights'
+import SelectOptionBeds from '@dashboard/beds/SelectOptionBeds'
+import BedReservation from '@dashboard/beds/BedReservation'
+import BedRegistration from '@dashboard/beds/BedRegistration'
+import OptionsTouristPackages from '@dashboard/tourist-packages/OptionsTouristPackages'
+import TouristpackagesRegistration from '@dashboard/tourist-packages/TouristPackagesRegistration'
+import TouristPackagesReservation from '@dashboard/tourist-packages/TouristPackagesReservation'
+import Users from '@dashboard/Users'
+import Statistics from '@dashboard/Statistics'
+import OptionSettings from '@dashboard/settings/OptionSettings'
+import Roles from '@dashboard/settings/Roles'
+import Coupons from '@dashboard/settings/Coupons'
+import Receipts from '@dashboard/settings/Receipts'
+import Messages from '@dashboard/settings/Messages'
+import Comments from '@dashboard/settings/Comments'
 
 const Routing = (): JSX.Element => {
   return (
@@ -42,7 +42,7 @@ const Routing = (): JSX.Element => {
       <Route path='/sobre-nosotros' element={<AboutUs />} />
       <Route path='/destinos-populares' element={<DestinationsCatalog />} />
       <Route path='/destinos-populares/detalle' element={<DestinationDetail />} />
-      <Route path='/carrito-de-compras' element={<ShoppingCart />} />
+      <Route path='/mis-compras' element={<MyPurchases />} />
       {/* <Route path='/admin' element={<Main />} /> */}
       <Route path='/admin/calendario' element={<AdminCalendar />} />
       <Route path='/admin/vuelos' element={<AdminFlights />} />
@@ -60,6 +60,9 @@ const Routing = (): JSX.Element => {
       <Route path='/admin/configuracion/comprobantes' element={<Receipts />} />
       <Route path='/admin/configuracion/mensajes' element={<Messages />} />
       <Route path='/admin/configuracion/comentarios' element={<Comments />} />
+
+      <Route path='/carrito-de-compras' element={<ShoppingCart />} />
+      <Route path='/carrito-de-compras/confirmar-datos' element={<ShoppingCart />} />
 
       <Route path='*' element={<PageNotFound />} />
     </Routes>
