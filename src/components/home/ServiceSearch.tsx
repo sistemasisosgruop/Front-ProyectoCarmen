@@ -9,7 +9,7 @@ import SearchTourPackage from './SearchTourPackage'
 
 const ServiceSearch = (): JSX.Element => {
   return (
-    <div className='mt-16 xl:absolute xl:top-[82vh] xl:z-10 xl:mt-0'>
+    <div className='absolute top-[75vh] z-10 xl:top-[70vh]'>
       <Tabs
         tabContainerStyles='flex justify-center items-center sm:justify-start'
         inactiveTabStyle='bg-blue border-t-2 border-t-blue text-white font-bold'
