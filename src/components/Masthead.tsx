@@ -34,7 +34,7 @@ const Masthead = (): JSX.Element => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <article className='absolute top-0 left-0 w-full h-full px-8 py-4 z-10 grid place-content-center xl:px-64'>
+      <article className='absolute top-0 left-0 w-full h-full bg-dark bg-opacity-30 px-8 py-4 z-10 grid place-content-center xl:px-64'>
         <h2 className='text-4xl text-center font-bold text-white xl:text-6xl'>
           {t('masthead.title')}
         </h2>
