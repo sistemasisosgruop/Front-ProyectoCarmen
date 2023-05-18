@@ -9,7 +9,7 @@ interface Props {
   errors: any
   handleSubmit: any
   onPrevStep: () => void
-  onSubmit: () => void
+  onSubmit: (data: FormData) => void
 }
 
 const AddThirdForm = ({ control, errors, handleSubmit, onPrevStep, onSubmit }: Props): JSX.Element => {
