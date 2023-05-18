@@ -10,6 +10,7 @@ import DestinationsCatalog from '@web/destination/DestinationsCatalog'
 import DestinationDetail from '@web/destination/DestinationDetail'
 import MyPurchases from '@web/MyPurchases'
 import ShoppingCart from '@web/shopping-cart/ShoppingCart'
+import TravelerInformation from '@web/shopping-cart/TravelerInformation'
 import PageNotFound from '@web/PageNotFound'
 
 // import Main from '../pages/dashboard/Main'
@@ -62,7 +63,7 @@ const Routing = (): JSX.Element => {
       <Route path='/admin/configuracion/comentarios' element={<Comments />} />
 
       <Route path='/carrito-de-compras' element={<ShoppingCart />} />
-      <Route path='/carrito-de-compras/confirmar-datos' element={<ShoppingCart />} />
+      <Route path='/carrito-de-compras/confirmar-datos' element={<TravelerInformation />} />
 
       <Route path='*' element={<PageNotFound />} />
     </Routes>
