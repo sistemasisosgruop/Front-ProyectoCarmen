@@ -1,10 +1,12 @@
 import { useState } from 'react'
 
-export const useToggleMenu = (): {
+interface HookData {
   isOpenMenu: boolean
   openMenu: () => void
   closeMenu: () => void
-} => {
+}
+
+export const useToggleMenu = (): HookData => {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
 
   const openMenu = (): void => {
@@ -17,4 +19,3 @@ export const useToggleMenu = (): {
 
   return { isOpenMenu, openMenu, closeMenu }
 }
-

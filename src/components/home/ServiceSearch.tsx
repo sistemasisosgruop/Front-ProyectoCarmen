@@ -9,8 +9,12 @@ import SearchTourPackage from './SearchTourPackage'
 
 const ServiceSearch = (): JSX.Element => {
   return (
-    <div className='absolute top-[84vh] z-20'>
-      <Tabs>
+    <div className='absolute top-[75vh] z-10 xl:top-[70vh]'>
+      <Tabs
+        tabContainerStyles='flex justify-center items-center sm:justify-start'
+        inactiveTabStyle='bg-blue border-t-2 border-t-blue text-white font-bold'
+        activeTabStyle='bg-white border-t-2 border-t-blue text-dark font-bold'
+      >
         <TabItem icon={<FiHome />} label='Hospedaje'>
           <SearchLodging />
         </TabItem>
@@ -26,4 +30,3 @@ const ServiceSearch = (): JSX.Element => {
 }
 
 export default ServiceSearch
-

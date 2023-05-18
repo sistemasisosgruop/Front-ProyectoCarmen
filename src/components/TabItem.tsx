@@ -1,17 +1,16 @@
 interface Props {
-  children: JSX.Element
-  icon: JSX.Element
+  children: JSX.Element | JSX.Element[]
   label: string
+  icon?: JSX.Element
+  text?: string | number
 }
 
-// eslint-disable-next-line
-const TabItem = ({ children, icon, label }: Props): JSX.Element => {
+const TabItem = ({ children, label, icon, text }: Props): JSX.Element => {
   return (
-    <div>
+    <>
       {children}
-    </div>
+    </>
   )
 }
 
 export default TabItem
-

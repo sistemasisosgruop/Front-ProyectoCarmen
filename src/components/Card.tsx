@@ -1,5 +1,4 @@
 import { AiFillStar } from 'react-icons/ai'
-import '../styles/card.css'
 
 interface Props {
   imagePath: string
@@ -8,9 +7,17 @@ interface Props {
 
 const Card = ({ imagePath, alt }: Props): JSX.Element => {
   return (
-      <div className='relative group/description cursor-pointer transition-all hover:mb-24 card'>
-      <img src={imagePath} alt={alt} className='h-[380px] object-cover object-center border border-white rounded-md' />
-      <article className='invisible card-description absolute z-50 left-0 px-4 py-4 w-full group-hover/description:visible'>
+    <div className='relative w-full rounded-xl border border-white group/description cursor-pointer transition-all overflow-hidden'>
+      <img
+        src={imagePath}
+        alt={alt}
+        className='w-full h-[380px] object-cover object-center group-hover/description:scale-125 duration-200'
+      />
+      <div className='invisible absolute top-2 right-2 bg-white px-2 py-1 rounded-xl group-hover/description:visible'>
+        <p className='text-dark font-bold'>5.0</p>
+      </div>
+
+      <article className='md:invisible absolute z-20 bg-white bottom-0 left-0 px-4 py-4 w-full md:group-hover/description:visible rounded-b-md'>
         <div className='flex justify-between items-start'>
           <span className='uppercase text-sm text-gray-600'>
             Alojamiento
@@ -42,4 +49,3 @@ const Card = ({ imagePath, alt }: Props): JSX.Element => {
 }
 
 export default Card
-
