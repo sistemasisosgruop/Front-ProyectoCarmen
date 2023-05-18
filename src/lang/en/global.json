@@ -1,0 +1,45 @@
+{
+  "header": {
+    "rooms": "Rooms",
+    "flights": "Flights",
+    "packages": "Packages",
+    "contact": "Contact",
+    "aboutUs": "About Us",
+    "logIn": "Log in",
+    "myShop": "My shopping"
+  },
+  "footer": {
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "rooms": "Rooms",
+    "tourPackages": "Tour packages",
+    "flights": "Flights",
+    "contact": "Contact",
+    "aboutUs": "About us",
+    "complainstBook": "Complaints book",
+    "copyright": "All rights reserved",
+    "legalWarning": "Legal warning",
+    "privacyPolicies": "Privacy policies",
+    "cookiePolicies": "Cookie policies"
+  },
+  "masthead": {
+    "title": "Book now and enjoy a perfect stay",
+    "description": "Take advantage of this unique opportunity and book now to live an unforgettable experience in our cozy rooms!"
+  },
+  "home": {
+    "popularRooms": "Popular rooms",
+    "popularDestinations": "Popular destinations",
+    "popularFlights": "Popular flights",
+    "seeCatalog": "See catalog",
+    "commentsSection": {
+      "theCommentOf": "The comments of",
+      "ourClients": "our clients",
+      "description": "Check out some reviews from our customers",
+      "qualification": "General rating",
+      "seeMore": "See more"
+    }
+
+  }
+
+}
