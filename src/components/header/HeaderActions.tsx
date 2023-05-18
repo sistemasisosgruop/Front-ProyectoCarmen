@@ -50,7 +50,7 @@ const HeaderActions = ({ isScrolled, t, toggleLang }: Props): JSX.Element => {
               {t('header.logIn')}
             </span>
           </button>
-          <Link to='/carrito-de-compras' className='flex justify-content items-center gap-2'>
+          <Link to='/mis-compras' className='flex justify-content items-center gap-2'>
             <FaShoppingBag size={18} className='text-white' />
             <p className='text-white'>
               {t('header.myShop')}
