@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { IoIosAddCircleOutline, IoIosRemoveCircleOutline } from 'react-icons/io'
+import Button from '../Button'
 
 const DestinationForm = (): JSX.Element => {
   const [numChildren, setNumChildren] = useState<number>(1)
@@ -119,12 +120,10 @@ const DestinationForm = (): JSX.Element => {
           </p>
         </div>
         <div className='flex justify-center items-center'>
-          <button
-            type='button'
-            className='bg-orange text-white font-bold px-4 py-1 rounded-xl'
-          >
-            Agregar al carrito de compras
-          </button>
+          <Button
+            text='Agregar al carrito de compras'
+            background='bg-orange'
+          />
         </div>
       </form>
     </div>

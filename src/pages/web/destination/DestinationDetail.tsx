@@ -12,6 +12,8 @@ import { HiOutlineIdentification, HiUsers, HiOutlineLanguage } from 'react-icons
 import { CgSandClock } from 'react-icons/cg'
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 
+const title: string = 'Valle sagrado de los Incas'
+
 const DestinationDetail = (): JSX.Element => {
   return (
     <LayoutPage title='Detalles de destino populares'>
@@ -33,11 +35,11 @@ const DestinationDetail = (): JSX.Element => {
       <Section>
         <div>
           <h2 className='uppercase text-[2.5rem] text-center text-dark font-bold'>
-            <span className='text-blue'>
-              Valle sagrado
+            <span className='text-blue mr-2'>
+              {title.split(' ').slice(0, 2).join(' ')}
             </span>
             <span>
-              de los incas
+              {title.split(' ').slice(2).join(' ')}
             </span>
           </h2>
           <p className='text-dark text-center text-2xl'>

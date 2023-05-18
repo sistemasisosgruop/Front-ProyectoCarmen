@@ -2,7 +2,7 @@ import { IoMdDownload } from 'react-icons/io'
 import LayoutPage from '../../components/layouts/LayoutPage'
 import Section from '../../components/layouts/Section'
 
-const ShoppingCart = (): JSX.Element => {
+const MyPurchases = (): JSX.Element => {
   return (
     <LayoutPage title='Mi carrito de compras'>
       <Section className='mb-32 pt-16'>
@@ -83,4 +83,4 @@ const ShoppingCart = (): JSX.Element => {
   )
 }
 
-export default ShoppingCart
+export default MyPurchases
