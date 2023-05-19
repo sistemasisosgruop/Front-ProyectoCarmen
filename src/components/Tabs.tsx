@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useTabs } from '@hooks/useTabs'
 
 interface Props {
   children: JSX.Element[]
@@ -19,7 +19,7 @@ const Tabs = ({
   inactiveTabStyle = 'bg-white text-dark',
   textTabStyle = 'bg-dark text-white'
 }: Props): JSX.Element => {
-  const [activeTab, setActiveTab] = useState<number>(0)
+  const { activeTab, switchTab } = useTabs(0)
 
   return (
     <section>
@@ -29,7 +29,7 @@ const Tabs = ({
             key={index}
             type='button'
             className={`flex justify-center items-center gap-2 ${tabStyle} ${activeTab === index ? activeTabStyle : inactiveTabStyle} hover:bg-opacity-90`}
-            onClick={() => { setActiveTab(index) }}
+            onClick={() => { switchTab(index) }}
           >
             {child.props?.text !== undefined && (
               <div className={`w-10 h-10 rounded-full grid place-content-center ${textTabStyle}`}>
