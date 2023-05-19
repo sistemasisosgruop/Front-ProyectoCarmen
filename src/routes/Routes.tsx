@@ -39,10 +39,11 @@ const Routing = (): JSX.Element => {
       <Route path='/paquetes' element={<Packages />} />
       <Route path='/vuelos' element={<Flights />} />
       <Route path='/contactanos' element={<Contact />} />
-      <Route path='/sobre-nosotros' element={<AboutUs />} />
+      <Route path='/sobre-nosotros' element={<Contact />} />
       <Route path='/destinos-populares' element={<DestinationsCatalog />} />
       <Route path='/destinos-populares/detalle' element={<DestinationDetail />} />
       <Route path='/mis-compras' element={<MyPurchases />} />
+
       <Route path='/admin/calendario' element={<AdminCalendar />} />
       <Route path='/admin/vuelos' element={<AdminFlights />} />
       <Route path='/admin/camas' element={<SelectOptionBeds />} />
