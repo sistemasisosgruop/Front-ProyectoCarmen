@@ -13,7 +13,6 @@ import ShoppingCart from '@web/shopping-cart/ShoppingCart'
 import TravelerInformation from '@web/shopping-cart/TravelerInformation'
 import PageNotFound from '@web/PageNotFound'
 
-// import Main from '../pages/dashboard/Main'
 import AdminCalendar from '@dashboard/AdminCalendar'
 import AdminFlights from '@dashboard/AdminFlights'
 import SelectOptionBeds from '@dashboard/beds/SelectOptionBeds'
@@ -44,7 +43,6 @@ const Routing = (): JSX.Element => {
       <Route path='/destinos-populares' element={<DestinationsCatalog />} />
       <Route path='/destinos-populares/detalle' element={<DestinationDetail />} />
       <Route path='/mis-compras' element={<MyPurchases />} />
-      {/* <Route path='/admin' element={<Main />} /> */}
       <Route path='/admin/calendario' element={<AdminCalendar />} />
       <Route path='/admin/vuelos' element={<AdminFlights />} />
       <Route path='/admin/camas' element={<SelectOptionBeds />} />
