@@ -48,7 +48,7 @@ const PopularRoomCard = ({ image, index }: Props): JSX.Element => {
           <p className='flex justify-start items-center gap-2'>
             <MdGroup size={18} className='text-green' />
             <span>
-              Hasta {image.capacity} personas
+              Hasta {'2'} personas
             </span>
           </p>
           <button type='button' className='text-white px-4 py-[2px] bg-orange rounded-md'>
