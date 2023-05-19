@@ -25,29 +25,29 @@ const Header = (): JSX.Element => {
   const { t, toggleLang } = useLang()
 
   return (
-    <AnimatePresence>
-      <header className={`fixed top-0 z-30 bg-white w-full flex justify-between items-center py-6 px-6 ${isScrolled ? 'xl:items-center' : 'xl:items-start'} md:pr-16 xl:pr-0 xl:px-0`}>
-        <Logo isScrolled={isScrolled} />
+    <header className={`fixed top-0 z-30 bg-white w-full flex justify-between items-center py-6 px-6 ${isScrolled ? 'xl:items-center' : 'xl:items-start'} md:pr-16 xl:pr-0 xl:px-0`}>
+      <Logo isScrolled={isScrolled} />
 
-        <button
-          onClick={openMenu}
-          className='flex justify-center items-center p-1 text-green border border-green rounded-md hover:bg-green hover:text-white hover:transition-colors xl:hidden'
-        >
-          <AiOutlineMenu size={18} />
-        </button>
+      <button
+        onClick={openMenu}
+        className='flex justify-center items-center p-1 text-green border border-green rounded-md hover:bg-green hover:text-white hover:transition-colors xl:hidden'
+      >
+        <AiOutlineMenu size={18} />
+      </button>
 
-        <div className={`hidden xl:flex xl:flex-col xl:justify-center xl:items-center md:gap-4 ${isScrolled ? 'mr-32' : ''}`}>
-          {!isScrolled && (
-            <HeaderActions
-              isScrolled={isScrolled}
-              t={t}
-              toggleLang={toggleLang}
-            />
-          )}
-          <NavigationMenu isScrolled={isScrolled} t={t} />
-        </div>
+      <div className={`hidden xl:flex xl:flex-col xl:justify-center xl:items-center md:gap-4 ${isScrolled ? 'mr-32' : ''}`}>
+        {!isScrolled && (
+          <HeaderActions
+            isScrolled={isScrolled}
+            t={t}
+            toggleLang={toggleLang}
+          />
+        )}
+        <NavigationMenu isScrolled={isScrolled} t={t} />
+      </div>
 
-        {isOpenMenu && (
+      {isOpenMenu && (
+        <AnimatePresence>
           <motion.div
             className='absolute w-full h-full bg-white top-0 left-0 flex flex-col z-30 md:h-[40vh]'
             variants={VARIANTS_MENU}
@@ -66,9 +66,9 @@ const Header = (): JSX.Element => {
             />
             <NavigationMenu t={t} />
           </motion.div>
-        )}
-      </header>
-    </AnimatePresence>
+        </AnimatePresence>
+      )}
+    </header>
   )
 }
 
