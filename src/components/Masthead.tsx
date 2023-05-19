@@ -36,10 +36,10 @@ const Masthead = (): JSX.Element => {
       </Swiper>
       <article className='absolute top-0 left-0 w-full h-full bg-dark bg-opacity-30 px-8 py-4 z-10 grid place-content-center xl:px-64'>
         <h2 className='text-4xl text-center font-bold text-white xl:text-6xl'>
-          {t('masthead.title')}
+          {t('components.masthead.title')}
         </h2>
         <p className='text-white text-center text-lg font-semibold'>
-          {t('masthead.description')}
+          {t('components.masthead.description')}
         </p>
       </article>
     </section>
