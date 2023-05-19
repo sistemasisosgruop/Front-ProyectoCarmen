@@ -1,5 +1,5 @@
-import { useLang } from '../../hooks/useLang'
-import CommentCard from '../../components/CommentCard'
+import { useLang } from '@hooks/useLang'
+import CommentCard from '@components/CommentCard'
 import { AiFillStar } from 'react-icons/ai'
 
 const Comments = (): JSX.Element => {
@@ -9,10 +9,10 @@ const Comments = (): JSX.Element => {
     <>
       <div className='xl:px-32'>
         <h2 className='text-2xl tetx-dark font-bold text-center xl:text-4xl'>
-          {t('home.commentsSection.theCommentOf')} <span className='text-orange'>{t('home.commentsSection.ourClients')}</span>
+          {t('pages.home.comments_section.customer_comments')}
         </h2>
         <p className='text-xl text-dark text-center xl:text-2xl'>
-          {t('home.commentsSection.description')}
+          {t('pages.home.comments_section.description')}
         </p>
         <hr className='border-b-2 border-b-gray-400 mt-4' />
       </div>
@@ -22,7 +22,7 @@ const Comments = (): JSX.Element => {
             5.0
           </span>
           <span className='text-sm md:text-base'>
-            {t('home.commentsSection.qualification')}
+            {t('pages.home.comments_section.qualification')}
           </span>
         </p>
         <div className='text-yellow-600 flex justify-start gap-2'>
