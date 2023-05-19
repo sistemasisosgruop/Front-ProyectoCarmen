@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-import LayoutPage from '../../components/layouts/LayoutPage'
-import Section from '../../components/layouts/Section'
-import Masthead from '../../components/Masthead'
-import Heading from '../../components/Heading'
-import Card from '../../components/Card'
-import PopularRoomCard from '../../components/PopularRoomCard'
-import DepartmentCard from '../../components/DepartmentCard'
+import LayoutPage from '@components/layouts/LayoutPage'
+import Section from '@components/layouts/Section'
+import Masthead from '@components/Masthead'
+import Heading from '@components/Heading'
+import Card from '@components/Card'
+import PopularRoomCard from '@components/PopularRoomCard'
+import DepartmentCard from '@components/DepartmentCard'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 
 const IMAGES = [
@@ -88,22 +88,14 @@ const Rooms = (): JSX.Element => {
           description='sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra'
         />
         <section className='grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
-          <Card
-            imagePath='/images/popular-rooms/01.jpg'
-            alt='image popular room'
-          />
-          <Card
-            imagePath='/images/popular-rooms/02.jpg'
-            alt='image popular room'
-          />
-          <Card
-            imagePath='/images/popular-rooms/03.jpg'
-            alt='image popular room'
-          />
-          <Card
-            imagePath='/images/popular-rooms/04.jpg'
-            alt='image popular room'
-          />
+          {[...Array(4)].map((_, index) => (
+            <Card
+              key={index}
+              href='/'
+              imagePath='/images/popular-rooms/01.jpg'
+              alt='image popular room'
+            />
+          ))}
         </section>
         <div className='flex justify-center items-center'>
           <button className='bg-orange text-white font-bold rounded-md px-5 py-2 hover:bg-opacity-90'>

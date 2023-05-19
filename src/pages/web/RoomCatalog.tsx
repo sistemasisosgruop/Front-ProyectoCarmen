@@ -1,7 +1,7 @@
-import LayoutPage from '../../components/layouts/LayoutPage'
-import Section from '../../components/layouts/Section'
-import Recommendation from '../../components/room-catalog/Recommendation'
-import RoomCard from '../../components/room-catalog/RoomCard'
+import LayoutPage from '@components/layouts/LayoutPage'
+import Section from '@components/layouts/Section'
+import Recommendation from '@components/rooms/Recommendation'
+import RoomCard from '@components/rooms/RoomCard'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
 const RoomCatalog = (): JSX.Element => {

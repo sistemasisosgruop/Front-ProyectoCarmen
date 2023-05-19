@@ -20,22 +20,14 @@ const Packages = (): JSX.Element => {
           description='sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra'
         />
         <section className='grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
-          <Card
-            imagePath='/images/popular-rooms/01.jpg'
-            alt='image popular room'
-          />
-          <Card
-            imagePath='/images/popular-rooms/02.jpg'
-            alt='image popular room'
-          />
-          <Card
-            imagePath='/images/popular-rooms/03.jpg'
-            alt='image popular room'
-          />
-          <Card
-            imagePath='/images/popular-rooms/04.jpg'
-            alt='image popular room'
-          />
+          {[...Array(4)].map((_, index) => (
+            <Card
+              key={index}
+              href='/'
+              imagePath='/images/popular-rooms/01.jpg'
+              alt='image popular room'
+            />
+          ))}
         </section>
         <div className='flex justify-center items-center'>
           <Link
