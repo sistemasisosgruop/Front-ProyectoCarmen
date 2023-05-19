@@ -1,11 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from '@web/Home'
-import Rooms from '@web/Rooms'
+import Rooms from '@web/rooms/Rooms'
+import RoomsDetail from '@web/rooms/RoomsDetail'
 import RoomCatalog from '@web/RoomCatalog'
 import Packages from '@web/Packages'
 import Flights from '@web/Flights'
 import Contact from '@web/Contact'
-import AboutUs from '@web/AboutUs'
+// import AboutUs from '@web/AboutUs'
 import DestinationsCatalog from '@web/destination/DestinationsCatalog'
 import DestinationDetail from '@web/destination/DestinationDetail'
 import MyPurchases from '@web/MyPurchases'
@@ -35,6 +36,7 @@ const Routing = (): JSX.Element => {
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/habitaciones' element={<Rooms />} />
+      <Route path='/habitaciones/detalle' element={<RoomsDetail />} />
       <Route path='/catalogo-habitaciones' element={<RoomCatalog />} />
       <Route path='/paquetes' element={<Packages />} />
       <Route path='/vuelos' element={<Flights />} />
