@@ -1,45 +1,64 @@
 {
-  "header": {
+  "general": {
+    "search": "Search",
+    "view_catalog": "View catalog",
+    "view_more": "View more",
     "rooms": "Rooms",
+    "lodging": "Lodging",
     "flights": "Flights",
+    "tour_packages": "Tour packages",
     "packages": "Packages",
     "contact": "Contact",
-    "aboutUs": "About Us",
-    "logIn": "Log in",
-    "myShop": "My shopping"
+    "about_us": "About us",
+    "back": "Back"
   },
-  "footer": {
-    "address": "Address",
-    "phone": "Phone",
-    "email": "Email",
-    "rooms": "Rooms",
-    "tourPackages": "Tour packages",
-    "flights": "Flights",
-    "contact": "Contact",
-    "aboutUs": "About us",
-    "complainstBook": "Complaints book",
-    "copyright": "All rights reserved",
-    "legalWarning": "Legal warning",
-    "privacyPolicies": "Privacy policies",
-    "cookiePolicies": "Cookie policies"
+  "pages": {
+    "home": {
+      "search_services": {
+        "room": "Room",
+        "choose_room_type": "Choose room type",
+        "start_date": "Start date",
+        "end_date": "End date",
+        "flight_type": "Flight type",
+        "adults_number": "Number of adults",
+        "children_number_under_12": "Number of children (under 12)",
+        "origin": "Origin",
+        "destination_in_Peru": "Destination in Peru",
+        "desired_dates": "Desired dates",
+        "select_tour_package": "Select a tour package"
+      },
+      "popular_rooms": "Popular rooms",
+      "popular_destinations": "Popular destinations",
+      "popular_flights": "Popular flights",
+      "comments_section": {
+        "customer_comments": "Customer comments",
+        "description": "Check out some opinions from our customers",
+        "qualification": "Overall rating"
+      }
+    },
+    "flights": {},
+    "packages": {},
+    "contact": {},
+    "about_us": {}
   },
-  "masthead": {
-    "title": "Book now and enjoy a perfect stay",
-    "description": "Take advantage of this unique opportunity and book now to live an unforgettable experience in our cozy rooms!"
-  },
-  "home": {
-    "popularRooms": "Popular rooms",
-    "popularDestinations": "Popular destinations",
-    "popularFlights": "Popular flights",
-    "seeCatalog": "See catalog",
-    "commentsSection": {
-      "theCommentOf": "The comments of",
-      "ourClients": "our clients",
-      "description": "Check out some reviews from our customers",
-      "qualification": "General rating",
-      "seeMore": "See more"
+  "components": {
+    "header": {
+      "log_in": "Log in",
+      "my_purchases": "My purchases"
+    },
+    "masthead": {
+      "title": "Book now and enjoy a perfect stay",
+      "description": "Take advantage of this unique opportunity and book now for an unforgettable experience in our cozy rooms!"
+    },
+    "footer": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "complainst_book": "Complaints book",
+      "copyright": "All rights reserved",
+      "legal_warning": "Legal warning",
+      "privacy_policies": "Privacy policies",
+      "cookie_policies": "Cookie policies"
     }
-
   }
-
 }
