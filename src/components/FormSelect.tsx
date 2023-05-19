@@ -5,6 +5,7 @@ interface OptionProp {
 
 interface Props {
   label?: string
+  labelStyles?: string
   name: string
   showIcon?: boolean
   icon?: JSX.Element
@@ -15,6 +16,7 @@ interface Props {
 
 const FormSelect = ({
   label,
+  labelStyles = 'text-base font-bold text-gray-800',
   name,
   showIcon,
   icon,
@@ -31,7 +33,7 @@ const FormSelect = ({
           {showIcon !== undefined && iconPosition === 'left' && (
             <span>{icon}</span>
           )}
-          <span className='text-base font-bold text-gray-800 lg:text-lg whitespace-nowrap'>
+          <span className={`${labelStyles ?? ''} lg:text-lg whitespace-nowrap`}>
             {label}
           </span>
           {showIcon !== undefined && iconPosition === 'right' && (
