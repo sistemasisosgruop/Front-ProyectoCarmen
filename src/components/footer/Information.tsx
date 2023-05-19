@@ -12,7 +12,7 @@ const Information = (): JSX.Element => {
         <FaMapMarkerAlt size={24} className='text-white' />
         <p className='flex flex-col'>
           <span className='font-bold text-white'>
-            {t('footer.address')}
+            {t('components.footer.address')}
           </span>
           <span className='text-sm text-white'>
             Av. El Sol, Galerías UNSAAC (Oficina 3)
@@ -23,7 +23,7 @@ const Information = (): JSX.Element => {
         <BsFillTelephoneFill size={24} className='text-white' />
         <p className='flex flex-col'>
           <span className='font-bold text-white'>
-            {t('footer.phone')}
+            {t('components.footer.phone')}
           </span>
           <span className='text-sm text-white'>
             +51 984 748 106
@@ -34,7 +34,7 @@ const Information = (): JSX.Element => {
         <MdEmail size={24} className='text-white' />
         <p className='flex flex-col'>
           <span className='font-bold text-white'>
-            {t('footer.email')}
+            {t('components.footer.email')}
           </span>
           <span className='text-sm text-white'>
             agtcarmen@hotmail.com
