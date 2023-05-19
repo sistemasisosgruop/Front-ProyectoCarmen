@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom'
+import { useTabs } from '@hooks/useTabs'
 import LayoutPage from '@layouts/LayoutPage'
 import Section from '@layouts/Section'
 import Tabs from '@components/Tabs'
 import TabItem from '@components/TabItem'
+import Button from '@components/Button'
 import OrderSummary from '@components/shopping-cart/OrderSummary'
 import MainUserForm from '@components/shopping-cart/MainUserForm'
 import SecondaryUserForm from '@components/shopping-cart/SecondaryUserForm'
@@ -10,9 +12,9 @@ import { IoReturnDownBack } from 'react-icons/io5'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { MdOutlinePayment } from 'react-icons/md'
-import ButtonLink from '@components/ButtonLink'
 
 const TravelerInformation = (): JSX.Element => {
+  const { switchTab } = useTabs()
   const navigate = useNavigate()
 
   return (
@@ -65,10 +67,10 @@ const TravelerInformation = (): JSX.Element => {
                 <SecondaryUserForm />
               </div>
               <div>
-                <ButtonLink
-                  to=''
+                <Button
                   text='Confirmar datos'
                   background='bg-blue'
+                  onClick={() => { switchTab(1) }}
                 />
               </div>
             </section>
