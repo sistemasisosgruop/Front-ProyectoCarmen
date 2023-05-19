@@ -1,21 +1,20 @@
-import type { TFunction } from 'i18next'
 import type { ChangeEvent } from 'react'
+import { useLang } from '@hooks/useLang'
 import { useState, useEffect } from 'react'
-import { useLocalStorage } from '../../hooks/useLocalStorage'
+import { useLocalStorage } from '@hooks/useLocalStorage'
 import { Link } from 'react-router-dom'
+import Login from '../../auth/Login'
 import { AiOutlineWhatsApp } from 'react-icons/ai'
 import { FaUser, FaShoppingBag } from 'react-icons/fa'
-import Login from '../../auth/Login'
 
 interface Props {
   isScrolled?: boolean | undefined
-  t: TFunction<string, undefined, string>
-  toggleLang: (lang: string) => void
 }
 
-const HeaderActions = ({ isScrolled, t, toggleLang }: Props): JSX.Element => {
+const HeaderActions = ({ isScrolled }: Props): JSX.Element => {
   const [isLoginShow, setIsLoginShow] = useState<boolean>(false)
   const [saveLang, setSaveLang] = useLocalStorage('lang', '')
+  const { t, toggleLang } = useLang()
 
   useEffect(() => {
     toggleLang(saveLang)
@@ -47,13 +46,13 @@ const HeaderActions = ({ isScrolled, t, toggleLang }: Props): JSX.Element => {
           >
             <FaUser size={18} className='text-white' />
             <span className='text-white'>
-              {t('header.logIn')}
+              {t('components.header.log_in')}
             </span>
           </button>
           <Link to='/mis-compras' className='flex justify-content items-center gap-2'>
             <FaShoppingBag size={18} className='text-white' />
             <p className='text-white'>
-              {t('header.myShop')}
+              {t('components.header.my_purchases')}
             </p>
           </Link>
           <select
