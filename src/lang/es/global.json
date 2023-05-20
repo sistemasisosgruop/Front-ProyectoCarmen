@@ -10,7 +10,18 @@
     "packages": "Paquetes",
     "contact": "Contacto",
     "about_us": "Acerca de nosotros",
-    "back": "Volver"
+    "back": "Volver",
+    "book_now": "Reserva ahora",
+    "comments": "{{comments}} comentarios",
+    "most_recent": "Los más recientes",
+    "hours_ago": "Hace {{time}} horas",
+    "reviews": "Reseñas",
+    "see_more_comments": "Ver más comentarios",
+    "add_comment": "Agregar un comentario",
+    "add_comment_rate_us": "Agregar un comentario y califícanos",
+    "comment": "Comentar",
+    "total": "Total",
+    "add_to_cart": "Añadir al carrito"
   },
   "pages": {
     "home": {
@@ -35,6 +46,27 @@
         "description": "Mira algunas opiniones de nuestros cliente",
         "qualification": "Calificacion general"
       }
+    },
+    "rooms": {
+      "show_more_photos": "Mostrar más fotos",
+      "overview": "Descripción general",
+      "up_to_people": "Hasta {{numberPeople}} personas",
+      "bedrooms": "{{numberBedrooms}} habitaciones",
+      "beds": "{{numberBeds}} camas",
+      "bathrooms": "{{numberBathrooms}} baños",
+      "what_it_offers": "Lo que ofrece este sitio",
+      "wifi_included": "WiFi incluido",
+      "free_cancellation": "Cancelación gratis",
+      "heating": "Calefacción",
+      "show_more": "Mostrar más",
+      "services": "Servicios",
+      "free_cancellation_until": "Cancelación gratis hasta {{time}} días de antelación.",
+      "additional_charge_until": "Cobro adicional hasta {{time}} días de antelación.",
+      "travel_dates": "Fechas de viaje",
+      "most_relevant": "Los más relacionados",
+      "season_promotions": "No te pierdas nuestras promociones por esta temporada",
+      "days_left_to_book": "Solo quedan {{days}} para reservar este lugar."
+
     },
     "flights": {},
     "packages": {},
