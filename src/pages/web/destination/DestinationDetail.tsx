@@ -1,11 +1,11 @@
+import { useLang } from '@hooks/useLang'
 import LayoutPage from '@layouts/LayoutPage'
 import Section from '@layouts/Section'
 import SliderDetail from '@components/destinations/SliderDetail'
 import DestinationForm from '@components/destinations/DestinationForm'
 import TourDetails from '@components/destinations/TourDetails'
-import DestinationReview from '@components/destinations/DestinationReview'
-import Comments from '@components/destinations/Comments'
 import Related from '@components/destinations/Related'
+import CommentSection from '@components/comments/CommentSection'
 import { AiFillDashboard, AiFillStar } from 'react-icons/ai'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { HiOutlineIdentification, HiUsers, HiOutlineLanguage } from 'react-icons/hi2'
@@ -15,19 +15,19 @@ import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 const title: string = 'Valle sagrado de los Incas'
 
 const DestinationDetail = (): JSX.Element => {
+  const { t } = useLang()
+
   return (
     <LayoutPage title='Detalles de destino populares'>
       <SliderDetail />
 
       <Section className='my-4 mb-32'>
         <div className='flex justify-start items-center gap-2'>
-          <AiFillStar size={18} />
-          <AiFillStar size={18} />
-          <AiFillStar size={18} />
-          <AiFillStar size={18} />
-          <AiFillStar size={18} />
+          {[...Array(5)].map((_, index) => (
+            <AiFillStar key={index} size={18} />
+          ))}
           <span>
-            (12 opiniones)
+            ({t('general.opinnions', { opinnions: 12 })})
           </span>
         </div>
       </Section>
@@ -152,21 +152,10 @@ const DestinationDetail = (): JSX.Element => {
         </div>
       </Section>
 
-      <Section className='my-16'>
-        <div className='grid grid-cols-3 gap-16 p-8 rounded-xl bg-white'>
-          <div className='col-span-1'>
-            <DestinationReview />
-          </div>
-          <div className='col-span-2'>
-            <Comments />
-          </div>
-        </div>
-      </Section>
-      <Section className='mx-16'>
-        <hr className='border-b border-b-gray-600' />
-      </Section>
+      <CommentSection />
+
       <Section className='mt-16 mb-32'>
-        <div className='flex justify-between items-center mb-4'>
+        <div className='w-full flex flex-col justify-between items-start mb-4 sm:flex-row sm:items-center'>
           <div className='mb-8'>
             <h2 className='text-4xl text-dark font-bold'>
               Lo mas relacionado
@@ -175,12 +164,12 @@ const DestinationDetail = (): JSX.Element => {
               No te pierdas nuestras promociones por esta temporada
             </p>
           </div>
-          <div className='flex justify-center items-center gap-4'>
+          <div className='flex justify-end items-center gap-4 sm:justify-center'>
             <HiOutlineArrowSmLeft size={24} className='w-10 h-10 rounded-full bg-transparent border border-gray-600 text-dark flex justify-center items-center' />
             <HiOutlineArrowSmRight size={24} className='w-10 h-10 rounded-full bg-turquoise border border-turquoise text-white flex justify-center items-center' />
           </div>
         </div>
-        <div className='w-full grid grid-cols-3 gap-4'>
+        <div className='w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
           {[...Array(3)].map((_, index) => (
             <Related key={index} index={index} />
           ))}
