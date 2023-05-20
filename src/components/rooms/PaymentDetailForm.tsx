@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLang } from '@hooks/useLang'
 import DatePicker from 'react-datepicker'
-import Button from '@components/Button'
+import ButtonLink from '@components/ButtonLink'
 import { AiFillStar, AiOutlineShoppingCart } from 'react-icons/ai'
 import { SlPresent } from 'react-icons/sl'
 
@@ -68,10 +68,12 @@ const PaymentDetailForm = (): JSX.Element => {
         </p>
       </article>
       <article className='mt-8'>
-        <Button
+        <ButtonLink
+          to='/carrito-de-compras'
           text={t('general.add_to_cart')}
           background='bg-orange'
-          isIcon
+          showIcon={true}
+          iconPosition='right'
           icon={<AiOutlineShoppingCart size={18} />}
           extraClasses='sm:w-full'
         />
