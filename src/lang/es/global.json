@@ -16,12 +16,16 @@
     "most_recent": "Los más recientes",
     "hours_ago": "Hace {{time}} horas",
     "reviews": "Reseñas",
+    "opinnions": "{{opinnions}} opiniones",
+    "add_review": "Agregar una reseña",
     "see_more_comments": "Ver más comentarios",
     "add_comment": "Agregar un comentario",
     "add_comment_rate_us": "Agregar un comentario y califícanos",
     "comment": "Comentar",
     "total": "Total",
-    "add_to_cart": "Añadir al carrito"
+    "add_to_cart": "Añadir al carrito",
+    "show_more": "Mostrar más",
+    "show_less": "Mostrar menos"
   },
   "pages": {
     "home": {

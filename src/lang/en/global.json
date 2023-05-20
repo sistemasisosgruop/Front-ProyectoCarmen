@@ -16,12 +16,16 @@
     "most_recent": "Most recent",
     "hours_ago": "{{time}} hours ago",
     "reviews": "Reviews",
+    "opinnions": "{{opinnions}} opinnions",
+    "add_review": "Add a review",
     "see_more_comments": "See more comments",
     "add_comment": "Add a comment",
     "add_comment_rate_us": "Add a comment and rate us",
     "comment": "Comment",
     "total": "Total",
-    "add_to_cart": "Add to cart"
+    "add_to_cart": "Add to cart",
+    "show_more": "Show more",
+    "show_less": "Show less"
   },
   "pages": {
     "home": {
