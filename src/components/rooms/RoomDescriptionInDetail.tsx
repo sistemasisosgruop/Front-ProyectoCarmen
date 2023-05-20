@@ -80,7 +80,7 @@ const RoomDescriptionInDetail = (): JSX.Element => {
           text={t('general.view_more')}
           background='bg-white'
           textColor='text-dark'
-          extraClasses='w-auto mt-4'
+          extraClasses='w-auto sm:w-auto mt-4'
         />
       </div>
 
