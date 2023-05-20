@@ -18,4 +18,3 @@ export const useLang = (): Functions => {
 
   return { t, toggleLang }
 }
-
