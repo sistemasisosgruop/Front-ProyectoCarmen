@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useLang } from '@hooks/useLang'
 import { BiLoader } from 'react-icons/bi'
 import { BsStarFill } from 'react-icons/bs'
 
 const CommentList = (): JSX.Element => {
   const [activeComment, setActiveComment] = useState<number | null>(null)
+  const { t } = useLang()
 
   const toggleFullComment = (commentIndex: number): void => {
     setActiveComment(commentIndex === activeComment ? null : commentIndex)
@@ -26,7 +28,7 @@ const CommentList = (): JSX.Element => {
       </div>
       <div className='mb-8'>
         <p className='text-lg text-dark font-bold'>
-          10 comentarios
+          {t('general.comments', { comments: 10 })}
         </p>
       </div>
       <div className='flex flex-col gap-8'>
@@ -55,10 +57,10 @@ const CommentList = (): JSX.Element => {
                   onClick={() => { toggleFullComment(index) }}
                   className='hover:underline'
                 >
-                  {activeComment === index ? 'Mostrar menos' : 'Mostrar más'}
+                  {activeComment === index ? t('general.show_less') : t('general.show_more')}
                 </button>
                 <span>
-                  Hace 10 horas
+                  {t('general.hours_ago', { time: 10 })}
                 </span>
               </p>
             </article>
@@ -71,7 +73,7 @@ const CommentList = (): JSX.Element => {
           <button type='button' className='flex justify-center items-center gap-2 px-6 py-1 rounded-xl border border-blue text-blue font-bold'>
             <BiLoader size={24} />
             <span>
-              Ver más comentarios
+              {t('general.see_more_comments')}
             </span>
           </button>
         </div>
