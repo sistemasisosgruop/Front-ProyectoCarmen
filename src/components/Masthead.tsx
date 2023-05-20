@@ -5,14 +5,6 @@ import 'swiper/css'
 import 'swiper/css/autoplay'
 import 'swiper/css/effect-fade'
 
-const sliderImages = [
-  '/images/home-slider/01.jpg',
-  '/images/home-slider/02.jpg',
-  '/images/home-slider/03.jpg',
-  '/images/home-slider/04.jpg',
-  '/images/home-slider/05.jpg'
-]
-
 const Masthead = (): JSX.Element => {
   const { t } = useLang()
 
@@ -24,10 +16,10 @@ const Masthead = (): JSX.Element => {
         loop
         autoplay={{ delay: 3000 }}
       >
-        {sliderImages.map((image, index) => (
+        {[...Array(5)].map((_, index) => (
           <SwiperSlide key={index}>
             <img
-              src={image}
+              src='http://blog.redbus.pe/wp-content/uploads/2017/08/arequipa-x.jpg'
               alt={`los mejores lugares turisticos 0${index + 1}`}
               className='w-full h-[420px] object-cover object-bottom'
             />
