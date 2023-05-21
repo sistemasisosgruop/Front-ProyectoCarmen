@@ -27,6 +27,12 @@
       "@layouts/*": [
         "components/layouts/*"
       ],
+      "@forms/*": [
+        "components/forms/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
       "@hooks/*": [
         "hooks/*"
       ],
