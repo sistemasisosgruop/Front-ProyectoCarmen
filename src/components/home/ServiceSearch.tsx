@@ -12,11 +12,12 @@ const ServiceSearch = (): JSX.Element => {
   const { t } = useLang()
 
   return (
-    <div className='absolute top-[75vh] z-10 xl:top-[70vh]'>
+    <div className='absolute left-0 top-[480px] z-20 sm:top-[420px] md:top-[420px] xl:top-[480px]'>
       <Tabs
-        tabContainerStyles='flex justify-center items-center sm:justify-start'
+        tabContainerStyles='flex'
         inactiveTabStyle='bg-blue border-t-2 border-t-blue text-white font-bold'
         activeTabStyle='bg-white border-t-2 border-t-blue text-dark font-bold'
+        contentContainerStyles='w-auto bg-white p-8'
       >
         <TabItem icon={<FiHome />} label={t('general.lodging')}>
           <SearchLodging />
