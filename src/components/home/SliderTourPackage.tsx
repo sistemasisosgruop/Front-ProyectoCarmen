@@ -18,15 +18,15 @@ const SliderTourPackage = (): JSX.Element => {
       pagination={{ clickable: true }}
       className='h-[60vh]'
     >
-      <SwiperSlide>
-        <img src='/images/promotions-slider/01.avif' alt='paquetes promocionales 01' className='w-full' />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src='/images/promotions-slider/02.jpg' alt='paquetes promocionales 02' className='w-full' />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src='/images/promotions-slider/03.jpg' alt='paquetes promocionales 03' className='w-full' />
-      </SwiperSlide>
+      {[...Array(3)].map((_, index) => (
+        <SwiperSlide key={index} className='w-full h-full'>
+          <img
+            src='https://i1.wp.com/www.sendamaya.com/wp-content/uploads/ofertas-hospedaje-en-las-playas-mexianas-.png'
+            alt='paquetes promocionales 01'
+            className='w-full h-full object-cover object-center'
+          />
+        </SwiperSlide>
+      ))}
     </Swiper>
   )
 }
