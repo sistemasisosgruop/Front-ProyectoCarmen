@@ -29,27 +29,29 @@
   },
   "pages": {
     "home": {
-      "search_services": {
-        "room": "Habitación",
-        "choose_room_type": "Escoge el tipo de habitación",
-        "start_date": "Fecha de inicio",
-        "end_date": "Fecha de fin",
-        "flight_type": "Tipo de vuelo",
-        "adults_number": "N° de adultos",
-        "children_number_under_12": "N° de niños (men. 12 años)",
-        "origin": "Origen",
-        "destination_in_Peru": "Destino del Perú",
-        "desired_dates": "Fechas deseadas",
-        "select_tour_package": "Selecciona un paquete turístico"
-      },
+      "room": "Habitación",
+      "choose_room_type": "Escoge el tipo de habitación",
+      "start_date": "Fecha de inicio",
+      "end_date": "Fecha de fin",
+      "flight_type": "Tipo de vuelo",
+      "adults_number": "N° de adultos",
+      "children_number": "N° de niños (men. 12 años)",
+      "origin": "Origen",
+      "destination_in_Peru": "Destino del Perú",
+      "place_to_visit": "¿Qué lugar desea visitar?",
+      "select_place_origin": "Seleccione un lugar de origen",
+      "select_place_destination": "Seleccione el lugar de destino",
+      "desired_dates": "Fechas deseadas",
+      "select_tour_package": "Selecciona un paquete turístico",
       "popular_rooms": "Habitaciones populares",
+      "description_popular_rooms": "Descubre nuestras habitaciones destacadas y disfruta de una estancia inolvidable en un ambiente de lujo y comodidad.",
       "popular_destinations": "Destinos populares",
+      "description_popular_destinations": "Explora distintos destinos populares y sumérgete en experiencias inolvidables que te llevarán a lugares llenos de belleza y aventura.",
       "popular_flights": "Vuelos populares",
-      "comments_section": {
-        "customer_comments": "Los comentarios de nuestros clientes",
-        "description": "Mira algunas opiniones de nuestros cliente",
-        "qualification": "Calificacion general"
-      }
+      "description_popular_flights": "Descubre los vuelos más destacados y planifica tu próximo viaje a lugares fascinantes llenos de aventura y descubrimiento.",
+      "customer_comments": "Los comentarios de nuestros clientes",
+      "description": "Mira algunas opiniones de nuestros cliente",
+      "qualification": "Calificacion general"
     },
     "rooms": {
       "show_more_photos": "Mostrar más fotos",

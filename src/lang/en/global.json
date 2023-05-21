@@ -29,27 +29,29 @@
   },
   "pages": {
     "home": {
-      "search_services": {
-        "room": "Room",
-        "choose_room_type": "Choose room type",
-        "start_date": "Start date",
-        "end_date": "End date",
-        "flight_type": "Flight type",
-        "adults_number": "Number of adults",
-        "children_number_under_12": "Number of children (under 12)",
-        "origin": "Origin",
-        "destination_in_Peru": "Destination in Peru",
-        "desired_dates": "Desired dates",
-        "select_tour_package": "Select a tour package"
-      },
+      "room": "Room",
+      "choose_room_type": "Choose room type",
+      "start_date": "Start date",
+      "end_date": "End date",
+      "flight_type": "Flight type",
+      "adults_number": "Number of adults",
+      "children_number": "Number of children (under 12)",
+      "origin": "Origin",
+      "destination_in_Peru": "Destination in Peru",
+      "place_to_visit": "What place do you want to visit?",
+      "select_place_origin": "Select a place of origin",
+      "select_place_destination": "Select the place of destination",
+      "desired_dates": "Desired dates",
+      "select_tour_package": "Select a tour package",
       "popular_rooms": "Popular rooms",
+      "description_popular_rooms": "Discover our featured rooms and enjoy an unforgettable stay in a luxurious and comfortable environment.",
       "popular_destinations": "Popular destinations",
+      "description_popular_destinations": "Explore different popular destinations and immerse yourself in unforgettable experiences that will take you to places full of beauty and adventure.",
       "popular_flights": "Popular flights",
-      "comments_section": {
-        "customer_comments": "Customer comments",
-        "description": "Check out some opinions from our customers",
-        "qualification": "Overall rating"
-      }
+      "description_popular_flights": "Discover the most prominent flights and plan your next trip to fascinating places full of adventure and discovery.",
+      "customer_comments": "The comments of our clients",
+      "description": "Check out some opinions from our customers",
+      "qualification": "Overall rating"
     },
     "rooms": {
       "show_more_photos": "Show more photos",
