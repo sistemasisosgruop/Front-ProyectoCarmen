@@ -1,11 +1,12 @@
 import { useState } from 'react'
+import { useLang } from '@hooks/useLang'
 import DatePicker from 'react-datepicker'
-import Button from '../Button'
+import FormSelect from '@forms/FormSelect'
+import Button from '@components/Button'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { GiPerson } from 'react-icons/gi'
 import { FaCalendarAlt } from 'react-icons/fa'
 import { IoMdWalk } from 'react-icons/io'
-import FormSelect from '../FormSelect'
 
 const OPTIONS = [
   { text: 'Cusco', value: 'cusco' },
@@ -17,26 +18,27 @@ const OPTIONS = [
 
 const SearchTourPackage = (): JSX.Element => {
   const [startDate, setStartDate] = useState<Date>(new Date())
+  const { t } = useLang()
 
   return (
     <div className='grid grid-cols-1 gap-8 sm:grid-cols-2'>
       <FormSelect
         name='destination'
-        label='Destino del Perú'
+        label={t('pages.home.destination_in_Peru')}
         options={OPTIONS}
         showIcon={true}
         iconPosition='left'
-        placeholder='¿Qué lugar desea visitar?'
+        placeholder={t('pages.home.place_to_visit')}
         icon={<IoMdWalk size={18} />}
       />
 
       <FormSelect
         name='destination'
-        label='Selecciona un paquete turístico'
+        label={t('pages.home.select_tour_package')}
         options={OPTIONS}
         showIcon={true}
         iconPosition='left'
-        placeholder='Paquetes turśiticos'
+        placeholder={t('general.tour_packages')}
         icon={<GiPerson size={18} />}
       />
 
@@ -44,7 +46,7 @@ const SearchTourPackage = (): JSX.Element => {
         <p className='flex justify-start items-center gap-2'>
           <FaCalendarAlt size={18} className='text-gray-400' />
           <span className='text-base font-bold text-gray-800 lg:text-lg'>
-            Fechas deseadas
+            {t('pages.home.desired_dates')}
           </span>
         </p>
         <div className='w-full grid grid-cols-1 gap-4 sm:grid-cols-3'>
@@ -61,7 +63,7 @@ const SearchTourPackage = (): JSX.Element => {
             showIcon={true}
           />
           <Button
-            text='Buscar'
+            text={t('general.search')}
             isIcon={true}
             icon={<AiOutlineSearch size={18} />}
             position='right'

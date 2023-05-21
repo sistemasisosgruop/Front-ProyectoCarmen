@@ -1,12 +1,14 @@
 import { useState } from 'react'
+import { useLang } from '@hooks/useLang'
 import DatePicker from 'react-datepicker'
-import Button from '../Button'
+import Button from '@components/Button'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { MdOutlineEditCalendar } from 'react-icons/md'
 import { BiDoorOpen } from 'react-icons/bi'
 
 const SearchLodging = (): JSX.Element => {
   const [startDate, setStartDate] = useState<Date>(new Date())
+  const { t } = useLang()
 
   return (
     <div className='flex flex-col justify-start items-center gap-8 px-8 py-4 md:flex-row md:gap-24'>
@@ -14,11 +16,11 @@ const SearchLodging = (): JSX.Element => {
         <div className='flex justify-start items-center gap-2'>
           <BiDoorOpen size={24} className='text-gray-500' />
           <p className='text-xl font-bold lg:text-2xl'>
-            Habitación
+            {t('pages.home.room')}
           </p>
         </div>
         <span className='text-xs text-gray-600 font-bold indent-8'>
-          Escoge el tipo de habitación
+          {t('pages.home.choose_room_type')}
         </span>
       </article>
       <article className='flex flex-wrap justify-center items-end gap-8'>
@@ -26,7 +28,7 @@ const SearchLodging = (): JSX.Element => {
           <div className='flex items-center gap-2'>
             <MdOutlineEditCalendar size={22} className='text-gray-500' />
             <p className='text-base font-bold lg:text-lg'>
-              Fecha de inicio
+              {t('pages.home.start_date')}
             </p>
           </div>
           <DatePicker
@@ -40,7 +42,7 @@ const SearchLodging = (): JSX.Element => {
           <div className='flex items-center gap-2'>
             <MdOutlineEditCalendar size={22} className='text-gray-500' />
             <p className='text-base font-bold lg:text-lg'>
-              Fecha de fin
+              {t('pages.home.end_date')}
             </p>
           </div>
           <DatePicker
@@ -51,7 +53,7 @@ const SearchLodging = (): JSX.Element => {
           />
         </div>
         <Button
-          text='Buscar'
+          text={t('general.search')}
           isIcon={true}
           icon={<AiOutlineSearch size={18} />}
           position='right'

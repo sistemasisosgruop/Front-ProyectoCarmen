@@ -1,27 +1,29 @@
 import { useState } from 'react'
+import { useLang } from '@hooks/useLang'
 import DatePicker from 'react-datepicker'
-import NumberPicker from '../NumberPicker'
-import Button from '../Button'
+import NumberPicker from '@forms/NumberPicker'
+import FormSelect from '@forms/FormSelect'
+import Button from '@components/Button'
 import { MdFlightLand } from 'react-icons/md'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { HiUserGroup } from 'react-icons/hi'
 import { GiPerson } from 'react-icons/gi'
 import { FaCalendarAlt } from 'react-icons/fa'
 import { IoMdWalk } from 'react-icons/io'
-import FormSelect from '../FormSelect'
 
 const SearchFlights = (): JSX.Element => {
   const [startDate, setStartDate] = useState<Date>(new Date())
   const [numAdultPassengers, setNumAdultPassengers] = useState<number>(1)
   const [numChildPassengers, setNumChildPassengers] = useState<number>(1)
+  const { t } = useLang()
 
   return (
     <div className='w-full grid grid-cols-1 gap-4'>
       <article className='grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-8'>
         <FormSelect
-          label='Tipo de vuelo'
+          label={t('pages.home.flight_type')}
           name='typeFlight'
-          placeholder='Selecciona el tipo de vuelo'
+          placeholder={t('pages.home.select_tour_package')}
           showIcon={true}
           iconPosition='left'
           icon={<MdFlightLand size={18} />}
@@ -32,7 +34,7 @@ const SearchFlights = (): JSX.Element => {
           ]}
         />
         <NumberPicker
-          label='N° de adultos'
+          label={t('pages.home.adults_number')}
           htmlFor='adultPassengers'
           value={numAdultPassengers}
           onChangeValue={setNumAdultPassengers}
@@ -41,7 +43,7 @@ const SearchFlights = (): JSX.Element => {
           icon={<HiUserGroup size={18} className='text-gray-400' />}
         />
         <NumberPicker
-          label='N° de niños (men. 12 años)'
+          label={t('pages.home.children_number')}
           htmlFor='childPassengers'
           value={numChildPassengers}
           onChangeValue={setNumChildPassengers}
@@ -54,9 +56,9 @@ const SearchFlights = (): JSX.Element => {
       {/* second row */}
       <article className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
         <FormSelect
-          label='Origen'
+          label={t('pages.home.origin')}
           name='origen'
-          placeholder='Seleccione su lugar de origen'
+          placeholder={t('pages.home.select_place_origin')}
           showIcon={true}
           iconPosition='left'
           icon={<IoMdWalk size={18} />}
@@ -65,9 +67,9 @@ const SearchFlights = (): JSX.Element => {
           ]}
         />
         <FormSelect
-          label='Destino del Perú'
+          label={t('pages.home.destination_in_Peru')}
           name='destination'
-          placeholder='Selecciona el lugar a visitar'
+          placeholder={t('pages.home.select_place_destination')}
           showIcon={true}
           iconPosition='left'
           icon={<GiPerson size={18} />}
@@ -80,7 +82,7 @@ const SearchFlights = (): JSX.Element => {
           <p className='flex justify-start items-center gap-2'>
             <FaCalendarAlt size={18} className='text-gray-400' />
             <span className='text-base font-bold text-gray-800 lg:text-lg'>
-              Fechas deseadas
+              {t('pages.home.desired_dates')}
             </span>
           </p>
           <div className='w-full grid grid-cols-1 sm:grid-cols-3 gap-4'>
@@ -97,7 +99,7 @@ const SearchFlights = (): JSX.Element => {
               showIcon={true}
             />
             <Button
-              text='Buscar'
+              text={t('general.search')}
               isIcon={true}
               icon={<AiOutlineSearch size={18} />}
               position='right'
