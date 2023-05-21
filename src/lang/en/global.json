@@ -71,7 +71,13 @@
       "travel_dates": "Travel dates",
       "most_relevant": "Most relevant",
       "season_promotions": "Don't miss out on our promotions for this season",
-      "days_left_to_book": "Only {{days}} left to book this place."
+      "days_left_to_book": "Only {{days}} left to book this place.",
+      "promotions": "Promotions",
+      "promotion_description": "Take advantage of our irresistible offers and enjoy unique experiences in our exclusive spaces, designed for your comfort and satisfaction.",
+      "the_most_popular": "The most popular",
+      "description_the_most_popular": "Discover our exclusive most popular rooms, carefully curated to provide you with an unparalleled experience in comfort, style, and hospitality.",
+      "full_apartment": "Full apartment",
+      "description_full_apartment": "Discover our range of fully-equipped apartments, designed to provide you with an exceptional accommodation experience. Enjoy spacious spaces and amenities for an unforgettable stay."
     },
     "flights": {},
     "packages": {},

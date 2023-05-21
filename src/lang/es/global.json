@@ -71,8 +71,13 @@
       "travel_dates": "Fechas de viaje",
       "most_relevant": "Los más relacionados",
       "season_promotions": "No te pierdas nuestras promociones por esta temporada",
-      "days_left_to_book": "Solo quedan {{days}} para reservar este lugar."
-
+      "days_left_to_book": "Solo quedan {{days}} para reservar este lugar.",
+      "promotions": "Promociones",
+      "promotion_description": "Aprovecha nuestras irresistibles ofertas y disfruta de experiencias únicas en nuestros exclusivos espacios, diseñados para tu confort y satisfacción.",
+      "the_most_popular": "Los más populares",
+      "description_the_most_popular": "Descubre nuestras exclusivas habitaciones más populares, cuidadosamente seleccionadas para brindarte una experiencia inigualable en comodidad, estilo y hospitalidad.",
+      "full_apartment": "Departamentos completos",
+      "description_full_apartment": "Explora nuestra variedad de departamentos completamente equipados, diseñados para ofrecerte una experiencia de alojamiento excepcional. Disfruta de amplios espacios y comodidades para una estancia inolvidable."
     },
     "flights": {},
     "packages": {},
