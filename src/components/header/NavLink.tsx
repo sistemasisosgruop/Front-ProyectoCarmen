@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink as NavLinkReactRouter } from 'react-router-dom'
 
 interface Props {
   path: string
@@ -7,15 +7,26 @@ interface Props {
   customClass: string
 }
 
-const NavLink = ({ path, text, icon, customClass }: Props): JSX.Element => {
+// flex justify-center items-center gap-2 hover:text-orange
+// ${customClass}
+const NavLink = ({
+  path,
+  text,
+  icon,
+  customClass,
+  ...props
+}: Props): JSX.Element => {
   return (
-    <Link to={path} className={`flex justify-center items-center gap-2 hover:text-orange ${customClass}`}>
+    <NavLinkReactRouter
+      {...props}
+      to={path}
+      className={({ isActive }) => isActive ? `text-orange pointer-events-none flex justify-center items-center gap-2 hover:text-orange ${customClass ?? ''}` : `flex justify-center items-center gap-2 hover:text-orange ${customClass ?? ''}`}
+    >
       {icon}
       <span>
         {text}
-      </span>
-    </Link>
+      </span >
+    </NavLinkReactRouter >
   )
 }
 export default NavLink
-

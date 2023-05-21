@@ -23,7 +23,12 @@ const Header = (): JSX.Element => {
   const { isScrolled } = useScrollPageY()
 
   return (
-    <header className={`fixed top-0 z-30 bg-white w-full flex justify-between items-center py-6 px-6 ${isScrolled ? 'xl:items-center' : 'xl:items-start'} md:pr-16 xl:pr-0 xl:px-0`}>
+    <header
+      className={`
+        fixed top-0 z-30 bg-white w-full flex justify-between items-center px-6 md:pr-16 xl:pr-0 xl:px-0 drop-shadow-lg
+        ${isScrolled ? 'xl:items-center py-6' : 'py-10 xl:items-start'} 
+      `}
+    >
       <Logo isScrolled={isScrolled} />
 
       <button
