@@ -28,7 +28,7 @@ const Tabs = ({
           <button
             key={index}
             type='button'
-            className={`flex justify-center items-center gap-2 ${tabStyle} ${activeTab === index ? activeTabStyle : inactiveTabStyle} hover:bg-opacity-90`}
+            className={`min-h-full flex justify-center items-center gap-2 ${tabStyle} ${activeTab === index ? activeTabStyle : inactiveTabStyle} hover:bg-opacity-90`}
             onClick={() => { switchTab(index) }}
           >
             {child.props?.text !== undefined && (
