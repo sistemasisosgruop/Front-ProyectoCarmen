@@ -1,120 +1,52 @@
-import { Link } from 'react-router-dom'
+import { useLang } from '@hooks/useLang'
 import LayoutPage from '@components/layouts/LayoutPage'
 import Section from '@components/layouts/Section'
 import Masthead from '@components/Masthead'
 import Heading from '@components/Heading'
-import Card from '@components/Card'
-import PopularRoomCard from '@components/PopularRoomCard'
-import DepartmentCard from '@components/DepartmentCard'
-import { AiOutlineArrowRight } from 'react-icons/ai'
-
-const IMAGES = [
-  {
-    imagePath: 'images/popular-rooms/01.jpg',
-    alt: 'Image of popular room 01',
-    typeRoom: 'Duplex',
-    price: '90.00',
-    capacity: 4
-  },
-  {
-    imagePath: 'images/popular-rooms/01.jpg',
-    alt: 'Image of popular room 02',
-    typeRoom: 'Duplex',
-    price: '90.00',
-    capacity: 4
-  },
-  {
-    imagePath: 'images/popular-rooms/01.jpg',
-    alt: 'Image of popular room 03',
-    typeRoom: 'Duplex',
-    price: '90.00',
-    capacity: 4
-  },
-  {
-    imagePath: 'images/popular-rooms/01.jpg',
-    alt: 'Image of popular room 04',
-    typeRoom: 'Duplex',
-    price: '90.00',
-    capacity: 4
-  },
-  {
-    imagePath: 'images/popular-rooms/01.jpg',
-    alt: 'Image of popular room 05',
-    typeRoom: 'Duplex',
-    price: '90.00',
-    capacity: 4
-  }
-]
-
-const IMAGES_DEPARTAMENT = [
-  {
-    imagePath: 'images/popular-rooms/01.jpg',
-    alt: 'Image of popular room 01',
-    typeRoom: 'Duplex',
-    price: '90.00',
-    capacity: 4
-  },
-  {
-    imagePath: 'images/popular-rooms/01.jpg',
-    alt: 'Image of popular room 02',
-    typeRoom: 'Duplex',
-    price: '90.00',
-    capacity: 4
-  },
-  {
-    imagePath: 'images/popular-rooms/01.jpg',
-    alt: 'Image of popular room 03',
-    typeRoom: 'Duplex',
-    price: '90.00',
-    capacity: 4
-  },
-  {
-    imagePath: 'images/popular-rooms/01.jpg',
-    alt: 'Image of popular room 04',
-    typeRoom: 'Duplex',
-    price: '90.00',
-    capacity: 4
-  }
-]
+import PromotionCard from '@components/rooms/PromotionCard'
+import PopularRoomCard from '@components/rooms/PopularRoomCard'
+import ButtonLink from '@components/ButtonLink'
+import FullApartmentCard from '@components/rooms/FullApartmentCard'
+import ButtonLinkSm from '@components/ButtonLinkSm'
+import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
 const Rooms = (): JSX.Element => {
+  const { t } = useLang()
+
   return (
-    <LayoutPage title='Las mejores habitaciones - Carmen Agencia de Viajes y Turismo'>
+    <LayoutPage title='Las mejores habitaciones'>
       <Masthead />
 
       <Section className='pt-32'>
         <Heading
-          title='Promociones'
-          description='sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra'
+          title={t('pages.rooms.promotions')}
+          description={t('pages.rooms.promotion_description')}
         />
         <section className='grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
           {[...Array(4)].map((_, index) => (
-            <Card
+            <PromotionCard
               key={index}
               href='/'
-              imagePath='/images/popular-rooms/01.jpg'
-              alt='image popular room'
+              imagePath='https://eraseunhotel.com/wp-content/uploads/2017/12/4-grande-1.jpg'
+              alt={`image popular room ${index + 1}`}
             />
           ))}
         </section>
-        <div className='flex justify-center items-center'>
-          <button className='bg-orange text-white font-bold rounded-md px-5 py-2 hover:bg-opacity-90'>
-            <span>Ver catálogo</span>
-          </button>
-        </div>
       </Section>
 
       <Section className='pt-32'>
         <Heading
-          title='Los más populares'
-          description='sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra'
+          title={t('pages.rooms.the_most_popular')}
+          description={t('pages.rooms.description_the_most_popular')}
+          textAlign='text-left'
         />
         <section className='grid grid-cols-12 lg:row-span-2 gap-4 pb-8'>
-          {IMAGES.map((image, index) => (
+          {[...Array(5)].map((_, index) => (
             <PopularRoomCard
               key={index}
               index={index}
-              image={image}
+              imagePath='https://houseandhome.com/wp-content/uploads/2018/01/Cropped_Best_Living_Rooms_2017_23.jpg'
+              alt={`The most popular room ${index + 1}`}
             />
           ))}
         </section>
@@ -122,15 +54,18 @@ const Rooms = (): JSX.Element => {
 
       <Section className='pt-32'>
         <Heading
-          title='Departamento completo'
-          description='sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra'
+          title={t('pages.rooms.full_apartment')}
+          description={t('pages.rooms.description_full_apartment')}
+          textAlign='text-left'
         />
         <section className='grid grid-cols-6 grid-rows-2 gap-4'>
-          {IMAGES_DEPARTAMENT.map((image, index) => (
-            <DepartmentCard
+          {[...Array(4)].map((_, index) => (
+            <FullApartmentCard
               key={index}
-              index={index}
-              image={image}
+              href='/habitaciones/detalle'
+              id={index}
+              imagePath='http://www.laguiadelvaron.com/wp-content/uploads/2015/09/Los-mejores-20-departamentos-para-un-soltero-18.jpg'
+              alt=''
             />
           ))}
         </section>
@@ -141,43 +76,41 @@ const Rooms = (): JSX.Element => {
           Buscar por tipo de habitacion
         </h2>
         <section className='grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
-          {IMAGES.map((image, index) => (
+          {[...Array(5)].map((_, index) => (
             <div
               key={index}
               className='bg-white rounded-xl overflow-hidden border border-white'
             >
               <img
-                src={image.imagePath}
-                alt={image.alt}
+                src='https://i.pinimg.com/originals/8a/58/20/8a58209121f6c945dcc79a4c9bb81a0d.jpg'
+                alt={`Room ${index + 1}`}
                 className=''
               />
-              <article className='px-4 py-4'>
-                <p className='text-xl font-bold text-dark'>
+              <article className='px-4 py-4 space-y-2'>
+                <p className='text-lg font-bold text-dark uppercase'>
                   Matrimoniales
                 </p>
-                <p>
+                <p className='text-gray-600 underline hover:decoration-wavy'>
                   10+ habitaciones
                 </p>
-                <Link
-                  to='ver-mas'
-                  className='inline-block mt-2 bg-orange text-white rounded-md px-6 py-[2px]'
-                >
-                  Ver mas
-                </Link>
+
+                <ButtonLinkSm
+                  to='/habitaciones/detalle'
+                  text={t('general.view_more')}
+                  background='bg-orange'
+                />
               </article>
             </div>
           ))}
         </section>
         <div className='my-8 flex justify-center items-center'>
-          <button
-            type='button'
-            className='bg-turquoise text-white flex justify-center items-center gap-2 rounded-xl font-bold px-6 py-2'
-          >
-            <span>
-              Ver catalogo
-            </span>
-            <AiOutlineArrowRight size={18} />
-          </button>
+          <ButtonLink
+            to=''
+            text={t('general.view_catalog')}
+            showIcon={true}
+            icon={<HiOutlineArrowSmRight size={18} />}
+            iconPosition='right'
+          />
         </div>
       </Section>
     </LayoutPage>
