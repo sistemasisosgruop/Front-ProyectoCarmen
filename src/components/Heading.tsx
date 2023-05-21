@@ -1,6 +1,6 @@
 interface Props {
   title: string
-  description?: string
+  description?: string | null
   textAlign?: string
 }
 
@@ -15,7 +15,7 @@ const Heading = ({
         {title}
       </h2>
       {description !== undefined && (
-        <p className='text-2xl text-gray-800 text-center'>
+        <p className={`text-2xl text-gray-800 ${textAlign ?? ''}`}>
           {description}
         </p>
       )}
