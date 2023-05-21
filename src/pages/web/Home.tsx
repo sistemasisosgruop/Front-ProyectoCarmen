@@ -6,6 +6,7 @@ import Masthead from '@components/Masthead'
 import ServiceSearch from '@components/home/ServiceSearch'
 import SliderTourPackage from '@components/home/SliderTourPackage'
 import Comments from '@components/home/Comments'
+import FeedbackSection from '@components/feedback/FeedbackSection'
 import Card from '@components/Card'
 import ButtonLink from '@components/ButtonLink'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
@@ -25,13 +26,13 @@ const Home = (): JSX.Element => {
       <Section className='pt-16 md:pt-32'>
         <Heading
           title={t('pages.home.popular_rooms')}
-          description='sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra'
+          description={t('pages.home.description_popular_rooms')}
         />
         <section className='grid grid-cols-1 gap-8 pb-8 sm:grid-cols-2 xl:grid-cols-4'>
           {[...Array(4)].map((_, index) => (
             <Card
               key={index}
-              href='/'
+              href='/habitaciones/detalle'
               imagePath='https://i.pinimg.com/originals/38/f2/ea/38f2eaee058ad116a31b7eebc621650f.jpg'
               alt='image popular room'
             />
@@ -51,13 +52,13 @@ const Home = (): JSX.Element => {
       <Section className='pt-32'>
         <Heading
           title={t('pages.home.popular_destinations')}
-          description='sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra'
+          description={t('pages.home.description_popular_destinations')}
         />
-        <section className='grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 xl:grid-cols-4'>
+        <section className='grid grid-cols-1 gap-8 pb-8 sm:grid-cols-2 xl:grid-cols-4'>
           {[...Array(4)].map((_, index) => (
             <Card
               key={index}
-              href='/'
+              href='/habitaciones/detalle'
               imagePath='https://img.europapress.es/fotoweb/fotonoticia_20171009090720_1024.jpg'
               alt='image popular room'
             />
@@ -77,13 +78,13 @@ const Home = (): JSX.Element => {
       <Section className='py-32'>
         <Heading
           title={t('pages.home.popular_flights')}
-          description='sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra'
+          description={t('pages.home.description_popular_flights')}
         />
         <section className='grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 xl:grid-cols-4'>
           {[...Array(4)].map((_, index) => (
             <Card
               key={index}
-              href='/'
+              href='/habitaciones/detalle'
               imagePath='http://www.subturismo.gob.cl/wp-content/uploads/2017/10/TREKKING-LAGUNAS-COTACOTANI-3.jpg'
               alt='image popular room'
             />
@@ -100,9 +101,8 @@ const Home = (): JSX.Element => {
         </div>
       </Section>
 
-      <Section className='bg-white pt-32'>
-        <Comments />
-      </Section>
+      {/* Section for comments of clients */}
+      <FeedbackSection />
     </LayoutPage >
   )
 }
