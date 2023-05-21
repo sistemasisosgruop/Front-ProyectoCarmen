@@ -5,7 +5,6 @@ import Heading from '@components/Heading'
 import Masthead from '@components/Masthead'
 import ServiceSearch from '@components/home/ServiceSearch'
 import SliderTourPackage from '@components/home/SliderTourPackage'
-import Comments from '@components/home/Comments'
 import FeedbackSection from '@components/feedback/FeedbackSection'
 import Card from '@components/Card'
 import ButtonLink from '@components/ButtonLink'
@@ -19,7 +18,7 @@ const Home = (): JSX.Element => {
       <Masthead />
       <ServiceSearch />
 
-      <section className='bg-gray-200 w-full pt-56'>
+      <section className='w-full h-full border-y border-y-gray-100 mt-[420px] sm:mt-80 md:mt-64'>
         <SliderTourPackage />
       </section>
 
