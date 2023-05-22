@@ -1,10 +1,14 @@
+import { Link } from 'react-router-dom'
 import { AiFillStar } from 'react-icons/ai'
 
 const RoomCard = (): JSX.Element => {
   return (
-    <div className='bg-white rounded-md overflow-hidden flex flex-col w-full'>
+    <Link
+      to=''
+      className='bg-white rounded-xl overflow-hidden flex flex-col w-full'
+    >
       <img
-        src='/images/popular-rooms/01.jpg'
+        src='https://img.sunset02.com/sites/default/files/image/2016/08/main/luxurious-master-bedroom-sun-1114.jpg'
         alt='habitaciones'
         className=''
       />
@@ -44,7 +48,7 @@ const RoomCard = (): JSX.Element => {
           </p>
         </article>
       </div>
-    </div>
+    </Link>
   )
 }
 

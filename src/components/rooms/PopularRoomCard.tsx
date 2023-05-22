@@ -1,4 +1,4 @@
-import ButtonLink from '@components/ButtonLink'
+import ButtonLinkSm from '@components/ButtonLinkSm'
 import { MdGroup } from 'react-icons/md'
 
 interface Props {
@@ -48,7 +48,7 @@ const PopularRoomCard = ({ imagePath, alt, index }: Props): JSX.Element => {
               Hasta {'2'} personas
             </span>
           </p>
-          <ButtonLink
+          <ButtonLinkSm
             to='/habitaciones/detalle'
             text='Ver más'
             background='bg-orange'
