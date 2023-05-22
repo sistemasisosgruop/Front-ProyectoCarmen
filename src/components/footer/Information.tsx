@@ -7,7 +7,7 @@ const Information = (): JSX.Element => {
   const { t } = useLang()
 
   return (
-    <article className='bg-orange inline-flex flex-wrap justify-start items-center gap-16 px-8 py-4 xl:justify-center xl:items-start'>
+    <article className='bg-turquoise rounded-b-xl inline-flex flex-wrap justify-start items-center gap-16 px-8 py-4 xl:justify-center xl:items-start'>
       <div className='flex justify-start items-center gap-2'>
         <FaMapMarkerAlt size={24} className='text-white' />
         <p className='flex flex-col'>
