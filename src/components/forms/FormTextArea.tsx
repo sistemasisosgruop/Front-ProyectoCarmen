@@ -10,6 +10,7 @@ interface Props {
   errors: FieldErrors<FieldValues>
   name: string
   label: string
+  labelColor?: string
   extraClasses?: string
 }
 
@@ -19,13 +20,14 @@ const FormTextArea = ({
   errors,
   name,
   label,
+  labelColor = 'text-gray-600',
   extraClasses
 }: Props): JSX.Element => {
   return (
     <div className={`flex flex-col justify-start items-start ${extraClasses ?? ''}`}>
       <label
         htmlFor={name}
-        className='text-gray-600 text-sm mb-1'
+        className={`${labelColor ?? ''} text-sm mb-1`}
       >
         {label}
       </label>
