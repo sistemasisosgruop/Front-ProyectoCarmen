@@ -79,7 +79,12 @@
       "full_apartment": "Full apartment",
       "description_full_apartment": "Discover our range of fully-equipped apartments, designed to provide you with an exceptional accommodation experience. Enjoy spacious spaces and amenities for an unforgettable stay."
     },
-    "flights": {},
+    "flights": {
+      "search_packages": "Search for packages by destination",
+      "description_search_packages": "Discover your perfect destination. Find enticing and personalized travel packages to fulfill your desires for exploration and adventure.",
+      "promotions": "Promotions",
+      "description_promotion": "Discover our irresistible promotions on travel packages. Take advantage of these exclusive deals and enjoy your dream vacation!"
+    },
     "packages": {},
     "contact": {},
     "about_us": {}
@@ -103,5 +108,10 @@
       "privacy_policies": "Privacy policies",
       "cookie_policies": "Cookie policies"
     }
+  },
+  "not_found": {
+    "not_found": "Not found",
+    "page_not_found": "The page you are looking for was not found.",
+    "return_home": "Return home"
   }
 }

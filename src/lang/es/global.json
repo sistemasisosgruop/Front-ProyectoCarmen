@@ -80,7 +80,12 @@
       "description_full_apartment": "Explora nuestra variedad de departamentos completamente equipados, diseñados para ofrecerte una experiencia de alojamiento excepcional. Disfruta de amplios espacios y comodidades para una estancia inolvidable."
     },
     "flights": {},
-    "packages": {},
+    "packages": {
+      "search_packages": "Buscar paquetes según el destino",
+      "description_search_packages": "Descubre tu destino perfecto. Encuentra paquetes de viaje atractivos y personalizados para satisfacer tus deseos de exploración y aventura.",
+      "promotions": "Promociones",
+      "description_promotion": "Explora nuestras irresistibles promociones de paquetes turísticos. ¡Aprovecha estas ofertas exclusivas y disfruta de tus vacaciones soñadas!"
+    },
     "contact": {},
     "about_us": {}
   },
@@ -103,5 +108,10 @@
       "privacy_policies": "Politicas de privacidad",
       "cookie_policies": "Politicas de Cookies"
     }
+  },
+  "not_found": {
+    "not_found": "No se encuentra",
+    "page_not_found": "La página que buscas no se ha encontrado.",
+    "return_home": "Regresa a casa"
   }
 }
