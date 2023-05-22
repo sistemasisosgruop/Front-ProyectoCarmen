@@ -11,7 +11,7 @@ const AddBedForm = (): JSX.Element => {
   const [numOfBathrooms, setNumOfBathrooms] = useState<number>(1)
   const [numOfBeds, setNumOfBeds] = useState<number>(1)
   const [numOfRooms, setNumOfRooms] = useState<number>(1)
-  const { register, handleSubmit, formState: { errors } } = useForm()
+  const { register, formState: { errors } } = useForm()
 
   return (
     <div className='flex flex-col justify-center items-center gap-4'>
