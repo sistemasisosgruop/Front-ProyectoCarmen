@@ -1,25 +1,26 @@
-import ContactForm from '../../components/flights/ContactForm'
-import LayoutPage from '../../components/layouts/LayoutPage'
-import Section from '../../components/layouts/Section'
-import Masthead from '../../components/Masthead'
+import ContactFormSection from '@components/contact-form/ContactFormSection'
+import Heading from '@components/Heading'
+import LayoutPage from '@components/layouts/LayoutPage'
+import Section from '@components/layouts/Section'
+import Masthead from '@components/Masthead'
 
 const Contact = (): JSX.Element => {
   return (
     <LayoutPage title='Contactanos'>
       <Masthead />
 
-      <Section className='my-32'>
-        <div className='bg-white rounded-xl overflow-hidden flex justify-between items-center'>
+      <Section className='my-32 lg:bg-blue'>
+        <div className='bg-white rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-3'>
           <img
             src='https://www.grandespymes.com.ar/wp-content/uploads/2018/10/El-secreto-para-lograr-equipos-de-alto-rendimiento.jpg'
             alt='image'
-            className='h-full w-96 object-cover object-center'
+            className='w-full h-full min-h-[280px] object-cover object-center md:col-span-1'
           />
-          <article className='p-8'>
-            <h2 className='text-4xl uppercase text-blue font-bold mb-4'>
+          <article className='py-4 px-4 sm:px-8 md:col-span-2'>
+            <h2 className='text-2xl uppercase text-blue font-bold mb-2'>
               Nuestro equipo
             </h2>
-            <p className='text-dark text-xl'>
+            <p className='text-xl text-justify'>
               non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit
             </p>
             <div className='flex justify-center items-center mt-8'>
@@ -43,18 +44,18 @@ const Contact = (): JSX.Element => {
       </Section>
 
       <Section className='mb-32'>
-        <div className='grid grid-cols-2 gap-8'>
+        <div className='grid grid-cols-1 gap-8 lg:grid-cols-2'>
           <article className='bg-white rounded-xl overflow-hidden shadow border border-white'>
             <img
               src='https://thumbs.dreamstime.com/b/grupo-de-personas-54360518.jpg'
               alt='image'
               className='h-64 w-full object-cover object-top'
             />
-            <div className='px-8 py-4'>
+            <div className='px-4 py-4 sm:px-8'>
               <h2 className='uppercase text-2xl text-blue font-bold mb-2'>
                 Nuestra vision
               </h2>
-              <p className='text-dark text-xl'>
+              <p className='text-xl text-justify'>
                 non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit
               </p>
             </div>
@@ -65,11 +66,11 @@ const Contact = (): JSX.Element => {
               alt='image 02'
               className='h-64 w-full object-cover object-top'
             />
-            <div className='px-8 py-4'>
+            <div className='px-4 py-4 sm:px-8'>
               <h2 className='uppercase text-2xl text-blue font-bold mb-2'>
                 Nuestra vision
               </h2>
-              <p className='text-dark text-xl'>
+              <p className='text-xl text-justify'>
                 non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit
               </p>
             </div>
@@ -77,22 +78,14 @@ const Contact = (): JSX.Element => {
         </div>
       </Section>
 
-      <Section>
-        <div className='grid grid-cols-2 gap-8'>
-          <ContactForm />
-          <img
-            src='https://thumbs.dreamstime.com/b/grupo-de-personas-54360518.jpg'
-            alt='image form'
-            className='w-full h-full object-cover obeject-center rounded-xl overflow-hidden border border-white border-opacity-80'
-          />
-        </div>
-      </Section>
+      <ContactFormSection />
 
       <Section className='my-32'>
         <div className='mb-8'>
-          <h2 className='text-3xl uppercase text-blue font-bold text-center'>
-            Donde nos encontramos
-          </h2>
+          <Heading
+            title='Donde nos encontramos'
+            titleStyles='uppercase text-blue'
+          />
           <p className='text-xl text-dark text-center'>
             Av. El Sol, primera cuadra, Galerias ISAAC (oficina 3) 084 Cusco, Peru
           </p>
