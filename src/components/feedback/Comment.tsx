@@ -2,8 +2,8 @@ import { AiFillStar } from 'react-icons/ai'
 
 const Comment = (): JSX.Element => {
   return (
-    <article className='py-4 px-8 bg-blue mr-8 rounded-xl'>
-      <div className='flex justify-between items-center mb-2'>
+    <article className='py-4 px-4 bg-blue mr-4 rounded-xl md:px-8 md:mr-8'>
+      <div className='flex flex-wrap justify-between items-center gap-4 mb-2'>
         <div className='flex flex-col justify-start'>
           <p className='text-xl text-white font-bold'>
             Yoel Valverde
@@ -12,7 +12,7 @@ const Comment = (): JSX.Element => {
             05 de Marzo del 2003
           </p>
         </div>
-        <div className='flex justify-start items-start gap-1'>
+        <div className='flex justify-start items-start gap-1 mt-4 sm:mt-0'>
           {[...Array(5)].map((_, index) => (
             <AiFillStar key={index} size={18} className='text-white' />
           ))}
