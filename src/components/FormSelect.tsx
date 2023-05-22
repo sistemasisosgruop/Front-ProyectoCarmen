@@ -4,14 +4,14 @@ interface OptionProp {
 }
 
 interface Props {
-  label?: string
+  label?: string | null
   labelStyles?: string
   name: string
   showIcon?: boolean
   icon?: JSX.Element
   iconPosition?: string
   options: OptionProp[]
-  placeholder?: string
+  placeholder?: string | null
 }
 
 const FormSelect = ({
