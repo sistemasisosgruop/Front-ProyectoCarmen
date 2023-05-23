@@ -1,4 +1,4 @@
-import InformationForm from './InformationForm'
+import InformationHorizontalForm from './InformationHorizontalForm'
 
 const SecondaryUserForm = (): JSX.Element => {
   return (
@@ -12,7 +12,7 @@ const SecondaryUserForm = (): JSX.Element => {
         </span>
       </h2>
       <form className='flex flex-col gap-4'>
-        <InformationForm />
+        <InformationHorizontalForm />
       </form>
     </div>
   )
