@@ -1,11 +1,14 @@
-import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
-import Card from '../../components/Card'
-import Heading from '../../components/Heading'
-import LayoutPage from '../../components/layouts/LayoutPage'
-import Section from '../../components/layouts/Section'
-import Masthead from '../../components/Masthead'
-import { useLang } from '../../hooks/useLang'
+import { useLang } from '@hooks/useLang'
+import LayoutPage from '@layouts/LayoutPage'
+import Section from '@layouts/Section'
+import Heading from '@components/Heading'
+import Masthead from '@components/Masthead'
+import CardHover from '@components/CardHover'
+import ButtonLinkSm from '@components/ButtonLinkSm'
+import PromotionCard from '@components/tourist-packages/PromotionCard'
+import ButtonLink from '@components/ButtonLink'
+import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 
 const Packages = (): JSX.Element => {
   const { t } = useLang()
@@ -16,84 +19,53 @@ const Packages = (): JSX.Element => {
 
       <Section className='mt-32'>
         <Heading
-          title={'Buscar paquetes segun destino'}
-          description='sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra'
+          title={t('pages.packages.search_packages')}
+          description={t('pages.packages.description_search_packages')}
         />
         <section className='grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
           {[...Array(4)].map((_, index) => (
-            <Card
-              key={index}
-              href='/'
-              imagePath='/images/popular-rooms/01.jpg'
-              alt='image popular room'
-            />
+            <Link to='/destinos-populares/detalle' key={index}>
+              <CardHover
+                imagePath='https://elcomercio.pe/resizer/kPYiMdRvQaOmdMYQvDjsIOVaO_k=/980x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/6GW5P5E755BVHMKENSDZKMGOPU.jpg'
+                alt='image popular room'
+              >
+                <article className='flex justify-between items-center'>
+                  <p className='uppercase text-xs'>
+                    Descubre
+                  </p>
+                  <p className='fon-bold text-lg'>
+                    desde $ 105.00 <span className='text-gray-600'> /persona</span>
+                  </p>
+                </article>
+                <h3 className='text-2xl font-bold mb-4'>
+                  Cusco
+                </h3>
+                <div className='flex justify-center items-center'>
+                  <ButtonLinkSm
+                    to='/destinos-populares/detalle'
+                    text={t('general.view_more')}
+                    background='bg-orange'
+                  />
+                </div>
+              </CardHover>
+            </Link>
           ))}
         </section>
-        <div className='flex justify-center items-center'>
-          <Link
-            to='/destinos-populares'
-            className='bg-orange text-white font-bold rounded-md px-5 py-2 hover:bg-opacity-90'
-          >
-            <span>Ver catálogo</span>
-          </Link>
-        </div>
       </Section>
 
       <Section className='mt-32'>
         <Heading
-          title={'Promociones'}
-          description='sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra'
+          title={t('pages.packages.promotions')}
+          description={t('pages.packages.description_promotion')}
+          textAlign='text-left'
         />
-        <div className='w-full grid grid-cols-3 gap-4'>
+        <div className='w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
           {[...Array(6)].map((_, index) => (
-            <div key={index} className='relative bg-white rounded-xl overflow-hidden w-full flex flex-col border border-white shadow-dark group/descripcion'>
-              <img
-                src='https://www.passagenspromo.com.br/blog/wp-content/uploads/2020/09/turismo-no-peru-machu-pichu.jpg'
-                alt={`image ${index}}`}
-                className=''
-              />
-              <div className='absolute top-2 right-2 rounded-md px-2 py-1 bg-white border border-blue border-opacity-90'>
-                <p className='text-dark text-center font-bold'>4.5</p>
-              </div>
-              <article className='p-4'>
-                <div>
-                  <p className='uppercase text-blue text-center'>
-                    TOUR FULLDAY
-                  </p>
-                  <h3 className='text-dark text-xl text-center font-bold'>
-                    Laguna azul
-                  </h3>
-                </div>
-                <ul>
-                  <li>
-                    5 (10)
-                  </li>
-                  <li>
-                    Cusco, Perú
-                  </li>
-                  <li>
-                    8 horas
-                  </li>
-                  <li>
-                    Hasta 12 personas
-                  </li>
-                </ul>
-                <div className='flex justify-between items-center'>
-                  <p className='flex flex-col justify-start'>
-                    <span className='text-gray-600'>
-                      Precio por persona
-                    </span>
-                    <span className='text-lg font-bold'>
-                      <strong className='text-blue'>S/.&nbsp;</strong>
-                      <strong className='text-dark'>90.00</strong>
-                    </span>
-                  </p>
-                  <button type='button' className=' bg-blue rounded-xl px-4 py-1 text-white text-center'>
-                    Ver más
-                  </button>
-                </div>
-              </article>
-            </div>
+            <PromotionCard
+              key={index}
+              imagePath='https://www.passagenspromo.com.br/blog/wp-content/uploads/2020/09/turismo-no-peru-machu-pichu.jpg'
+              alt={`image promotion packages ${index + 1}`}
+            />
           ))}
         </div>
       </Section>
@@ -113,69 +85,24 @@ const Packages = (): JSX.Element => {
             <HiOutlineArrowSmRight size={24} className='w-10 h-10 rounded-full bg-turquoise border border-turquoise text-white flex justify-center items-center' />
           </div>
         </div>
-        <div className='w-full grid grid-cols-3 gap-4'>
+        <div className='w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
           {[...Array(3)].map((_, index) => (
-            <div key={index} className='relative bg-white rounded-xl overflow-hidden w-full flex flex-col border border-white shadow-dark group/descripcion'>
-              <img
-                src='https://www.passagenspromo.com.br/blog/wp-content/uploads/2020/09/turismo-no-peru-machu-pichu.jpg'
-                alt={`image ${index}}`}
-                className=''
-              />
-              <div className='absolute top-2 right-2 rounded-md px-2 py-1 bg-white border border-blue border-opacity-90'>
-                <p className='text-dark text-center font-bold'>4.5</p>
-              </div>
-              <article className='p-4'>
-                <div>
-                  <p className='uppercase text-blue text-center'>
-                    TOUR FULLDAY
-                  </p>
-                  <h3 className='text-dark text-xl text-center font-bold'>
-                    Laguna azul
-                  </h3>
-                </div>
-                <ul>
-                  <li>
-                    5 (10)
-                  </li>
-                  <li>
-                    Cusco, Perú
-                  </li>
-                  <li>
-                    8 horas
-                  </li>
-                  <li>
-                    Hasta 12 personas
-                  </li>
-                </ul>
-                <div className='flex justify-between items-center'>
-                  <p className='flex flex-col justify-start'>
-                    <span className='text-gray-600'>
-                      Precio por persona
-                    </span>
-                    <span className='text-lg font-bold'>
-                      <strong className='text-blue'>S/.&nbsp;</strong>
-                      <strong className='text-dark'>90.00</strong>
-                    </span>
-                  </p>
-                  <button type='button' className=' bg-blue rounded-xl px-4 py-1 text-white text-center'>
-                    Ver más
-                  </button>
-                </div>
-              </article>
-            </div>
+            <PromotionCard
+              key={index}
+              imagePath='https://www.passagenspromo.com.br/blog/wp-content/uploads/2020/09/turismo-no-peru-machu-pichu.jpg'
+              alt={`image promotion packages ${index + 1}`}
+            />
           ))}
         </div>
 
         <div className='flex justify-center items-center mt-8'>
-          <button
-            type='button'
-            className='bg-blue rounded-xl px-6 py-1 text-white font-bold flex justify-center items-center gap-2 hover:bg-opacity-80'
-          >
-            <span>
-              Ver mas
-            </span>
-            <HiOutlineArrowSmRight size={20} />
-          </button>
+          <ButtonLink
+            to='/'
+            text={t('general.view_more')}
+            showIcon={true}
+            icon={<HiOutlineArrowSmRight size={20} />}
+            iconPosition='right'
+          />
         </div>
       </Section>
     </LayoutPage>
