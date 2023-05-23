@@ -10,7 +10,7 @@ const InformationForm = (): JSX.Element => {
 
   return (
     <>
-      <article className='w-full flex flex-col gap-4'>
+      <article className='w-full flex flex-col gap-4 sm:flex-row md:bg-green'>
         <FormInput
           label='Nombres'
           name='names'
@@ -26,8 +26,8 @@ const InformationForm = (): JSX.Element => {
           errors={errors}
         />
       </article>
-      <article className='grid grid-cols-1 gap-4'>
-        <div className='flex justify-between items-end gap-4'>
+      <article className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+        <div className='grid grid-cols-3 items-end gap-4 col-span-1'>
           <FormSelect
             label='Tipo y número de documento'
             labelStyles='text-sm text-gray-600'
@@ -44,6 +44,7 @@ const InformationForm = (): JSX.Element => {
             register={register}
             rules={{ required: true }}
             errors={errors}
+            extraClasses='col-span-2'
           />
         </div>
         <div>
@@ -62,7 +63,8 @@ const InformationForm = (): JSX.Element => {
           </div>
         </div>
       </article>
-      <article className='w-full flex flex-col gap-4'>
+
+      <article className='w-full grid grid-cols-1 gap-4 sm:grid-cols-2'>
         <div>
           <label htmlFor='birthDate' className='text-sm text-gray-600'>
             Fecha de nacimiento
@@ -90,7 +92,8 @@ const InformationForm = (): JSX.Element => {
           </div>
         </div>
       </article>
-      <article className='grid grid-cols-1 gap-4'>
+
+      <article className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
         <FormSelect
           label='País'
           labelStyles='text-sm text-gray-600'
@@ -102,7 +105,7 @@ const InformationForm = (): JSX.Element => {
             { value: 'mexico', text: 'México' }
           ]}
         />
-        <div className='flex justify-between items-end gap-4'>
+        <div className='grid grid-cols-3 items-end gap-4'>
           <FormSelect
             label='Tipo y número de documento'
             labelStyles='text-sm text-gray-600'
@@ -119,9 +122,11 @@ const InformationForm = (): JSX.Element => {
             register={register}
             rules={{ required: true }}
             errors={errors}
+            extraClasses='col-span-2'
           />
         </div>
       </article>
+
       <article>
         <FormInput
           label='Correo electrónico'
@@ -131,7 +136,8 @@ const InformationForm = (): JSX.Element => {
           errors={errors}
         />
       </article>
-      <article className='grid grid-cols-1 gap-4'>
+
+      <article className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
         <FormInput
           label='Código postal'
           name='postalCode'
@@ -145,6 +151,7 @@ const InformationForm = (): JSX.Element => {
           register={register}
           rules={{ required: true }}
           errors={errors}
+          extraClasses='sm:col-span-2'
         />
       </article>
     </>
