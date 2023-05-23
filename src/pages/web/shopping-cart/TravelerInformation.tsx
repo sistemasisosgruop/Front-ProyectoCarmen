@@ -46,8 +46,8 @@ const TravelerInformation = (): JSX.Element => {
         </button>
 
         <Tabs
-          tabContainerStyles='w-full bg-white rounded-full overflow-hidden flex justify-between items-center'
-          tabStyle='w-full py-2 text-base font-bold lg:py-4 lg:text-xl'
+          tabContainerStyles='w-full bg-white rounded-full overflow-hidden grid grid-cols-2'
+          tabStyle='w-full h-full py-2 px-4 text-base font-bold lg:py-4 lg:text-xl'
           activeTabStyle='bg-blue rounded-full text-white'
           inactiveTabStyle='bg-white text-blue'
           contentContainerStyles='mt-8'
@@ -66,7 +66,7 @@ const TravelerInformation = (): JSX.Element => {
               <div className='bg-white rounded-xl p-4 lg:col-span-3'>
                 <SecondaryUserForm />
               </div>
-              <div>
+              <div className='w-full flex justify-end items-center col-start-3'>
                 <Button
                   text='Confirmar datos'
                   background='bg-blue'
