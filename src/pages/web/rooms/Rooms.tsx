@@ -105,7 +105,7 @@ const Rooms = (): JSX.Element => {
         </section>
         <div className='my-8 flex justify-center items-center'>
           <ButtonLink
-            to=''
+            to='/catalogo-habitaciones'
             text={t('general.view_catalog')}
             showIcon={true}
             icon={<HiOutlineArrowSmRight size={18} />}
