@@ -6,6 +6,7 @@ import Tabs from '../../components/Tabs'
 import TabItem from '../../components/TabItem'
 import PriceList from '../../components/flights/PriceList'
 import SelectFlight from '../../components/flights/SelectFlight'
+import ContactFormSection from '@components/contact-form/ContactFormSection'
 
 const Flights = (): JSX.Element => {
   return (
@@ -39,17 +40,7 @@ const Flights = (): JSX.Element => {
       </Section >
 
       {/* Contact form */}
-      < Section className='mb-32' >
-        <div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
-          <ContactForm />
-
-          <img
-            src='http://noticiasmachupicchu.com/wp-content/uploads/2019/10/llamita.jpg'
-            alt=''
-            className='h-full w-full rounded-md border border-white'
-          />
-        </div>
-      </Section >
+      <ContactFormSection />
     </LayoutPage >
   )
 }
