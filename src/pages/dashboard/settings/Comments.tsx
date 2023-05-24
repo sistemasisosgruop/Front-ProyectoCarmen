@@ -1,13 +1,13 @@
-import HeadingText from '../../../components/HeadingText'
-import AdminLayout from '../../../components/layouts/AdminLayout'
-import AdminSection from '../../../components/layouts/AdminSection'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
 import { AiFillCheckCircle, AiFillCloseCircle, AiOutlineSearch } from 'react-icons/ai'
-import THead from '../../../components/THead'
 
 const Comments = (): JSX.Element => {
   return (
     <AdminLayout title='Registro de comentarios'>
-      <HeadingText text='Comentarios' />
+      <Heading title='Comentarios' />
 
       <AdminSection>
         <article className='flex justify-between items-center gap-4 mb-8'>

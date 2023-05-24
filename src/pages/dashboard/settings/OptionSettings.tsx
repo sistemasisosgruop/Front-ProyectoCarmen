@@ -1,5 +1,5 @@
-import AdminLayout from '../../../components/layouts/AdminLayout'
-import Options from '../../../components/Options'
+import AdminLayout from '@layouts/AdminLayout'
+import Options from '@components/Options'
 import { HiUsers } from 'react-icons/hi'
 import { RiCouponFill } from 'react-icons/ri'
 import { IoIosPaper } from 'react-icons/io'

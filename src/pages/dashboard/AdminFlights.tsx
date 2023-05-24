@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import DatePicker from 'react-datepicker'
-import AdminLayout from '../../components/layouts/AdminLayout'
-import AdminSection from '../../components/layouts/AdminSection'
-import HeadingText from '../../components/HeadingText'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
 import { BiChevronDown, BiDownload, BiEdit, BiTrash } from 'react-icons/bi'
 
 import 'react-datepicker/dist/react-datepicker.css'
@@ -13,7 +13,7 @@ const AdminFlights = (): JSX.Element => {
 
   return (
     <AdminLayout title='Vuelos'>
-      <HeadingText text='Reservas de vuelos' />
+      <Heading title='Reservas de vuelos' />
 
       <AdminSection>
         <div className='w-full flex flex-col justify-between items-center gap-2 mb-4 md:flex-row'>

@@ -3,14 +3,14 @@ import interactionPlugin from '@fullcalendar/interaction'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import localeEs from '@fullcalendar/core/locales/es'
-import AdminLayout from '../../components/layouts/AdminLayout'
-import AdminSection from '../../components/layouts/AdminSection'
-import HeadingText from '../../components/HeadingText'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
 
 const AdminCalendar = (): JSX.Element => {
   return (
     <AdminLayout title='Mi calendario'>
-      <HeadingText text='Mi calendario' />
+      <Heading title='Mi calendario' />
 
       <div className='w-full'>
         <AdminSection>

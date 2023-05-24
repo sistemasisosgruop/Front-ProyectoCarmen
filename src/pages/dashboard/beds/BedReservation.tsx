@@ -1,14 +1,14 @@
-import AdminLayout from '../../../components/layouts/AdminLayout'
-import HeadingText from '../../../components/HeadingText'
-import AdminSection from '../../../components/layouts/AdminSection'
-import THead from '../../../components/THead'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
 
 const BedReservation = (): JSX.Element => {
   return (
     <AdminLayout title='Reserva de camas'>
-      <HeadingText text='Reservas' />
+      <Heading title='Reservas' />
 
       <AdminSection>
         <article className='flex justify-start items-center gap-4 mb-8'>

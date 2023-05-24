@@ -1,5 +1,5 @@
-import AdminLayout from '../../../components/layouts/AdminLayout'
-import Options from '../../../components/Options'
+import AdminLayout from '@layouts/AdminLayout'
+import Options from '@components/Options'
 import { FaBed } from 'react-icons/fa'
 import { IoMdBed } from 'react-icons/io'
 

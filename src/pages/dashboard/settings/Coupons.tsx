@@ -1,14 +1,14 @@
-import { useModal } from '../../../hooks/useModal'
-import AdminLayout from '../../../components/layouts/AdminLayout'
-import AdminSection from '../../../components/layouts/AdminSection'
-import Modal from '../../../components/Modal'
-import HeadingText from '../../../components/HeadingText'
-import THead from '../../../components/THead'
+import { useModal } from '@hooks/useModal'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Modal from '@components/Modal'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
+import Button from '@components/Button'
+import AddCouponForm from '@components/coupons/AddCouponForm'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IoMdAdd } from 'react-icons/io'
 import { BiEdit, BiTrash } from 'react-icons/bi'
-import Button from '../../../components/Button'
-import AddCouponForm from '../../../components/coupons/AddCouponForm'
 
 const Coupons = (): JSX.Element => {
   const { isOpenModal, openModal, closeModal } = useModal()
@@ -16,7 +16,7 @@ const Coupons = (): JSX.Element => {
   return (
     <>
       <AdminLayout title='Registro de cupones'>
-        <HeadingText text='Cupones' />
+        <Heading title='Cupones' />
 
         <AdminSection>
           <article className='flex flex-col justify-between items-end gap-4 mb-8 sm:flex-row'>

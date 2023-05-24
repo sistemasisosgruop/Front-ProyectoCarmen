@@ -1,13 +1,13 @@
-import HeadingText from '../../components/HeadingText'
-import AdminLayout from '../../components/layouts/AdminLayout'
-import AdminSection from '../../components/layouts/AdminSection'
-import THead from '../../components/THead'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
 import { BiDownload, BiEdit, BiTrash } from 'react-icons/bi'
 
 const Users = (): JSX.Element => {
   return (
     <AdminLayout title='Usuarios'>
-      <HeadingText text='Tabla de usuarios' />
+      <Heading title='Tabla de usuarios' />
 
       <AdminSection>
         <div className='w-full flex justify-between items-center gap-2 mb-4'>

@@ -1,13 +1,13 @@
-import { useModal } from '../../../hooks/useModal'
-import HeadingText from '../../../components/HeadingText'
-import AdminLayout from '../../../components/layouts/AdminLayout'
-import AdminSection from '../../../components/layouts/AdminSection'
-import THead from '../../../components/THead'
+import { useModal } from '@hooks/useModal'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
+import Modal from '@components/Modal'
+import AddRole from '@components/roles/AddRole'
+import Button from '@components/Button'
 import { IoMdAdd } from 'react-icons/io'
 import { BiEdit, BiTrash } from 'react-icons/bi'
-import Modal from '../../../components/Modal'
-import AddRole from '../../../components/roles/AddRole'
-import Button from '../../../components/Button'
 
 const Roles = (): JSX.Element => {
   const { isOpenModal, openModal, closeModal } = useModal()
@@ -15,7 +15,7 @@ const Roles = (): JSX.Element => {
   return (
     <>
       <AdminLayout title='Roles de usuarios'>
-        <HeadingText text='Roles' />
+        <Heading title='Roles' />
 
         <AdminSection>
           <article className='flex justify-start items-center gap-4 mb-8'>

@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion'
-import AdminLayout from '../../components/layouts/AdminLayout'
-import HeadingText from '../../components/HeadingText'
-import HorizontalChart from '../../components/statistics/HorizontalChart'
-import VerticalChart from '../../components/statistics/VerticalChart'
+import AdminLayout from '@layouts/AdminLayout'
+import HorizontalChart from '@components/statistics/HorizontalChart'
+import VerticalChart from '@components/statistics/VerticalChart'
+import Heading from '@components/Heading'
 
 const Statistics = (): JSX.Element => {
   return (
     <AdminLayout title='Estadísticas'>
-      <HeadingText text='Estadísticas' />
+      <Heading title='Estadísticas' />
 
       <motion.div
         initial={{ opacity: 0, x: 0, y: 25 }}

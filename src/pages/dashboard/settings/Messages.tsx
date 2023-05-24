@@ -1,14 +1,14 @@
-import HeadingText from '../../../components/HeadingText'
-import AdminLayout from '../../../components/layouts/AdminLayout'
-import AdminSection from '../../../components/layouts/AdminSection'
-import THead from '../../../components/THead'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiTrash } from 'react-icons/bi'
 
 const Messages = (): JSX.Element => {
   return (
     <AdminLayout title='Lista de mensajes'>
-      <HeadingText text='Mensajes' />
+      <Heading title='Mensajes' />
 
       <AdminSection>
         <article className='flex justify-between items-center gap-4 mb-8'>

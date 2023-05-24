@@ -1,14 +1,14 @@
-import AdminLayout from '../../../components/layouts/AdminLayout'
-import HeadingText from '../../../components/HeadingText'
-import AdminSection from '../../../components/layouts/AdminSection'
-import THead from '../../../components/THead'
+import AdminLayout from '@layouts/AdminLayout'
+import Heading from '@components/Heading'
+import AdminSection from '@components/layouts/AdminSection'
+import THead from '@components/THead'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
 
 const TouristPackagesReservation = (): JSX.Element => {
   return (
     <AdminLayout title='Reserva de paquetes turísticos'>
-      <HeadingText text='Reservas' />
+      <Heading title='Reservas' />
 
       <AdminSection>
         <article className='flex justify-start items-center gap-4 mb-8'>

@@ -1,14 +1,14 @@
-import AdminLayout from '../../../components/layouts/AdminLayout'
-import AdminSection from '../../../components/layouts/AdminSection'
-import HeadingText from '../../../components/HeadingText'
-import THead from '../../../components/THead'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiDownload } from 'react-icons/bi'
 
 const Receipts = (): JSX.Element => {
   return (
     <AdminLayout title='Comprobantes'>
-      <HeadingText text='Comprobantes' />
+      <Heading title='Comprobantes' />
 
       <AdminSection>
         <article className='flex flex-col justify-between items-end gap-4 mb-8 sm:flex-row'>

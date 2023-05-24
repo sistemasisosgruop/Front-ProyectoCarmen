@@ -1,20 +1,20 @@
-import { useModal } from '../../../hooks/useModal'
-import HeadingText from '../../../components/HeadingText'
-import AdminLayout from '../../../components/layouts/AdminLayout'
-import AdminSection from '../../../components/layouts/AdminSection'
-import THead from '../../../components/THead'
+import { useModal } from '@hooks/useModal'
+import Heading from '@components/Heading'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Modal from '@components/Modal'
+import AddBedForm from '@components/beds/AddBedForm'
+import THead from '@components/THead'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IoMdAdd } from 'react-icons/io'
 import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
-import Modal from '../../../components/Modal'
-import AddBedForm from '../../../components/beds/AddBedForm'
 
 const BedRegistration = (): JSX.Element => {
   const { isOpenModal, openModal, closeModal } = useModal()
   return (
     <>
       <AdminLayout title='Registro de camas'>
-        <HeadingText text='Camas' />
+        <Heading title='Camas' />
 
         <AdminSection>
           <article className='flex flex-col justify-between items-end gap-4 mb-8 sm:flex-row'>

@@ -1,13 +1,13 @@
-import { useModal } from '../../../hooks/useModal'
-import HeadingText from '../../../components/HeadingText'
-import AdminLayout from '../../../components/layouts/AdminLayout'
-import AdminSection from '../../../components/layouts/AdminSection'
-import THead from '../../../components/THead'
-import Modal from '../../../components/Modal'
+import { useModal } from '@hooks/useModal'
+import Heading from '@components/Heading'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import THead from '@components/THead'
+import Modal from '@components/Modal'
+import AddTourPackage from '@components/tourist-packages/AddTourPackage'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
 import { IoMdAdd } from 'react-icons/io'
-import AddTourPackage from '../../../components/tourist-packages/AddTourPackage'
 
 const TouristPackages = (): JSX.Element => {
   const { isOpenModal, openModal, closeModal } = useModal()
@@ -15,7 +15,7 @@ const TouristPackages = (): JSX.Element => {
   return (
     <>
       <AdminLayout title='Registro de paquetes turísticos'>
-        <HeadingText text='Paquetes turísticos' />
+        <Heading title='Paquetes turísticos' />
 
         <AdminSection>
           <article className='flex flex-col justify-between items-end gap-4 mb-8 sm:flex-row'>
