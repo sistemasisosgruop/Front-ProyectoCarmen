@@ -9,6 +9,7 @@ import ButtonLinkSm from '@components/ButtonLinkSm'
 import PromotionCard from '@components/tourist-packages/PromotionCard'
 import ButtonLink from '@components/ButtonLink'
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
+import PackagesDestinationCard from '@components/tourist-packages/PackagesDestinationCard'
 
 const Packages = (): JSX.Element => {
   const { t } = useLang()
@@ -24,31 +25,12 @@ const Packages = (): JSX.Element => {
         />
         <section className='grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
           {[...Array(4)].map((_, index) => (
-            <Link to='/destinos-populares/detalle' key={index}>
-              <CardHover
-                imagePath='https://elcomercio.pe/resizer/kPYiMdRvQaOmdMYQvDjsIOVaO_k=/980x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/6GW5P5E755BVHMKENSDZKMGOPU.jpg'
-                alt='image popular room'
-              >
-                <article className='flex justify-between items-center'>
-                  <p className='uppercase text-xs'>
-                    Descubre
-                  </p>
-                  <p className='fon-bold text-lg'>
-                    desde $ 105.00 <span className='text-gray-600'> /persona</span>
-                  </p>
-                </article>
-                <h3 className='text-2xl font-bold mb-4'>
-                  Cusco
-                </h3>
-                <div className='flex justify-center items-center'>
-                  <ButtonLinkSm
-                    to='/destinos-populares/detalle'
-                    text={t('general.view_more')}
-                    background='bg-orange'
-                  />
-                </div>
-              </CardHover>
-            </Link>
+          <PackagesDestinationCard
+              key={index}
+              href='/'
+              imagePath='https://elcomercio.pe/resizer/kPYiMdRvQaOmdMYQvDjsIOVaO_k=/980x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/6GW5P5E755BVHMKENSDZKMGOPU.jpg'
+              imageAlt={`images destination ${index + 1}`}
+            />
           ))}
         </section>
       </Section>

@@ -6,7 +6,7 @@ import Masthead from '@components/Masthead'
 import ServiceSearch from '@components/home/ServiceSearch'
 import SliderTourPackage from '@components/home/SliderTourPackage'
 import FeedbackSection from '@components/feedback/FeedbackSection'
-import Card from '@components/Card'
+import PopularCard from '@components/home/PopularCard'
 import ButtonLink from '@components/ButtonLink'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
@@ -29,11 +29,11 @@ const Home = (): JSX.Element => {
         />
         <section className='grid grid-cols-1 gap-8 pb-8 sm:grid-cols-2 xl:grid-cols-4'>
           {[...Array(4)].map((_, index) => (
-            <Card
+            <PopularCard
               key={index}
               href='/habitaciones/detalle'
               imagePath='https://i.pinimg.com/originals/38/f2/ea/38f2eaee058ad116a31b7eebc621650f.jpg'
-              alt='image popular room'
+              imageAlt={`image popular room ${index + 1}`}
             />
           ))}
         </section>
@@ -55,11 +55,11 @@ const Home = (): JSX.Element => {
         />
         <section className='grid grid-cols-1 gap-8 pb-8 sm:grid-cols-2 xl:grid-cols-4'>
           {[...Array(4)].map((_, index) => (
-            <Card
+            <PopularCard
               key={index}
-              href='/habitaciones/detalle'
+              href='/destinos-populares/detalle'
               imagePath='https://img.europapress.es/fotoweb/fotonoticia_20171009090720_1024.jpg'
-              alt='image popular room'
+              imageAlt={`image popular destination ${index + 1}`}
             />
           ))}
         </section>
@@ -81,11 +81,11 @@ const Home = (): JSX.Element => {
         />
         <section className='grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 xl:grid-cols-4'>
           {[...Array(4)].map((_, index) => (
-            <Card
+            <PopularCard
               key={index}
-              href='/habitaciones/detalle'
+              href='/vuelos'
               imagePath='http://www.subturismo.gob.cl/wp-content/uploads/2017/10/TREKKING-LAGUNAS-COTACOTANI-3.jpg'
-              alt='image popular room'
+              imageAlt={`image popular flights ${index + 1}`}
             />
           ))}
         </section>

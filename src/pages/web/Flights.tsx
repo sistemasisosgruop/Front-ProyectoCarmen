@@ -44,7 +44,9 @@ const Flights = (): JSX.Element => {
       </Section >
 
       {/* Contact form */}
-      <ContactFormSection />
+      <div className='mb-16'>
+        <ContactFormSection />
+      </div>
     </LayoutPage >
   )
 }

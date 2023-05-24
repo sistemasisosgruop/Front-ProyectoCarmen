@@ -28,7 +28,7 @@ const Rooms = (): JSX.Element => {
               key={index}
               href='/'
               imagePath='https://eraseunhotel.com/wp-content/uploads/2017/12/4-grande-1.jpg'
-              alt={`image popular room ${index + 1}`}
+              imageAlt={`image popular room ${index + 1}`}
             />
           ))}
         </section>
@@ -63,9 +63,9 @@ const Rooms = (): JSX.Element => {
             <FullApartmentCard
               key={index}
               href='/habitaciones/detalle'
-              id={index}
+              index={index}
               imagePath='http://www.laguiadelvaron.com/wp-content/uploads/2015/09/Los-mejores-20-departamentos-para-un-soltero-18.jpg'
-              alt=''
+              imageAlt={`departamento completo ${index + 1}`}
             />
           ))}
         </section>
@@ -95,7 +95,7 @@ const Rooms = (): JSX.Element => {
                 </p>
 
                 <ButtonLinkSm
-                  to='/habitaciones/detalle'
+                  to='/catalogo-habitaciones'
                   text={t('general.view_more')}
                   background='bg-orange'
                 />

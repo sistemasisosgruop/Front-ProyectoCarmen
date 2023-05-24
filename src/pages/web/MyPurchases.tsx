@@ -1,6 +1,6 @@
+import LayoutPage from '@layouts/LayoutPage'
+import Section from '@layouts/Section'
 import { IoMdDownload } from 'react-icons/io'
-import LayoutPage from '../../components/layouts/LayoutPage'
-import Section from '../../components/layouts/Section'
 
 const MyPurchases = (): JSX.Element => {
   return (

@@ -12,9 +12,11 @@ import { IoReturnDownBack } from 'react-icons/io5'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { MdOutlinePayment } from 'react-icons/md'
+import PaymentForm from '@components/shopping-cart/PaymentForm'
+import PurchaseTerms from '@components/shopping-cart/PurchaseTerms'
 
 const TravelerInformation = (): JSX.Element => {
-  const { switchTab } = useTabs()
+  const { activeTab, switchTab } = useTabs()
   const navigate = useNavigate()
 
   return (
@@ -51,22 +53,24 @@ const TravelerInformation = (): JSX.Element => {
           activeTabStyle='bg-blue rounded-full text-white'
           inactiveTabStyle='bg-white text-blue'
           contentContainerStyles='mt-8'
+          activeTab={activeTab}
+          switchTab={switchTab}
         >
           <TabItem
             label='Información personal'
             icon={<AiOutlineInfoCircle size={18} />}
           >
-            <section className='grid grid-cols-1 gap-8 lg:grid-cols-3'>
-              <div className='bg-white rounded-xl p-4 lg:col-span-2'>
+            <section className='grid grid-cols-1 gap-8 lg:grid-cols-5'>
+              <div className='bg-white rounded-xl py-8 px-4 md:px-8 lg:col-span-3'>
                 <MainUserForm />
               </div>
-              <div className='bg-white rounded-xl p-4 row-start-1 lg:row-start-auto lg:col-span-1'>
+              <div className='bg-white rounded-xl p-4 row-start-1 lg:row-start-auto lg:col-span-2'>
                 <OrderSummary />
               </div>
-              <div className='bg-white rounded-xl p-4 lg:col-span-3'>
+              <div className='bg-white rounded-xl py-8 px-4 md:px-8 lg:col-span-5'>
                 <SecondaryUserForm />
               </div>
-              <div className='w-full flex justify-end items-center col-start-3'>
+              <div className='w-full flex justify-end items-center lg:col-span-5'>
                 <Button
                   text='Confirmar datos'
                   background='bg-blue'
@@ -79,9 +83,27 @@ const TravelerInformation = (): JSX.Element => {
             label='Realizar pago'
             icon={<MdOutlinePayment size={18} />}
           >
-            <h2>
-              Realizar pago
-            </h2>
+            <section className='grid grid-cols-1 gap-8 lg:grid-cols-5'>
+              <div className='bg-white rounded-xl py-8 px-4 md:px-8 lg:col-span-3'>
+                <PaymentForm />
+              </div>
+              <div className='bg-white rounded-xl p-4 row-start-1 lg:row-start-auto lg:col-span-2'>
+                <OrderSummary />
+              </div>
+              <div className='bg-white rounded-xl py-8 px-4 md:px-8 lg:col-span-5'>
+                <PurchaseTerms />
+              </div>
+              <div className='w-full flex justify-center items-center col-span-1 lg:col-span-5'>
+                <Button
+                  text='Confirmar pago'
+                  background='bg-blue'
+                  onClick={() => { switchTab(1) }}
+                  isIcon
+                  icon={<MdOutlinePayment size={18} />}
+                  extraClasses='uppercase'
+                />
+              </div>
+            </section>
           </TabItem>
         </Tabs>
       </Section>
