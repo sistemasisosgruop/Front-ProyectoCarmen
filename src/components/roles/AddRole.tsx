@@ -1,20 +1,16 @@
 import { useForm } from 'react-hook-form'
-import Button from '../Button'
-import FormInput from '../FormInput'
+import Button from '@components/Button'
+import FormInput from '@forms/FormInput'
 
 interface Props {
   closeModal: () => void
 }
 
 const AddRole = ({ closeModal }: Props): JSX.Element => {
-  const { register, handleSubmit, formState: { errors } } = useForm()
-
-  const onSubmit = (data: any): void => {
-    console.log(data)
-  }
+  const { register, formState: { errors } } = useForm()
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form>
       <FormInput
         register={register}
         errors={errors}

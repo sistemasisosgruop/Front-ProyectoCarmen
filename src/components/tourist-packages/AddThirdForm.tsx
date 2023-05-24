@@ -1,6 +1,6 @@
-import Button from '../Button'
-import FormInput from '../FormInput'
-import FormTextArea from '../FormTextArea'
+import Button from '@components/Button'
+import FormInput from '@forms/FormInput'
+import FormTextArea from '@forms/FormTextArea'
 import { BiSave } from 'react-icons/bi'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 

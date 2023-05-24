@@ -1,5 +1,3 @@
-import { useTabs } from '@hooks/useTabs'
-
 interface Props {
   children: JSX.Element[]
   tabContainerStyles?: string
@@ -8,19 +6,21 @@ interface Props {
   activeTabStyle?: string
   inactiveTabStyle?: string
   textTabStyle?: string
+  activeTab: number
+  switchTab: (index: number) => void
 }
 
 const Tabs = ({
   children,
   tabContainerStyles = 'flex justify-start items-center',
-  contentContainerStyles = 'bg-white p-8',
+  contentContainerStyles = 'bg-white py-8 px-y md:px-8',
   tabStyle = 'px-4 py-2',
   activeTabStyle = 'bg-blue text-white',
   inactiveTabStyle = 'bg-white text-dark',
-  textTabStyle = 'bg-dark text-white'
+  textTabStyle = 'bg-dark text-white',
+  activeTab,
+  switchTab
 }: Props): JSX.Element => {
-  const { activeTab, switchTab } = useTabs(0)
-
   return (
     <section>
       <div className={tabContainerStyles}>

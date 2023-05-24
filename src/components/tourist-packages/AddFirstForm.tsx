@@ -1,5 +1,5 @@
-import Button from '../Button'
-import FormInput from '../FormInput'
+import Button from '@components/Button'
+import FormInput from '@forms/FormInput'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
 interface Props {

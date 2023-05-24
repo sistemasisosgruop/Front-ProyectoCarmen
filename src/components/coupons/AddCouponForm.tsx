@@ -1,22 +1,17 @@
-import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import Autocomplete from '../Autocomplete'
-import Button from '../Button'
-import FormInput from '../FormInput'
+import Autocomplete from '@forms/Autocomplete'
+import FormInput from '@forms/FormInput'
+import Button from '@components/Button'
 
 interface Props {
   closeModal: () => void
 }
 
 const AddCouponForm = ({ closeModal }: Props): JSX.Element => {
-  const { register, handleSubmit, formState: { errors } } = useForm()
-
-  const onSubmit = (data: any): void => {
-    console.log(data)
-  }
+  const { register, formState: { errors } } = useForm()
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4'>
+    <form className='flex flex-col gap-4'>
       <article className='grid grid-cols-2 gap-4'>
         <FormInput
           register={register}

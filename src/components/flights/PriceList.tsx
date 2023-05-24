@@ -1,10 +1,16 @@
+import { useTabs } from '@hooks/useTabs'
 import Tabs from '../../components/Tabs'
 import TabItem from '../../components/TabItem'
 import THead from '../THead'
 
 const SelectFlight = (): JSX.Element => {
+  const { activeTab, switchTab } = useTabs(0)
+
   return (
-    <Tabs>
+    <Tabs
+      activeTab={activeTab}
+      switchTab={switchTab}
+    >
       <TabItem label='Precios por aerolinea'>
         <table>
           <THead

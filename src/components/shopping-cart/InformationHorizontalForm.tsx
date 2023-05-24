@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import DatePicker from 'react-datepicker'
-import FormInput from '@components/FormInput'
-import FormSelect from '@components/FormSelect'
+import FormInput from '@forms/FormInput'
+import FormSelect from '@forms/FormSelect'
 
 const InformationHorizontalForm = (): JSX.Element => {
   const [startDate, setStartDate] = useState<Date>(new Date())

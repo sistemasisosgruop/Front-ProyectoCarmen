@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import CardHover from './CardHover'
+import { useLang } from '@hooks/useLang'
+import CardHover from '@components/CardHover'
 import { AiFillStar } from 'react-icons/ai'
 
 interface Props {
@@ -8,14 +9,17 @@ interface Props {
   imageAlt: string
 }
 
-const Card = ({
+const PopularCard = ({
   href,
   imagePath,
   imageAlt
 }: Props): JSX.Element => {
+  const { t } = useLang()
+
   return (
     <Link
       to={href}
+      className='w-full h-full inline-block'
     >
       <CardHover
         imagePath={imagePath}
@@ -33,22 +37,24 @@ const Card = ({
           <p className='text-2xl text-dark font-bold'>
             Habitación matrimonial
           </p>
-          <div className='flex justify-start items-center gap-2'>
-            <p className='flex justify-start items-center gap-1'>
-              <AiFillStar size={18} className='text-green' />
-              <AiFillStar size={18} className='text-green' />
-              <AiFillStar size={18} className='text-green' />
-              <AiFillStar size={18} className='text-green' />
-              <AiFillStar size={18} className='text-green' />
-            </p>
+          <article className='flex justify-start items-center gap-2'>
+            <div className='flex justify-start items-center gap-1'>
+              {[...Array(5)].map((_, index) => (
+                <AiFillStar
+                  key={index}
+                  size={18}
+                  className='text-orange'
+                />
+              ))}
+            </div>
             <span className='text-gray-600'>
-              (10 reseñas)
+              ({t('general.num_reviews', { numReviews: '10' })})
             </span>
-          </div>
+          </article>
         </div>
       </CardHover>
     </Link>
   )
 }
 
-export default Card
+export default PopularCard

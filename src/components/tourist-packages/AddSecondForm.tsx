@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import DatePicker from 'react-datepicker'
-import Button from '../Button'
-import FormInput from '../FormInput'
-import FormTextArea from '../FormTextArea'
+import Button from '@components/Button'
+import FormInput from '@forms/FormInput'
+import FormTextArea from '@forms/FormTextArea'
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 
 interface Props {

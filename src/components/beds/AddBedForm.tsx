@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import DatePicker from 'react-datepicker'
-import FormInput from '../FormInput'
-import FormTextArea from '../FormTextArea'
-import NumberPicker from '../NumberPicker'
-import Button from '../Button'
+import FormInput from '@forms/FormInput'
+import FormTextArea from '@forms/FormTextArea'
+import NumberPicker from '@forms/NumberPicker'
+import Button from '@components/Button'
 
 const AddBedForm = (): JSX.Element => {
   const [startDate, setStartDate] = useState<Date>(new Date())

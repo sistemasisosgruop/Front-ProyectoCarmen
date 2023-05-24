@@ -2,19 +2,16 @@ import CardHover from './CardHover'
 import ButtonLink from './ButtonLink'
 
 interface Props {
-  href: string
   imagePath: string
   alt: string
 }
 
 const RoomCard = ({
-  href,
   imagePath,
   alt
 }: Props): JSX.Element => {
   return (
     <CardHover
-      href={href}
       imagePath={imagePath}
       alt={alt}
     >

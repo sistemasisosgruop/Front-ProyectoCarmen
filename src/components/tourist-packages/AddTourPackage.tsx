@@ -24,7 +24,7 @@ const SectionForm = ({ children }: SectionFormProps): JSX.Element => {
 
 const AddTourPackage = (): JSX.Element => {
   const [currentStep, setCurrentStep] = useState<number>(1)
-  const { control, handleSubmit, setValue, getValues, formState: { errors } } = useForm()
+  const { control, handleSubmit, formState: { errors } } = useForm()
 
   const onNextStep = (): void => {
     setCurrentStep(currentStep + 1)

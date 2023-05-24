@@ -4,31 +4,32 @@ import CardHover from '@components/CardHover'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { HiUsers } from 'react-icons/hi'
 import { MdBedroomParent } from 'react-icons/md'
+import { Link } from 'react-router-dom'
 
 interface Props {
-  id: number | string
   href: string
+  index: number | string
   imagePath: string
-  alt: string
+  imageAlt: string
 }
 
-const FullApartmentCard = ({ id, href, imagePath, alt }: Props): JSX.Element => {
+const FullApartmentCard = ({ href, index, imagePath, imageAlt }: Props): JSX.Element => {
   const { t } = useLang()
 
   return (
-    <div
+    <Link
+      to={href}
       className={`
         h-full flex flex-col rounded-xl overflow-hidden
-        ${id === 0 ? 'col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-2' : ''}
-        ${id === 1 ? 'col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-1' : ''}
-        ${id === 2 ? 'col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-2' : ''}
-        ${id === 3 ? 'col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-1' : ''}
+        ${index === 0 ? 'col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-2' : ''}
+        ${index === 1 ? 'col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-1' : ''}
+        ${index === 2 ? 'col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-2' : ''}
+        ${index === 3 ? 'col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-1' : ''}
       `}
     >
       <CardHover
-        href={href}
         imagePath={imagePath}
-        alt={alt}
+        alt={imageAlt}
         score={'4.5'}
         minHeight='min-h-[220px]'
       >
@@ -78,7 +79,7 @@ const FullApartmentCard = ({ id, href, imagePath, alt }: Props): JSX.Element => 
           </div>
         </article>
       </CardHover>
-    </div>
+    </Link>
   )
 }
 

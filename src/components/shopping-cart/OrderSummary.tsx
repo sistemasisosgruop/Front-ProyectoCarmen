@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import Button from '@components/Button'
-import FormInput from '@components/FormInput'
+import FormInput from '@forms/FormInput'
 
 const OrderSummary = (): JSX.Element => {
   const { register, formState: { errors } } = useForm()

@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import DatePicker from 'react-datepicker'
-import FormInput from '@components/FormInput'
-import FormSelect from '@components/FormSelect'
+import FormInput from '@forms/FormInput'
+import FormSelect from '@forms/FormSelect'
 
 const InformationForm = (): JSX.Element => {
   const [startDate, setStartDate] = useState<Date>(new Date())
@@ -10,7 +10,7 @@ const InformationForm = (): JSX.Element => {
 
   return (
     <>
-      <article className='w-full flex flex-col gap-4 sm:flex-row md:bg-green'>
+      <article className='w-full flex flex-col gap-4 sm:flex-row'>
         <FormInput
           label='Nombres'
           name='names'
