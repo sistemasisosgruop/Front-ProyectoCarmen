@@ -16,6 +16,7 @@
     "most_recent": "Los más recientes",
     "hours_ago": "Hace {{time}} horas",
     "reviews": "Reseñas",
+    "num_reviews": "{{numReviews}} reseñas",
     "opinnions": "{{opinnions}} opiniones",
     "add_review": "Agregar una reseña",
     "see_more_comments": "Ver más comentarios",
