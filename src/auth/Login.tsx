@@ -1,5 +1,6 @@
 import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
+import { useLang } from '@hooks/useLang'
 import { IoIosClose } from 'react-icons/io'
 
 interface Props {
@@ -7,12 +8,14 @@ interface Props {
 }
 
 const Login = ({ toggleShowLogin }: Props): JSX.Element => {
+  const { t } = useLang()
+
   return createPortal(
     <div className='fixed top-0 left-0 z-50 w-screen h-screen bg-dark bg-opacity-90 grid place-content-center'>
       <section className='bg-white rounded-xl overflow-hidden px-8'>
         <header className='w-full border-b border-b-gray-400 px-2 py-2 flex justify-between items-center gap-8'>
           <h4 className='text-xl text-dark text-center font-bold'>
-            Datos del usuario principal
+            {t('login.title')}
           </h4>
           <button
             type='button'
@@ -27,7 +30,7 @@ const Login = ({ toggleShowLogin }: Props): JSX.Element => {
           <form autoComplete='false'>
             <div className='flex flex-col items-start justify-center mb-4'>
               <label htmlFor='email' className='text-dark font-bold'>
-                Correo electronico
+                {t('login.email')}
               </label>
               <input
                 type='text'
@@ -41,12 +44,12 @@ const Login = ({ toggleShowLogin }: Props): JSX.Element => {
                 type='button'
                 className='w-full bg-blue px-6 py-2 text-white font-bold rounded-lg hover:bg-opacity-90'
               >
-                Continuar con correo
+                {t('login.continue')}
               </button>
             </div>
           </form>
           <Link to='/' className='inline-block text-blue underline hover:text-opacity-90 hover:transition-all duration-300'>
-            Recuperar cuenta
+            {t('login.recover_account')}
           </Link>
         </article>
 
@@ -55,7 +58,7 @@ const Login = ({ toggleShowLogin }: Props): JSX.Element => {
             className='absolute top-1/2 left-0 translate-y-1/2 -z-10 border-none w-full bg-gray-200 py-[0.5px]'
           />
           <p className='inline-block text-dark text-center bg-white px-4 py-1 z-10'>
-            Otras opciones
+            {t('login.other_options')}
           </p>
         </div>
 
