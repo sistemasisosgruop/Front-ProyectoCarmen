@@ -10,7 +10,7 @@ i18next.use(initReactI18next).init({
   interpolation: {
     escapeValue: false
   },
-  lng: 'es',
+  lng: localStorage.getItem('lang') ?? 'es',
   resources: {
     es: {
       global: globalEs
