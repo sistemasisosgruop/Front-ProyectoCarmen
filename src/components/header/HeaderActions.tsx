@@ -1,7 +1,6 @@
 import type { ChangeEvent } from 'react'
 import { useLang } from '@hooks/useLang'
 import { useState, useEffect } from 'react'
-import { useLocalStorage } from '@hooks/useLocalStorage'
 import { Link } from 'react-router-dom'
 import Login from '../../auth/Login'
 import { AiOutlineWhatsApp } from 'react-icons/ai'
@@ -11,23 +10,40 @@ interface Props {
   isScrolled?: boolean | undefined
 }
 
+const LANGUAGES = [
+  { value: 'es', text: 'ES', icon: '🇪🇸' },
+  { value: 'en', text: 'EN', icon: '🇺🇸' }
+]
+
 const HeaderActions = ({ isScrolled }: Props): JSX.Element => {
   const [isLoginShow, setIsLoginShow] = useState<boolean>(false)
-  const [saveLang, setSaveLang] = useLocalStorage('lang', '')
+  const [saveLang, setSaveLang] = useState<string>(localStorage.getItem('lang') ?? '')
+  // const [saveLang, setSaveLang] = useLocalStorage('lang', 'es')
   const { t, toggleLang } = useLang()
 
   useEffect(() => {
-    toggleLang(saveLang)
+    if (saveLang !== null) {
+      setSaveLang(saveLang)
+      console.log({ '!== undefined': saveLang })
+    } else {
+      setSaveLang('es')
+      localStorage.setItem('lang', 'es')
+    }
+    // toggleLang(saveLang)
   }, [])
 
   const toggleSaveLang = (e: ChangeEvent<HTMLSelectElement>): void => {
-    setSaveLang(e.target.value)
-    toggleLang(e.target.value)
+    const selectedLang = e.target.value
+    setSaveLang(selectedLang)
+    localStorage.setItem('lang', selectedLang)
+    toggleLang(localStorage.getItem('lang') ?? '')
   }
 
   const toggleShowLogin = (): void => {
     setIsLoginShow(!isLoginShow)
   }
+
+  console.log(saveLang)
 
   return (
     <>
@@ -60,12 +76,11 @@ const HeaderActions = ({ isScrolled }: Props): JSX.Element => {
             onChange={toggleSaveLang}
             className='bg-white text-black px-4 py-1 rounded-md cursor-pointer border-none'
           >
-            <option value='es'>
-              🇪🇸 ES
-            </option>
-            <option value='en'>
-              🇺🇸 EN
-            </option>
+            {LANGUAGES.map((lang, index) => (
+              <option key={index} value={lang.value}>
+                {`${lang.icon} ${lang.text}`}
+              </option>
+            ))}
           </select>
         </div>
       </section>
