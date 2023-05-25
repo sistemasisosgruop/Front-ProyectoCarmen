@@ -9,13 +9,12 @@ const HeaderTestimonials = (): JSX.Element => {
   return (
     <>
       <div className='xl:px-32'>
-        <h2 className='text-2xl font-bold text-center xl:text-4xl flex justify-center items-center gap-2'>
+        <h2 className='text-2xl font-bold text-center xl:text-4xl'>
           <span className='text-orange'>
             {customerCommentsTranslation.split(' ').splice(0, 2).join(' ')}
           </span>
-          <span>
-            {customerCommentsTranslation.split(' ').splice(2).join(' ')}
-          </span>
+          &nbsp;
+          {customerCommentsTranslation.split(' ').splice(2).join(' ')}
         </h2>
         <p className='text-xl text-dark text-center xl:text-2xl'>
           {t('pages.home.description')}
