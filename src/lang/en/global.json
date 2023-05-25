@@ -110,6 +110,13 @@
       "cookie_policies": "Cookie policies"
     }
   },
+  "login": {
+    "title": "Main User Data",
+    "email": "Email",
+    "continue": "Continue",
+    "recover_account": "Recover Account",
+    "other_options": "Other Options"
+  },
   "not_found": {
     "not_found": "Not found",
     "page_not_found": "The page you are looking for was not found.",

@@ -110,6 +110,13 @@
       "cookie_policies": "Politicas de Cookies"
     }
   },
+  "login": {
+    "title": "Datos del usuario principal",
+    "email": "Correo electrónico",
+    "continue": "Continuar",
+    "recover_account": "Recuperar cuenta",
+    "other_options": "Otras opciones"
+  },
   "not_found": {
     "not_found": "No se encuentra",
     "page_not_found": "La página que buscas no se ha encontrado.",
