@@ -1,78 +1,76 @@
-import { useForm } from 'react-hook-form'
-import Autocomplete from '@forms/Autocomplete'
-import FormInput from '@forms/FormInput'
-import Button from '@components/Button'
+import { useForm } from "react-hook-form";
+import Autocomplete from "@forms/Autocomplete";
+import FormInput from "@forms/FormInput";
+import Button from "@components/Button";
 
 interface Props {
-  closeModal: () => void
+  closeModal: () => void;
 }
 
 const AddCouponForm = ({ closeModal }: Props): JSX.Element => {
-  const { register, formState: { errors } } = useForm()
+  const {
+    register,
+    formState: { errors },
+  } = useForm();
 
   return (
-    <form className='flex flex-col gap-4'>
-      <article className='grid grid-cols-2 gap-4'>
+    <form className="flex flex-col gap-4">
+      <article className="grid grid-cols-2 gap-4">
         <FormInput
           register={register}
           errors={errors}
           rules={{ required: true }}
-          label='Código de cupón'
-          name='couponCode'
+          label="Código de cupón"
+          name="couponCode"
         />
         <FormInput
           register={register}
           errors={errors}
           rules={{ required: true }}
-          label='Descuento asignado'
-          name='assignedDiscount'
+          label="Descuento asignado"
+          name="assignedDiscount"
         />
       </article>
 
       <article>
-        <p className='inline-block text-gray-600 mb-2'>
-          Asignar producto
-        </p>
-        <div className='flex flex-col gap-4'>
+        <p className="inline-block text-gray-600 mb-2">Asignar producto</p>
+        <div className="flex flex-col gap-4">
           <Autocomplete
-            label='Selecciona un paquete turístico'
-            name='touristPackages'
+            label="Selecciona un paquete turístico"
+            name="touristPackages"
             results={[
-              { text: 'Uno', value: 'uno' },
-              { text: 'Dos', value: 'dos' },
-              { text: 'tres', value: 'tres' },
-              { text: 'Cuatro', value: 'cuatro' },
-              { text: 'Cinco', value: 'cinco' }
+              { text: "Uno", value: "uno" },
+              { text: "Dos", value: "dos" },
+              { text: "tres", value: "tres" },
+              { text: "Cuatro", value: "cuatro" },
+              { text: "Cinco", value: "cinco" },
             ]}
           />
 
           <Autocomplete
-            label='Selecciona una habitación'
-            name='room'
+            label="Selecciona una habitación"
+            name="room"
             results={[
-              { text: 'Uno', value: 'uno' },
-              { text: 'Dos', value: 'dos' },
-              { text: 'tres', value: 'tres' },
-              { text: 'Cuatro', value: 'cuatro' },
-              { text: 'Cinco', value: 'cinco' }
+              { text: "Uno", value: "uno" },
+              { text: "Dos", value: "dos" },
+              { text: "tres", value: "tres" },
+              { text: "Cuatro", value: "cuatro" },
+              { text: "Cinco", value: "cinco" },
             ]}
           />
         </div>
       </article>
-      <article className='flex justify-between items-center'>
+      <article className="flex justify-between items-center">
         <Button
-          text='Cancelar'
-          background='bg-wite border border-gray-600'
-          textColor='text-dark'
+          text="Cancelar"
+          background="bg-wite border border-gray-600"
+          textColor="text-dark"
           onClick={closeModal}
         />
-        <Button
-          text='Guardar'
-          background='bg-orange'
-        />
+        <Button text="Guardar" background="bg-orange" />
       </article>
     </form>
-  )
-}
+  );
+};
 
-export default AddCouponForm
+export default AddCouponForm;

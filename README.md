@@ -1,7 +1,9 @@
 # Carmen - Agencia de viajes y Turismo
+
 Página web
 
 ## Instalación
+
 1. Clona el repositorio `https://github.com/sistemasisosgroup/Front-ProyectoCarmen.git`
 2. Instala las dependencias usando el siguiente comando: `npm install`
 3. Iniciar el servidor de React con el siguiente comando: `npm run dev`
@@ -30,6 +32,7 @@ Página web
 ```
 
 ## Dependencias
+
 - **[tailwindcss](https://tailwindcss.com):** Un framework de utilidades CSS altamente personalizable que facilita la creación de interfaces modernas y responsivas.
 - **[react-router-dom](https://reactrouter.com):** Una librería de enrutamiento para React que permite la navegación entre diferentes componentes y la gestión de rutas en una aplicación de una sola página.
 - **[framer-motion](https://www.framer.com/motion/):** Una librería de animaciones para React que proporciona un conjunto de componentes y funciones para crear transiciones y animaciones fluidas en la interfaz de usuario.

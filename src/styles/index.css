@@ -26,7 +26,6 @@
   }
 }
 
-
 @media screen and (min-width: 560px) {
   .h-options-settings {
     @apply mt-20;
@@ -48,4 +47,3 @@
     height: calc(100vh - 50px);
   }
 }
-
