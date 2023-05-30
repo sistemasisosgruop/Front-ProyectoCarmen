@@ -1,17 +1,17 @@
-import { useModal } from "@hooks/useModal";
-import AdminLayout from "@layouts/AdminLayout";
-import AdminSection from "@layouts/AdminSection";
-import Modal from "@components/Modal";
-import Heading from "@components/Heading";
-import THead from "@components/THead";
-import Button from "@components/Button";
-import AddCouponForm from "@components/coupons/AddCouponForm";
-import { AiOutlineSearch } from "react-icons/ai";
-import { IoMdAdd } from "react-icons/io";
-import { BiEdit, BiTrash } from "react-icons/bi";
+import { useModal } from '@hooks/useModal'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Modal from '@components/Modal'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
+import Button from '@components/Button'
+import AddCouponForm from '@components/coupons/AddCouponForm'
+import { AiOutlineSearch } from 'react-icons/ai'
+import { IoMdAdd } from 'react-icons/io'
+import { BiEdit, BiTrash } from 'react-icons/bi'
 
 const Coupons = (): JSX.Element => {
-  const { isOpenModal, openModal, closeModal } = useModal();
+  const { isOpenModal, openModal, closeModal } = useModal()
 
   return (
     <>
@@ -48,11 +48,11 @@ const Coupons = (): JSX.Element => {
             <table className="w-full">
               <THead
                 headers={[
-                  "#",
-                  "Código de cipón",
-                  "Descuento",
-                  "Producto asignado",
-                  "Acciones",
+                  '#',
+                  'Código de cipón',
+                  'Descuento',
+                  'Producto asignado',
+                  'Acciones'
                 ]}
                 rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
               />
@@ -91,7 +91,7 @@ const Coupons = (): JSX.Element => {
         </Modal>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Coupons;
+export default Coupons

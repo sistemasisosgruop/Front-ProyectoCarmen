@@ -1,5 +1,5 @@
-import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
-import { FaFacebookF, FaTiktok } from "react-icons/fa";
+import { AiOutlineInstagram, AiOutlineWhatsApp } from 'react-icons/ai'
+import { FaFacebookF, FaTiktok } from 'react-icons/fa'
 
 const SocialNetwork = (): JSX.Element => {
   return (
@@ -25,7 +25,7 @@ const SocialNetwork = (): JSX.Element => {
         </a>
       </li>
     </ul>
-  );
-};
+  )
+}
 
-export default SocialNetwork;
+export default SocialNetwork

@@ -1,6 +1,6 @@
-import LayoutPage from "@layouts/LayoutPage";
-import Section from "@layouts/Section";
-import { IoMdDownload } from "react-icons/io";
+import LayoutPage from '@layouts/LayoutPage'
+import Section from '@layouts/Section'
+import { IoMdDownload } from 'react-icons/io'
 
 const MyPurchases = (): JSX.Element => {
   return (
@@ -33,8 +33,8 @@ const MyPurchases = (): JSX.Element => {
                   key={index}
                   className={
                     index === orders.length - 1
-                      ? ""
-                      : "border-b border-b-gray-200"
+                      ? ''
+                      : 'border-b border-b-gray-200'
                   }
                 >
                   <td className="py-4">
@@ -83,7 +83,7 @@ const MyPurchases = (): JSX.Element => {
         </div>
       </Section>
     </LayoutPage>
-  );
-};
+  )
+}
 
-export default MyPurchases;
+export default MyPurchases

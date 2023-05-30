@@ -1,6 +1,6 @@
-import LayoutPage from "@layouts/LayoutPage";
-import Section from "@layouts/Section";
-import SignUp from "./SignUp";
+import LayoutPage from '@layouts/LayoutPage'
+import Section from '@layouts/Section'
+import SignUp from './SignUp'
 
 const Register = (): JSX.Element => {
   return (
@@ -29,7 +29,7 @@ const Register = (): JSX.Element => {
         </div>
       </Section>
     </LayoutPage>
-  );
-};
+  )
+}
 
-export default Register;
+export default Register

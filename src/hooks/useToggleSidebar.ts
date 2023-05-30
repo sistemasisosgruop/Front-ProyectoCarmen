@@ -1,21 +1,21 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 interface HookData {
-  isShowSidebar: boolean;
-  openSidebar: () => void;
-  closeSidebar: () => void;
+  isShowSidebar: boolean
+  openSidebar: () => void
+  closeSidebar: () => void
 }
 
 export const useToggleSidebar = (): HookData => {
-  const [isShowSidebar, setIsShowSidebar] = useState<boolean>(false);
+  const [isShowSidebar, setIsShowSidebar] = useState<boolean>(false)
 
   const openSidebar = (): void => {
-    setIsShowSidebar(true);
-  };
+    setIsShowSidebar(true)
+  }
 
   const closeSidebar = (): void => {
-    setIsShowSidebar(false);
-  };
+    setIsShowSidebar(false)
+  }
 
-  return { isShowSidebar, openSidebar, closeSidebar };
-};
+  return { isShowSidebar, openSidebar, closeSidebar }
+}

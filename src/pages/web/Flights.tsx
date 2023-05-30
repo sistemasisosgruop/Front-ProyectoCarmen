@@ -1,15 +1,15 @@
-import { useTabs } from "@hooks/useTabs";
-import LayoutPage from "@layouts/LayoutPage";
-import Section from "@layouts/Section";
-import Masthead from "@components/Masthead";
-import Tabs from "@components/Tabs";
-import TabItem from "@components/TabItem";
-import PriceList from "@components/flights/PriceList";
-import SelectFlight from "@components/flights/SelectFlight";
-import ContactFormSection from "@components/contact-form/ContactFormSection";
+import { useTabs } from '@hooks/useTabs'
+import LayoutPage from '@layouts/LayoutPage'
+import Section from '@layouts/Section'
+import Masthead from '@components/Masthead'
+import Tabs from '@components/Tabs'
+import TabItem from '@components/TabItem'
+import PriceList from '@components/flights/PriceList'
+import SelectFlight from '@components/flights/SelectFlight'
+import ContactFormSection from '@components/contact-form/ContactFormSection'
 
 const Flights = (): JSX.Element => {
-  const { activeTab, switchTab } = useTabs(0);
+  const { activeTab, switchTab } = useTabs(0)
 
   return (
     <LayoutPage title="Vuelos - Carmen Agencia de Viajes y Turismo">
@@ -44,7 +44,7 @@ const Flights = (): JSX.Element => {
         <ContactFormSection />
       </div>
     </LayoutPage>
-  );
-};
+  )
+}
 
-export default Flights;
+export default Flights

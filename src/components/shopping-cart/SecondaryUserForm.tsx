@@ -1,4 +1,4 @@
-import InformationHorizontalForm from "./InformationHorizontalForm";
+import InformationHorizontalForm from './InformationHorizontalForm'
 
 const SecondaryUserForm = (): JSX.Element => {
   return (
@@ -13,7 +13,7 @@ const SecondaryUserForm = (): JSX.Element => {
         <InformationHorizontalForm />
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default SecondaryUserForm;
+export default SecondaryUserForm

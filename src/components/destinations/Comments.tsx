@@ -1,5 +1,5 @@
-import { BiLoader } from "react-icons/bi";
-import { BsStarFill } from "react-icons/bs";
+import { BiLoader } from 'react-icons/bi'
+import { BsStarFill } from 'react-icons/bs'
 
 const Comments = (): JSX.Element => {
   return (
@@ -57,7 +57,7 @@ const Comments = (): JSX.Element => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Comments;
+export default Comments

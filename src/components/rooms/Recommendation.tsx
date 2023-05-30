@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { HiOutlineArrowSmLeft } from "react-icons/hi";
+import { Link } from 'react-router-dom'
+import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 
 const Recommendation = (): JSX.Element => {
   return (
@@ -18,7 +18,7 @@ const Recommendation = (): JSX.Element => {
         </h4>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Recommendation;
+export default Recommendation

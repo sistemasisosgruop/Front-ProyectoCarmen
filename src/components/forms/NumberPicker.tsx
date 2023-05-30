@@ -1,15 +1,15 @@
-import { GrSubtractCircle } from "react-icons/gr";
-import { IoMdAddCircleOutline } from "react-icons/io";
+import { GrSubtractCircle } from 'react-icons/gr'
+import { IoMdAddCircleOutline } from 'react-icons/io'
 
 interface Props {
-  value: number;
-  onChangeValue: (newValue: number) => void;
-  label: string;
-  htmlFor: string;
-  showIcon?: boolean;
-  icon?: JSX.Element;
-  iconPosition?: string;
-  textStyle?: string;
+  value: number
+  onChangeValue: (newValue: number) => void
+  label: string
+  htmlFor: string
+  showIcon?: boolean
+  icon?: JSX.Element
+  iconPosition?: string
+  textStyle?: string
 }
 
 const NumberPicker = ({
@@ -20,15 +20,15 @@ const NumberPicker = ({
   showIcon,
   icon,
   iconPosition,
-  textStyle,
+  textStyle
 }: Props): JSX.Element => {
   const increaseValue = (): void => {
-    onChangeValue(value + 1);
-  };
+    onChangeValue(value + 1)
+  }
 
   const decreaseValue = (): void => {
-    onChangeValue(value - 1);
-  };
+    onChangeValue(value - 1)
+  }
 
   return (
     <div className="w-full flex flex-col justify-start items-start">
@@ -39,7 +39,7 @@ const NumberPicker = ({
         <>
           {showIcon !== undefined && icon}
           <span className={textStyle}>{label}</span>
-          {showIcon !== undefined && iconPosition === "right" && icon}
+          {showIcon !== undefined && iconPosition === 'right' && icon}
         </>
       </label>
       <div className="w-full flex justify-start items-start gap-2">
@@ -58,7 +58,7 @@ const NumberPicker = ({
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NumberPicker;
+export default NumberPicker

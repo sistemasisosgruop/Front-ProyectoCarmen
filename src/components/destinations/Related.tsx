@@ -1,5 +1,5 @@
 interface Props {
-  index: number;
+  index: number
 }
 
 const Related = ({ index }: Props): JSX.Element => {
@@ -43,7 +43,7 @@ const Related = ({ index }: Props): JSX.Element => {
         </div>
       </article>
     </div>
-  );
-};
+  )
+}
 
-export default Related;
+export default Related

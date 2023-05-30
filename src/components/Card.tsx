@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
-import CardHover from "./CardHover";
-import { AiFillStar } from "react-icons/ai";
+import { Link } from 'react-router-dom'
+import CardHover from './CardHover'
+import { AiFillStar } from 'react-icons/ai'
 
 interface Props {
-  href: string;
-  imagePath: string;
-  imageAlt: string;
+  href: string
+  imagePath: string
+  imageAlt: string
 }
 
 const Card = ({ href, imagePath, imageAlt }: Props): JSX.Element => {
@@ -33,7 +33,7 @@ const Card = ({ href, imagePath, imageAlt }: Props): JSX.Element => {
         </div>
       </CardHover>
     </Link>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

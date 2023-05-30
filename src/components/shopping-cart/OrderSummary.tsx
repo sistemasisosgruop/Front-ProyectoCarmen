@@ -1,12 +1,12 @@
-import { useForm } from "react-hook-form";
-import Button from "@components/Button";
-import FormInput from "@forms/FormInput";
+import { useForm } from 'react-hook-form'
+import Button from '@components/Button'
+import MyFormInput from '@forms/FormInput'
 
 const OrderSummary = (): JSX.Element => {
   const {
     register,
-    formState: { errors },
-  } = useForm();
+    formState: { errors }
+  } = useForm()
 
   return (
     <div>
@@ -19,7 +19,7 @@ const OrderSummary = (): JSX.Element => {
           <span>500.00</span>
         </p>
         <p className="flex justify-between items-center gap-4 text-dark">
-          <span>Tour Valle Sagrado de los Incas (x{"2"})</span>
+          <span>Tour Valle Sagrado de los Incas (x{'2'})</span>
           <span>5,312.00</span>
         </p>
         <p className="flex justify-between items-center gap-4 text-dark">
@@ -35,7 +35,7 @@ const OrderSummary = (): JSX.Element => {
       <hr className="w-full border-none bg-gray-200 py-[0.5px] my-4" />
 
       <form className="flex justify-between items-end gap-4">
-        <FormInput
+        <MyFormInput
           label="Código de cupón"
           name="couponCode"
           register={register}
@@ -51,7 +51,7 @@ const OrderSummary = (): JSX.Element => {
         </p>
       </article>
     </div>
-  );
-};
+  )
+}
 
-export default OrderSummary;
+export default OrderSummary

@@ -1,20 +1,20 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import DatePicker from "react-datepicker";
-import FormInput from "@components/forms/FormInput";
-import Button from "@components/Button";
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import DatePicker from 'react-datepicker'
+import MyFormInput from '@components/forms/FormInput'
+import Button from '@components/Button'
 
 const PaymentCreditCardForm = (): JSX.Element => {
-  const [startDate, setStartDate] = useState<Date>(new Date());
+  const [startDate, setStartDate] = useState<Date>(new Date())
   const {
     register,
-    formState: { errors },
-  } = useForm();
+    formState: { errors }
+  } = useForm()
 
   return (
     <form className="flex flex-col gap-4">
       <article>
-        <FormInput
+        <MyFormInput
           label="Correo electrónico"
           name="email"
           register={register}
@@ -29,7 +29,7 @@ const PaymentCreditCardForm = (): JSX.Element => {
           <article></article>
         </div>
         <article className="grid grid-cols-1 gap-4">
-          <FormInput
+          <MyFormInput
             label="Número de tarjeta"
             name="numberCard"
             register={register}
@@ -45,12 +45,12 @@ const PaymentCreditCardForm = (): JSX.Element => {
               <DatePicker
                 selected={startDate}
                 onChange={(date: Date) => {
-                  setStartDate(date);
+                  setStartDate(date)
                 }}
                 className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
               />
             </div>
-            <FormInput
+            <MyFormInput
               label="CCV"
               name="expiration"
               register={register}
@@ -72,7 +72,7 @@ const PaymentCreditCardForm = (): JSX.Element => {
         <Button text="Guardar" background="bg-orange" />
       </article>
     </form>
-  );
-};
+  )
+}
 
-export default PaymentCreditCardForm;
+export default PaymentCreditCardForm

@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import { FiMapPin } from "react-icons/fi";
-import { BiTimeFive } from "react-icons/bi";
-import { HiUsers } from "react-icons/hi";
+import { Link } from 'react-router-dom'
+import { FiMapPin } from 'react-icons/fi'
+import { BiTimeFive } from 'react-icons/bi'
+import { HiUsers } from 'react-icons/hi'
 
 const HorizontalCard = (): JSX.Element => {
   return (
@@ -55,7 +55,7 @@ const HorizontalCard = (): JSX.Element => {
         </article>
       </div>
     </Link>
-  );
-};
+  )
+}
 
-export default HorizontalCard;
+export default HorizontalCard

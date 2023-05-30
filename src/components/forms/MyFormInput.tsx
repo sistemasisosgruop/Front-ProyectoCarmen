@@ -1,28 +1,30 @@
-import type { FieldErrors, FieldValues, RegisterOptions } from 'react-hook-form'
+import type { ChangeEvent } from 'react'
 
-interface Rules {
-  required: boolean
-}
+type FormEvent = ChangeEvent<HTMLInputElement>
 
 interface Props {
-  register: (name: string, options?: RegisterOptions) => void
-  rules: Rules
-  errors: FieldErrors<FieldValues>
+  type: string
   name: string
+  value: string
+  handleChange: (event: FormEvent) => void
   label: string
   labelColor?: string
   extraClasses?: string
 }
 
 const MyFormInput = ({
-  register,
-  rules,
-  errors,
+  type = 'text',
   name,
+  value,
+  handleChange,
   label,
   labelColor = 'text-gray-600',
   extraClasses
 }: Props): JSX.Element => {
+  const handleInputChange = (event: FormEvent): void => {
+    handleChange(event)
+  }
+
   return (
     <div
       className={`w-full flex flex-col justify-start items-start ${
@@ -33,16 +35,12 @@ const MyFormInput = ({
         {label}
       </label>
       <input
-        type="text"
+        type={type}
         placeholder=""
-        onBlur={() => {
-          register(name, rules)
-        }}
+        value={value}
+        onChange={handleInputChange}
         className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
       />
-      <span>
-        {errors[name]?.type === 'required' && 'El campo es requerido'}
-      </span>
     </div>
   )
 }

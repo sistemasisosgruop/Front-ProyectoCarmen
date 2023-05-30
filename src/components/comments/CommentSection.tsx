@@ -1,5 +1,5 @@
-import CommentInput from "./CommentInput";
-import CommentList from "./CommentList";
+import CommentInput from './CommentInput'
+import CommentList from './CommentList'
 
 const CommentSection = (): JSX.Element => {
   return (
@@ -11,7 +11,7 @@ const CommentSection = (): JSX.Element => {
         <CommentList />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default CommentSection;
+export default CommentSection

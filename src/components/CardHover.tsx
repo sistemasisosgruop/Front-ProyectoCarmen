@@ -1,9 +1,9 @@
 interface Props {
-  children: JSX.Element | JSX.Element[];
-  imagePath: string;
-  alt: string;
-  score?: string | number;
-  minHeight?: string;
+  children: JSX.Element | JSX.Element[]
+  imagePath: string
+  alt: string
+  score?: string | number
+  minHeight?: string
 }
 
 const CardHover = ({
@@ -11,7 +11,7 @@ const CardHover = ({
   imagePath,
   alt,
   score,
-  minHeight = "min-h-[380px]",
+  minHeight = 'min-h-[380px]'
 }: Props): JSX.Element => {
   return (
     <div className="inline-block relative h-full w-full rounded-xl border border-white group/description cursor-pointer transition-all overflow-hidden">
@@ -19,7 +19,7 @@ const CardHover = ({
         src={imagePath}
         alt={alt}
         className={`w-full h-full ${
-          minHeight ?? ""
+          minHeight ?? ''
         } object-cover object-center group-hover/description:scale-125 duration-200`}
       />
       {score !== undefined && (
@@ -32,7 +32,7 @@ const CardHover = ({
         {children}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CardHover;
+export default CardHover

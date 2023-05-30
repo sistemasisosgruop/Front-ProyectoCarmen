@@ -1,17 +1,17 @@
-import { useForm } from "react-hook-form";
-import FormInput from "@components/forms/FormInput";
-import Button from "@components/Button";
+import { useForm } from 'react-hook-form'
+import MyFormInput from '@components/forms/FormInput'
+import Button from '@components/Button'
 
 const PaymentPaypalCard = (): JSX.Element => {
   const {
     register,
-    formState: { errors },
-  } = useForm();
+    formState: { errors }
+  } = useForm()
 
   return (
     <form className="flex flex-col gap-4">
       <article>
-        <FormInput
+        <MyFormInput
           label="Correo electrónico"
           name="email"
           register={register}
@@ -27,14 +27,14 @@ const PaymentPaypalCard = (): JSX.Element => {
         </div>
 
         <article className="grid grid-cols-1 gap-4">
-          <FormInput
+          <MyFormInput
             label="Email o correo electrónico"
             name="email"
             register={register}
             rules={{ required: true }}
             errors={errors}
           />
-          <FormInput
+          <MyFormInput
             label="Contraseña"
             name="password"
             register={register}
@@ -55,7 +55,7 @@ const PaymentPaypalCard = (): JSX.Element => {
         <Button text="Guardar" background="bg-orange" />
       </article>
     </form>
-  );
-};
+  )
+}
 
-export default PaymentPaypalCard;
+export default PaymentPaypalCard

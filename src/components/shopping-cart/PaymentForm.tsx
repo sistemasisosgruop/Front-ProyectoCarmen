@@ -1,11 +1,11 @@
-import { useTabs } from "@hooks/useTabs";
-import TabItem from "@components/TabItem";
-import Tabs from "@components/Tabs";
-import PaymentCreditCardForm from "./PaymentCreditCardForm";
-import PaymentPaypalCard from "./PaymentPaypalCard";
+import { useTabs } from '@hooks/useTabs'
+import TabItem from '@components/TabItem'
+import Tabs from '@components/Tabs'
+import PaymentCreditCardForm from './PaymentCreditCardForm'
+import PaymentPaypalCard from './PaymentPaypalCard'
 
 const PaymentForm = (): JSX.Element => {
-  const { activeTab, switchTab } = useTabs(0);
+  const { activeTab, switchTab } = useTabs(0)
 
   return (
     <>
@@ -32,7 +32,7 @@ const PaymentForm = (): JSX.Element => {
         </Tabs>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default PaymentForm;
+export default PaymentForm

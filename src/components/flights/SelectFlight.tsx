@@ -1,24 +1,24 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { BsChevronDown, BsFillHandbagFill } from "react-icons/bs";
-import { FaPlaneArrival, FaPlaneDeparture } from "react-icons/fa";
-import { TbPaperBagOff } from "react-icons/tb";
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { BsChevronDown, BsFillHandbagFill } from 'react-icons/bs'
+import { FaPlaneArrival, FaPlaneDeparture } from 'react-icons/fa'
+import { TbPaperBagOff } from 'react-icons/tb'
 
 const SelectFlight = (): JSX.Element => {
-  const [numFlight, setNumFlight] = useState<number | null>(null);
-  const navigate = useNavigate();
+  const [numFlight, setNumFlight] = useState<number | null>(null)
+  const navigate = useNavigate()
 
   const handleToggleSection = (index: number): void => {
-    setNumFlight((prevState) => (prevState === index ? null : index));
-  };
+    setNumFlight(prevState => (prevState === index ? null : index))
+  }
 
   const handleTab = (): void => {
-    navigate("/vuelos/completa-tus-datos");
-  };
+    navigate('/vuelos/completa-tus-datos')
+  }
 
-  console.log(navigate);
+  console.log(navigate)
 
   return (
     <div className="w-full grid grid-cols-3 gap-8">
@@ -54,7 +54,7 @@ const SelectFlight = (): JSX.Element => {
                   <button
                     type="button"
                     onClick={() => {
-                      handleToggleSection(index);
+                      handleToggleSection(index)
                     }}
                   >
                     <BsChevronDown size={24} />
@@ -143,7 +143,7 @@ const SelectFlight = (): JSX.Element => {
                   <button
                     type="button"
                     onClick={() => {
-                      handleToggleSection(index);
+                      handleToggleSection(index)
                     }}
                   >
                     <BsChevronDown size={24} />
@@ -234,7 +234,7 @@ const SelectFlight = (): JSX.Element => {
         </article>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SelectFlight;
+export default SelectFlight

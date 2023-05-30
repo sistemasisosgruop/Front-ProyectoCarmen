@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 const PurchaseTerms = (): JSX.Element => {
   return (
@@ -28,7 +28,7 @@ const PurchaseTerms = (): JSX.Element => {
         </div>
       </form>
     </article>
-  );
-};
+  )
+}
 
-export default PurchaseTerms;
+export default PurchaseTerms

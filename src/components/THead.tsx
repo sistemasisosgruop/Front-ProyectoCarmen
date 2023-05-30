@@ -1,10 +1,10 @@
 interface Props {
-  headers: string[];
-  rowCellStyles?: string;
+  headers: string[]
+  rowCellStyles?: string
 }
 const THead = ({
   headers,
-  rowCellStyles = "bg-gray-50 px-8 py-2 border-b border-b-gray-200 text-start text-dark text-lg",
+  rowCellStyles = 'bg-gray-50 px-8 py-2 border-b border-b-gray-200 text-start text-dark text-lg'
 }: Props): JSX.Element => {
   return (
     <thead>
@@ -16,7 +16,7 @@ const THead = ({
         ))}
       </tr>
     </thead>
-  );
-};
+  )
+}
 
-export default THead;
+export default THead

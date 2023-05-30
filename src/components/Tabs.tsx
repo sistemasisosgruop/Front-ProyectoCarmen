@@ -1,25 +1,25 @@
 interface Props {
-  children: JSX.Element[];
-  tabContainerStyles?: string;
-  contentContainerStyles?: string;
-  tabStyle?: string;
-  activeTabStyle?: string;
-  inactiveTabStyle?: string;
-  textTabStyle?: string;
-  activeTab: number;
-  switchTab: (index: number) => void;
+  children: JSX.Element[]
+  tabContainerStyles?: string
+  contentContainerStyles?: string
+  tabStyle?: string
+  activeTabStyle?: string
+  inactiveTabStyle?: string
+  textTabStyle?: string
+  activeTab: number
+  switchTab: (index: number) => void
 }
 
 const Tabs = ({
   children,
-  tabContainerStyles = "flex justify-start items-center",
-  contentContainerStyles = "bg-white py-8 px-y md:px-8",
-  tabStyle = "px-4 py-2",
-  activeTabStyle = "bg-blue text-white",
-  inactiveTabStyle = "bg-white text-dark",
-  textTabStyle = "bg-dark text-white",
+  tabContainerStyles = 'flex justify-start items-center',
+  contentContainerStyles = 'bg-white py-8 px-y md:px-8',
+  tabStyle = 'px-4 py-2',
+  activeTabStyle = 'bg-blue text-white',
+  inactiveTabStyle = 'bg-white text-dark',
+  textTabStyle = 'bg-dark text-white',
   activeTab,
-  switchTab,
+  switchTab
 }: Props): JSX.Element => {
   return (
     <section>
@@ -32,7 +32,7 @@ const Tabs = ({
               activeTab === index ? activeTabStyle : inactiveTabStyle
             } hover:bg-opacity-90`}
             onClick={() => {
-              switchTab(index);
+              switchTab(index)
             }}
           >
             {child.props?.text !== undefined && (
@@ -49,7 +49,7 @@ const Tabs = ({
       </div>
       <div className={`${contentContainerStyles}`}>{children[activeTab]}</div>
     </section>
-  );
-};
+  )
+}
 
-export default Tabs;
+export default Tabs

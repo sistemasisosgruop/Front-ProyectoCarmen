@@ -1,7 +1,7 @@
-import AdminLayout from "@layouts/AdminLayout";
-import Options from "@components/Options";
-import { FaBed } from "react-icons/fa";
-import { IoMdBed } from "react-icons/io";
+import AdminLayout from '@layouts/AdminLayout'
+import Options from '@components/Options'
+import { FaBed } from 'react-icons/fa'
+import { IoMdBed } from 'react-icons/io'
 
 const Beds = (): JSX.Element => {
   return (
@@ -10,20 +10,20 @@ const Beds = (): JSX.Element => {
         <Options
           options={[
             {
-              label: "Camas",
-              path: "/admin/camas/registro",
-              icon: <IoMdBed size={80} />,
+              label: 'Camas',
+              path: '/admin/camas/registro',
+              icon: <IoMdBed size={80} />
             },
             {
-              label: "Reservas",
-              path: "/admin/camas/reservas",
-              icon: <FaBed size={80} />,
-            },
+              label: 'Reservas',
+              path: '/admin/camas/reservas',
+              icon: <FaBed size={80} />
+            }
           ]}
         />
       </div>
     </AdminLayout>
-  );
-};
+  )
+}
 
-export default Beds;
+export default Beds

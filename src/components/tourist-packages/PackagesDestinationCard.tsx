@@ -1,20 +1,20 @@
-import { useLang } from "@hooks/useLang";
-import ButtonLinkSm from "@components/ButtonLinkSm";
-import CardHover from "@components/CardHover";
-import { Link } from "react-router-dom";
+import { useLang } from '@hooks/useLang'
+import ButtonLinkSm from '@components/ButtonLinkSm'
+import CardHover from '@components/CardHover'
+import { Link } from 'react-router-dom'
 
 interface Props {
-  href: string;
-  imagePath: string;
-  imageAlt: string;
+  href: string
+  imagePath: string
+  imageAlt: string
 }
 
 const PackagesDestinationCard = ({
   href,
   imagePath,
-  imageAlt,
+  imageAlt
 }: Props): JSX.Element => {
-  const { t } = useLang();
+  const { t } = useLang()
 
   return (
     <Link to={href} className="w-full h-full inline-block">
@@ -29,13 +29,13 @@ const PackagesDestinationCard = ({
         <div className="flex justify-center items-center">
           <ButtonLinkSm
             to="/destinos-populares/detalle"
-            text={t("general.view_more")}
+            text={t('general.view_more')}
             background="bg-orange"
           />
         </div>
       </CardHover>
     </Link>
-  );
-};
+  )
+}
 
-export default PackagesDestinationCard;
+export default PackagesDestinationCard

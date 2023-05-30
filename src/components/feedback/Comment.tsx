@@ -1,4 +1,4 @@
-import { AiFillStar } from "react-icons/ai";
+import { AiFillStar } from 'react-icons/ai'
 
 const Comment = (): JSX.Element => {
   return (
@@ -22,7 +22,7 @@ const Comment = (): JSX.Element => {
         arcu non odio euismod lacinia at quis risus sed vulputate.&ldquo;
       </p>
     </article>
-  );
-};
+  )
+}
 
-export default Comment;
+export default Comment

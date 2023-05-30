@@ -1,16 +1,16 @@
-import { useModal } from "@hooks/useModal";
-import Heading from "@components/Heading";
-import AdminLayout from "@layouts/AdminLayout";
-import AdminSection from "@layouts/AdminSection";
-import THead from "@components/THead";
-import Modal from "@components/Modal";
-import AddTourPackage from "@components/tourist-packages/AddTourPackage";
-import { AiOutlineSearch } from "react-icons/ai";
-import { BiChevronDown, BiEdit, BiTrash } from "react-icons/bi";
-import { IoMdAdd } from "react-icons/io";
+import { useModal } from '@hooks/useModal'
+import Heading from '@components/Heading'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import THead from '@components/THead'
+import Modal from '@components/Modal'
+import AddTourPackage from '@components/tourist-packages/AddTourPackage'
+import { AiOutlineSearch } from 'react-icons/ai'
+import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
+import { IoMdAdd } from 'react-icons/io'
 
 const TouristPackages = (): JSX.Element => {
-  const { isOpenModal, openModal, closeModal } = useModal();
+  const { isOpenModal, openModal, closeModal } = useModal()
 
   return (
     <>
@@ -48,19 +48,19 @@ const TouristPackages = (): JSX.Element => {
             <table className="w-full">
               <THead
                 headers={[
-                  "#",
-                  "Nombre del tour",
-                  "Descripción del tour",
-                  "Extras",
-                  "Ubicación",
-                  "Duración",
-                  "Dificultad",
-                  "Idiomas",
-                  "N° personas",
-                  "Edades",
-                  "Información",
-                  "Detalles",
-                  "Acciones",
+                  '#',
+                  'Nombre del tour',
+                  'Descripción del tour',
+                  'Extras',
+                  'Ubicación',
+                  'Duración',
+                  'Dificultad',
+                  'Idiomas',
+                  'N° personas',
+                  'Edades',
+                  'Información',
+                  'Detalles',
+                  'Acciones'
                 ]}
                 rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
               />
@@ -120,7 +120,7 @@ const TouristPackages = (): JSX.Element => {
         </Modal>
       )}
     </>
-  );
-};
+  )
+}
 
-export default TouristPackages;
+export default TouristPackages

@@ -1,18 +1,18 @@
-import { useState } from "react";
-import UserActions from "./UserActions";
-import { AiOutlineMenu } from "react-icons/ai";
-import { BiChevronDown, BiChevronUp } from "react-icons/bi";
+import { useState } from 'react'
+import UserActions from './UserActions'
+import { AiOutlineMenu } from 'react-icons/ai'
+import { BiChevronDown, BiChevronUp } from 'react-icons/bi'
 
 interface Props {
-  openSidebar: () => void;
+  openSidebar: () => void
 }
 
 const Header = ({ openSidebar }: Props): JSX.Element => {
-  const [isOpenAction, setIsOpenAction] = useState<boolean>(false);
+  const [isOpenAction, setIsOpenAction] = useState<boolean>(false)
 
   const toggleUserAction = (): void => {
-    setIsOpenAction(!isOpenAction);
-  };
+    setIsOpenAction(!isOpenAction)
+  }
 
   return (
     <>
@@ -41,7 +41,7 @@ const Header = ({ openSidebar }: Props): JSX.Element => {
 
       {isOpenAction && <UserActions />}
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

@@ -1,21 +1,21 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 interface HookData {
-  isOpenMenu: boolean;
-  openMenu: () => void;
-  closeMenu: () => void;
+  isOpenMenu: boolean
+  openMenu: () => void
+  closeMenu: () => void
 }
 
 export const useToggleMenu = (): HookData => {
-  const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
+  const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
 
   const openMenu = (): void => {
-    setIsOpenMenu(true);
-  };
+    setIsOpenMenu(true)
+  }
 
   const closeMenu = (): void => {
-    setIsOpenMenu(false);
-  };
+    setIsOpenMenu(false)
+  }
 
-  return { isOpenMenu, openMenu, closeMenu };
-};
+  return { isOpenMenu, openMenu, closeMenu }
+}

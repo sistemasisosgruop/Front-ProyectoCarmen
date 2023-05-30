@@ -1,9 +1,9 @@
-import AdminLayout from "@layouts/AdminLayout";
-import AdminSection from "@layouts/AdminSection";
-import Heading from "@components/Heading";
-import THead from "@components/THead";
-import { AiOutlineSearch } from "react-icons/ai";
-import { BiChevronDown, BiEdit, BiTrash } from "react-icons/bi";
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
+import { AiOutlineSearch } from 'react-icons/ai'
+import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
 
 const BedReservation = (): JSX.Element => {
   return (
@@ -32,16 +32,16 @@ const BedReservation = (): JSX.Element => {
           <table className="w-full">
             <THead
               headers={[
-                "#",
-                "Tipo de habitación",
-                "Fecha de check-in",
-                "Fecha de check-out",
-                "Dirección",
-                "Fecha de compra",
-                "Hora de compra",
-                "N° personas",
-                "Precio por noche",
-                "Acciones",
+                '#',
+                'Tipo de habitación',
+                'Fecha de check-in',
+                'Fecha de check-out',
+                'Dirección',
+                'Fecha de compra',
+                'Hora de compra',
+                'N° personas',
+                'Precio por noche',
+                'Acciones'
               ]}
               rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
             />
@@ -85,7 +85,7 @@ const BedReservation = (): JSX.Element => {
         </div>
       </AdminSection>
     </AdminLayout>
-  );
-};
+  )
+}
 
-export default BedReservation;
+export default BedReservation

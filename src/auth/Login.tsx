@@ -9,7 +9,7 @@ const Login = (): JSX.Element => {
 
   return (
     <LayoutPage title="Iniciar sesión">
-      <Section className="bg-white py-16 grid grid-cols-1 gap-8">
+      <Section className="bg-white py-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
         <div>
           <SignIn />
 
@@ -25,13 +25,13 @@ const Login = (): JSX.Element => {
                 to="/registrate"
                 className="inline-block text-orange font-bold underline hover:text-opacity-90 hover:decoration-wavy hover:transition-all duration-300"
               >
-                Registrate
+                {t('login.sign_up')}
               </Link>
             </div>
           </article>
         </div>
 
-        <div className="row-start-1">
+        <div className="row-start-1 sm:row-start-auto">
           <picture className="inline-block w-full mb-8">
             <img
               src="/images/illustrations/login.svg"

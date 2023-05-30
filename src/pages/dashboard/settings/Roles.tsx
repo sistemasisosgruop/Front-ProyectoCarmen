@@ -1,16 +1,16 @@
-import { useModal } from "@hooks/useModal";
-import AdminLayout from "@layouts/AdminLayout";
-import AdminSection from "@layouts/AdminSection";
-import Heading from "@components/Heading";
-import THead from "@components/THead";
-import Modal from "@components/Modal";
-import AddRole from "@components/roles/AddRole";
-import Button from "@components/Button";
-import { IoMdAdd } from "react-icons/io";
-import { BiEdit, BiTrash } from "react-icons/bi";
+import { useModal } from '@hooks/useModal'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
+import Modal from '@components/Modal'
+import AddRole from '@components/roles/AddRole'
+import Button from '@components/Button'
+import { IoMdAdd } from 'react-icons/io'
+import { BiEdit, BiTrash } from 'react-icons/bi'
 
 const Roles = (): JSX.Element => {
-  const { isOpenModal, openModal, closeModal } = useModal();
+  const { isOpenModal, openModal, closeModal } = useModal()
 
   return (
     <>
@@ -32,7 +32,7 @@ const Roles = (): JSX.Element => {
           <div className="overflow-x-scroll rounded-xl">
             <table>
               <THead
-                headers={["#", "Rol", "Permisos", "Acciones"]}
+                headers={['#', 'Rol', 'Permisos', 'Acciones']}
                 rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
               />
               <tbody>
@@ -68,7 +68,7 @@ const Roles = (): JSX.Element => {
         </Modal>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Roles;
+export default Roles

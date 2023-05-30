@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 interface Props {
-  isScrolled: boolean;
+  isScrolled: boolean
 }
 
 const Logo = ({ isScrolled }: Props): JSX.Element => {
@@ -10,10 +10,10 @@ const Logo = ({ isScrolled }: Props): JSX.Element => {
       <img
         src="/logo.png"
         alt="logo carmen - agencia de viajes y turismo"
-        className={isScrolled ? "h-16 xl:h-16" : "h-16 xl:h-24"}
+        className={isScrolled ? 'h-16 xl:h-16' : 'h-16 xl:h-24'}
       />
     </Link>
-  );
-};
+  )
+}
 
-export default Logo;
+export default Logo

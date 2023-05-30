@@ -1,25 +1,25 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import DatePicker from "react-datepicker";
-import FormInput from "@forms/FormInput";
-import FormTextArea from "@forms/FormTextArea";
-import NumberPicker from "@forms/NumberPicker";
-import Button from "@components/Button";
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import DatePicker from 'react-datepicker'
+import MyFormInput from '@forms/FormInput'
+import FormTextArea from '@forms/FormTextArea'
+import NumberPicker from '@forms/NumberPicker'
+import Button from '@components/Button'
 
 const AddBedForm = (): JSX.Element => {
-  const [startDate, setStartDate] = useState<Date>(new Date());
-  const [numOfBathrooms, setNumOfBathrooms] = useState<number>(1);
-  const [numOfBeds, setNumOfBeds] = useState<number>(1);
-  const [numOfRooms, setNumOfRooms] = useState<number>(1);
+  const [startDate, setStartDate] = useState<Date>(new Date())
+  const [numOfBathrooms, setNumOfBathrooms] = useState<number>(1)
+  const [numOfBeds, setNumOfBeds] = useState<number>(1)
+  const [numOfRooms, setNumOfRooms] = useState<number>(1)
   const {
     register,
-    formState: { errors },
-  } = useForm();
+    formState: { errors }
+  } = useForm()
 
   return (
     <div className="flex flex-col justify-center items-center gap-4">
       <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <FormInput
+        <MyFormInput
           register={register}
           rules={{ required: true }}
           errors={errors}
@@ -28,7 +28,7 @@ const AddBedForm = (): JSX.Element => {
           extraClasses="lg:col-span-1"
         />
 
-        <FormInput
+        <MyFormInput
           register={register}
           rules={{ required: true }}
           errors={errors}
@@ -39,7 +39,7 @@ const AddBedForm = (): JSX.Element => {
       </article>
 
       <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <FormInput
+        <MyFormInput
           register={register}
           rules={{ required: true }}
           errors={errors}
@@ -48,7 +48,7 @@ const AddBedForm = (): JSX.Element => {
           extraClasses="col-span-1"
         />
 
-        <FormInput
+        <MyFormInput
           register={register}
           rules={{ required: true }}
           errors={errors}
@@ -65,14 +65,14 @@ const AddBedForm = (): JSX.Element => {
             <DatePicker
               selected={startDate}
               onChange={(date: Date) => {
-                setStartDate(date);
+                setStartDate(date)
               }}
               className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
             />
             <DatePicker
               selected={startDate}
               onChange={(date: Date) => {
-                setStartDate(date);
+                setStartDate(date)
               }}
               className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
             />
@@ -139,7 +139,7 @@ const AddBedForm = (): JSX.Element => {
           extraClasses="lg:col-span-2 lg:row-span-2"
         />
 
-        <FormInput
+        <MyFormInput
           register={register}
           rules={{ required: true }}
           errors={errors}
@@ -148,7 +148,7 @@ const AddBedForm = (): JSX.Element => {
           extraClasses="lg:col-span-1 lg:row-span-1"
         />
 
-        <FormInput
+        <MyFormInput
           register={register}
           rules={{ required: true }}
           errors={errors}
@@ -163,7 +163,7 @@ const AddBedForm = (): JSX.Element => {
         <Button text="Agregar cama" background="bg-orange" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AddBedForm;
+export default AddBedForm

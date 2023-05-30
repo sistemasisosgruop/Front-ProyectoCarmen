@@ -1,32 +1,32 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react'
 
 const token =
-  "kjciaubxaukvcudsfdssv7fds7f87dsf87sf5s5a86d5a46s4d6asd6sa54d65wsdas";
+  'kjciaubxaukvcudsfdssv7fds7f87dsf87sf5s5a86d5a46s4d6asd6sa54d65wsdas'
 
 interface Props {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
-const AuthContext = createContext({});
+const AuthContext = createContext({})
 
 const AuthProvider = ({ children }: Props): JSX.Element => {
-  const [token, setToken] = useState<string | null>(null);
+  const [token, setToken] = useState<string | null>(null)
 
   const login = (email: string, password: string): void => {
-    if (email === "admin@admin.com" && password === "admin") {
-      setToken(token);
+    if (email === 'admin@admin.com' && password === 'admin') {
+      setToken(token)
     }
-  };
+  }
 
   const logout = (): void => {
-    setToken(null);
-  };
+    setToken(null)
+  }
 
   return (
     <AuthContext.Provider value={{ token, login, logout }}>
       {children}
     </AuthContext.Provider>
-  );
-};
+  )
+}
 
-export default AuthProvider;
+export default AuthProvider

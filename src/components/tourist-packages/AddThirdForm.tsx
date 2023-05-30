@@ -1,15 +1,15 @@
-import Button from "@components/Button";
-import FormInput from "@forms/FormInput";
-import FormTextArea from "@forms/FormTextArea";
-import { BiSave } from "react-icons/bi";
-import { HiOutlineArrowSmLeft } from "react-icons/hi";
+import Button from '@components/Button'
+import MyFormInput from '@forms/FormInput'
+import FormTextArea from '@forms/FormTextArea'
+import { BiSave } from 'react-icons/bi'
+import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 
 interface Props {
-  control: any;
-  errors: any;
-  handleSubmit: any;
-  onPrevStep: () => void;
-  onSubmit: (data: FormData) => void;
+  control: any
+  errors: any
+  handleSubmit: any
+  onPrevStep: () => void
+  onSubmit: (data: FormData) => void
 }
 
 const AddThirdForm = ({
@@ -17,7 +17,7 @@ const AddThirdForm = ({
   errors,
   handleSubmit,
   onPrevStep,
-  onSubmit,
+  onSubmit
 }: Props): JSX.Element => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
@@ -49,14 +49,14 @@ const AddThirdForm = ({
       </article>
 
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
           name="departureDetails"
           label="Detalles de salida"
         />
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
@@ -66,7 +66,7 @@ const AddThirdForm = ({
       </article>
 
       <article className="grid grid-cols-1 gap-4">
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
@@ -93,7 +93,7 @@ const AddThirdForm = ({
         </button>
       </article>
     </form>
-  );
-};
+  )
+}
 
-export default AddThirdForm;
+export default AddThirdForm

@@ -115,7 +115,10 @@
     "email": "Email",
     "continue": "Continue",
     "recover_account": "Recover Account",
-    "other_options": "Other Options"
+    "other_options": "Other Options",
+    "password": "Password",
+    "sign_in": "Sign in",
+    "sign_up": "Sign up"
   },
   "not_found": {
     "not_found": "Not found",

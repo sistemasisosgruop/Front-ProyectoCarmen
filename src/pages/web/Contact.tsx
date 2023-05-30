@@ -1,8 +1,8 @@
-import ContactFormSection from "@components/contact-form/ContactFormSection";
-import Heading from "@components/Heading";
-import LayoutPage from "@components/layouts/LayoutPage";
-import Section from "@components/layouts/Section";
-import Masthead from "@components/Masthead";
+import ContactFormSection from '@components/contact-form/ContactFormSection'
+import Heading from '@components/Heading'
+import LayoutPage from '@components/layouts/LayoutPage'
+import Section from '@components/layouts/Section'
+import Masthead from '@components/Masthead'
 
 const Contact = (): JSX.Element => {
   return (
@@ -122,7 +122,7 @@ const Contact = (): JSX.Element => {
         </div>
       </Section>
     </LayoutPage>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

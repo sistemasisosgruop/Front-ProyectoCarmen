@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom";
-import { useLang } from "@hooks/useLang";
-import CardHover from "@components/CardHover";
-import { AiFillStar } from "react-icons/ai";
+import { Link } from 'react-router-dom'
+import { useLang } from '@hooks/useLang'
+import CardHover from '@components/CardHover'
+import { AiFillStar } from 'react-icons/ai'
 
 interface Props {
-  href: string;
-  imagePath: string;
-  imageAlt: string;
+  href: string
+  imagePath: string
+  imageAlt: string
 }
 
 const PopularCard = ({ href, imagePath, imageAlt }: Props): JSX.Element => {
-  const { t } = useLang();
+  const { t } = useLang()
 
   return (
     <Link to={href} className="w-full h-full inline-block">
@@ -30,13 +30,13 @@ const PopularCard = ({ href, imagePath, imageAlt }: Props): JSX.Element => {
               ))}
             </div>
             <span className="text-gray-600">
-              ({t("general.num_reviews", { numReviews: "10" })})
+              ({t('general.num_reviews', { numReviews: '10' })})
             </span>
           </article>
         </div>
       </CardHover>
     </Link>
-  );
-};
+  )
+}
 
-export default PopularCard;
+export default PopularCard

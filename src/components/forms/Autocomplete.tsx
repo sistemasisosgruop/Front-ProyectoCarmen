@@ -1,14 +1,14 @@
-import { AiOutlineCaretDown } from "react-icons/ai";
+import { AiOutlineCaretDown } from 'react-icons/ai'
 
 interface ResultProps {
-  text: string;
-  value: string;
+  text: string
+  value: string
 }
 
 interface Props {
-  label: string;
-  results: ResultProps[];
-  name: string;
+  label: string
+  results: ResultProps[]
+  name: string
 }
 
 const Autocomplete = ({ label, results, name }: Props): JSX.Element => {
@@ -34,7 +34,7 @@ const Autocomplete = ({ label, results, name }: Props): JSX.Element => {
         ))}
       </datalist>
     </div>
-  );
-};
+  )
+}
 
-export default Autocomplete;
+export default Autocomplete

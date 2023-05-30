@@ -1,19 +1,19 @@
-import Button from "@components/Button";
-import FormInput from "@forms/FormInput";
-import { HiOutlineArrowSmRight } from "react-icons/hi";
+import Button from '@components/Button'
+import MyFormInput from '@forms/FormInput'
+import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
 interface Props {
-  control: any;
-  errors: any;
-  handleSubmit: any;
-  onNextStep: () => void;
+  control: any
+  errors: any
+  handleSubmit: any
+  onNextStep: () => void
 }
 
 const AddFirstForm = ({
   control,
   errors,
   handleSubmit,
-  onNextStep,
+  onNextStep
 }: Props): JSX.Element => {
   return (
     <form
@@ -21,7 +21,7 @@ const AddFirstForm = ({
       className="w-full flex flex-col gap-4"
     >
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
@@ -29,7 +29,7 @@ const AddFirstForm = ({
           name="tourName"
           extraClasses="lg:col-span-1"
         />
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
@@ -40,28 +40,28 @@ const AddFirstForm = ({
       </article>
 
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
           label="Extras"
           name="extras"
         />
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
           label="Ubicación"
           name="location"
         />
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
           label="Duración"
           name="duration"
         />
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
@@ -71,21 +71,21 @@ const AddFirstForm = ({
       </article>
 
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
           label="Idiomas"
           name="languages"
         />
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
           label="Número de personas"
           name="numOfPeople"
         />
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
@@ -104,7 +104,7 @@ const AddFirstForm = ({
         />
       </article>
     </form>
-  );
-};
+  )
+}
 
-export default AddFirstForm;
+export default AddFirstForm

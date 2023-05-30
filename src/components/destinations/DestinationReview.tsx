@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { BsStarFill } from "react-icons/bs";
-import { HiOutlineArrowSmRight } from "react-icons/hi";
+import { useState } from 'react'
+import { BsStarFill } from 'react-icons/bs'
+import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
 const DestinationReview = (): JSX.Element => {
-  const [selectedStar, setSelectedStar] = useState<number>(0);
+  const [selectedStar, setSelectedStar] = useState<number>(0)
 
   const handleStarClick = (index: number): void => {
-    setSelectedStar(index + 1);
-  };
+    setSelectedStar(index + 1)
+  }
 
   return (
     <form>
@@ -24,10 +24,10 @@ const DestinationReview = (): JSX.Element => {
               key={index}
               type="button"
               onClick={() => {
-                handleStarClick(index);
+                handleStarClick(index)
               }}
               className={`${
-                index <= selectedStar - 1 ? "text-orange" : "text-gray-400"
+                index <= selectedStar - 1 ? 'text-orange' : 'text-gray-400'
               }`}
             >
               <BsStarFill size={24} />
@@ -51,7 +51,7 @@ const DestinationReview = (): JSX.Element => {
         </div>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export default DestinationReview;
+export default DestinationReview

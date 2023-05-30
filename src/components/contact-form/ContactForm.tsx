@@ -1,14 +1,14 @@
-import { useForm } from "react-hook-form";
-import Button from "@components/Button";
-import FormInput from "@components/forms/FormInput";
-import FormTextArea from "@components/forms/FormTextArea";
-import { BsSend } from "react-icons/bs";
+import { useForm } from 'react-hook-form'
+import Button from '@components/Button'
+import MyFormInput from '@components/forms/FormInput'
+import FormTextArea from '@components/forms/FormTextArea'
+import { BsSend } from 'react-icons/bs'
 
 const ContactForm = (): JSX.Element => {
   const {
     register,
-    formState: { errors },
-  } = useForm();
+    formState: { errors }
+  } = useForm()
 
   return (
     <div className="bg-turquoise py-4 px-8 rounded-xl">
@@ -17,7 +17,7 @@ const ContactForm = (): JSX.Element => {
       </h2>
       <form className="flex flex-col gap-4">
         <article className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <FormInput
+          <MyFormInput
             label="Nombres y apellidos"
             name="names"
             register={register}
@@ -64,7 +64,7 @@ const ContactForm = (): JSX.Element => {
               />
             </div>
           </div>
-          <FormInput
+          <MyFormInput
             label="Correo electrónico"
             name="email"
             register={register}
@@ -75,7 +75,7 @@ const ContactForm = (): JSX.Element => {
         </article>
 
         <article className="flex flex-col gap-2">
-          <FormInput
+          <MyFormInput
             label="Asunto"
             name="subject"
             register={register}
@@ -100,7 +100,7 @@ const ContactForm = (): JSX.Element => {
         </div>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm

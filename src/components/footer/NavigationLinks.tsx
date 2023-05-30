@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { useLang } from "@hooks/useLang";
+import { Link } from 'react-router-dom'
+import { useLang } from '@hooks/useLang'
 
 const NavigationLinks = (): JSX.Element => {
-  const { t } = useLang();
+  const { t } = useLang()
 
   return (
     <ul className="grid grid-cols-1 grid-rows-3 flex-wrap justify-start items-start gap-y-2 gap-x-16 sm:grid-cols-2">
@@ -12,7 +12,7 @@ const NavigationLinks = (): JSX.Element => {
           className="text-white font-bold hover:text-orange group/link"
         >
           <span className="border-l-2 border-gray-200 mr-1 group-hover/link:border-orange"></span>
-          {t("general.rooms")}
+          {t('general.rooms')}
         </Link>
       </li>
       <li>
@@ -21,7 +21,7 @@ const NavigationLinks = (): JSX.Element => {
           className="text-white font-bold hover:text-orange group/link"
         >
           <span className="border-l-2 border-gray-200 mr-1 group-hover/link:border-orange"></span>
-          {t("general.flights")}
+          {t('general.flights')}
         </Link>
       </li>
       <li>
@@ -30,7 +30,7 @@ const NavigationLinks = (): JSX.Element => {
           className="text-white font-bold hover:text-orange group/link"
         >
           <span className="border-l-2 border-gray-200 mr-1 group-hover/link:border-orange"></span>
-          {t("general.tour_packages")}
+          {t('general.tour_packages')}
         </Link>
       </li>
       <li>
@@ -39,7 +39,7 @@ const NavigationLinks = (): JSX.Element => {
           className="text-white font-bold hover:text-orange group/link"
         >
           <span className="border-l-2 border-gray-200 mr-1 group-hover/link:border-orange"></span>
-          {t("general.contact")}
+          {t('general.contact')}
         </Link>
       </li>
       <li>
@@ -48,11 +48,11 @@ const NavigationLinks = (): JSX.Element => {
           className="text-white font-bold hover:text-orange group/link"
         >
           <span className="border-l-2 border-gray-200 mr-1 group-hover/link:border-orange"></span>
-          {t("general.about_us")}
+          {t('general.about_us')}
         </Link>
       </li>
     </ul>
-  );
-};
+  )
+}
 
-export default NavigationLinks;
+export default NavigationLinks

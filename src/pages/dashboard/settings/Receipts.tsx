@@ -1,9 +1,9 @@
-import AdminLayout from "@layouts/AdminLayout";
-import AdminSection from "@layouts/AdminSection";
-import Heading from "@components/Heading";
-import THead from "@components/THead";
-import { AiOutlineSearch } from "react-icons/ai";
-import { BiDownload } from "react-icons/bi";
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
+import { AiOutlineSearch } from 'react-icons/ai'
+import { BiDownload } from 'react-icons/bi'
 
 const Receipts = (): JSX.Element => {
   return (
@@ -32,15 +32,15 @@ const Receipts = (): JSX.Element => {
           <table className="w-full">
             <THead
               headers={[
-                "#",
-                "N° operación",
-                "Nombre completo",
-                "Producto",
-                "Fecha de compra",
-                "Hora de compra",
-                "Método de pago",
-                "Código de cupón",
-                "Acciones",
+                '#',
+                'N° operación',
+                'Nombre completo',
+                'Producto',
+                'Fecha de compra',
+                'Hora de compra',
+                'Método de pago',
+                'Código de cupón',
+                'Acciones'
               ]}
               rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
             />
@@ -73,7 +73,7 @@ const Receipts = (): JSX.Element => {
         </div>
       </AdminSection>
     </AdminLayout>
-  );
-};
+  )
+}
 
-export default Receipts;
+export default Receipts

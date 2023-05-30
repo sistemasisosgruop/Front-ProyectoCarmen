@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { useLang } from "@hooks/useLang";
-import DatePicker from "react-datepicker";
-import ButtonLink from "@components/ButtonLink";
-import { AiFillStar, AiOutlineShoppingCart } from "react-icons/ai";
-import { SlPresent } from "react-icons/sl";
+import { useState } from 'react'
+import { useLang } from '@hooks/useLang'
+import DatePicker from 'react-datepicker'
+import ButtonLink from '@components/ButtonLink'
+import { AiFillStar, AiOutlineShoppingCart } from 'react-icons/ai'
+import { SlPresent } from 'react-icons/sl'
 
 const PaymentDetailForm = (): JSX.Element => {
-  const [startDate, setStartDate] = useState<Date>(new Date());
-  const { t } = useLang();
+  const [startDate, setStartDate] = useState<Date>(new Date())
+  const { t } = useLang()
 
   return (
     <form>
@@ -18,16 +18,16 @@ const PaymentDetailForm = (): JSX.Element => {
       <p className="flex justify-start items-center gap-2">
         <AiFillStar size={18} className="text-orange" />
         <span className="font-bold">4.5</span>
-        <span className="text-gray-600">(10 {t("general.reviews")})</span>
+        <span className="text-gray-600">(10 {t('general.reviews')})</span>
       </p>
 
       <article className="my-8">
-        <p className="text-gray-600 mb-1">{t("pages.rooms.travel_dates")}</p>
+        <p className="text-gray-600 mb-1">{t('pages.rooms.travel_dates')}</p>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-1">
           <DatePicker
             selected={startDate}
             onChange={(date: Date) => {
-              setStartDate(date);
+              setStartDate(date)
             }}
             showIcon
             className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
@@ -35,7 +35,7 @@ const PaymentDetailForm = (): JSX.Element => {
           <DatePicker
             selected={startDate}
             onChange={(date: Date) => {
-              setStartDate(date);
+              setStartDate(date)
             }}
             showIcon
             className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
@@ -49,14 +49,14 @@ const PaymentDetailForm = (): JSX.Element => {
           <span>$ 1,500.00</span>
         </p>
         <p className="text-lg font-bold flex justify-between items-center gap-4">
-          <span>{t("general.total")}</span>
+          <span>{t('general.total')}</span>
           <span>$ 1,500.00</span>
         </p>
       </article>
       <article className="mt-8">
         <ButtonLink
           to="/carrito-de-compras"
-          text={t("general.add_to_cart")}
+          text={t('general.add_to_cart')}
           background="bg-orange"
           showIcon={true}
           iconPosition="right"
@@ -68,12 +68,12 @@ const PaymentDetailForm = (): JSX.Element => {
       <article className="my-8 flex flex-col justify-center items-center gap-2">
         <SlPresent size={48} className="text-orange" />
         <p>
-          {t("pages.rooms.days_left_to_book", { days: 2 })}
+          {t('pages.rooms.days_left_to_book', { days: 2 })}
           <span className="text-orange font-bold">&nbsp;Reserva ahora.</span>
         </p>
       </article>
     </form>
-  );
-};
+  )
+}
 
-export default PaymentDetailForm;
+export default PaymentDetailForm

@@ -1,29 +1,29 @@
-import { useForm } from "react-hook-form";
-import Autocomplete from "@forms/Autocomplete";
-import FormInput from "@forms/FormInput";
-import Button from "@components/Button";
+import { useForm } from 'react-hook-form'
+import Autocomplete from '@forms/Autocomplete'
+import MyFormInput from '@forms/FormInput'
+import Button from '@components/Button'
 
 interface Props {
-  closeModal: () => void;
+  closeModal: () => void
 }
 
 const AddCouponForm = ({ closeModal }: Props): JSX.Element => {
   const {
     register,
-    formState: { errors },
-  } = useForm();
+    formState: { errors }
+  } = useForm()
 
   return (
     <form className="flex flex-col gap-4">
       <article className="grid grid-cols-2 gap-4">
-        <FormInput
+        <MyFormInput
           register={register}
           errors={errors}
           rules={{ required: true }}
           label="Código de cupón"
           name="couponCode"
         />
-        <FormInput
+        <MyFormInput
           register={register}
           errors={errors}
           rules={{ required: true }}
@@ -39,11 +39,11 @@ const AddCouponForm = ({ closeModal }: Props): JSX.Element => {
             label="Selecciona un paquete turístico"
             name="touristPackages"
             results={[
-              { text: "Uno", value: "uno" },
-              { text: "Dos", value: "dos" },
-              { text: "tres", value: "tres" },
-              { text: "Cuatro", value: "cuatro" },
-              { text: "Cinco", value: "cinco" },
+              { text: 'Uno', value: 'uno' },
+              { text: 'Dos', value: 'dos' },
+              { text: 'tres', value: 'tres' },
+              { text: 'Cuatro', value: 'cuatro' },
+              { text: 'Cinco', value: 'cinco' }
             ]}
           />
 
@@ -51,11 +51,11 @@ const AddCouponForm = ({ closeModal }: Props): JSX.Element => {
             label="Selecciona una habitación"
             name="room"
             results={[
-              { text: "Uno", value: "uno" },
-              { text: "Dos", value: "dos" },
-              { text: "tres", value: "tres" },
-              { text: "Cuatro", value: "cuatro" },
-              { text: "Cinco", value: "cinco" },
+              { text: 'Uno', value: 'uno' },
+              { text: 'Dos', value: 'dos' },
+              { text: 'tres', value: 'tres' },
+              { text: 'Cuatro', value: 'cuatro' },
+              { text: 'Cinco', value: 'cinco' }
             ]}
           />
         </div>
@@ -70,7 +70,7 @@ const AddCouponForm = ({ closeModal }: Props): JSX.Element => {
         <Button text="Guardar" background="bg-orange" />
       </article>
     </form>
-  );
-};
+  )
+}
 
-export default AddCouponForm;
+export default AddCouponForm

@@ -1,9 +1,9 @@
-import CardHover from "./CardHover";
-import ButtonLink from "./ButtonLink";
+import CardHover from './CardHover'
+import ButtonLink from './ButtonLink'
 
 interface Props {
-  imagePath: string;
-  alt: string;
+  imagePath: string
+  alt: string
 }
 
 const RoomCard = ({ imagePath, alt }: Props): JSX.Element => {
@@ -20,7 +20,7 @@ const RoomCard = ({ imagePath, alt }: Props): JSX.Element => {
         <ButtonLink to="/habitacion" text="Ver más" background="bg-orange" />
       </div>
     </CardHover>
-  );
-};
+  )
+}
 
-export default RoomCard;
+export default RoomCard

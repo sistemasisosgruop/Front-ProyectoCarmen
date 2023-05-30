@@ -1,33 +1,33 @@
-import { BrowserRouter } from "react-router-dom";
-import { I18nextProvider, initReactI18next } from "react-i18next";
-import i18next from "i18next";
-import Routes from "./routes/Routes";
+import { BrowserRouter } from 'react-router-dom'
+import { I18nextProvider, initReactI18next } from 'react-i18next'
+import i18next from 'i18next'
+import Routes from './routes/Routes'
 
-import globalEs from "./lang/es/global.json";
-import globalEn from "./lang/en/global.json";
+import globalEs from './lang/es/global.json'
+import globalEn from './lang/en/global.json'
 
 i18next
   .use(initReactI18next)
   .init({
     interpolation: {
-      escapeValue: false,
+      escapeValue: false
     },
-    lng: localStorage.getItem("lang") ?? "es",
+    lng: localStorage.getItem('lang') ?? 'es',
     resources: {
       es: {
-        global: globalEs,
+        global: globalEs
       },
       en: {
-        global: globalEn,
-      },
-    },
+        global: globalEn
+      }
+    }
   })
-  .then((response) => {
-    console.log(response);
+  .then(response => {
+    console.log(response)
   })
-  .catch((error) => {
-    console.log(error);
-  });
+  .catch(error => {
+    console.log(error)
+  })
 
 const App = (): JSX.Element => {
   return (
@@ -36,7 +36,7 @@ const App = (): JSX.Element => {
         <Routes />
       </BrowserRouter>
     </I18nextProvider>
-  );
-};
+  )
+}
 
-export default App;
+export default App

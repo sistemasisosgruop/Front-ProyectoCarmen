@@ -1,8 +1,8 @@
-import AdminLayout from "@layouts/AdminLayout";
-import AdminSection from "@layouts/AdminSection";
-import Heading from "@components/Heading";
-import THead from "@components/THead";
-import { BiDownload, BiEdit, BiTrash } from "react-icons/bi";
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
+import { BiDownload, BiEdit, BiTrash } from 'react-icons/bi'
 
 const Users = (): JSX.Element => {
   return (
@@ -26,20 +26,20 @@ const Users = (): JSX.Element => {
           <table className="w-full">
             <THead
               headers={[
-                "#",
-                "Nombre completo",
-                "Género",
-                "Tipo de documento",
-                "N° documento",
-                "Correo",
-                "Contraseña",
-                "Fecha de nacimiento",
-                "Estudiante",
-                "País",
-                "Celular",
-                "Código postal",
-                "Dirección",
-                "Acciones",
+                '#',
+                'Nombre completo',
+                'Género',
+                'Tipo de documento',
+                'N° documento',
+                'Correo',
+                'Contraseña',
+                'Fecha de nacimiento',
+                'Estudiante',
+                'País',
+                'Celular',
+                'Código postal',
+                'Dirección',
+                'Acciones'
               ]}
               rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
             />
@@ -84,7 +84,7 @@ const Users = (): JSX.Element => {
         </div>
       </AdminSection>
     </AdminLayout>
-  );
-};
+  )
+}
 
-export default Users;
+export default Users

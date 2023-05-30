@@ -1,29 +1,26 @@
-import { useState } from "react";
-import {
-  IoIosAddCircleOutline,
-  IoIosRemoveCircleOutline,
-} from "react-icons/io";
-import Button from "../Button";
+import { useState } from 'react'
+import { IoIosAddCircleOutline, IoIosRemoveCircleOutline } from 'react-icons/io'
+import Button from '../Button'
 
 const DestinationForm = (): JSX.Element => {
-  const [numChildren, setNumChildren] = useState<number>(1);
-  const [numAdults, setNumAdults] = useState<number>(1);
+  const [numChildren, setNumChildren] = useState<number>(1)
+  const [numAdults, setNumAdults] = useState<number>(1)
 
   const addAdultPassenger = (): void => {
-    setNumChildren(numChildren + 1);
-  };
+    setNumChildren(numChildren + 1)
+  }
 
   const subtractAdultPassenger = (): void => {
-    setNumChildren(numChildren - 1);
-  };
+    setNumChildren(numChildren - 1)
+  }
 
   const addChildPassenger = (): void => {
-    setNumAdults(numAdults + 1);
-  };
+    setNumAdults(numAdults + 1)
+  }
 
   const subtractChildPassenger = (): void => {
-    setNumAdults(numAdults - 1);
-  };
+    setNumAdults(numAdults - 1)
+  }
 
   return (
     <div className="col-span-2 bg-white rounded-xl p-8 overflow-hidden">
@@ -113,7 +110,7 @@ const DestinationForm = (): JSX.Element => {
         </div>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default DestinationForm;
+export default DestinationForm

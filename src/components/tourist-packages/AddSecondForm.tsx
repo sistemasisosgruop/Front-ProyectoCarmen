@@ -1,16 +1,16 @@
-import { useState } from "react";
-import DatePicker from "react-datepicker";
-import Button from "@components/Button";
-import FormInput from "@forms/FormInput";
-import FormTextArea from "@forms/FormTextArea";
-import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from "react-icons/hi";
+import { useState } from 'react'
+import DatePicker from 'react-datepicker'
+import Button from '@components/Button'
+import MyFormInput from '@forms/FormInput'
+import FormTextArea from '@forms/FormTextArea'
+import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 
 interface Props {
-  control: any;
-  errors: any;
-  handleSubmit: any;
-  onPrevStep: () => void;
-  onNextStep: () => void;
+  control: any
+  errors: any
+  handleSubmit: any
+  onPrevStep: () => void
+  onNextStep: () => void
 }
 
 const AddSecondForm = ({
@@ -18,9 +18,9 @@ const AddSecondForm = ({
   errors,
   handleSubmit,
   onPrevStep,
-  onNextStep,
+  onNextStep
 }: Props): JSX.Element => {
-  const [startDate, setStartDate] = useState<Date>(new Date());
+  const [startDate, setStartDate] = useState<Date>(new Date())
 
   return (
     <form
@@ -48,14 +48,14 @@ const AddSecondForm = ({
           name="whatWillYouDo"
           label="Qué harás"
         />
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
           name="goodChoice"
           label="Buena elección para"
         />
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
@@ -65,14 +65,14 @@ const AddSecondForm = ({
       </article>
 
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
           name="pricePerPerson"
           label="Precio por persona"
         />
-        <FormInput
+        <MyFormInput
           register={control.register}
           rules={{ required: true }}
           errors={errors}
@@ -88,14 +88,14 @@ const AddSecondForm = ({
             <DatePicker
               selected={startDate}
               onChange={(date: Date) => {
-                setStartDate(date);
+                setStartDate(date)
               }}
               className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
             />
             <DatePicker
               selected={startDate}
               onChange={(date: Date) => {
-                setStartDate(date);
+                setStartDate(date)
               }}
               className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
             />
@@ -122,7 +122,7 @@ const AddSecondForm = ({
         />
       </article>
     </form>
-  );
-};
+  )
+}
 
-export default AddSecondForm;
+export default AddSecondForm

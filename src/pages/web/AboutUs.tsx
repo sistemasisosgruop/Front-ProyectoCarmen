@@ -1,4 +1,4 @@
-import LayoutPage from "@layouts/LayoutPage";
+import LayoutPage from '@layouts/LayoutPage'
 
 const AboutUs = (): JSX.Element => {
   return (
@@ -6,7 +6,7 @@ const AboutUs = (): JSX.Element => {
       <h1 className="">Acerca de nosotros</h1>
       <h1 className="text-red-700"></h1>
     </LayoutPage>
-  );
-};
+  )
+}
 
-export default AboutUs;
+export default AboutUs

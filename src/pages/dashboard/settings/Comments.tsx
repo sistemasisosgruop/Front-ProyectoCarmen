@@ -1,12 +1,12 @@
-import AdminLayout from "@layouts/AdminLayout";
-import AdminSection from "@layouts/AdminSection";
-import Heading from "@components/Heading";
-import THead from "@components/THead";
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
 import {
   AiFillCheckCircle,
   AiFillCloseCircle,
-  AiOutlineSearch,
-} from "react-icons/ai";
+  AiOutlineSearch
+} from 'react-icons/ai'
 
 const Comments = (): JSX.Element => {
   return (
@@ -35,11 +35,11 @@ const Comments = (): JSX.Element => {
           <table className="w-full">
             <THead
               headers={[
-                "#",
-                "Nombre completo",
-                "Contenido del comentario",
-                "Calificación",
-                "Acciones",
+                '#',
+                'Nombre completo',
+                'Contenido del comentario',
+                'Calificación',
+                'Acciones'
               ]}
               rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
             />
@@ -81,7 +81,7 @@ const Comments = (): JSX.Element => {
         </div>
       </AdminSection>
     </AdminLayout>
-  );
-};
+  )
+}
 
-export default Comments;
+export default Comments

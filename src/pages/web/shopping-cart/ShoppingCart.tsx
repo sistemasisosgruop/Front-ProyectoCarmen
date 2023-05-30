@@ -1,29 +1,29 @@
-import { useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import LayoutPage from "@layouts/LayoutPage";
-import Section from "@layouts/Section";
-import Heading from "@components/Heading";
-import Products from "@components/shopping-cart/Products";
-import FormInput from "@forms/FormInput";
-import Button from "@components/Button";
-import ButtonLink from "@components/ButtonLink";
-import { IoReturnDownBack } from "react-icons/io5";
-import { HiOutlineArrowSmLeft } from "react-icons/hi";
-import { MdOutlinePayment } from "react-icons/md";
+import { useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+import LayoutPage from '@layouts/LayoutPage'
+import Section from '@layouts/Section'
+import Heading from '@components/Heading'
+import Products from '@components/shopping-cart/Products'
+import MyFormInput from '@forms/FormInput'
+import Button from '@components/Button'
+import ButtonLink from '@components/ButtonLink'
+import { IoReturnDownBack } from 'react-icons/io5'
+import { HiOutlineArrowSmLeft } from 'react-icons/hi'
+import { MdOutlinePayment } from 'react-icons/md'
 
 const ShoppingCart = (): JSX.Element => {
   const {
     register,
-    formState: { errors },
-  } = useForm();
-  const navigate = useNavigate();
+    formState: { errors }
+  } = useForm()
+  const navigate = useNavigate()
 
   return (
     <LayoutPage title="Mi carrito de compras">
       <section className="py-8 flex justify-end items-center px-8">
         <button
           onClick={() => {
-            navigate(-1);
+            navigate(-1)
           }}
           className="flex justify-center items-center gap-2 uppercase text-dark "
         >
@@ -38,7 +38,7 @@ const ShoppingCart = (): JSX.Element => {
         <button
           type="button"
           onClick={() => {
-            navigate(-1);
+            navigate(-1)
           }}
           className="bg-turquoise px-6 py-2 text-white rounded-xl flex justify-center items-center gap-2 mb-8"
         >
@@ -53,7 +53,7 @@ const ShoppingCart = (): JSX.Element => {
             <header className="w-full bg-white px-6 py-2 rounded-xl mb-2">
               <p className="text-dark font-bold">
                 Resumen del pedido&nbsp;
-                <span>({"2"})</span>
+                <span>({'2'})</span>
               </p>
               <label
                 htmlFor="all"
@@ -88,7 +88,7 @@ const ShoppingCart = (): JSX.Element => {
               </header>
               <article>
                 <div className="flex flex-col justify-center items-end gap-4 sm:flex-row">
-                  <FormInput
+                  <MyFormInput
                     name="coupon"
                     label="Código de cupón"
                     register={register}
@@ -142,7 +142,7 @@ const ShoppingCart = (): JSX.Element => {
         </div>
       </Section>
     </LayoutPage>
-  );
-};
+  )
+}
 
-export default ShoppingCart;
+export default ShoppingCart

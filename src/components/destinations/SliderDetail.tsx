@@ -1,18 +1,18 @@
-import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, Navigation, EffectFade } from "swiper";
-import { useLang } from "@hooks/useLang";
-import { HiOutlineArrowSmLeft } from "react-icons/hi";
+import { Link } from 'react-router-dom'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Autoplay, Navigation, EffectFade } from 'swiper'
+import { useLang } from '@hooks/useLang'
+import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
-import "swiper/css/scrollbar";
-import "swiper/css/effect-fade";
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/autoplay'
+import 'swiper/css/scrollbar'
+import 'swiper/css/effect-fade'
 
 const SliderDetail = (): JSX.Element => {
-  const { t } = useLang();
+  const { t } = useLang()
 
   return (
     <section className="relative h-[60vh] w-full">
@@ -59,10 +59,10 @@ const SliderDetail = (): JSX.Element => {
         className="absolute top-8 left-8 z-20 bg-blue px-6 py-2 rounded-xl flex justify-center items-center gap-2 text-white border border-white border-opacity-40"
       >
         <HiOutlineArrowSmLeft size={18} />
-        <span>{t("general.back")}</span>
+        <span>{t('general.back')}</span>
       </Link>
     </section>
-  );
-};
+  )
+}
 
-export default SliderDetail;
+export default SliderDetail

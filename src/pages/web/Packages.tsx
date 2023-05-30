@@ -1,18 +1,18 @@
-import { Link } from "react-router-dom";
-import { useLang } from "@hooks/useLang";
-import LayoutPage from "@layouts/LayoutPage";
-import Section from "@layouts/Section";
-import Heading from "@components/Heading";
-import Masthead from "@components/Masthead";
-import CardHover from "@components/CardHover";
-import ButtonLinkSm from "@components/ButtonLinkSm";
-import PromotionCard from "@components/tourist-packages/PromotionCard";
-import ButtonLink from "@components/ButtonLink";
-import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from "react-icons/hi";
-import PackagesDestinationCard from "@components/tourist-packages/PackagesDestinationCard";
+import { Link } from 'react-router-dom'
+import { useLang } from '@hooks/useLang'
+import LayoutPage from '@layouts/LayoutPage'
+import Section from '@layouts/Section'
+import Heading from '@components/Heading'
+import Masthead from '@components/Masthead'
+import CardHover from '@components/CardHover'
+import ButtonLinkSm from '@components/ButtonLinkSm'
+import PromotionCard from '@components/tourist-packages/PromotionCard'
+import ButtonLink from '@components/ButtonLink'
+import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
+import PackagesDestinationCard from '@components/tourist-packages/PackagesDestinationCard'
 
 const Packages = (): JSX.Element => {
-  const { t } = useLang();
+  const { t } = useLang()
 
   return (
     <LayoutPage title="Paquetes turisticos - Carmen Agencia de Viajes y Turismo">
@@ -20,8 +20,8 @@ const Packages = (): JSX.Element => {
 
       <Section className="mt-32">
         <Heading
-          title={t("pages.packages.search_packages")}
-          description={t("pages.packages.description_search_packages")}
+          title={t('pages.packages.search_packages')}
+          description={t('pages.packages.description_search_packages')}
         />
         <section className="grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
           {[...Array(4)].map((_, index) => (
@@ -37,8 +37,8 @@ const Packages = (): JSX.Element => {
 
       <Section className="mt-32">
         <Heading
-          title={t("pages.packages.promotions")}
-          description={t("pages.packages.description_promotion")}
+          title={t('pages.packages.promotions')}
+          description={t('pages.packages.description_promotion')}
           textAlign="text-left"
         />
         <div className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -84,7 +84,7 @@ const Packages = (): JSX.Element => {
         <div className="flex justify-center items-center mt-8">
           <ButtonLink
             to="/"
-            text={t("general.view_more")}
+            text={t('general.view_more')}
             showIcon={true}
             icon={<HiOutlineArrowSmRight size={20} />}
             iconPosition="right"
@@ -92,7 +92,7 @@ const Packages = (): JSX.Element => {
         </div>
       </Section>
     </LayoutPage>
-  );
-};
+  )
+}
 
-export default Packages;
+export default Packages

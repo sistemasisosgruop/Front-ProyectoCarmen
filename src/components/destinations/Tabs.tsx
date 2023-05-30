@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 interface Props {
-  children: JSX.Element[];
+  children: JSX.Element[]
 }
 
 const Tabs = ({ children }: Props): JSX.Element => {
-  const [activeTab, setActiveTab] = useState<number>(0);
+  const [activeTab, setActiveTab] = useState<number>(0)
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -17,12 +17,12 @@ const Tabs = ({ children }: Props): JSX.Element => {
               inline-flex justify-center items-center gap-2 uppercase py-2 pl-4 pr-16 font-bold md:px-8 rounded-t-xl hover:bg-opacity-80
               ${
                 activeTab === index
-                  ? "bg-white text-blue border border-blue"
-                  : "bg-blue text-white border border-blue"
+                  ? 'bg-white text-blue border border-blue'
+                  : 'bg-blue text-white border border-blue'
               }
             `}
             onClick={() => {
-              setActiveTab(index);
+              setActiveTab(index)
             }}
           >
             {child.props.icon}
@@ -34,7 +34,7 @@ const Tabs = ({ children }: Props): JSX.Element => {
         {children[activeTab]}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Tabs;
+export default Tabs

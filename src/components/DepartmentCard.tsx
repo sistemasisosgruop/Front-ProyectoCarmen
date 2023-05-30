@@ -1,11 +1,11 @@
 interface Props {
   image: {
-    imagePath: string;
-    alt: string;
-    typeRoom: string;
-    price: string;
-  };
-  index: number;
+    imagePath: string
+    alt: string
+    typeRoom: string
+    price: string
+  }
+  index: number
 }
 
 const DepartmentCard = ({ image, index }: Props): JSX.Element => {
@@ -16,23 +16,23 @@ const DepartmentCard = ({ image, index }: Props): JSX.Element => {
         bg-white flex flex-col rounded-xl overflow-hidden border border-white
         ${
           index === 0
-            ? "col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-2"
-            : ""
+            ? 'col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-2'
+            : ''
         }
         ${
           index === 1
-            ? "col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-1"
-            : ""
+            ? 'col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-1'
+            : ''
         }
         ${
           index === 2
-            ? "col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-2"
-            : ""
+            ? 'col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-2'
+            : ''
         }
         ${
           index === 3
-            ? "col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-1"
-            : ""
+            ? 'col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-1'
+            : ''
         }
       `}
     >
@@ -65,7 +65,7 @@ const DepartmentCard = ({ image, index }: Props): JSX.Element => {
         </div>
       </article>
     </div>
-  );
-};
+  )
+}
 
-export default DepartmentCard;
+export default DepartmentCard

@@ -36,7 +36,7 @@ const Product = (): JSX.Element => {
         </div>
       </div>
     </article>
-  );
-};
+  )
+}
 
-export default Product;
+export default Product

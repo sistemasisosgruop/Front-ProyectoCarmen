@@ -1,16 +1,16 @@
-import { Navigate, Route } from "react-router-dom";
+import { Navigate, Route } from 'react-router-dom'
 
 interface Props {
-  path: string;
-  element: JSX.Element;
+  path: string
+  element: JSX.Element
 }
 
 const ProtectedRoute = ({ path, element }: Props): JSX.Element => {
   if (true === true) {
-    return true && <Route path={path} element={element} />;
+    return true && <Route path={path} element={element} />
   }
 
-  return <Navigate to="/" replace state={{ from: path }} />;
-};
+  return <Navigate to="/" replace state={{ from: path }} />
+}
 
-export default ProtectedRoute;
+export default ProtectedRoute

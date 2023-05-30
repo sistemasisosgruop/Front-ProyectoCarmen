@@ -1,17 +1,17 @@
-import { useTabs } from "@hooks/useTabs";
-import Tabs from "../../components/Tabs";
-import TabItem from "../../components/TabItem";
-import THead from "../THead";
+import { useTabs } from '@hooks/useTabs'
+import Tabs from '../../components/Tabs'
+import TabItem from '../../components/TabItem'
+import THead from '../THead'
 
 const SelectFlight = (): JSX.Element => {
-  const { activeTab, switchTab } = useTabs(0);
+  const { activeTab, switchTab } = useTabs(0)
 
   return (
     <Tabs activeTab={activeTab} switchTab={switchTab}>
       <TabItem label="Precios por aerolinea">
         <table>
           <THead
-            headers={["Aerolínea", "Directo", "1 escala", "2 escalas o más"]}
+            headers={['Aerolínea', 'Directo', '1 escala', '2 escalas o más']}
           />
           <tbody>
             <tr>
@@ -39,7 +39,7 @@ const SelectFlight = (): JSX.Element => {
         <p>Fechas flexibles</p>
       </TabItem>
     </Tabs>
-  );
-};
+  )
+}
 
-export default SelectFlight;
+export default SelectFlight

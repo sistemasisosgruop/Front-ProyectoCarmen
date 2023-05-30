@@ -1,27 +1,27 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
 interface FunctionTypes {
-  isScrolled: boolean;
+  isScrolled: boolean
 }
 
 export const useScrollPageY = (): FunctionTypes => {
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false)
 
   useEffect(() => {
     const handleScroll = (): void => {
       if (window.pageYOffset > 0) {
-        setIsScrolled(true);
+        setIsScrolled(true)
       } else {
-        setIsScrolled(false);
+        setIsScrolled(false)
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll)
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
-  return { isScrolled };
-};
+  return { isScrolled }
+}

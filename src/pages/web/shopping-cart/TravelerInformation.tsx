@@ -1,30 +1,30 @@
-import { useNavigate } from "react-router-dom";
-import { useTabs } from "@hooks/useTabs";
-import LayoutPage from "@layouts/LayoutPage";
-import Section from "@layouts/Section";
-import Tabs from "@components/Tabs";
-import TabItem from "@components/TabItem";
-import Button from "@components/Button";
-import OrderSummary from "@components/shopping-cart/OrderSummary";
-import MainUserForm from "@components/shopping-cart/MainUserForm";
-import SecondaryUserForm from "@components/shopping-cart/SecondaryUserForm";
-import { IoReturnDownBack } from "react-icons/io5";
-import { HiOutlineArrowSmLeft } from "react-icons/hi";
-import { AiOutlineInfoCircle } from "react-icons/ai";
-import { MdOutlinePayment } from "react-icons/md";
-import PaymentForm from "@components/shopping-cart/PaymentForm";
-import PurchaseTerms from "@components/shopping-cart/PurchaseTerms";
+import { useNavigate } from 'react-router-dom'
+import { useTabs } from '@hooks/useTabs'
+import LayoutPage from '@layouts/LayoutPage'
+import Section from '@layouts/Section'
+import Tabs from '@components/Tabs'
+import TabItem from '@components/TabItem'
+import Button from '@components/Button'
+import OrderSummary from '@components/shopping-cart/OrderSummary'
+import MainUserForm from '@components/shopping-cart/MainUserForm'
+import SecondaryUserForm from '@components/shopping-cart/SecondaryUserForm'
+import { IoReturnDownBack } from 'react-icons/io5'
+import { HiOutlineArrowSmLeft } from 'react-icons/hi'
+import { AiOutlineInfoCircle } from 'react-icons/ai'
+import { MdOutlinePayment } from 'react-icons/md'
+import PaymentForm from '@components/shopping-cart/PaymentForm'
+import PurchaseTerms from '@components/shopping-cart/PurchaseTerms'
 
 const TravelerInformation = (): JSX.Element => {
-  const { activeTab, switchTab } = useTabs();
-  const navigate = useNavigate();
+  const { activeTab, switchTab } = useTabs()
+  const navigate = useNavigate()
 
   return (
     <LayoutPage title="Mi carrito de compras">
       <section className="py-8 flex justify-end items-center px-8">
         <button
           onClick={() => {
-            navigate(-1);
+            navigate(-1)
           }}
           className="flex justify-center items-center gap-2 uppercase text-dark "
         >
@@ -39,7 +39,7 @@ const TravelerInformation = (): JSX.Element => {
         <button
           type="button"
           onClick={() => {
-            navigate(-1);
+            navigate(-1)
           }}
           className="bg-blue px-6 py-2 text-white rounded-xl flex justify-center items-center gap-2 mb-8"
         >
@@ -75,7 +75,7 @@ const TravelerInformation = (): JSX.Element => {
                   text="Confirmar datos"
                   background="bg-blue"
                   onClick={() => {
-                    switchTab(1);
+                    switchTab(1)
                   }}
                 />
               </div>
@@ -97,7 +97,7 @@ const TravelerInformation = (): JSX.Element => {
                   text="Confirmar pago"
                   background="bg-blue"
                   onClick={() => {
-                    switchTab(1);
+                    switchTab(1)
                   }}
                   isIcon
                   icon={<MdOutlinePayment size={18} />}
@@ -109,7 +109,7 @@ const TravelerInformation = (): JSX.Element => {
         </Tabs>
       </Section>
     </LayoutPage>
-  );
-};
+  )
+}
 
-export default TravelerInformation;
+export default TravelerInformation

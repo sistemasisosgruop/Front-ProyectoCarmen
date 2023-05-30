@@ -1,37 +1,37 @@
-import { Routes, Route } from "react-router-dom";
-import Home from "@web/Home";
-import Rooms from "@web/rooms/Rooms";
-import RoomsDetail from "@web/rooms/RoomsDetail";
-import RoomCatalog from "@web/rooms/RoomCatalog";
-import Packages from "@web/Packages";
-import Flights from "@web/Flights";
-import Contact from "@web/Contact";
+import { Routes, Route } from 'react-router-dom'
+import Home from '@web/Home'
+import Rooms from '@web/rooms/Rooms'
+import RoomsDetail from '@web/rooms/RoomsDetail'
+import RoomCatalog from '@web/rooms/RoomCatalog'
+import Packages from '@web/Packages'
+import Flights from '@web/Flights'
+import Contact from '@web/Contact'
 // import AboutUs from '@web/AboutUs'
-import DestinationsCatalog from "@web/destination/DestinationsCatalog";
-import DestinationDetail from "@web/destination/DestinationDetail";
-import MyPurchases from "@web/MyPurchases";
-import ShoppingCart from "@web/shopping-cart/ShoppingCart";
-import TravelerInformation from "@web/shopping-cart/TravelerInformation";
-import Login from "../auth/Login";
-import Register from "../auth/Register";
-import PageNotFound from "@web/PageNotFound";
+import DestinationsCatalog from '@web/destination/DestinationsCatalog'
+import DestinationDetail from '@web/destination/DestinationDetail'
+import MyPurchases from '@web/MyPurchases'
+import ShoppingCart from '@web/shopping-cart/ShoppingCart'
+import TravelerInformation from '@web/shopping-cart/TravelerInformation'
+import Login from '../auth/Login'
+import Register from '../auth/Register'
+import PageNotFound from '@web/PageNotFound'
 
-import AdminCalendar from "@dashboard/AdminCalendar";
-import AdminFlights from "@dashboard/AdminFlights";
-import SelectOptionBeds from "@dashboard/beds/SelectOptionBeds";
-import BedReservation from "@dashboard/beds/BedReservation";
-import BedRegistration from "@dashboard/beds/BedRegistration";
-import OptionsTouristPackages from "@dashboard/tourist-packages/OptionsTouristPackages";
-import TouristpackagesRegistration from "@dashboard/tourist-packages/TouristPackagesRegistration";
-import TouristPackagesReservation from "@dashboard/tourist-packages/TouristPackagesReservation";
-import Users from "@dashboard/Users";
-import Statistics from "@dashboard/Statistics";
-import OptionSettings from "@dashboard/settings/OptionSettings";
-import Roles from "@dashboard/settings/Roles";
-import Coupons from "@dashboard/settings/Coupons";
-import Receipts from "@dashboard/settings/Receipts";
-import Messages from "@dashboard/settings/Messages";
-import Comments from "@dashboard/settings/Comments";
+import AdminCalendar from '@dashboard/AdminCalendar'
+import AdminFlights from '@dashboard/AdminFlights'
+import SelectOptionBeds from '@dashboard/beds/SelectOptionBeds'
+import BedReservation from '@dashboard/beds/BedReservation'
+import BedRegistration from '@dashboard/beds/BedRegistration'
+import OptionsTouristPackages from '@dashboard/tourist-packages/OptionsTouristPackages'
+import TouristpackagesRegistration from '@dashboard/tourist-packages/TouristPackagesRegistration'
+import TouristPackagesReservation from '@dashboard/tourist-packages/TouristPackagesReservation'
+import Users from '@dashboard/Users'
+import Statistics from '@dashboard/Statistics'
+import OptionSettings from '@dashboard/settings/OptionSettings'
+import Roles from '@dashboard/settings/Roles'
+import Coupons from '@dashboard/settings/Coupons'
+import Receipts from '@dashboard/settings/Receipts'
+import Messages from '@dashboard/settings/Messages'
+import Comments from '@dashboard/settings/Comments'
 
 const Routing = (): JSX.Element => {
   return (
@@ -87,7 +87,7 @@ const Routing = (): JSX.Element => {
 
       <Route path="*" element={<PageNotFound />} />
     </Routes>
-  );
-};
+  )
+}
 
-export default Routing;
+export default Routing

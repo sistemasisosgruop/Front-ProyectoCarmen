@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { AiFillStar } from "react-icons/ai";
+import { Link } from 'react-router-dom'
+import { AiFillStar } from 'react-icons/ai'
 
 const RoomCard = (): JSX.Element => {
   return (
@@ -39,7 +39,7 @@ const RoomCard = (): JSX.Element => {
         </article>
       </div>
     </Link>
-  );
-};
+  )
+}
 
-export default RoomCard;
+export default RoomCard

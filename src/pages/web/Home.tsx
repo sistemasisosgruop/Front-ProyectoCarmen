@@ -1,17 +1,17 @@
-import { useLang } from "@hooks/useLang";
-import LayoutPage from "@layouts/LayoutPage";
-import Section from "@layouts/Section";
-import Heading from "@components/Heading";
-import Masthead from "@components/Masthead";
-import ServiceSearch from "@components/home/ServiceSearch";
-import SliderTourPackage from "@components/home/SliderTourPackage";
-import FeedbackSection from "@components/feedback/FeedbackSection";
-import PopularCard from "@components/home/PopularCard";
-import ButtonLink from "@components/ButtonLink";
-import { HiOutlineArrowSmRight } from "react-icons/hi";
+import { useLang } from '@hooks/useLang'
+import LayoutPage from '@layouts/LayoutPage'
+import Section from '@layouts/Section'
+import Heading from '@components/Heading'
+import Masthead from '@components/Masthead'
+import ServiceSearch from '@components/home/ServiceSearch'
+import SliderTourPackage from '@components/home/SliderTourPackage'
+import FeedbackSection from '@components/feedback/FeedbackSection'
+import PopularCard from '@components/home/PopularCard'
+import ButtonLink from '@components/ButtonLink'
+import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
 const Home = (): JSX.Element => {
-  const { t } = useLang();
+  const { t } = useLang()
 
   return (
     <LayoutPage title="Carmen Agencia de Viajes y Turismo">
@@ -24,8 +24,8 @@ const Home = (): JSX.Element => {
 
       <Section className="pt-16 md:pt-32">
         <Heading
-          title={t("pages.home.popular_rooms")}
-          description={t("pages.home.description_popular_rooms")}
+          title={t('pages.home.popular_rooms')}
+          description={t('pages.home.description_popular_rooms')}
         />
         <section className="grid grid-cols-1 gap-8 pb-8 sm:grid-cols-2 xl:grid-cols-4">
           {[...Array(4)].map((_, index) => (
@@ -40,7 +40,7 @@ const Home = (): JSX.Element => {
         <div className="flex justify-center items-center">
           <ButtonLink
             to="/catalogo-habitaciones"
-            text={t("general.view_catalog")}
+            text={t('general.view_catalog')}
             showIcon={true}
             icon={<HiOutlineArrowSmRight size={18} />}
             iconPosition="right"
@@ -50,8 +50,8 @@ const Home = (): JSX.Element => {
 
       <Section className="pt-32">
         <Heading
-          title={t("pages.home.popular_destinations")}
-          description={t("pages.home.description_popular_destinations")}
+          title={t('pages.home.popular_destinations')}
+          description={t('pages.home.description_popular_destinations')}
         />
         <section className="grid grid-cols-1 gap-8 pb-8 sm:grid-cols-2 xl:grid-cols-4">
           {[...Array(4)].map((_, index) => (
@@ -66,7 +66,7 @@ const Home = (): JSX.Element => {
         <div className="flex justify-center items-center">
           <ButtonLink
             to="/destinos-populares"
-            text={t("general.view_catalog")}
+            text={t('general.view_catalog')}
             showIcon={true}
             icon={<HiOutlineArrowSmRight size={18} />}
             iconPosition="right"
@@ -76,8 +76,8 @@ const Home = (): JSX.Element => {
 
       <Section className="py-32">
         <Heading
-          title={t("pages.home.popular_flights")}
-          description={t("pages.home.description_popular_flights")}
+          title={t('pages.home.popular_flights')}
+          description={t('pages.home.description_popular_flights')}
         />
         <section className="grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 xl:grid-cols-4">
           {[...Array(4)].map((_, index) => (
@@ -92,7 +92,7 @@ const Home = (): JSX.Element => {
         <div className="flex justify-center items-center">
           <ButtonLink
             to="/vuelos"
-            text={t("general.view_catalog")}
+            text={t('general.view_catalog')}
             showIcon={true}
             icon={<HiOutlineArrowSmRight size={18} />}
             iconPosition="right"
@@ -103,7 +103,7 @@ const Home = (): JSX.Element => {
       {/* Section for comments of clients */}
       <FeedbackSection />
     </LayoutPage>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

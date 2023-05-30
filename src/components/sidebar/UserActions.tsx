@@ -1,5 +1,5 @@
-import { createPortal } from "react-dom";
-import { Link } from "react-router-dom";
+import { createPortal } from 'react-dom'
+import { Link } from 'react-router-dom'
 
 const UserActions = (): JSX.Element => {
   return createPortal(
@@ -31,8 +31,8 @@ const UserActions = (): JSX.Element => {
         </li>
       </ul>
     </section>,
-    document.getElementById("portal") ?? document.createDocumentFragment()
-  );
-};
+    document.getElementById('portal') ?? document.createDocumentFragment()
+  )
+}
 
-export default UserActions;
+export default UserActions

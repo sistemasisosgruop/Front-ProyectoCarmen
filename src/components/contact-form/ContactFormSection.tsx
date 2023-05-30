@@ -1,5 +1,5 @@
-import Section from "@layouts/Section";
-import ContactForm from "./ContactForm";
+import Section from '@layouts/Section'
+import ContactForm from './ContactForm'
 
 const ContactFormSection = (): JSX.Element => {
   return (
@@ -12,7 +12,7 @@ const ContactFormSection = (): JSX.Element => {
         className="w-full h-full min-h-[380px] object-cover obeject-center rounded-xl overflow-hidden border border-white border-opacity-80"
       />
     </Section>
-  );
-};
+  )
+}
 
-export default ContactFormSection;
+export default ContactFormSection

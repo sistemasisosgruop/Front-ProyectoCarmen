@@ -1,15 +1,15 @@
-import { useState } from "react";
-import DatePicker from "react-datepicker";
-import AdminLayout from "@layouts/AdminLayout";
-import AdminSection from "@layouts/AdminSection";
-import Heading from "@components/Heading";
-import { BiChevronDown, BiDownload, BiEdit, BiTrash } from "react-icons/bi";
+import { useState } from 'react'
+import DatePicker from 'react-datepicker'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
+import { BiChevronDown, BiDownload, BiEdit, BiTrash } from 'react-icons/bi'
 
-import "react-datepicker/dist/react-datepicker.css";
-import THead from "../../components/THead";
+import 'react-datepicker/dist/react-datepicker.css'
+import THead from '../../components/THead'
 
 const AdminFlights = (): JSX.Element => {
-  const [startDate, setStartDate] = useState<Date>(new Date());
+  const [startDate, setStartDate] = useState<Date>(new Date())
 
   return (
     <AdminLayout title="Vuelos">
@@ -30,7 +30,7 @@ const AdminFlights = (): JSX.Element => {
             <DatePicker
               selected={startDate}
               onChange={(date: Date) => {
-                setStartDate(date);
+                setStartDate(date)
               }}
               showIcon={true}
               className="w-full px-4 py-2 text-base text-gray-600 border border-gray-200 rounded-xl focus:outline-none focus:border-blue"
@@ -45,20 +45,20 @@ const AdminFlights = (): JSX.Element => {
           <table className="w-full">
             <THead
               headers={[
-                "#",
-                "Nombre completo",
-                "Tipo de documento",
-                "N° documento",
-                "Celular",
-                "Número de adultos",
-                "Número de niños",
-                "Aerolínea",
-                "Fecha ida",
-                "Fecha vuelta",
-                "Tipo",
-                "Escalas",
-                "Vuelos",
-                "Acciones",
+                '#',
+                'Nombre completo',
+                'Tipo de documento',
+                'N° documento',
+                'Celular',
+                'Número de adultos',
+                'Número de niños',
+                'Aerolínea',
+                'Fecha ida',
+                'Fecha vuelta',
+                'Tipo',
+                'Escalas',
+                'Vuelos',
+                'Acciones'
               ]}
               rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
             />
@@ -101,7 +101,7 @@ const AdminFlights = (): JSX.Element => {
         </div>
       </AdminSection>
     </AdminLayout>
-  );
-};
+  )
+}
 
-export default AdminFlights;
+export default AdminFlights

@@ -1,4 +1,4 @@
-import InformationForm from "./InformationForm";
+import InformationForm from './InformationForm'
 
 const MainUserForm = (): JSX.Element => {
   return (
@@ -13,7 +13,7 @@ const MainUserForm = (): JSX.Element => {
         <InformationForm />
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default MainUserForm;
+export default MainUserForm

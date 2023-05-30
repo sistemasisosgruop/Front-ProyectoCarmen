@@ -1,25 +1,25 @@
-import { useLang } from "@hooks/useLang";
-import LayoutPage from "@layouts/LayoutPage";
-import Section from "@layouts/Section";
-import SliderDetail from "@components/destinations/SliderDetail";
-import DestinationForm from "@components/destinations/DestinationForm";
-import TourDetails from "@components/destinations/TourDetails";
-import Related from "@components/destinations/Related";
-import CommentSection from "@components/comments/CommentSection";
-import { AiFillDashboard, AiFillStar } from "react-icons/ai";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { useLang } from '@hooks/useLang'
+import LayoutPage from '@layouts/LayoutPage'
+import Section from '@layouts/Section'
+import SliderDetail from '@components/destinations/SliderDetail'
+import DestinationForm from '@components/destinations/DestinationForm'
+import TourDetails from '@components/destinations/TourDetails'
+import Related from '@components/destinations/Related'
+import CommentSection from '@components/comments/CommentSection'
+import { AiFillDashboard, AiFillStar } from 'react-icons/ai'
+import { FaMapMarkerAlt } from 'react-icons/fa'
 import {
   HiOutlineIdentification,
   HiUsers,
-  HiOutlineLanguage,
-} from "react-icons/hi2";
-import { CgSandClock } from "react-icons/cg";
-import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from "react-icons/hi";
+  HiOutlineLanguage
+} from 'react-icons/hi2'
+import { CgSandClock } from 'react-icons/cg'
+import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 
-const title: string = "Valle sagrado de los Incas";
+const title: string = 'Valle sagrado de los Incas'
 
 const DestinationDetail = (): JSX.Element => {
-  const { t } = useLang();
+  const { t } = useLang()
 
   return (
     <LayoutPage title="Detalles de destino populares">
@@ -30,7 +30,7 @@ const DestinationDetail = (): JSX.Element => {
           {[...Array(5)].map((_, index) => (
             <AiFillStar key={index} size={18} />
           ))}
-          <span>({t("general.opinnions", { opinnions: 12 })})</span>
+          <span>({t('general.opinnions', { opinnions: 12 })})</span>
         </div>
       </Section>
 
@@ -38,9 +38,9 @@ const DestinationDetail = (): JSX.Element => {
         <div>
           <h2 className="uppercase text-[2.5rem] text-center text-dark font-bold">
             <span className="text-blue mr-2">
-              {title.split(" ").slice(0, 2).join(" ")}
+              {title.split(' ').slice(0, 2).join(' ')}
             </span>
-            <span>{title.split(" ").slice(2).join(" ")}</span>
+            <span>{title.split(' ').slice(2).join(' ')}</span>
           </h2>
           <p className="text-dark text-center text-2xl">
             Explora Cusco a los mejores precios
@@ -181,7 +181,7 @@ const DestinationDetail = (): JSX.Element => {
         </div>
       </Section>
     </LayoutPage>
-  );
-};
+  )
+}
 
-export default DestinationDetail;
+export default DestinationDetail

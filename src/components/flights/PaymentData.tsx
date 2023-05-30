@@ -1,5 +1,5 @@
 const PaymentData = (): JSX.Element => {
-  return <div></div>;
-};
+  return <div></div>
+}
 
-export default PaymentData;
+export default PaymentData

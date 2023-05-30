@@ -1,10 +1,10 @@
-import ButtonLinkSm from "@components/ButtonLinkSm";
-import { MdGroup } from "react-icons/md";
+import ButtonLinkSm from '@components/ButtonLinkSm'
+import { MdGroup } from 'react-icons/md'
 
 interface Props {
-  imagePath: string;
-  alt: string;
-  index: number;
+  imagePath: string
+  alt: string
+  index: number
 }
 
 const PopularRoomCard = ({ imagePath, alt, index }: Props): JSX.Element => {
@@ -14,28 +14,28 @@ const PopularRoomCard = ({ imagePath, alt, index }: Props): JSX.Element => {
         relative rounded-xl border border-white overflow-hidden bg-white w-full flex flex-col
         ${
           index === 0
-            ? "col-span-12 md:col-span-6 lg:row-span-2 xl:col-span-3 xl:row-span-1"
-            : ""
+            ? 'col-span-12 md:col-span-6 lg:row-span-2 xl:col-span-3 xl:row-span-1'
+            : ''
         }
         ${
           index === 1
-            ? "col-span-12 md:col-span-6 lg:row-span-2 xl:col-span-4 xl:row-span-2"
-            : ""
+            ? 'col-span-12 md:col-span-6 lg:row-span-2 xl:col-span-4 xl:row-span-2'
+            : ''
         } 
         ${
           index === 2
-            ? "col-span-12 sm:col-span-12 lg:row-span-2 xl:col-span-5 xl:row-span-1"
-            : ""
+            ? 'col-span-12 sm:col-span-12 lg:row-span-2 xl:col-span-5 xl:row-span-1'
+            : ''
         }
         ${
           index === 3
-            ? "col-span-12 md:col-span-6 lg:row-span-2 xl:col-span-3 xl:row-span-1"
-            : ""
+            ? 'col-span-12 md:col-span-6 lg:row-span-2 xl:col-span-3 xl:row-span-1'
+            : ''
         }
         ${
           index === 4
-            ? "col-span-12 md:col-span-6 lg:row-span-2 xl:col-span-5 xl:row-span-1"
-            : ""
+            ? 'col-span-12 md:col-span-6 lg:row-span-2 xl:col-span-5 xl:row-span-1'
+            : ''
         }
       `}
     >
@@ -43,7 +43,7 @@ const PopularRoomCard = ({ imagePath, alt, index }: Props): JSX.Element => {
         src={imagePath}
         alt={alt}
         className={`object-cover object-center h-full w-full ${
-          index === 1 ? "h-full" : "max-h-[220px]"
+          index === 1 ? 'h-full' : 'max-h-[220px]'
         }`}
       />
       <div className="absolute top-2 right-2 bg-white px-2 py-[2px] rounded-md flex justify-center items-center">
@@ -54,7 +54,7 @@ const PopularRoomCard = ({ imagePath, alt, index }: Props): JSX.Element => {
           <p className="text-xl font-bold">Dúplex</p>
           <p className="flex gap-1">
             <span className="text-blue">S/.</span>
-            <strong className="font-bold">{"70.00"}</strong>
+            <strong className="font-bold">{'70.00'}</strong>
             <span>/</span>
             <i>por dia</i>
           </p>
@@ -62,7 +62,7 @@ const PopularRoomCard = ({ imagePath, alt, index }: Props): JSX.Element => {
         <div className="flex justify-between items-center">
           <p className="flex justify-start items-center gap-2">
             <MdGroup size={18} className="text-blue" />
-            <span>Hasta {"2"} personas</span>
+            <span>Hasta {'2'} personas</span>
           </p>
           <ButtonLinkSm
             to="/habitaciones/detalle"
@@ -72,7 +72,7 @@ const PopularRoomCard = ({ imagePath, alt, index }: Props): JSX.Element => {
         </div>
       </article>
     </div>
-  );
-};
+  )
+}
 
-export default PopularRoomCard;
+export default PopularRoomCard

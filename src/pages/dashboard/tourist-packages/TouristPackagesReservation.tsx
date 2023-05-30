@@ -1,9 +1,9 @@
-import AdminLayout from "@layouts/AdminLayout";
-import Heading from "@components/Heading";
-import AdminSection from "@components/layouts/AdminSection";
-import THead from "@components/THead";
-import { AiOutlineSearch } from "react-icons/ai";
-import { BiChevronDown, BiEdit, BiTrash } from "react-icons/bi";
+import AdminLayout from '@layouts/AdminLayout'
+import Heading from '@components/Heading'
+import AdminSection from '@components/layouts/AdminSection'
+import THead from '@components/THead'
+import { AiOutlineSearch } from 'react-icons/ai'
+import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
 
 const TouristPackagesReservation = (): JSX.Element => {
   return (
@@ -32,16 +32,16 @@ const TouristPackagesReservation = (): JSX.Element => {
           <table className="w-full">
             <THead
               headers={[
-                "#",
-                "Nombre del tour",
-                "Fecha escogida",
-                "Horario escogido",
-                "Ubicación",
-                "Fecha de compra",
-                "Hora de compra",
-                "Monto de compra",
-                "N° personas",
-                "Acciones",
+                '#',
+                'Nombre del tour',
+                'Fecha escogida',
+                'Horario escogido',
+                'Ubicación',
+                'Fecha de compra',
+                'Hora de compra',
+                'Monto de compra',
+                'N° personas',
+                'Acciones'
               ]}
               rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
             />
@@ -87,7 +87,7 @@ const TouristPackagesReservation = (): JSX.Element => {
         </div>
       </AdminSection>
     </AdminLayout>
-  );
-};
+  )
+}
 
-export default TouristPackagesReservation;
+export default TouristPackagesReservation

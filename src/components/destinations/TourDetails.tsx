@@ -1,8 +1,8 @@
-import TabItem from "./TabItem";
-import Tabs from "./Tabs";
-import { BiUniversalAccess } from "react-icons/bi";
-import { BsCardChecklist, BsCheckCircle } from "react-icons/bs";
-import { TbPaperBag } from "react-icons/tb";
+import TabItem from './TabItem'
+import Tabs from './Tabs'
+import { BiUniversalAccess } from 'react-icons/bi'
+import { BsCardChecklist, BsCheckCircle } from 'react-icons/bs'
+import { TbPaperBag } from 'react-icons/tb'
 
 const TourDetails = (): JSX.Element => {
   return (
@@ -127,7 +127,7 @@ const TourDetails = (): JSX.Element => {
         </TabItem>
       </Tabs>
     </div>
-  );
-};
+  )
+}
 
-export default TourDetails;
+export default TourDetails

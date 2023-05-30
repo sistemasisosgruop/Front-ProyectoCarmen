@@ -1,20 +1,20 @@
-import { useForm } from "react-hook-form";
-import Button from "@components/Button";
-import FormInput from "@forms/FormInput";
+import { useForm } from 'react-hook-form'
+import Button from '@components/Button'
+import MyFormInput from '@forms/FormInput'
 
 interface Props {
-  closeModal: () => void;
+  closeModal: () => void
 }
 
 const AddRole = ({ closeModal }: Props): JSX.Element => {
   const {
     register,
-    formState: { errors },
-  } = useForm();
+    formState: { errors }
+  } = useForm()
 
   return (
     <form>
-      <FormInput
+      <MyFormInput
         register={register}
         errors={errors}
         rules={{ required: true }}
@@ -25,7 +25,7 @@ const AddRole = ({ closeModal }: Props): JSX.Element => {
         <h4 className="text-dark text-lg font-dark">Permisos</h4>
         <div className="flex justify-start items-center gap-2">
           <label htmlFor="createBeds">
-            <input type="checkbox" {...register("createBeds")} className="" />
+            <input type="checkbox" {...register('createBeds')} className="" />
             Crear camas
           </label>
         </div>
@@ -49,7 +49,7 @@ const AddRole = ({ closeModal }: Props): JSX.Element => {
         <Button text="Guardar" background="bg-orange" />
       </article>
     </form>
-  );
-};
+  )
+}
 
-export default AddRole;
+export default AddRole

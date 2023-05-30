@@ -1,4 +1,4 @@
-import Product from "./Product";
+import Product from './Product'
 
 const Products = (): JSX.Element => {
   return (
@@ -10,7 +10,7 @@ const Products = (): JSX.Element => {
         </>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Products;
+export default Products

@@ -1,25 +1,25 @@
-import { useLang } from "@hooks/useLang";
-import ButtonLinkSm from "@components/ButtonLinkSm";
-import CardHover from "@components/CardHover";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { HiUsers } from "react-icons/hi";
-import { MdBedroomParent } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { useLang } from '@hooks/useLang'
+import ButtonLinkSm from '@components/ButtonLinkSm'
+import CardHover from '@components/CardHover'
+import { FaMapMarkerAlt } from 'react-icons/fa'
+import { HiUsers } from 'react-icons/hi'
+import { MdBedroomParent } from 'react-icons/md'
+import { Link } from 'react-router-dom'
 
 interface Props {
-  href: string;
-  index: number | string;
-  imagePath: string;
-  imageAlt: string;
+  href: string
+  index: number | string
+  imagePath: string
+  imageAlt: string
 }
 
 const FullApartmentCard = ({
   href,
   index,
   imagePath,
-  imageAlt,
+  imageAlt
 }: Props): JSX.Element => {
-  const { t } = useLang();
+  const { t } = useLang()
 
   return (
     <Link
@@ -28,30 +28,30 @@ const FullApartmentCard = ({
         h-full flex flex-col rounded-xl overflow-hidden
         ${
           index === 0
-            ? "col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-2"
-            : ""
+            ? 'col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-2'
+            : ''
         }
         ${
           index === 1
-            ? "col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-1"
-            : ""
+            ? 'col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-1'
+            : ''
         }
         ${
           index === 2
-            ? "col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-2"
-            : ""
+            ? 'col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-2'
+            : ''
         }
         ${
           index === 3
-            ? "col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-1"
-            : ""
+            ? 'col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-1'
+            : ''
         }
       `}
     >
       <CardHover
         imagePath={imagePath}
         alt={imageAlt}
-        score={"4.5"}
+        score={'4.5'}
         minHeight="min-h-[220px]"
       >
         <article className="flex flex-col gap-2">
@@ -82,14 +82,14 @@ const FullApartmentCard = ({
             </ul>
             <ButtonLinkSm
               to="/habitaciones/detalle"
-              text={t("general.view_more")}
+              text={t('general.view_more')}
               background="bg-orange"
             />
           </div>
         </article>
       </CardHover>
     </Link>
-  );
-};
+  )
+}
 
-export default FullApartmentCard;
+export default FullApartmentCard

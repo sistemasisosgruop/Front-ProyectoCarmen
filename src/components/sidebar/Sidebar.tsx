@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
-import NavLink from "./NavLink";
-import { FiSettings } from "react-icons/fi";
-import { HiOutlineUsers } from "react-icons/hi";
-import { IoMdStats } from "react-icons/io";
-import { TbPlane } from "react-icons/tb";
-import { BiBed, BiBriefcaseAlt2, BiCalendar } from "react-icons/bi";
-import { AiOutlineClose } from "react-icons/ai";
+import { Link } from 'react-router-dom'
+import NavLink from './NavLink'
+import { FiSettings } from 'react-icons/fi'
+import { HiOutlineUsers } from 'react-icons/hi'
+import { IoMdStats } from 'react-icons/io'
+import { TbPlane } from 'react-icons/tb'
+import { BiBed, BiBriefcaseAlt2, BiCalendar } from 'react-icons/bi'
+import { AiOutlineClose } from 'react-icons/ai'
 
 interface Props {
-  closeSidebar?: () => void;
+  closeSidebar?: () => void
 }
 
 const Sidebar = ({ closeSidebar }: Props): JSX.Element => {
@@ -84,7 +84,7 @@ const Sidebar = ({ closeSidebar }: Props): JSX.Element => {
         </ul>
       </nav>
     </aside>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

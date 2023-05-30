@@ -1,9 +1,9 @@
-import AdminLayout from "@layouts/AdminLayout";
-import AdminSection from "@layouts/AdminSection";
-import Heading from "@components/Heading";
-import THead from "@components/THead";
-import { AiOutlineSearch } from "react-icons/ai";
-import { BiTrash } from "react-icons/bi";
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Heading from '@components/Heading'
+import THead from '@components/THead'
+import { AiOutlineSearch } from 'react-icons/ai'
+import { BiTrash } from 'react-icons/bi'
 
 const Messages = (): JSX.Element => {
   return (
@@ -32,15 +32,15 @@ const Messages = (): JSX.Element => {
           <table className="w-full">
             <THead
               headers={[
-                "#",
-                "Nombre completo",
-                "Tipo de documento",
-                "Número de documento",
-                "Correo",
-                "Celular",
-                "Asunto",
-                "Contenido del mensaje",
-                "Acciones",
+                '#',
+                'Nombre completo',
+                'Tipo de documento',
+                'Número de documento',
+                'Correo',
+                'Celular',
+                'Asunto',
+                'Contenido del mensaje',
+                'Acciones'
               ]}
               rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
             />
@@ -77,7 +77,7 @@ const Messages = (): JSX.Element => {
         </div>
       </AdminSection>
     </AdminLayout>
-  );
-};
+  )
+}
 
-export default Messages;
+export default Messages

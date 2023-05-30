@@ -1,7 +1,7 @@
-import HeaderTestimonials from "@components/feedback/HeaderTestimonials";
-import Comment from "@components/feedback/Comment";
-import Carousel from "@components/carousel/Carousel";
-import CarouselItem from "@components/carousel/CarouselItem";
+import HeaderTestimonials from '@components/feedback/HeaderTestimonials'
+import Comment from '@components/feedback/Comment'
+import Carousel from '@components/carousel/Carousel'
+import CarouselItem from '@components/carousel/CarouselItem'
 
 const FeedbackSection = (): JSX.Element => {
   return (
@@ -16,7 +16,7 @@ const FeedbackSection = (): JSX.Element => {
         ))}
       </Carousel>
     </section>
-  );
-};
+  )
+}
 
-export default FeedbackSection;
+export default FeedbackSection

@@ -1,16 +1,16 @@
-import { useLang } from "@hooks/useLang";
-import ButtonLinkSm from "@components/ButtonLinkSm";
-import { BiTimer } from "react-icons/bi";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { HiUsers } from "react-icons/hi";
+import { useLang } from '@hooks/useLang'
+import ButtonLinkSm from '@components/ButtonLinkSm'
+import { BiTimer } from 'react-icons/bi'
+import { FaMapMarkerAlt } from 'react-icons/fa'
+import { HiUsers } from 'react-icons/hi'
 
 interface Props {
-  imagePath: string;
-  alt: string;
+  imagePath: string
+  alt: string
 }
 
 const PromotionCard = ({ imagePath, alt }: Props): JSX.Element => {
-  const { t } = useLang();
+  const { t } = useLang()
 
   return (
     <div className="relative bg-white rounded-xl overflow-hidden w-full flex flex-col border border-white shadow-dark group/descripcion">
@@ -51,13 +51,13 @@ const PromotionCard = ({ imagePath, alt }: Props): JSX.Element => {
           </p>
           <ButtonLinkSm
             to="destinos-populares/detalle"
-            text={t("general.view_more")}
+            text={t('general.view_more')}
             background="bg-orange"
           />
         </div>
       </article>
     </div>
-  );
-};
+  )
+}
 
-export default PromotionCard;
+export default PromotionCard

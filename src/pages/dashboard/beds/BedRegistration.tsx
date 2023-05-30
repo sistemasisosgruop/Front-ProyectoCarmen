@@ -1,16 +1,16 @@
-import { useModal } from "@hooks/useModal";
-import Heading from "@components/Heading";
-import AdminLayout from "@layouts/AdminLayout";
-import AdminSection from "@layouts/AdminSection";
-import Modal from "@components/Modal";
-import AddBedForm from "@components/beds/AddBedForm";
-import THead from "@components/THead";
-import { AiOutlineSearch } from "react-icons/ai";
-import { IoMdAdd } from "react-icons/io";
-import { BiChevronDown, BiEdit, BiTrash } from "react-icons/bi";
+import { useModal } from '@hooks/useModal'
+import Heading from '@components/Heading'
+import AdminLayout from '@layouts/AdminLayout'
+import AdminSection from '@layouts/AdminSection'
+import Modal from '@components/Modal'
+import AddBedForm from '@components/beds/AddBedForm'
+import THead from '@components/THead'
+import { AiOutlineSearch } from 'react-icons/ai'
+import { IoMdAdd } from 'react-icons/io'
+import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
 
 const BedRegistration = (): JSX.Element => {
-  const { isOpenModal, openModal, closeModal } = useModal();
+  const { isOpenModal, openModal, closeModal } = useModal()
   return (
     <>
       <AdminLayout title="Registro de camas">
@@ -47,18 +47,18 @@ const BedRegistration = (): JSX.Element => {
             <table className="w-full">
               <THead
                 headers={[
-                  "#",
-                  "Tipo de habitación",
-                  "Descripción general",
-                  "Dirección",
-                  "Precio por noche",
-                  "Fechas disponibles",
-                  "N° de baños",
-                  "N° de camas",
-                  "Número de habitaciones",
-                  "Extras",
-                  "Detalles",
-                  "Acciones",
+                  '#',
+                  'Tipo de habitación',
+                  'Descripción general',
+                  'Dirección',
+                  'Precio por noche',
+                  'Fechas disponibles',
+                  'N° de baños',
+                  'N° de camas',
+                  'Número de habitaciones',
+                  'Extras',
+                  'Detalles',
+                  'Acciones'
                 ]}
                 rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
               />
@@ -121,7 +121,7 @@ const BedRegistration = (): JSX.Element => {
         </Modal>
       )}
     </>
-  );
-};
+  )
+}
 
-export default BedRegistration;
+export default BedRegistration

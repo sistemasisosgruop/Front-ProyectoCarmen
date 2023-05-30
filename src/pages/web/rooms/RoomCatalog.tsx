@@ -1,8 +1,8 @@
-import LayoutPage from "@components/layouts/LayoutPage";
-import Section from "@components/layouts/Section";
-import Recommendation from "@components/rooms/Recommendation";
-import RoomCard from "@components/rooms/RoomCard";
-import { HiOutlineArrowSmRight } from "react-icons/hi";
+import LayoutPage from '@components/layouts/LayoutPage'
+import Section from '@components/layouts/Section'
+import Recommendation from '@components/rooms/Recommendation'
+import RoomCard from '@components/rooms/RoomCard'
+import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
 const RoomCatalog = (): JSX.Element => {
   return (
@@ -68,7 +68,7 @@ const RoomCatalog = (): JSX.Element => {
               key={index}
               type="button"
               className={`rounded-full w-8 h-8 ${
-                index === 2 ? "bg-turquoise" : "bg-white"
+                index === 2 ? 'bg-turquoise' : 'bg-white'
               } text-dark grid place-content-center font-bold`}
             >
               {index + 1}
@@ -83,7 +83,7 @@ const RoomCatalog = (): JSX.Element => {
         </div>
       </Section>
     </LayoutPage>
-  );
-};
+  )
+}
 
-export default RoomCatalog;
+export default RoomCatalog

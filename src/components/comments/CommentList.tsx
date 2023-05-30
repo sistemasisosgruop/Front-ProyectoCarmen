@@ -1,15 +1,15 @@
-import { useState } from "react";
-import { useLang } from "@hooks/useLang";
-import { BiLoader } from "react-icons/bi";
-import { BsStarFill } from "react-icons/bs";
+import { useState } from 'react'
+import { useLang } from '@hooks/useLang'
+import { BiLoader } from 'react-icons/bi'
+import { BsStarFill } from 'react-icons/bs'
 
 const CommentList = (): JSX.Element => {
-  const [activeComment, setActiveComment] = useState<number | null>(null);
-  const { t } = useLang();
+  const [activeComment, setActiveComment] = useState<number | null>(null)
+  const { t } = useLang()
 
   const toggleFullComment = (commentIndex: number): void => {
-    setActiveComment(commentIndex === activeComment ? null : commentIndex);
-  };
+    setActiveComment(commentIndex === activeComment ? null : commentIndex)
+  }
 
   return (
     <>
@@ -24,7 +24,7 @@ const CommentList = (): JSX.Element => {
       </div>
       <div className="mb-8">
         <p className="text-lg text-dark font-bold">
-          {t("general.comments", { comments: 10 })}
+          {t('general.comments', { comments: 10 })}
         </p>
       </div>
       <div className="flex flex-col gap-8">
@@ -43,7 +43,7 @@ const CommentList = (): JSX.Element => {
               </div>
               <p
                 className={`text-dark mb-2 ${
-                  activeComment === index ? "" : "line-clamp-4 md:line-clamp-3"
+                  activeComment === index ? '' : 'line-clamp-4 md:line-clamp-3'
                 }`}
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
@@ -61,15 +61,15 @@ const CommentList = (): JSX.Element => {
                 <button
                   type="button"
                   onClick={() => {
-                    toggleFullComment(index);
+                    toggleFullComment(index)
                   }}
                   className="hover:underline"
                 >
                   {activeComment === index
-                    ? t("general.show_less")
-                    : t("general.show_more")}
+                    ? t('general.show_less')
+                    : t('general.show_more')}
                 </button>
-                <span>{t("general.hours_ago", { time: 10 })}</span>
+                <span>{t('general.hours_ago', { time: 10 })}</span>
               </p>
             </article>
             {index === array.length - 1 || (
@@ -83,12 +83,12 @@ const CommentList = (): JSX.Element => {
             className="flex justify-center items-center gap-2 px-6 py-1 rounded-xl border border-blue text-blue font-bold"
           >
             <BiLoader size={24} />
-            <span>{t("general.see_more_comments")}</span>
+            <span>{t('general.see_more_comments')}</span>
           </button>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default CommentList;
+export default CommentList

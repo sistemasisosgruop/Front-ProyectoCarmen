@@ -1,14 +1,14 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 interface Option {
-  label: string;
-  path: string;
-  icon: JSX.Element;
+  label: string
+  path: string
+  icon: JSX.Element
 }
 
 interface Props {
-  options: Option[];
+  options: Option[]
 }
 
 const Options = ({ options }: Props): JSX.Element => {
@@ -16,7 +16,7 @@ const Options = ({ options }: Props): JSX.Element => {
     <motion.section
       initial={{ opacity: 0, x: 0, y: 25 }}
       animate={{ opacity: 1, x: 0, y: 0 }}
-      transition={{ duration: 0.7, type: "easeInOut" }}
+      transition={{ duration: 0.7, type: 'easeInOut' }}
       className="flex flex-wrap justify-center items-center gap-16 p-4"
     >
       {options.map((option, index: number) => (
@@ -30,7 +30,7 @@ const Options = ({ options }: Props): JSX.Element => {
         </Link>
       ))}
     </motion.section>
-  );
-};
+  )
+}
 
-export default Options;
+export default Options

@@ -113,7 +113,10 @@
   "login": {
     "title": "Datos del usuario principal",
     "email": "Correo electrónico",
+    "password": "Contrasela",
     "continue": "Continuar",
+    "sign_in": "Iniciar sesión",
+    "sign_up": "Registrate",
     "recover_account": "Recuperar cuenta",
     "other_options": "Otras opciones"
   },

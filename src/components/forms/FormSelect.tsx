@@ -1,31 +1,31 @@
 interface OptionProp {
-  text: string;
-  value: string;
+  text: string
+  value: string
 }
 
 interface Props {
-  label?: string | null;
-  labelStyles?: string;
-  name: string;
-  showIcon?: boolean;
-  icon?: JSX.Element;
-  iconPosition?: string;
-  options: OptionProp[];
-  placeholder?: string | null;
+  label?: string | null
+  labelStyles?: string
+  name: string
+  showIcon?: boolean
+  icon?: JSX.Element
+  iconPosition?: string
+  options: OptionProp[]
+  placeholder?: string | null
 }
 
 const FormSelect = ({
   label,
-  labelStyles = "text-base font-bold text-gray-800",
+  labelStyles = 'text-base font-bold text-gray-800',
   name,
   showIcon,
   icon,
   iconPosition,
   options,
-  placeholder,
+  placeholder
 }: Props): JSX.Element => {
   const formatedPlaceholder =
-    placeholder?.toLowerCase().replace(/ /g, "-") ?? "";
+    placeholder?.toLowerCase().replace(/ /g, '-') ?? ''
 
   return (
     <div className="w-full flex flex-col justify-start items-start gap-1">
@@ -34,13 +34,13 @@ const FormSelect = ({
           htmlFor={name}
           className="text-gray-400 flex justify-center items-center gap-2"
         >
-          {showIcon !== undefined && iconPosition === "left" && (
+          {showIcon !== undefined && iconPosition === 'left' && (
             <span>{icon}</span>
           )}
-          <span className={`${labelStyles ?? ""} lg:text-lg whitespace-nowrap`}>
+          <span className={`${labelStyles ?? ''} lg:text-lg whitespace-nowrap`}>
             {label}
           </span>
-          {showIcon !== undefined && iconPosition === "right" && (
+          {showIcon !== undefined && iconPosition === 'right' && (
             <span>{icon}</span>
           )}
         </label>
@@ -63,7 +63,7 @@ const FormSelect = ({
         ))}
       </select>
     </div>
-  );
-};
+  )
+}
 
-export default FormSelect;
+export default FormSelect

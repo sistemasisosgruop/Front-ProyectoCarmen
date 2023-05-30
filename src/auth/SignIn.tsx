@@ -1,48 +1,61 @@
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import { useLang } from "@hooks/useLang";
-import FormInput from "@components/forms/FormInput";
+import { Link } from 'react-router-dom'
+import { useForm } from '@hooks/useForm'
+import { useLang } from '@hooks/useLang'
+import MyFormInput from '@forms/MyFormInput'
+
+interface Inputs {
+  email: string
+  password: string
+  [key: string]: string
+}
 
 const SignIn = (): JSX.Element => {
-  const {
-    register,
-    formState: { errors },
-  } = useForm();
-  const { t } = useLang();
+  const { formData, handleChange, resetForm } = useForm<Inputs>({
+    email: '',
+    password: ''
+  })
+  const { t } = useLang()
+
+  const handleSubmit = (event: React.FormEvent): void => {
+    event.preventDefault()
+    console.log(formData)
+    resetForm()
+  }
 
   return (
     <section className="rounded-xl overflow-hidden bg-gray-100 px-4 py-2 border border-blue border-opacity-25">
       <form
+        onSubmit={handleSubmit}
         autoComplete="false"
         className="w-full flex flex-col justify-center gap-4 mb-8"
       >
         <article className="flex flex-col justify-center items-start gap-4">
-          <FormInput
-            label={t("login.email")}
+          <MyFormInput
+            label={t('login.email')}
+            type="text"
             name="email"
-            register={register}
-            rules={{ required: true }}
-            errors={errors}
+            value={formData.email}
+            handleChange={handleChange}
           />
-          <FormInput
-            label={t("login.password")}
+          <MyFormInput
+            label={t('login.password')}
+            type="password"
             name="password"
-            register={register}
-            rules={{ required: true }}
-            errors={errors}
+            value={formData.password}
+            handleChange={handleChange}
           />
         </article>
         <button
-          type="button"
+          type="submit"
           className="w-full bg-blue px-6 py-2 text-white font-bold rounded-lg hover:bg-opacity-90"
         >
-          {t("login.continue")}
+          {t('login.sign_in')}
         </button>
       </form>
 
       <div className="relative w-full">
         <p className="text-center px-4 z-20 bg-gray-100">
-          {t("login.other_options")}
+          {t('login.other_options')}
         </p>
         <hr className="absolute top-3 -z-10 border-none w-full bg-white py-[1px]" />
       </div>
@@ -68,7 +81,7 @@ const SignIn = (): JSX.Element => {
         </Link>
       </article>
     </section>
-  );
-};
+  )
+}
 
-export default SignIn;
+export default SignIn

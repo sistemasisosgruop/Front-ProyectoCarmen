@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import LayoutPage from "@layouts/LayoutPage";
-import Section from "@layouts/Section";
-import HorizontalCard from "@components/HorizontalCard";
-import { HiOutlineArrowSmLeft } from "react-icons/hi";
-import { IoIosAddCircleOutline } from "react-icons/io";
+import { Link } from 'react-router-dom'
+import LayoutPage from '@layouts/LayoutPage'
+import Section from '@layouts/Section'
+import HorizontalCard from '@components/HorizontalCard'
+import { HiOutlineArrowSmLeft } from 'react-icons/hi'
+import { IoIosAddCircleOutline } from 'react-icons/io'
 
 const DestinationsCatalog = (): JSX.Element => {
   return (
@@ -37,7 +37,7 @@ const DestinationsCatalog = (): JSX.Element => {
         </div>
       </Section>
     </LayoutPage>
-  );
-};
+  )
+}
 
-export default DestinationsCatalog;
+export default DestinationsCatalog
