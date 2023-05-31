@@ -13,7 +13,8 @@ export default defineConfig({
       '@hooks': '/src/hooks',
       '@api': '/src/api',
       '@web': '/src/pages/web',
-      '@dashboard': '/src/pages/dashboard'
+      '@dashboard': '/src/pages/dashboard',
+      '@auth': '/src/auth'
     }
   }
 })
