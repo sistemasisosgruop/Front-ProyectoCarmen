@@ -1,44 +1,128 @@
 {
-  "header": {
+  "general": {
+    "search": "Buscar",
+    "view_catalog": "Ver catálogo",
+    "view_more": "Ver más",
     "rooms": "Habitaciones",
+    "lodging": "Hospedaje",
     "flights": "Vuelos",
+    "tour_packages": "Paquetes turísticos",
     "packages": "Paquetes",
     "contact": "Contacto",
-    "aboutUs": "Sobre nosotros",
-    "logIn": "Iniciar sesion",
-    "myShop": "Mis compras"
+    "about_us": "Acerca de nosotros",
+    "back": "Volver",
+    "book_now": "Reserva ahora",
+    "comments": "{{comments}} comentarios",
+    "most_recent": "Los más recientes",
+    "hours_ago": "Hace {{time}} horas",
+    "reviews": "Reseñas",
+    "num_reviews": "{{numReviews}} reseñas",
+    "opinnions": "{{opinnions}} opiniones",
+    "add_review": "Agregar una reseña",
+    "see_more_comments": "Ver más comentarios",
+    "add_comment": "Agregar un comentario",
+    "add_comment_rate_us": "Agregar un comentario y califícanos",
+    "comment": "Comentar",
+    "total": "Total",
+    "add_to_cart": "Añadir al carrito",
+    "show_more": "Mostrar más",
+    "show_less": "Mostrar menos"
   },
-  "footer": {
-    "address": "Direccion",
-    "phone": "Telefono",
-    "email": "Correo",
-    "rooms": "Habitaciones",
-    "tourPackages": "Paquetes turisticos",
-    "flights": "Vuelos",
-    "contact": "Contacto",
-    "aboutUs": "Sobre nosotros",
-    "complainstBook": "Libro de reclamaciones",
-    "copyright": "Todos los derechos reservados",
-    "legalWarning": "Aviso legal",
-    "privacyPolicies": "Politicas de privacidad",
-    "cookiePolicies": "Politicas de Cookies"
-  },
-  "masthead": {
-    "title": "Reserva ahora y disfruta de una estadía perfecta",
-    "description": "¡Aprovecha esta oportunidad única y reserva ahora para vivir una experiencia inolvidable en nuestra acogedoras habitaciones!"
-  },
-  "home": {
-    "popularRooms": "Habitaciones populares",
-    "popularDestinations": "Destinos populares",
-    "popularFlights": "Vuelos populares",
-    "seeCatalog": "Ver catalogo",
-    "commentsSection": {
-      "theCommentOf": "Los comentarios de",
-      "ourClients": "nuestros clientes",
+  "pages": {
+    "home": {
+      "room": "Habitación",
+      "choose_room_type": "Escoge el tipo de habitación",
+      "start_date": "Fecha de inicio",
+      "end_date": "Fecha de fin",
+      "flight_type": "Tipo de vuelo",
+      "adults_number": "N° de adultos",
+      "children_number": "N° de niños (men. 12 años)",
+      "origin": "Origen",
+      "destination_in_Peru": "Destino del Perú",
+      "place_to_visit": "¿Qué lugar desea visitar?",
+      "select_place_origin": "Seleccione un lugar de origen",
+      "select_place_destination": "Seleccione el lugar de destino",
+      "desired_dates": "Fechas deseadas",
+      "select_tour_package": "Selecciona un paquete turístico",
+      "popular_rooms": "Habitaciones populares",
+      "description_popular_rooms": "Descubre nuestras habitaciones destacadas y disfruta de una estancia inolvidable en un ambiente de lujo y comodidad.",
+      "popular_destinations": "Destinos populares",
+      "description_popular_destinations": "Explora distintos destinos populares y sumérgete en experiencias inolvidables que te llevarán a lugares llenos de belleza y aventura.",
+      "popular_flights": "Vuelos populares",
+      "description_popular_flights": "Descubre los vuelos más destacados y planifica tu próximo viaje a lugares fascinantes llenos de aventura y descubrimiento.",
+      "customer_comments": "Los comentarios de nuestros clientes",
       "description": "Mira algunas opiniones de nuestros cliente",
-      "qualification": "Calificacion general",
-      "seeMore": "Ver más"
+      "qualification": "Calificacion general"
+    },
+    "rooms": {
+      "show_more_photos": "Mostrar más fotos",
+      "overview": "Descripción general",
+      "up_to_people": "Hasta {{numberPeople}} personas",
+      "bedrooms": "{{numberBedrooms}} habitaciones",
+      "beds": "{{numberBeds}} camas",
+      "bathrooms": "{{numberBathrooms}} baños",
+      "what_it_offers": "Lo que ofrece este sitio",
+      "wifi_included": "WiFi incluido",
+      "free_cancellation": "Cancelación gratis",
+      "heating": "Calefacción",
+      "show_more": "Mostrar más",
+      "services": "Servicios",
+      "free_cancellation_until": "Cancelación gratis hasta {{time}} días de antelación.",
+      "additional_charge_until": "Cobro adicional hasta {{time}} días de antelación.",
+      "travel_dates": "Fechas de viaje",
+      "most_relevant": "Los más relacionados",
+      "season_promotions": "No te pierdas nuestras promociones por esta temporada",
+      "days_left_to_book": "Solo quedan {{days}} para reservar este lugar.",
+      "promotions": "Promociones",
+      "promotion_description": "Aprovecha nuestras irresistibles ofertas y disfruta de experiencias únicas en nuestros exclusivos espacios, diseñados para tu confort y satisfacción.",
+      "the_most_popular": "Los más populares",
+      "description_the_most_popular": "Descubre nuestras exclusivas habitaciones más populares, cuidadosamente seleccionadas para brindarte una experiencia inigualable en comodidad, estilo y hospitalidad.",
+      "full_apartment": "Departamentos completos",
+      "description_full_apartment": "Explora nuestra variedad de departamentos completamente equipados, diseñados para ofrecerte una experiencia de alojamiento excepcional. Disfruta de amplios espacios y comodidades para una estancia inolvidable."
+    },
+    "flights": {},
+    "packages": {
+      "search_packages": "Buscar paquetes según el destino",
+      "description_search_packages": "Descubre tu destino perfecto. Encuentra paquetes de viaje atractivos y personalizados para satisfacer tus deseos de exploración y aventura.",
+      "promotions": "Promociones",
+      "description_promotion": "Explora nuestras irresistibles promociones de paquetes turísticos. ¡Aprovecha estas ofertas exclusivas y disfruta de tus vacaciones soñadas!"
+    },
+    "contact": {},
+    "about_us": {}
+  },
+  "components": {
+    "header": {
+      "log_in": "Iniciar sesion",
+      "my_purchases": "Mis compras"
+    },
+    "masthead": {
+      "title": "Reserva ahora y disfruta de una estadía perfecta",
+      "description": "¡Aprovecha esta oportunidad única y reserva ahora para vivir una experiencia inolvidable en nuestra acogedoras habitaciones!"
+    },
+    "footer": {
+      "address": "Dirección",
+      "phone": "Teléfono",
+      "email": "Correo",
+      "complainst_book": "Libro de reclamaciones",
+      "copyright": "Todos los derechos reservados",
+      "legal_warning": "Aviso legal",
+      "privacy_policies": "Politicas de privacidad",
+      "cookie_policies": "Politicas de Cookies"
     }
-
+  },
+  "login": {
+    "title": "Datos del usuario principal",
+    "email": "Correo electrónico",
+    "password": "Contrasela",
+    "continue": "Continuar",
+    "sign_in": "Iniciar sesión",
+    "sign_up": "Registrate",
+    "recover_account": "Recuperar cuenta",
+    "other_options": "Otras opciones"
+  },
+  "not_found": {
+    "not_found": "No se encuentra",
+    "page_not_found": "La página que buscas no se ha encontrado.",
+    "return_home": "Regresa a casa"
   }
 }

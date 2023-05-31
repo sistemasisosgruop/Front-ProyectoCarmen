@@ -1,45 +1,128 @@
 {
-  "header": {
+  "general": {
+    "search": "Search",
+    "view_catalog": "View catalog",
+    "view_more": "View more",
     "rooms": "Rooms",
+    "lodging": "Lodging",
     "flights": "Flights",
+    "tour_packages": "Tour packages",
     "packages": "Packages",
     "contact": "Contact",
-    "aboutUs": "About Us",
-    "logIn": "Log in",
-    "myShop": "My shopping"
+    "about_us": "About us",
+    "back": "Back",
+    "book_now": "Book now",
+    "comments": "{{comments}} comments",
+    "most_recent": "Most recent",
+    "hours_ago": "{{time}} hours ago",
+    "reviews": "Reviews",
+    "num_reviews": "{{numReviews}} reviews",
+    "opinnions": "{{opinnions}} opinnions",
+    "add_review": "Add a review",
+    "see_more_comments": "See more comments",
+    "add_comment": "Add a comment",
+    "add_comment_rate_us": "Add a comment and rate us",
+    "comment": "Comment",
+    "total": "Total",
+    "add_to_cart": "Add to cart",
+    "show_more": "Show more",
+    "show_less": "Show less"
   },
-  "footer": {
-    "address": "Address",
-    "phone": "Phone",
-    "email": "Email",
-    "rooms": "Rooms",
-    "tourPackages": "Tour packages",
-    "flights": "Flights",
-    "contact": "Contact",
-    "aboutUs": "About us",
-    "complainstBook": "Complaints book",
-    "copyright": "All rights reserved",
-    "legalWarning": "Legal warning",
-    "privacyPolicies": "Privacy policies",
-    "cookiePolicies": "Cookie policies"
+  "pages": {
+    "home": {
+      "room": "Room",
+      "choose_room_type": "Choose room type",
+      "start_date": "Start date",
+      "end_date": "End date",
+      "flight_type": "Flight type",
+      "adults_number": "Number of adults",
+      "children_number": "Number of children (under 12)",
+      "origin": "Origin",
+      "destination_in_Peru": "Destination in Peru",
+      "place_to_visit": "What place do you want to visit?",
+      "select_place_origin": "Select a place of origin",
+      "select_place_destination": "Select the place of destination",
+      "desired_dates": "Desired dates",
+      "select_tour_package": "Select a tour package",
+      "popular_rooms": "Popular rooms",
+      "description_popular_rooms": "Discover our featured rooms and enjoy an unforgettable stay in a luxurious and comfortable environment.",
+      "popular_destinations": "Popular destinations",
+      "description_popular_destinations": "Explore different popular destinations and immerse yourself in unforgettable experiences that will take you to places full of beauty and adventure.",
+      "popular_flights": "Popular flights",
+      "description_popular_flights": "Discover the most prominent flights and plan your next trip to fascinating places full of adventure and discovery.",
+      "customer_comments": "The comments of our clients",
+      "description": "Check out some opinions from our customers",
+      "qualification": "Overall rating"
+    },
+    "rooms": {
+      "show_more_photos": "Show more photos",
+      "overview": "Overview",
+      "up_to_people": "Up to {{numberPeople}} people",
+      "bedrooms": "{{numberBedrooms}} bedrooms",
+      "beds": "{{numberBeds}} beds",
+      "bathrooms": "{{numberBathrooms}} bathrooms",
+      "what_it_offers": "What this place offers",
+      "wifi_included": "WiFi included",
+      "heating": "Heating",
+      "free_cancellation": "Free cancellation",
+      "show_more": "Show more",
+      "services": "Services",
+      "free_cancellation_until": "Free cancellation up to {{time}} days in advance.",
+      "additional_charge_until": "Additional charge up to {{time}} days in advance.",
+      "travel_dates": "Travel dates",
+      "most_relevant": "Most relevant",
+      "season_promotions": "Don't miss out on our promotions for this season",
+      "days_left_to_book": "Only {{days}} left to book this place.",
+      "promotions": "Promotions",
+      "promotion_description": "Take advantage of our irresistible offers and enjoy unique experiences in our exclusive spaces, designed for your comfort and satisfaction.",
+      "the_most_popular": "The most popular",
+      "description_the_most_popular": "Discover our exclusive most popular rooms, carefully curated to provide you with an unparalleled experience in comfort, style, and hospitality.",
+      "full_apartment": "Full apartment",
+      "description_full_apartment": "Discover our range of fully-equipped apartments, designed to provide you with an exceptional accommodation experience. Enjoy spacious spaces and amenities for an unforgettable stay."
+    },
+    "flights": {
+      "search_packages": "Search for packages by destination",
+      "description_search_packages": "Discover your perfect destination. Find enticing and personalized travel packages to fulfill your desires for exploration and adventure.",
+      "promotions": "Promotions",
+      "description_promotion": "Discover our irresistible promotions on travel packages. Take advantage of these exclusive deals and enjoy your dream vacation!"
+    },
+    "packages": {},
+    "contact": {},
+    "about_us": {}
   },
-  "masthead": {
-    "title": "Book now and enjoy a perfect stay",
-    "description": "Take advantage of this unique opportunity and book now to live an unforgettable experience in our cozy rooms!"
-  },
-  "home": {
-    "popularRooms": "Popular rooms",
-    "popularDestinations": "Popular destinations",
-    "popularFlights": "Popular flights",
-    "seeCatalog": "See catalog",
-    "commentsSection": {
-      "theCommentOf": "The comments of",
-      "ourClients": "our clients",
-      "description": "Check out some reviews from our customers",
-      "qualification": "General rating",
-      "seeMore": "See more"
+  "components": {
+    "header": {
+      "log_in": "Log in",
+      "my_purchases": "My purchases"
+    },
+    "masthead": {
+      "title": "Book now and enjoy a perfect stay",
+      "description": "Take advantage of this unique opportunity and book now for an unforgettable experience in our cozy rooms!"
+    },
+    "footer": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "complainst_book": "Complaints book",
+      "copyright": "All rights reserved",
+      "legal_warning": "Legal warning",
+      "privacy_policies": "Privacy policies",
+      "cookie_policies": "Cookie policies"
     }
-
+  },
+  "login": {
+    "title": "Main User Data",
+    "email": "Email",
+    "continue": "Continue",
+    "recover_account": "Recover Account",
+    "other_options": "Other Options",
+    "password": "Password",
+    "sign_in": "Sign in",
+    "sign_up": "Sign up"
+  },
+  "not_found": {
+    "not_found": "Not found",
+    "page_not_found": "The page you are looking for was not found.",
+    "return_home": "Return home"
   }
-
 }
