@@ -9,7 +9,7 @@ const Login = () => {
 
   return (
     <LayoutPage title="Iniciar sesión">
-      <Section className="bg-white py-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
+      <Section className="bg-white py-16 grid grid-cols-1 gap-8 sm:grid-cols-2 md:gap-16">
         <div>
           <SignIn />
 
@@ -41,12 +41,10 @@ const Login = () => {
           </picture>
           <article className="space-y-2">
             <h1 className="text-blue text-center text-2xl font-bold flex flex-col justify-center items-center">
-              Iniciar sesión / Registrarse
+              {t('login.sign_in_title')}
             </h1>
             <p className="text-center text-xl">
-              Explora un mundo de posibilidades. Inicia sesión si ya tienes una
-              cuenta o regístrate para descubrir todo lo que puedes hacer con
-              nosotros.
+              {t('login.sign_in_description')}
             </p>
           </article>
         </div>

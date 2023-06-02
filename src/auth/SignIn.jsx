@@ -1,54 +1,66 @@
-import { Link } from 'react-router-dom'
-import { useForm } from '@hooks/useForm'
+import { useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 import { useLang } from '@hooks/useLang'
-import MyFormInput from '@forms/MyFormInput'
-import { useGetRequest } from '@hooks/useGetRequest'
+import { AuthContext } from '@context/AuthContext'
+import axios from '@api/axios'
+import FormInput from '@forms/FormInput'
 
 const SignIn = () => {
-  const { formData, handleChange, resetForm } = useForm({
-    email: '',
-    password: ''
-  })
-  const [data, loading, error] = useGetRequest(
-    'http://localhost:5000/api/v1/users'
-  )
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors }
+  } = useForm()
   const { t } = useLang()
+  const { login } = useContext(AuthContext)
+  const navigate = useNavigate()
 
-  const handleSubmit = event => {
-    event.preventDefault()
-    console.log(formData)
-    resetForm()
+  const onSubmit = async data => {
+    try {
+      const response = await axios.post('auth/login', data)
+      const token = response?.data?.token
+      login(token)
+      navigate('/admin/calendario')
+    } catch (error) {
+      console.log(error)
+    }
+    reset()
   }
-
-  console.log(data)
 
   return (
     <section className="rounded-xl overflow-hidden bg-gray-100 px-4 py-2 border border-blue border-opacity-25">
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
         autoComplete="false"
         className="w-full flex flex-col justify-center gap-4 mb-8"
       >
         <article className="flex flex-col justify-center items-start gap-4">
-          <MyFormInput
+          <FormInput
             label={t('login.email')}
-            type="text"
             name="email"
-            value={formData.email}
-            handleChange={handleChange}
+            register={register}
+            rules={{ required: 'The field is required', minLength: 10 }}
+            errors={errors}
           />
 
-          <MyFormInput
+          <FormInput
             label={t('login.password')}
-            type="password"
             name="password"
-            value={formData.password}
-            handleChange={handleChange}
+            type="password"
+            register={register}
+            rules={{ required: true }}
+            errors={errors}
           />
         </article>
         <button
           type="submit"
-          className="w-full bg-blue px-6 py-2 text-white font-bold rounded-lg hover:bg-opacity-90"
+          disabled={(!watch('email') || !watch('password')) && true}
+          className={`w-full ${
+            !watch('email') || !watch('password') ? 'bg-gray-600' : 'bg-blue'
+          } px-6 py-2 text-white font-bold rounded-lg hover:bg-opacity-90 `}
         >
           {t('login.sign_in')}
         </button>
