@@ -14,7 +14,8 @@ export default defineConfig({
       '@api': '/src/api',
       '@web': '/src/pages/web',
       '@dashboard': '/src/pages/dashboard',
-      '@auth': '/src/auth'
+      '@auth': '/src/auth',
+      '@context': '/src/context'
     }
   }
 })
