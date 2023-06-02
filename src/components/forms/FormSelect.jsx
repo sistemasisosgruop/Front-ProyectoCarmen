@@ -35,7 +35,7 @@ const FormSelect = ({
         className="w-full bg-transparent text-gray-600 py-2 px-6 border border-gray-400 rounded-xl focus:border-blue"
         defaultValue={formatedPlaceholder}
       >
-        {placeholder !== undefined && (
+        {placeholder && (
           <option disabled value={formatedPlaceholder}>
             {placeholder}
           </option>
