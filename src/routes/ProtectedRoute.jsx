@@ -1,7 +1,12 @@
-import { Navigate, Route } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 
-const ProtectedRoute = ({ path, element }) => {
-  return <Navigate to="/" replace state={{ from: path }} />
+const ProtectedRoute = ({ token, redirectTo }) => {
+  return (
+    <>
+      {!token && <Navigate to={redirectTo} replace={true} />}
+      {token && <Outlet />}
+    </>
+  )
 }
 
 export default ProtectedRoute
