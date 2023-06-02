@@ -1,3 +1,4 @@
+import { AuthProvider } from '@context/AuthContext'
 import { BrowserRouter } from 'react-router-dom'
 import { I18nextProvider, initReactI18next } from 'react-i18next'
 import i18next from 'i18next'
@@ -32,9 +33,11 @@ i18next
 const App = () => {
   return (
     <I18nextProvider i18n={i18next}>
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
+      </AuthProvider>
     </I18nextProvider>
   )
 }
