@@ -10,7 +10,8 @@
       "@api/*": ["api/*"],
       "@web/*": ["pages/web/*"],
       "@dashboard/*": ["pages/dashboard/*"],
-      "@auth/*": ["auth/*"]
+      "@auth/*": ["auth/*"],
+      "@context/*": ["context/*"]
     }
   }
 }
