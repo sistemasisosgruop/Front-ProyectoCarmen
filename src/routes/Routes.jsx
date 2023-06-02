@@ -33,6 +33,8 @@ import Receipts from '@dashboard/settings/Receipts'
 import Messages from '@dashboard/settings/Messages'
 import Comments from '@dashboard/settings/Comments'
 
+import ProtectedRoute from './ProtectedRoute'
+
 const Routing = () => {
   return (
     <Routes>
@@ -52,40 +54,51 @@ const Routing = () => {
       <Route path="/mis-compras" element={<MyPurchases />} />
       <Route path="/iniciar-sesion" element={<Login />} />
       <Route path="/registrate" element={<Register />} />
-
-      <Route path="/admin/calendario" element={<AdminCalendar />} />
-      <Route path="/admin/vuelos" element={<AdminFlights />} />
-      <Route path="/admin/camas" element={<SelectOptionBeds />} />
-      <Route path="/admin/camas/registro" element={<BedRegistration />} />
-      <Route path="/admin/camas/reservas" element={<BedReservation />} />
-      <Route
-        path="/admin/paquetes-turisticos"
-        element={<OptionsTouristPackages />}
-      />
-      <Route
-        path="/admin/paquetes-turisticos/registro"
-        element={<TouristpackagesRegistration />}
-      />
-      <Route
-        path="/admin/paquetes-turisticos/reservas"
-        element={<TouristPackagesReservation />}
-      />
-      <Route path="/admin/usuarios" element={<Users />} />
-      <Route path="/admin/estadisticas" element={<Statistics />} />
-      <Route path="/admin/configuracion" element={<OptionSettings />} />
-      <Route path="/admin/configuracion/roles" element={<Roles />} />
-      <Route path="/admin/configuracion/cupones" element={<Coupons />} />
-      <Route path="/admin/configuracion/comprobantes" element={<Receipts />} />
-      <Route path="/admin/configuracion/mensajes" element={<Messages />} />
-      <Route path="/admin/configuracion/comentarios" element={<Comments />} />
-
-      <Route path="/carrito-de-compras" element={<ShoppingCart />} />
-      <Route
-        path="/carrito-de-compras/confirmar-datos"
-        element={<TravelerInformation />}
-      />
-
       <Route path="*" element={<PageNotFound />} />
+
+      <Route
+        element={
+          <ProtectedRoute
+            redirectTo="/iniciar-sesion"
+            token={window.sessionStorage.getItem('token') || null}
+          />
+        }
+      >
+        <Route path="/admin/calendario" element={<AdminCalendar />} />
+        <Route path="/admin/vuelos" element={<AdminFlights />} />
+        <Route path="/admin/camas" element={<SelectOptionBeds />} />
+        <Route path="/admin/camas/registro" element={<BedRegistration />} />
+        <Route path="/admin/camas/reservas" element={<BedReservation />} />
+        <Route
+          path="/admin/paquetes-turisticos"
+          element={<OptionsTouristPackages />}
+        />
+        <Route
+          path="/admin/paquetes-turisticos/registro"
+          element={<TouristpackagesRegistration />}
+        />
+        <Route
+          path="/admin/paquetes-turisticos/reservas"
+          element={<TouristPackagesReservation />}
+        />
+        <Route path="/admin/usuarios" element={<Users />} />
+        <Route path="/admin/estadisticas" element={<Statistics />} />
+        <Route path="/admin/configuracion" element={<OptionSettings />} />
+        <Route path="/admin/configuracion/roles" element={<Roles />} />
+        <Route path="/admin/configuracion/cupones" element={<Coupons />} />
+        <Route
+          path="/admin/configuracion/comprobantes"
+          element={<Receipts />}
+        />
+        <Route path="/admin/configuracion/mensajes" element={<Messages />} />
+        <Route path="/admin/configuracion/comentarios" element={<Comments />} />
+
+        <Route path="/carrito-de-compras" element={<ShoppingCart />} />
+        <Route
+          path="/carrito-de-compras/confirmar-datos"
+          element={<TravelerInformation />}
+        />
+      </Route>
     </Routes>
   )
 }
