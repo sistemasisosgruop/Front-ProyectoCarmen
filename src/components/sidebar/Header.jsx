@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { AuthContext } from '@context/AuthContext'
 import UserActions from './UserActions'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi'
 
-
 const Header = ({ openSidebar }) => {
   const [isOpenAction, setIsOpenAction] = useState(false)
+  const { user } = useContext(AuthContext)
 
   const toggleUserAction = () => {
     setIsOpenAction(!isOpenAction)
@@ -27,12 +28,11 @@ const Header = ({ openSidebar }) => {
           onClick={toggleUserAction}
           className="flex justify-center items-center gap-2 text-white"
         >
-          <p>Camila Raquel Dias Rosas</p>
-          {isOpenAction ? (
-            <BiChevronUp size={18} />
-          ) : (
-            <BiChevronDown size={18} />
-          )}
+          <p>
+            {user?.firstName} {user?.lastName}
+          </p>
+          {isOpenAction && <BiChevronUp size={18} />}
+          {!isOpenAction && <BiChevronDown size={18} />}
         </button>
       </header>
 

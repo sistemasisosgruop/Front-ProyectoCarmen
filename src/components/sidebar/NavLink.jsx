@@ -1,9 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 
-
 const NavLink = ({ href, label, icon }) => {
   const { pathname } = useLocation()
-  console.log(pathname)
 
   return (
     <Link
