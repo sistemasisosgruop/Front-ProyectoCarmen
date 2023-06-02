@@ -1,3 +1,4 @@
+import { useApiGet } from '@hooks/useApiGet'
 import AdminLayout from '@layouts/AdminLayout'
 import AdminSection from '@layouts/AdminSection'
 import Heading from '@components/Heading'
@@ -5,6 +6,8 @@ import THead from '@components/THead'
 import { BiDownload, BiEdit, BiTrash } from 'react-icons/bi'
 
 const Users = () => {
+  const { data, isLoading, error } = useApiGet('users')
+
   return (
     <AdminLayout title="Usuarios">
       <Heading title="Tabla de usuarios" />
@@ -38,34 +41,44 @@ const Users = () => {
                 'País',
                 'Celular',
                 'Código postal',
-                'Dirección',
                 'Acciones'
               ]}
               rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
             />
             <tbody>
-              {[...Array(5)].map((_, index) => (
+              {data?.results?.results?.map((user, index) => (
                 <tr key={index} className="text-sm">
                   <td>
                     <p className="text-center font-bold">{index + 1}</p>
                   </td>
                   <td className="whitespace-nowrap px-4 py-2">
-                    Yoel Valverde Polo
+                    {user.first_name} {user.last_name}
                   </td>
-                  <td className="whitespace-nowrap px-4 py-2">Masculino</td>
-                  <td className="whitespace-nowrap px-4 py-2">DNI</td>
-                  <td className="whitespace-nowrap px-4 py-2">12345678</td>
+                  <td className="whitespace-nowrap px-4 py-2">{user.genre}</td>
                   <td className="whitespace-nowrap px-4 py-2">
-                    correo@gmail.com
+                    {user.document_type}
                   </td>
-                  <td className="whitespace-nowrap px-4 py-2">123456</td>
-                  <td className="whitespace-nowrap px-4 py-2">12/07/2015</td>
-                  <td className="whitespace-nowrap px-4 py-2">Si</td>
-                  <td className="whitespace-nowrap px-4 py-2">Perú</td>
-                  <td className="whitespace-nowrap px-4 py-2">999 999 999</td>
-                  <td className="whitespace-nowrap px-4 py-2">13301</td>
                   <td className="whitespace-nowrap px-4 py-2">
-                    Urb. Las Rosas F-1 Yanahuara
+                    {user.document_number}
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">{user.email}</td>
+                  <td className="whitespace-nowrap px-4 py-2">
+                    {user.password}
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">
+                    {user.birthday}
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">
+                    {user.student ? <span>YES</span> : <span>NO</span>}
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">
+                    {user.country}
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">
+                    {user.phone_number}
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">
+                    {user.country_code}
                   </td>
                   <td className="whitespace-nowrap px-4 py-2">
                     <article className="flex justify-center items-center gap-2">
