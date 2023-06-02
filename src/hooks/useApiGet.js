@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import axios from '@api/axios'
 
-export const useGetRequest = url => {
+export const useApiGet = endPoint => {
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -9,8 +9,8 @@ export const useGetRequest = url => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(url)
-        setData(response.data.data)
+        const response = await axios.get(endPoint)
+        setData(response.data)
       } catch (error) {
         setError(error)
       } finally {
@@ -18,10 +18,8 @@ export const useGetRequest = url => {
       }
     }
 
-    fetchData().catch(e => {
-      console.log(e)
-    })
-  }, [url])
+    fetchData()
+  }, [])
 
-  return [data, isLoading, error]
+  return { data, isLoading, error }
 }
