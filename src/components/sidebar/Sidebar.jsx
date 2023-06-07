@@ -7,7 +7,6 @@ import { TbPlane } from 'react-icons/tb'
 import { BiBed, BiBriefcaseAlt2, BiCalendar } from 'react-icons/bi'
 import { AiOutlineClose } from 'react-icons/ai'
 
-
 const Sidebar = ({ closeSidebar }) => {
   return (
     <aside className="w-full bg-white fixed top-0 left-0 z-10 px-6 py-4 flex justify-between items-center border-b border-b-gray-200 shadow xl:relative xl:w-80 xl:h-screen xl:items-start">
@@ -44,8 +43,8 @@ const Sidebar = ({ closeSidebar }) => {
           </li>
           <li>
             <NavLink
-              href="/admin/camas"
-              label="Camas"
+              href="/admin/departamentos"
+              label="Departamentos"
               icon={<BiBed size={18} />}
             />
           </li>
