@@ -17,9 +17,7 @@ const FormTextArea = ({
         {label}
       </label>
       <textarea
-        onBlur={() => {
-          register(name, rules)
-        }}
+        {...register(name, rules)}
         rows={5}
         className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 resize-none focus:outline-none focus:border-blue focus:text-blue"
       ></textarea>
