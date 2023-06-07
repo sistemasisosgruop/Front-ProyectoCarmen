@@ -5,7 +5,7 @@ import THead from '@components/THead'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
 
-const BedReservation = () => {
+const DepartmentReservation = () => {
   return (
     <AdminLayout title="Reserva de camas">
       <Heading title="Reservas" />
@@ -88,4 +88,4 @@ const BedReservation = () => {
   )
 }
 
-export default BedReservation
+export default DepartmentReservation

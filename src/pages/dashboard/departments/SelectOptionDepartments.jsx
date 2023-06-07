@@ -3,20 +3,20 @@ import Options from '@components/Options'
 import { FaBed } from 'react-icons/fa'
 import { IoMdBed } from 'react-icons/io'
 
-const Beds = () => {
+const SelectOptionDepartments = () => {
   return (
-    <AdminLayout title="Selecciona la opcion de camas">
+    <AdminLayout title="Selecciona la opcion de departamentos">
       <div className="w-full h-full flex justify-center items-center">
         <Options
           options={[
             {
-              label: 'Camas',
-              path: '/admin/camas/registro',
+              label: 'Departamentos',
+              path: '/admin/departamentos/registro',
               icon: <IoMdBed size={80} />
             },
             {
               label: 'Reservas',
-              path: '/admin/camas/reservas',
+              path: '/admin/departamentos/reservas',
               icon: <FaBed size={80} />
             }
           ]}
@@ -26,4 +26,4 @@ const Beds = () => {
   )
 }
 
-export default Beds
+export default SelectOptionDepartments
