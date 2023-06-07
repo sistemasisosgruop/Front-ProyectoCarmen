@@ -9,7 +9,8 @@ const Button = ({
   icon,
   position = 'right',
   extraClasses,
-  onClick
+  onClick,
+  ...props
 }) => {
   return (
     <button
@@ -18,6 +19,7 @@ const Button = ({
       className={`w-full ${background} ${textColor} px-6 py-2 rounded-xl text-center font-bold flex justify-center items-center gap-2 hover:bg-opacity-90 sm:w-auto ${
         extraClasses ?? ''
       }`}
+      {...props}
     >
       {showIcon !== undefined && position === 'left' && icon}
       <span>{text}</span>
