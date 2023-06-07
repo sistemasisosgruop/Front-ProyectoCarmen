@@ -84,7 +84,7 @@ const SearchFlights = () => {
           <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4">
             <DatePicker
               selected={startDate}
-              onChange={(date) => {
+              onChange={date => {
                 setStartDate(date)
               }}
               className="w-full border border-gray-700 rounded-xl px-2 py-1 text-base text-gray-700 focus:outline-none focus:border-blue focus:text-blue"
@@ -92,7 +92,7 @@ const SearchFlights = () => {
             />
             <DatePicker
               selected={startDate}
-              onChange={(date) => {
+              onChange={date => {
                 setStartDate(date)
               }}
               className="w-full border border-gray-700 rounded-xl px-2 py-1 text-base text-gray-700 focus:outline-none focus:border-blue focus:text-blue"
@@ -100,7 +100,7 @@ const SearchFlights = () => {
             />
             <Button
               text={t('general.search')}
-              isIcon={true}
+              showIcon={true}
               icon={<AiOutlineSearch size={18} />}
               position="right"
             />
