@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+
 import Home from '@web/Home'
 import Rooms from '@web/rooms/Rooms'
 import RoomsDetail from '@web/rooms/RoomsDetail'
@@ -6,7 +7,6 @@ import RoomCatalog from '@web/rooms/RoomCatalog'
 import Packages from '@web/Packages'
 import Flights from '@web/Flights'
 import Contact from '@web/Contact'
-// import AboutUs from '@web/AboutUs'
 import DestinationsCatalog from '@web/destination/DestinationsCatalog'
 import DestinationDetail from '@web/destination/DestinationDetail'
 import MyPurchases from '@web/MyPurchases'
@@ -18,9 +18,9 @@ import PageNotFound from '@web/PageNotFound'
 
 import AdminCalendar from '@dashboard/AdminCalendar'
 import AdminFlights from '@dashboard/AdminFlights'
-import SelectOptionBeds from '@dashboard/beds/SelectOptionBeds'
-import BedReservation from '@dashboard/beds/BedReservation'
-import BedRegistration from '@dashboard/beds/BedRegistration'
+import SelectOptionDepartments from '@dashboard/departments/SelectOptionDepartments'
+import DepartmentReservation from '@dashboard/departments/DepartmentReservation'
+import DepartmentRegistration from '@dashboard/departments/DepartmentRegistration'
 import OptionsTouristPackages from '@dashboard/tourist-packages/OptionsTouristPackages'
 import TouristpackagesRegistration from '@dashboard/tourist-packages/TouristPackagesRegistration'
 import TouristPackagesReservation from '@dashboard/tourist-packages/TouristPackagesReservation'
@@ -59,16 +59,25 @@ const Routing = () => {
       <Route
         element={
           <ProtectedRoute
+            token={window.sessionStorage.getItem('token')}
             redirectTo="/iniciar-sesion"
-            token={window.sessionStorage.getItem('token') || null}
           />
         }
       >
         <Route path="/admin/calendario" element={<AdminCalendar />} />
         <Route path="/admin/vuelos" element={<AdminFlights />} />
-        <Route path="/admin/camas" element={<SelectOptionBeds />} />
-        <Route path="/admin/camas/registro" element={<BedRegistration />} />
-        <Route path="/admin/camas/reservas" element={<BedReservation />} />
+        <Route
+          path="/admin/departamentos"
+          element={<SelectOptionDepartments />}
+        />
+        <Route
+          path="/admin/departamentos/registro"
+          element={<DepartmentRegistration />}
+        />
+        <Route
+          path="/admin/departamentos/reservas"
+          element={<DepartmentReservation />}
+        />
         <Route
           path="/admin/paquetes-turisticos"
           element={<OptionsTouristPackages />}
