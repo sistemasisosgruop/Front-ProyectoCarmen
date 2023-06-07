@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { useLang } from '@hooks/useLang'
 import { AuthContext } from '@context/AuthContext'
 import axios from '@api/axios'
+import { toast } from 'react-toastify'
 import FormInput from '@forms/FormInput'
 
 const SignIn = () => {
@@ -23,10 +24,14 @@ const SignIn = () => {
       const response = await axios.post('auth/login', data)
       const token = response?.data?.token
       login(token)
-      navigate('/admin/calendario')
+      toast.success(response.data?.message)
+      if (token === window.sessionStorage.getItem('token')) {
+        navigate('/admin/calendario', { replace: true })
+      }
     } catch (error) {
-      console.log(error)
+      toast.error(error.response?.data?.message)
     }
+
     reset()
   }
 
