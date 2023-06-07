@@ -9,7 +9,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
 import { IoMdAdd } from 'react-icons/io'
 
-const TouristPackages = () => {
+const TouristPackagesResgistration = () => {
   const { isOpenModal, openModal, closeModal } = useModal()
 
   return (
@@ -123,4 +123,4 @@ const TouristPackages = () => {
   )
 }
 
-export default TouristPackages
+export default TouristPackagesResgistration
