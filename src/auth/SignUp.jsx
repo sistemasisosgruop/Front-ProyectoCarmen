@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useLang } from '@hooks/useLang'
+import axios from '@api/axios'
+import { toast } from 'react-toastify'
 import DatePicker from 'react-datepicker'
-import FormInput from '@forms/FormInput'
 import Button from '@components/Button'
+import Input from '@components/forms/Input'
 
 const SignUp = () => {
   const [startDate, setStartDate] = useState(new Date())
@@ -15,8 +17,29 @@ const SignUp = () => {
   } = useForm()
   const { t } = useLang()
 
-  const onSubmit = data => {
-    console.log({ ...data, startDate })
+  const onSubmit = async data => {
+    const newData = {
+      first_name: data.firstName,
+      last_name: data.lastName,
+      email: data.email,
+      password: data.password,
+      genre: data.gender,
+      phone_number: data.phoneNumber,
+      country_code: 1,
+      document_type: data.typeDocument,
+      document_number: data.documentNumber,
+      birthday: startDate,
+      student: data.student,
+      role_id: 1
+    }
+
+    try {
+      const response = await axios.post('users', newData)
+      toast.success(response.statusText)
+    } catch (error) {
+      toast.error(error)
+    }
+
     reset()
   }
 
@@ -28,18 +51,18 @@ const SignUp = () => {
         className="flex flex-col gap-4"
       >
         <article className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <FormInput
+          <Input
+            id="firstName"
             label={t('login.name')}
-            name="first_name"
             register={register}
-            rules={{ required: t('errors.required', { name: 'names' }) }}
+            required={true}
             errors={errors}
           />
-          <FormInput
+          <Input
             label={t('login.last_name')}
-            name="last_name"
+            id="lastName"
             register={register}
-            rules={{ required: t('errors.required', { name: 'last names' }) }}
+            required={true}
             errors={errors}
           />
         </article>
@@ -50,20 +73,20 @@ const SignUp = () => {
               {t('login.sex')}
             </label>
             <select
-              {...register('genre', {
+              {...register('gender', {
                 required: t('errors.required', { name: 'gender' })
               })}
               className="w-full bg-white text-gray-600 py-2 px-6 border border-gray-400 rounded-xl focus:border-blue"
             >
-              <option value="m">Masculino</option>
-              <option value="f">Femenino</option>
+              <option value="male">Masculino</option>
+              <option value="female">Femenino</option>
             </select>
           </div>
-          <FormInput
+          <Input
+            id="phoneNumber"
             label={t('login.phone_number')}
-            name="phone_number"
             register={register}
-            rules={{ required: t('errors.required', { name: 'phone number' }) }}
+            required={true}
             errors={errors}
           />
         </article>
@@ -79,24 +102,28 @@ const SignUp = () => {
             <select
               required
               className="w-full bg-white text-gray-600 py-2 px-6 border border-gray-400 rounded-xl focus:border-blue"
-              {...register('document_type', {
+              {...register('documentType', {
                 required: t('errors.required', { name: 'document type' })
               })}
             >
-              <option className="w-full">DNI</option>
-              <option className="w-full">Pasaporte</option>
-              <option className="w-full">Carnet de extranjería</option>
+              <option className="w-full" value="dni">
+                DNI
+              </option>
+              <option className="w-full" value="pasaporte">
+                Pasaporte
+              </option>
+              <option className="w-full" value="ce">
+                Carnet de extranjería
+              </option>
             </select>
           </div>
-          <FormInput
+          <Input
+            id="documentNumber"
             label={t('login.document_number')}
-            name="document_number"
             register={register}
-            rules={{
-              required: t('errors.required', { name: 'document number' })
-            }}
+            required={true}
             errors={errors}
-            extraClasses="col-span-3"
+            containerStyles="col-span-3"
           />
         </article>
 
@@ -138,19 +165,19 @@ const SignUp = () => {
 
         <hr className="border-none w-full inline-block py-[0.5px] bg-gray-200 my-2 mx-auto" />
 
-        <FormInput
+        <Input
+          id="email"
           label={t('login.email')}
-          name="email"
           register={register}
-          rules={{ required: t('errors.required', { name: 'email' }) }}
+          required={true}
           errors={errors}
         />
-        <FormInput
+        <Input
+          id="password"
           label={t('login.password')}
-          name="password"
           type="password"
           register={register}
-          rules={{ required: t('errors.required', { name: 'password' }) }}
+          required={true}
           errors={errors}
         />
         <Button text={t('login.register')} type="submit" />
