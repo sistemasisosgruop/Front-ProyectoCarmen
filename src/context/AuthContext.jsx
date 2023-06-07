@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 import jwtDecode from 'jwt-decode'
+import { toast } from 'react-toastify'
 
 const AuthContext = createContext({})
 
@@ -8,20 +9,31 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     try {
-      const userDecode = jwtDecode(window.sessionStorage.getItem('token'))
-      setUser({
-        id: userDecode.id,
-        email: userDecode.email,
-        firstName: userDecode.first_name,
-        lastName: userDecode.last_name
-      })
+      const token = window.sessionStorage.getItem('token')
+      if (token) {
+        const userDecode = jwtDecode(token)
+
+        setUser({
+          id: userDecode.id,
+          email: userDecode.email,
+          firstName: userDecode.first_name,
+          lastName: userDecode.last_name
+        })
+      }
     } catch (error) {
-      console.log(error)
+      toast.error(`Usted no a iniciado sesión ${error}`)
     }
   }, [])
 
   const login = token => {
     window.sessionStorage.setItem('token', token)
+    const userDecode = jwtDecode(token)
+    setUser({
+      id: userDecode.id,
+      email: userDecode.email,
+      firstName: userDecode.firstName,
+      lastName: userDecode.lastName
+    })
   }
 
   const logout = () => {
