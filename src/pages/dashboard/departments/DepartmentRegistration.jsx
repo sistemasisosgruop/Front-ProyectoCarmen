@@ -1,24 +1,15 @@
 import { useModal } from '@hooks/useModal'
-import { useApiGet } from '@hooks/useApiGet'
 import Heading from '@components/Heading'
 import AdminLayout from '@layouts/AdminLayout'
 import AdminSection from '@layouts/AdminSection'
 import Modal from '@components/Modal'
 import AddForm from '@components/departments/AddForm'
-import TableRow from '@components/departments/TableRow'
-import THead from '@components/THead'
+import TableDepartments from '@components/departments/TableDepartments'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IoMdAdd } from 'react-icons/io'
 
 const DepartmentRegistration = () => {
   const { isOpenModal, openModal, closeModal } = useModal()
-  const { data, setData, isLoading } = useApiGet(`rooms?page=${2}`)
-
-  const rooms = data?.results?.results
-
-  const addNewDepartment = newData => {
-    setData([...rooms, newData])
-  }
 
   return (
     <>
@@ -52,45 +43,13 @@ const DepartmentRegistration = () => {
             </button>
           </article>
 
-          <div className="overflow-x-scroll rounded-xl">
-            <table className="w-full">
-              <THead
-                headers={[
-                  '#',
-                  'Tipo de habitación',
-                  'Descripción general',
-                  'Dirección',
-                  'Precio por noche',
-                  'Fechas disponibles',
-                  'N° de baños',
-                  'N° de camas',
-                  'Número de habitaciones',
-                  'Extras',
-                  'Detalles',
-                  'Acciones'
-                ]}
-                rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
-              />
-              <tbody>
-                {isLoading && (
-                  <tr>
-                    <td>
-                      <p className="text-center text-xl text-blue">Cargando</p>
-                    </td>
-                  </tr>
-                )}
-                {rooms?.map((room, index) => (
-                  <TableRow key={room.id} room={room} index={index} />
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <TableDepartments />
         </AdminSection>
       </AdminLayout>
 
       {isOpenModal && (
         <Modal title="Agregar una cama" closeModal={closeModal}>
-          <AddForm closeModal={closeModal} onNewRecord={addNewDepartment} />
+          <AddForm closeModal={closeModal} />
         </Modal>
       )}
     </>
