@@ -8,7 +8,7 @@ const AdminLayout = ({ children, title }) => {
   const { isShowSidebar, openSidebar, closeSidebar } = useToggleSidebar()
 
   useEffect(() => {
-    document.title = title
+    document.title = `${title} -  Carmen Agencia de Viajes y Turismo`
   }, [title])
 
   return (
