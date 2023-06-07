@@ -9,7 +9,11 @@ export const useApiGet = endPoint => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(endPoint)
+        const response = await axios.get(endPoint, {
+          headers: {
+            Authorization: `jwt ${window.sessionStorage.getItem('token')}`
+          }
+        })
         setData(response.data)
       } catch (error) {
         setError(error)
@@ -21,5 +25,5 @@ export const useApiGet = endPoint => {
     fetchData()
   }, [])
 
-  return { data, isLoading, error }
+  return { data, setData, isLoading, error }
 }
