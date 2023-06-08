@@ -152,7 +152,7 @@ const TableRow = ({ room, index }) => {
 
       {/* Edit department */}
       {isOpenModal && (
-        <Modal title="Agregar una cama" closeModal={closeModal}>
+        <Modal title="Editar departamento" closeModal={closeModal}>
           <EditForm initialValue={room} />
         </Modal>
       )}

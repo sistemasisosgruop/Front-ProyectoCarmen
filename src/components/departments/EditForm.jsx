@@ -11,9 +11,11 @@ import UploadImages from './UploadImages'
 const EditForm = ({ initialValue }) => {
   const [files, setFiles] = useState([])
   const [startDate, setStartDate] = useState(new Date())
-  const [numOfBathrooms, setNumOfBathrooms] = useState(1)
-  const [numOfBeds, setNumOfBeds] = useState(1)
-  const [numOfRooms, setNumOfRooms] = useState(1)
+  const [numOfBathrooms, setNumOfBathrooms] = useState(
+    initialValue.num_bathrooms
+  )
+  const [numOfBeds, setNumOfBeds] = useState(initialValue.num_beds)
+  const [numOfRooms, setNumOfRooms] = useState(initialValue.num_room?.num_bed)
   const {
     register,
     handleSubmit,
@@ -24,6 +26,10 @@ const EditForm = ({ initialValue }) => {
   useEffect(() => {
     setValue('roomType', initialValue.room_type)
     setValue('description', initialValue.description)
+    setValue('address', initialValue.address)
+    setValue('price', initialValue.price)
+    setValue('checkIn', initialValue.check_in)
+    setValue('checkOut', initialValue.chec_out)
   }, [])
 
   console.log(initialValue)
@@ -95,7 +101,7 @@ const EditForm = ({ initialValue }) => {
         />
       </article>
 
-      {/* <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <FormInput
           register={register}
           rules={{ required: true }}
@@ -161,13 +167,12 @@ const EditForm = ({ initialValue }) => {
       </article>
 
       <hr className="border-none w-full bg-gray-200 py-[0.5px] mx-8" />
-*/}
 
       {/* Add images */}
       <UploadImages setFiles={setFiles} />
 
       {/* Description */}
-      {/* <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:grid-rows-2">
+      <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:grid-rows-2">
         <FormTextArea
           register={register}
           rules={{ required: true }}
@@ -204,7 +209,6 @@ const EditForm = ({ initialValue }) => {
           extraClasses="lg:col-span-1 lg:row-span-1"
         />
       </article>
-*/}
 
       {/* Button */}
       <div>
