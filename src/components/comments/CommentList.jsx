@@ -29,8 +29,8 @@ const CommentList = () => {
       </div>
       <div className="flex flex-col gap-8">
         {[...Array(3)].map((_, index, array) => (
-          <>
-            <article key={index}>
+          <div key={index}>
+            <article>
               <div className="flex justify-between items-center mb-4">
                 <p className="text-dark font-bold">Jane Doe</p>
                 <div className="flex justify-start items-center gap-2 text-orange">
@@ -75,7 +75,7 @@ const CommentList = () => {
             {index === array.length - 1 || (
               <hr className="border-none py-[0.5px] bg-gray-200" />
             )}
-          </>
+          </div>
         ))}
         <div className="grid place-content-center">
           <button
