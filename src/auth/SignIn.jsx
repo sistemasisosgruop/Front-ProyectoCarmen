@@ -1,11 +1,12 @@
 import { useContext } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { useLang } from '@hooks/useLang'
 import { AuthContext } from '@context/AuthContext'
 import axios from '@api/axios'
 import { toast } from 'react-toastify'
 import FormInput from '@forms/FormInput'
+import { GoogleLogin } from '@react-oauth/google'
 
 const SignIn = () => {
   const {
@@ -25,11 +26,14 @@ const SignIn = () => {
       const token = response?.data?.token
       login(token)
       toast.success(response.data?.message)
-      if (token === window.sessionStorage.getItem('token')) {
-        navigate('/admin/calendario', { replace: true })
-      }
     } catch (error) {
       toast.error(error.response?.data?.message)
+    } finally {
+      const token = window.sessionStorage.getItem('token')
+
+      if (token) {
+        navigate('/admin/calendario', { replace: true })
+      }
     }
 
     reset()
@@ -72,31 +76,16 @@ const SignIn = () => {
       </form>
 
       <div className="relative w-full">
-        <p className="text-center px-4 z-20 bg-gray-100">
-          {t('login.other_options')}
-        </p>
+        <p className="text-center px-4 z-20 bg-gray-100">{t('login.other_options')}</p>
         <hr className="absolute top-3 -z-10 border-none w-full bg-white py-[1px]" />
       </div>
 
       <article className="flex flex-col justify-center items-center gap-2 my-4">
-        <Link
-          to=""
-          className="w-full block text-dark text-center text-sm border border-gray-600 px-6 py-2 rounded-xl"
-        >
-          Continuar con Facebook
-        </Link>
-        <Link
-          to=""
-          className="w-full block text-dark text-center text-sm border border-gray-600 px-6 py-2 rounded-xl"
-        >
-          Continuar con Google
-        </Link>
-        <Link
-          to=""
-          className="w-full block text-dark text-center text-sm border border-gray-600 px-6 py-2 rounded-xl"
-        >
-          Continuar con Apple
-        </Link>
+        <GoogleLogin
+          onError={() => console.log('error')}
+          onSuccess={credentialResponse => console.log(credentialResponse)}
+          useOneTap
+        />
       </article>
     </section>
   )
