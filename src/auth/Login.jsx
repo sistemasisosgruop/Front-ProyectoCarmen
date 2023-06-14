@@ -33,19 +33,13 @@ const Login = () => {
 
         <div className="row-start-1 sm:row-start-auto">
           <picture className="inline-block w-full mb-8">
-            <img
-              src="/images/illustrations/login.svg"
-              alt="login file"
-              className="w-full"
-            />
+            <img src="/images/illustrations/login.svg" alt="login file" className="w-full" />
           </picture>
           <article className="space-y-2">
             <h1 className="text-blue text-center text-2xl font-bold flex flex-col justify-center items-center">
               {t('login.sign_in_title')}
             </h1>
-            <p className="text-center text-xl">
-              {t('login.sign_in_description')}
-            </p>
+            <p className="text-center text-xl">{t('login.sign_in_description')}</p>
           </article>
         </div>
       </Section>

@@ -8,7 +8,7 @@ const ProtectedRoute = ({ token, redirectTo }) => {
     if (!token) {
       navigate(redirectTo)
     }
-  }, [token, navigate, redirectTo])
+  }, [])
 
   return token ? <Outlet /> : null
 }

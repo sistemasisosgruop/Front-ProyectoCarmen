@@ -10,6 +10,8 @@ import FullApartmentCard from '@components/rooms/FullApartmentCard'
 import ButtonLinkSm from '@components/ButtonLinkSm'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
+console.log('Rooms')
+
 const Rooms = () => {
   const { t } = useLang()
 
@@ -18,10 +20,7 @@ const Rooms = () => {
       <Masthead />
 
       <Section className="pt-32">
-        <Heading
-          title={t('pages.rooms.promotions')}
-          description={t('pages.rooms.promotion_description')}
-        />
+        <Heading title={t('pages.rooms.promotions')} description={t('pages.rooms.promotion_description')} />
         <section className="grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
           {[...Array(4)].map((_, index) => (
             <PromotionCard
@@ -72,33 +71,20 @@ const Rooms = () => {
       </Section>
 
       <Section className="py-32">
-        <h2 className="text-4xl font-bold text-dark mb-4">
-          Buscar por tipo de habitacion
-        </h2>
+        <h2 className="text-4xl font-bold text-dark mb-4">Buscar por tipo de habitacion</h2>
         <section className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {[...Array(5)].map((_, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl overflow-hidden border border-white"
-            >
+            <div key={index} className="bg-white rounded-xl overflow-hidden border border-white">
               <img
                 src="https://i.pinimg.com/originals/8a/58/20/8a58209121f6c945dcc79a4c9bb81a0d.jpg"
                 alt={`Room ${index + 1}`}
                 className=""
               />
               <article className="px-4 py-4 space-y-2">
-                <p className="text-lg font-bold text-dark uppercase">
-                  Matrimoniales
-                </p>
-                <p className="text-gray-600 underline hover:decoration-wavy">
-                  10+ habitaciones
-                </p>
+                <p className="text-lg font-bold text-dark uppercase">Matrimoniales</p>
+                <p className="text-gray-600 underline hover:decoration-wavy">10+ habitaciones</p>
 
-                <ButtonLinkSm
-                  to="/catalogo-habitaciones"
-                  text={t('general.view_more')}
-                  background="bg-orange"
-                />
+                <ButtonLinkSm to="/catalogo-habitaciones" text={t('general.view_more')} background="bg-orange" />
               </article>
             </div>
           ))}

@@ -4,10 +4,7 @@ import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
 const AddFirstForm = ({ control, errors, handleSubmit, onNextStep }) => {
   return (
-    <form
-      onSubmit={handleSubmit(onNextStep)}
-      className="w-full flex flex-col gap-4"
-    >
+    <form onSubmit={handleSubmit(onNextStep)} className="w-full flex flex-col gap-4">
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <FormInput
           register={control.register}

@@ -3,26 +3,16 @@ import DatePicker from 'react-datepicker'
 import Button from '@components/Button'
 import MyFormInput from '@forms/FormInput'
 import FormTextArea from '@forms/FormTextArea'
-import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 import UploadImages from '@components/UploadImages'
+import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 
-const AddSecondForm = ({
-  control,
-  errors,
-  handleSubmit,
-  onPrevStep,
-  onNextStep
-}) => {
+const AddSecondForm = ({ control, errors, handleSubmit, setFiles, onPrevStep, onNextStep }) => {
   const [startDate, setStartDate] = useState(new Date())
-  const [images, setImages] = useState(null)
 
   return (
-    <form
-      onSubmit={handleSubmit(onNextStep)}
-      className="w-full flex flex-col gap-4"
-    >
+    <form onSubmit={handleSubmit(onNextStep)} className="w-full flex flex-col gap-4">
       {/* Add images */}
-      <UploadImages setImages={setImages} />
+      <UploadImages setFiles={setFiles} />
 
       <article className="grid grid-cols-1 gap-4">
         <FormTextArea
@@ -92,7 +82,7 @@ const AddSecondForm = ({
           text="Atrás"
           onClick={onPrevStep}
           background="bg-orange"
-          isIcon={true}
+          showIcon={true}
           position="left"
           icon={<HiOutlineArrowSmLeft size={18} />}
         />
@@ -101,7 +91,7 @@ const AddSecondForm = ({
           text="Siguiente"
           onClick={onNextStep}
           background="bg-orange"
-          isIcon={true}
+          showIcon={true}
           icon={<HiOutlineArrowSmRight size={18} />}
         />
       </article>

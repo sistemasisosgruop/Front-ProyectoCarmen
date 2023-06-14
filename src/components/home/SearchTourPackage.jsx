@@ -45,33 +45,20 @@ const SearchTourPackage = () => {
       <div className="w-full flex flex-col justify-center items-start gap-4 sm:col-span-2">
         <p className="flex justify-start items-center gap-2">
           <FaCalendarAlt size={18} className="text-gray-400" />
-          <span className="text-base font-bold text-gray-800 lg:text-lg">
-            {t('pages.home.desired_dates')}
-          </span>
+          <span className="text-base font-bold text-gray-800 lg:text-lg">{t('pages.home.desired_dates')}</span>
         </p>
         <div className="w-full grid grid-cols-1 gap-4 sm:grid-cols-3">
           <DatePicker
             selected={startDate}
-            onChange={date => {
-              setStartDate(date)
-            }}
+            onChange={date => setStartDate(date)}
             className="w-full border border-gray-700 rounded-xl px-2 py-1 text-base text-gray-700 focus:outline-none focus:border-blue focus:text-blue"
-            showIcon={true}
           />
           <DatePicker
             selected={startDate}
-            onChange={date => {
-              setStartDate(date)
-            }}
+            onChange={date => setStartDate(date)}
             className="w-full border border-gray-700 rounded-xl px-2 py-1 text-base text-gray-700 focus:outline-none focus:border-blue focus:text-blue"
-            showIcon={true}
           />
-          <Button
-            text={t('general.search')}
-            showIcon={true}
-            icon={<AiOutlineSearch size={18} />}
-            position="right"
-          />
+          <Button text={t('general.search')} showIcon={true} icon={<AiOutlineSearch size={18} />} position="right" />
         </div>
       </div>
     </div>

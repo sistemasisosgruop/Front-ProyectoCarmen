@@ -7,6 +7,7 @@ import axios from '@api/axios'
 import { toast } from 'react-toastify'
 import FormInput from '@forms/FormInput'
 import { GoogleLogin } from '@react-oauth/google'
+import jwtDecode from 'jwt-decode'
 
 const SignIn = () => {
   const {
@@ -24,6 +25,7 @@ const SignIn = () => {
     try {
       const response = await axios.post('auth/login', data)
       const token = response?.data?.token
+      console.log(jwtDecode(token))
       login(token)
       toast.success(response.data?.message)
     } catch (error) {

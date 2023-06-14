@@ -16,7 +16,7 @@ import PaymentForm from '@components/shopping-cart/PaymentForm'
 import PurchaseTerms from '@components/shopping-cart/PurchaseTerms'
 
 const TravelerInformation = () => {
-  const { activeTab, switchTab } = useTabs()
+  const { activeTab, switchTab } = useTabs(0)
   const navigate = useNavigate()
 
   return (
@@ -74,9 +74,7 @@ const TravelerInformation = () => {
                 <Button
                   text="Confirmar datos"
                   background="bg-blue"
-                  onClick={() => {
-                    switchTab(1)
-                  }}
+                  onClick={() => switchTab(1)}
                 />
               </div>
             </section>
@@ -96,10 +94,8 @@ const TravelerInformation = () => {
                 <Button
                   text="Confirmar pago"
                   background="bg-blue"
-                  onClick={() => {
-                    switchTab(1)
-                  }}
-                  isIcon
+                  onClick={() => switchTab(2)}
+                  showIcon={true}
                   icon={<MdOutlinePayment size={18} />}
                   extraClasses="uppercase"
                 />

@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import Types from 'prop-types'
 
-const UploadImages = ({ setImages }) => {
-  const [imagesSelected, setImagesSelected] = useState([])
+const UploadImages = ({ setFiles }) => {
+  const [images, setImages] = useState([])
 
   const handleImageUpload = event => {
     const files = event.target.files
-    const imagesArray = Array.from(files).slice(1, 10)
+    const imagesArray = Array.from(files).slice(0, 10)
 
-    setImagesSelected(imagesArray.map(image => URL.createObjectURL(image)))
-    setImages(files)
+    setImages(imagesArray.map(image => URL.createObjectURL(image)))
+    setFiles(files)
   }
 
   return (
@@ -29,7 +29,7 @@ const UploadImages = ({ setImages }) => {
           *Se acepta un máximo de 10 archivos con un tamaño máximo de 10MB
         </span>
         <div className="grid grid-cols-1 gap-8 mt-4 sm:grid-cols-2 md:grid-cols-3">
-          {imagesSelected.map((imageUrl, index) => (
+          {images.map((imageUrl, index) => (
             <img
               key={index}
               src={imageUrl}

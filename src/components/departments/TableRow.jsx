@@ -37,24 +37,14 @@ const TableRow = ({ room, index }) => {
         <td className="whitespace-nowrap px-4 py-2">
           <div className="flex justify-center items-center gap-4">
             <span>{room.num_beds}</span>
-            <button
-              type="button"
-              onClick={() => handleBedDetails(index)}
-              className="p-1 text-dark"
-            >
+            <button type="button" onClick={() => handleBedDetails(index)} className="p-1 text-dark">
               <BiChevronDown size={24} />
             </button>
           </div>
         </td>
+        <td className="whitespace-nowrap px-4 py-2">{room.extras?.join(', ') + '.'}</td>
         <td className="whitespace-nowrap px-4 py-2">
-          {room.extras?.join(', ') + '.'}
-        </td>
-        <td className="whitespace-nowrap px-4 py-2">
-          <button
-            type="button"
-            onClick={() => handleRoomDetails(index)}
-            className="p-1 text-dark"
-          >
+          <button type="button" onClick={() => handleRoomDetails(index)} className="p-1 text-dark">
             <BiChevronDown size={24} />
           </button>
         </td>
@@ -86,12 +76,8 @@ const TableRow = ({ room, index }) => {
               <tbody className="bg-gray-200">
                 {[...Array(3)].map((_, index) => (
                   <tr key={index}>
-                    <td className="px-4 py-2 text-center">
-                      Habitación 0{index + 1}
-                    </td>
-                    <td className="px-4 py-2 text-center">
-                      Habitación matrimonial
-                    </td>
+                    <td className="px-4 py-2 text-center">Habitación 0{index + 1}</td>
+                    <td className="px-4 py-2 text-center">Habitación matrimonial</td>
                     <td className="px-4 py-2 text-center">01</td>
                     <td className="px-4 py-2 text-center">Queen</td>
                     <td className="px-4 py-2 text-center">-</td>
@@ -117,16 +103,20 @@ const TableRow = ({ room, index }) => {
                 </tr>
                 <tr className="bg-gray-500">
                   <th>Qué está incluido</th>
-                  <th className="border-r border-r-gray-100">
-                    Qué no está incluido
-                  </th>
+                  <th className="border-r border-r-gray-100">Qué no está incluido</th>
                   <th>Cancelación gratis</th>
                   <th>Cobro adicional</th>
                 </tr>
               </thead>
               <tbody className="bg-gray-100">
                 <tr>
-                  <td>Fotos</td>
+                  <td>
+                    {room.Room_Details?.images_url?.map((image, index) => (
+                      <div key={image} className="w-full flex">
+                        <img src={image} alt={`Image of the room ${index + 1}`} className="border-md w-20" />
+                      </div>
+                    ))}
+                  </td>
                   <td>
                     <ul>
                       <li>Wifi</li>

@@ -4,7 +4,6 @@ import FormTextArea from '@forms/FormTextArea'
 import { BiSave } from 'react-icons/bi'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 
-
 const AddThirdForm = ({
   control,
   errors,
@@ -73,7 +72,7 @@ const AddThirdForm = ({
           text="Atrás"
           onClick={onPrevStep}
           background="bg-orange"
-          isIcon={true}
+          showIcon={true}
           position="left"
           icon={<HiOutlineArrowSmLeft size={18} />}
         />

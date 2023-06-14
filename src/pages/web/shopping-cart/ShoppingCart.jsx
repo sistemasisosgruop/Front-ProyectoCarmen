@@ -22,9 +22,7 @@ const ShoppingCart = () => {
     <LayoutPage title="Mi carrito de compras">
       <section className="py-8 flex justify-end items-center px-8">
         <button
-          onClick={() => {
-            navigate(-1)
-          }}
+          onClick={() => navigate(-1)}
           className="flex justify-center items-center gap-2 uppercase text-dark "
         >
           <span>Seguir comprando</span>
@@ -37,9 +35,7 @@ const ShoppingCart = () => {
       <Section className="py-16">
         <button
           type="button"
-          onClick={() => {
-            navigate(-1)
-          }}
+          onClick={() => navigate(-1)}
           className="bg-turquoise px-6 py-2 text-white rounded-xl flex justify-center items-center gap-2 mb-8"
         >
           <HiOutlineArrowSmLeft size={18} />

@@ -1,34 +1,12 @@
-import { useEffect, useState } from 'react'
-import axios from '@api/axios'
-import { toast } from 'react-toastify'
+import { useState } from 'react'
+import { useApiGet } from '@hooks/useApiGet'
 import THead from '@components/THead'
 import TableRow from './TableRow'
 import Paginate from '@components/Paginate'
 
 const TableDepartments = () => {
-  const [rooms, setRooms] = useState([] || null)
-  const [isLoading, setIsLoading] = useState(true)
   const [pageNumber, setPageNumber] = useState(1)
-
-  useEffect(() => {
-    getDepartments()
-  }, [pageNumber])
-
-  const getDepartments = async () => {
-    try {
-      const response = await axios.get(`rooms?page=${pageNumber}`, {
-        headers: {
-          Authorization: `jwt ${window.sessionStorage.getItem('token')}`
-        }
-      })
-      setIsLoading(false)
-      setRooms(response.data?.results)
-    } catch (error) {
-      toast.error(error)
-    } finally {
-      setIsLoading(false)
-    }
-  }
+  const { data, isLoading } = useApiGet({ url: 'rooms', pageNumber })
 
   return (
     <div className="rounded">
@@ -59,14 +37,14 @@ const TableDepartments = () => {
                 </td>
               </tr>
             )}
-            {rooms.results?.map((room, index) => (
+            {data?.results?.map((room, index) => (
               <TableRow key={room.id} room={room} index={index} />
             ))}
           </tbody>
         </table>
       </div>
       <div className="mt-4 flex justify-end items-center">
-        <Paginate counter={rooms.totalPages} setCounter={setPageNumber} />
+        <Paginate counter={data?.results?.totalPages} setCounter={setPageNumber} />
       </div>
     </div>
   )

@@ -1,11 +1,11 @@
 import { useLang } from '@hooks/useLang'
+import Button from '@components/Button'
 import { MdBedroomParent } from 'react-icons/md'
 import { RiHotelBedFill } from 'react-icons/ri'
 import { FaBath } from 'react-icons/fa'
 import { GiHeatHaze } from 'react-icons/gi'
 import { HiUsers } from 'react-icons/hi'
 import { AiOutlineLike, AiOutlineWifi } from 'react-icons/ai'
-import Button from '@components/Button'
 
 const RoomDescriptionInDetail = () => {
   const { t } = useLang()

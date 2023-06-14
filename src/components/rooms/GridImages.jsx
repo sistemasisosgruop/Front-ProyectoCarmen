@@ -2,8 +2,6 @@ import { useLang } from '@hooks/useLang'
 import Button from '@components/Button'
 import { HiOutlinePhoto } from 'react-icons/hi2'
 
-
-
 const GridImages = ({ images }) => {
   const { t } = useLang()
 
@@ -35,7 +33,7 @@ const GridImages = ({ images }) => {
           text={t('pages.rooms.show_more_photos')}
           background="bg-white"
           textColor="text-dark"
-          isIcon
+          showIcon={true}
           icon={<HiOutlinePhoto size={18} />}
           position="left"
         />

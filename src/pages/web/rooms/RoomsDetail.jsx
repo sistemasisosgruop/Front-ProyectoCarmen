@@ -18,9 +18,7 @@ const RoomDetail = () => {
       <Section className="py-16">
         <button
           type="button"
-          onClick={() => {
-            navigate(-1)
-          }}
+          onClick={() => navigate(-1)}
           className="bg-blue px-6 py-2 text-white rounded-xl flex justify-center items-center gap-2 mb-8"
         >
           <HiOutlineArrowSmLeft size={18} />
