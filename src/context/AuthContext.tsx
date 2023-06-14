@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 
 const AuthContext = createContext({})
 
-const AuthProvider = ({ children }) => {
+function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
@@ -41,11 +41,7 @@ const AuthProvider = ({ children }) => {
     window.sessionStorage.removeItem('token')
   }
 
-  return (
-    <AuthContext.Provider value={{ user, login, logout }}>
-      {children}
-    </AuthContext.Provider>
-  )
+  return <AuthContext.Provider value={{ user, login, logout }}>{children}</AuthContext.Provider>
 }
 
 export { AuthContext, AuthProvider }

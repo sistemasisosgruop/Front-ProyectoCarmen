@@ -7,7 +7,7 @@ import DatePicker from 'react-datepicker'
 import Button from '@components/Button'
 import Input from '@components/forms/Input'
 
-const SignUp = () => {
+function SignUp() {
   const [startDate, setStartDate] = useState(new Date())
   const {
     register,
@@ -45,33 +45,15 @@ const SignUp = () => {
 
   return (
     <section className="rounded-xl overflow-hidden bg-gray-100 px-4 py-8 border border-blue border-opacity-25 md:px-8">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        autoComplete="false"
-        className="flex flex-col gap-4"
-      >
+      <form onSubmit={handleSubmit(onSubmit)} autoComplete="false" className="flex flex-col gap-4">
         <article className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <Input
-            id="firstName"
-            label={t('login.name')}
-            register={register}
-            required={true}
-            errors={errors}
-          />
-          <Input
-            label={t('login.last_name')}
-            id="lastName"
-            register={register}
-            required={true}
-            errors={errors}
-          />
+          <Input id="firstName" label={t('login.name')} register={register} required={true} errors={errors} />
+          <Input label={t('login.last_name')} id="lastName" register={register} required={true} errors={errors} />
         </article>
 
         <article className="grid grid-cols-1 gap-4 lg:grid-cols-2">
           <div>
-            <label className="text-sm text-gray-600 inline-block mb-1">
-              {t('login.sex')}
-            </label>
+            <label className="text-sm text-gray-600 inline-block mb-1">{t('login.sex')}</label>
             <select
               {...register('gender', {
                 required: t('errors.required', { name: 'gender' })
@@ -82,21 +64,12 @@ const SignUp = () => {
               <option value="female">Femenino</option>
             </select>
           </div>
-          <Input
-            id="phoneNumber"
-            label={t('login.phone_number')}
-            register={register}
-            required={true}
-            errors={errors}
-          />
+          <Input id="phoneNumber" label={t('login.phone_number')} register={register} required={true} errors={errors} />
         </article>
 
         <article className="grid grid-cols-5 items-end gap-4">
           <div className="w-full flex flex-col justify-start items-start gap-1 col-span-2">
-            <label
-              htmlFor="typeDocument"
-              className="text-gray-600 text-sm inline-block mb-1"
-            >
+            <label htmlFor="typeDocument" className="text-gray-600 text-sm inline-block mb-1">
               {t('login.document_type')}
             </label>
             <select
@@ -129,10 +102,7 @@ const SignUp = () => {
 
         <article className="grid grid-cols-1 gap-4 lg:grid-cols-2">
           <div>
-            <label
-              htmlFor="birthday"
-              className="text-sm text-gray-600 inline-block mb-1"
-            >
+            <label htmlFor="birthday" className="text-sm text-gray-600 inline-block mb-1">
               {t('login.birthday')}
             </label>
             <DatePicker
@@ -142,9 +112,7 @@ const SignUp = () => {
             />
           </div>
           <div>
-            <label className="text-sm text-gray-600 inline-block mb-1">
-              {t('login.student')}
-            </label>
+            <label className="text-sm text-gray-600 inline-block mb-1">{t('login.student')}</label>
             <fieldset
               {...register('student', {
                 required: t('errors.required', { name: 'student' })
@@ -165,13 +133,7 @@ const SignUp = () => {
 
         <hr className="border-none w-full inline-block py-[0.5px] bg-gray-200 my-2 mx-auto" />
 
-        <Input
-          id="email"
-          label={t('login.email')}
-          register={register}
-          required={true}
-          errors={errors}
-        />
+        <Input id="email" label={t('login.email')} register={register} required={true} errors={errors} />
         <Input
           id="password"
           label={t('login.password')}

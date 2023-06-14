@@ -2,30 +2,25 @@ import { Link } from 'react-router-dom'
 import { useLang } from '@hooks/useLang'
 import LayoutPage from '@layouts/LayoutPage'
 import Section from '@layouts/Section'
-import SignIn from './SignIn'
+import SignUp from './SignUp'
 
-const Login = () => {
+function Register() {
   const { t } = useLang()
 
   return (
-    <LayoutPage title="Iniciar sesión">
+    <LayoutPage title="Registrate">
       <Section className="bg-white py-16 grid grid-cols-1 gap-8 sm:grid-cols-2 md:gap-16">
         <div>
-          <SignIn />
+          <SignUp />
 
           <article className="mt-8">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-start items-center gap-1">
+              <p>{t('login.already_have_account')}</p>
               <Link
-                to="/"
-                className="inline-block text-blue underline hover:text-opacity-90 hover:decoration-wavy hover:transition-all duration-300"
+                to="/iniciar-sesion"
+                className="inline-block text-blue font-bold underline hover:text-opacity-90 hover:decoration-wavy hover:transition-all duration-300"
               >
-                {t('login.recover_account')}
-              </Link>
-              <Link
-                to="/registrate"
-                className="inline-block text-orange font-bold underline hover:text-opacity-90 hover:decoration-wavy hover:transition-all duration-300"
-              >
-                {t('login.sign_up')}
+                {t('login.sign_in')}
               </Link>
             </div>
           </article>
@@ -47,4 +42,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register

@@ -9,7 +9,7 @@ import FormInput from '@forms/FormInput'
 import { GoogleLogin } from '@react-oauth/google'
 import jwtDecode from 'jwt-decode'
 
-const SignIn = () => {
+function SignIn() {
   const {
     register,
     handleSubmit,
