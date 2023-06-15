@@ -13,6 +13,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "jsxImportSource": "react",
 
     /* Linting */
     "strict": true,
@@ -23,15 +24,17 @@
     "paths": {
       "@components/*": ["components/*"],
       "@layouts/*": ["components/layouts/*"],
+      "@features/*": ["features/*"],
       "@forms/*": ["components/forms/*"],
-      "@styles/*": ["styles/*"],
+      "@assets/*": ["assets/*"],
       "@hooks/*": ["hooks/*"],
-      "@api/*": ["api/*"],
+      "@lib/*": ["lib/*"],
       "@web/*": ["pages/web/*"],
       "@dashboard/*": ["pages/dashboard/*"],
       "@auth/*": ["auth/*"],
       "@context/*": ["context/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@types/*": ["types/*"]
     }
   },
   "include": ["src"],

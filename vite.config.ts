@@ -8,15 +8,17 @@ export default defineConfig({
     alias: {
       '@components': '/src/components',
       '@layouts': '/src/components/layouts',
+      '@features': '/src/features',
       '@forms': '/src/components/forms',
-      '@styles': '/src/styles',
+      '@assets': '/src/assets',
       '@hooks': '/src/hooks',
-      '@api': '/src/api',
+      '@lib': '/src/lib',
       '@web': '/src/pages/web',
       '@dashboard': '/src/pages/dashboard',
       '@auth': '/src/auth',
       '@context': '/src/context',
-      '@utils': '/src/utils'
+      '@utils': '/src/utils',
+      '@types': '/src/types'
     }
   }
 })
