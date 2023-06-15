@@ -37,7 +37,7 @@ const Comments = lazy(() => import('@dashboard/settings/Comments'))
 
 const ProtectedRoute = lazy(() => import('./ProtectedRoute'))
 
-const Routing = () => {
+function Routing() {
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
@@ -56,7 +56,7 @@ const Routing = () => {
         <Route path="/registrate" element={<Register />} />
         <Route path="*" element={<PageNotFound />} />
 
-        <Route element={<ProtectedRoute token={window.sessionStorage.getItem('token')} redirectTo="/iniciar-sesion" />}>
+        <Route element={<ProtectedRoute />}>
           <Route path="/admin/calendario" element={<AdminCalendar />} />
           <Route path="/admin/vuelos" element={<AdminFlights />} />
           <Route path="/admin/departamentos" element={<SelectOptionDepartments />} />

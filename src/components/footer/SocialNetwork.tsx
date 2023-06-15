@@ -1,7 +1,7 @@
 import { AiOutlineInstagram, AiOutlineWhatsApp } from 'react-icons/ai'
 import { FaFacebookF, FaTiktok } from 'react-icons/fa'
 
-const SocialNetwork = () => {
+function SocialNetwork() {
   return (
     <ul className="flex justify-center items-center gap-2 mt-4 md:mt-0">
       <li>

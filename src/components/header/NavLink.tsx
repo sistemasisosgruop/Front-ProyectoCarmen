@@ -1,8 +1,13 @@
 import { NavLink as NavLinkReactRouter } from 'react-router-dom'
 
-// flex justify-center items-center gap-2 hover:text-orange
-// ${customClass}
-const NavLink = ({ path, text, icon, customClass, ...props }) => {
+interface Props {
+  path: string
+  text: string
+  icon: JSX.Element
+  customClass: string
+}
+
+const NavLink = ({ path, text, icon, customClass, ...props }: Props) => {
   return (
     <NavLinkReactRouter
       {...props}
@@ -12,9 +17,7 @@ const NavLink = ({ path, text, icon, customClass, ...props }) => {
           ? `text-orange pointer-events-none flex justify-center items-center gap-2 hover:text-orange ${
               customClass ?? ''
             }`
-          : `flex justify-center items-center gap-2 hover:text-orange ${
-              customClass ?? ''
-            }`
+          : `flex justify-center items-center gap-2 hover:text-orange ${customClass ?? ''}`
       }
     >
       {icon}

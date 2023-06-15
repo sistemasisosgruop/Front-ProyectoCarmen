@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react'
-import axios from '@api/axios'
+import axios from '@lib/axios'
 import { toast } from 'react-toastify'
 import THead from '@components/THead'
 import Paginate from '@components/Paginate'
 import TableRow from './TableRow'
 
-const CouponList = ({ isOpenModal }) => {
+interface Props {
+  isOpenModal: boolean
+}
+
+function CouponList({ isOpenModal }: Props) {
   const [coupons, setCoupons] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [numberPage, setNumberPage] = useState(1)
@@ -37,13 +41,7 @@ const CouponList = ({ isOpenModal }) => {
       <div className="overflow-x-scroll rounded-xl">
         <table className="w-full">
           <THead
-            headers={[
-              '#',
-              'Código de copón',
-              'Descuento',
-              'Producto asignado',
-              'Acciones'
-            ]}
+            headers={['#', 'Código de copón', 'Descuento', 'Producto asignado', 'Acciones']}
             rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
           />
           <tbody>
@@ -61,10 +59,7 @@ const CouponList = ({ isOpenModal }) => {
         </table>
       </div>
       <div className="my-4 flex justify-end items-center">
-        <Paginate
-          counter={coupons.results?.totalPages}
-          setCounter={setNumberPage}
-        />
+        <Paginate counter={coupons.results?.totalPages} setCounter={setNumberPage} />
       </div>
     </div>
   )

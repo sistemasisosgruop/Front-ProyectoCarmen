@@ -3,7 +3,7 @@ import Comment from '@components/feedback/Comment'
 import Carousel from '@components/carousel/Carousel'
 import CarouselItem from '@components/carousel/CarouselItem'
 
-const FeedbackSection = () => {
+function FeedbackSection() {
   return (
     <section className="bg-white py-32">
       <HeaderTestimonials />

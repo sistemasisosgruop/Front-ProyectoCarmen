@@ -1,15 +1,20 @@
-import { createContext, useCallback, useEffect, useState } from 'react'
+import { ReactNode, createContext, useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import ClassNames from 'embla-carousel-class-names'
-import s from '@styles/carousel.module.css'
+import s from '../../assets/carousel.module.css'
+
+interface Props {
+  children: ReactNode
+  className: string
+}
 
 export const CarouselContext = createContext({
   embla: undefined,
   selectedIndex: -1
 })
 
-const Carousel = ({ children, className }) => {
+function Carousel({ children, className }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [viewportRef, emblaApi] = useEmblaCarousel(
     {
@@ -32,10 +37,7 @@ const Carousel = ({ children, className }) => {
 
   return (
     <CarouselContext.Provider value={{ embla: emblaApi, selectedIndex }}>
-      <div
-        ref={viewportRef}
-        className={`${s.viewport} w-full overflow-hidden ${className}`}
-      >
+      <div ref={viewportRef} className={`${s.viewport} w-full overflow-hidden ${className}`}>
         <div className={`${s.container} flex`}>{children}</div>
       </div>
     </CarouselContext.Provider>

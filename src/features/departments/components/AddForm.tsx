@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import axios from '@api/axios'
+import axios from '@lib/axios'
 import DatePicker from 'react-datepicker'
 import Input from '@forms/Input'
 import Textarea from '@forms/Textarea'
@@ -9,7 +9,11 @@ import Button from '@components/Button'
 import UploadImages from './UploadImages'
 import { toast } from 'react-toastify'
 
-const AddForm = ({ closeModal, onNewRecord }) => {
+interface Props {
+  closeModal: () => void
+}
+
+function AddForm({ closeModal }: Props) {
   const [files, setFiles] = useState([])
   const [startDate, setStartDate] = useState(new Date())
   const [numOfBathrooms, setNumOfBathrooms] = useState(1)
@@ -22,7 +26,7 @@ const AddForm = ({ closeModal, onNewRecord }) => {
     formState: { errors }
   } = useForm()
 
-  const onSubmit = async data => {
+  const onSubmit = async (data: any) => {
     try {
       const response = await axios.post(
         'rooms',
@@ -78,10 +82,7 @@ const AddForm = ({ closeModal, onNewRecord }) => {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col justify-center items-center gap-4"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center items-center gap-4">
       <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Input
           id="roomType"
@@ -148,12 +149,7 @@ const AddForm = ({ closeModal, onNewRecord }) => {
           htmlFor="numOfBathrooms"
         />
 
-        <NumberPicker
-          value={numOfBeds}
-          onChangeValue={setNumOfBeds}
-          label="Número de camas"
-          htmlFor="numOfBeds"
-        />
+        <NumberPicker value={numOfBeds} onChangeValue={setNumOfBeds} label="Número de camas" htmlFor="numOfBeds" />
 
         <NumberPicker
           value={numOfRooms}

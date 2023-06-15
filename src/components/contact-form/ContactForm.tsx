@@ -4,7 +4,7 @@ import MyFormInput from '@components/forms/FormInput'
 import FormTextArea from '@components/forms/FormTextArea'
 import { BsSend } from 'react-icons/bs'
 
-const ContactForm = () => {
+function ContactForm() {
   const {
     register,
     formState: { errors }
@@ -12,9 +12,7 @@ const ContactForm = () => {
 
   return (
     <div className="bg-turquoise py-4 px-8 rounded-xl">
-      <h2 className="text-2xl font-bold uppercase mb-6 text-center text-white sm:text-3xl">
-        Contactanos
-      </h2>
+      <h2 className="text-2xl font-bold uppercase mb-6 text-center text-white sm:text-3xl">Contactanos</h2>
       <form className="flex flex-col gap-4">
         <article className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <MyFormInput

@@ -1,18 +1,16 @@
 import { useTabs } from '@hooks/useTabs'
-import Tabs from '../../components/Tabs'
-import TabItem from '../../components/TabItem'
-import THead from '../THead'
+import Tabs from '@components/Tabs'
+import TabItem from '@components/TabItem'
+import THead from '@components/THead'
 
-const SelectFlight = () => {
+function SelectFlight() {
   const { activeTab, switchTab } = useTabs(0)
 
   return (
     <Tabs activeTab={activeTab} switchTab={switchTab}>
       <TabItem label="Precios por aerolinea">
         <table>
-          <THead
-            headers={['Aerolínea', 'Directo', '1 escala', '2 escalas o más']}
-          />
+          <THead headers={['Aerolínea', 'Directo', '1 escala', '2 escalas o más']} />
           <tbody>
             <tr>
               <td>LATAM</td>

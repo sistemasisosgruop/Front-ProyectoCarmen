@@ -18,7 +18,7 @@ const VARIANTS_MENU = {
   }
 }
 
-const Header = () => {
+function Header() {
   const { isOpenMenu, openMenu, closeMenu } = useToggleMenu()
   const { isScrolled } = useScrollPageY()
 
@@ -39,9 +39,7 @@ const Header = () => {
       </button>
 
       <div
-        className={`hidden xl:flex xl:flex-col xl:justify-center xl:items-center md:gap-4 ${
-          isScrolled ? 'mr-32' : ''
-        }`}
+        className={`hidden xl:flex xl:flex-col xl:justify-center xl:items-center md:gap-4 ${isScrolled ? 'mr-32' : ''}`}
       >
         {!isScrolled && <HeaderActions isScrolled={isScrolled} />}
 
@@ -58,10 +56,7 @@ const Header = () => {
             transition={{ duration: 0.3 }}
             exit="exit"
           >
-            <button
-              onClick={closeMenu}
-              className="flex justify-end text-green py-4 px-6"
-            >
+            <button onClick={closeMenu} className="flex justify-end text-green py-4 px-6">
               <AiOutlineMenu size={18} />
             </button>
 

@@ -1,19 +1,22 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import axios from '@api/axios'
+import axios from '@lib/axios'
 import DatePicker from 'react-datepicker'
 import FormInput from '@forms/FormInput'
 import FormTextArea from '@forms/FormTextArea'
 import NumberPicker from '@forms/NumberPicker'
 import Button from '@components/Button'
 import UploadImages from './UploadImages'
+import { Department } from 'types/department'
 
-const EditForm = ({ initialValue }) => {
+interface Props {
+  initialValue: any
+}
+
+const EditForm = ({ initialValue }: Props) => {
   const [files, setFiles] = useState([])
   const [startDate, setStartDate] = useState(new Date())
-  const [numOfBathrooms, setNumOfBathrooms] = useState(
-    initialValue.num_bathrooms
-  )
+  const [numOfBathrooms, setNumOfBathrooms] = useState(initialValue.num_bathrooms)
   const [numOfBeds, setNumOfBeds] = useState(initialValue.num_beds)
   const [numOfRooms, setNumOfRooms] = useState(initialValue.num_room?.num_bed)
   const {
@@ -34,7 +37,7 @@ const EditForm = ({ initialValue }) => {
 
   console.log(initialValue)
 
-  const onSubmit = async data => {
+  const onSubmit = async (data: Department) => {
     try {
       const response = await axios.put(
         'rooms',
@@ -77,10 +80,7 @@ const EditForm = ({ initialValue }) => {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col justify-center items-center gap-4"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center items-center gap-4">
       <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <FormInput
           register={register}
@@ -151,12 +151,7 @@ const EditForm = ({ initialValue }) => {
           htmlFor="numOfBathrooms"
         />
 
-        <NumberPicker
-          value={numOfBeds}
-          onChangeValue={setNumOfBeds}
-          label="Número de camas"
-          htmlFor="numOfBeds"
-        />
+        <NumberPicker value={numOfBeds} onChangeValue={setNumOfBeds} label="Número de camas" htmlFor="numOfBeds" />
 
         <NumberPicker
           value={numOfRooms}
@@ -212,11 +207,7 @@ const EditForm = ({ initialValue }) => {
 
       {/* Button */}
       <div>
-        <Button
-          text="Editar departamento"
-          type="submit"
-          background="bg-orange"
-        />
+        <Button text="Editar departamento" type="submit" background="bg-orange" />
       </div>
     </form>
   )

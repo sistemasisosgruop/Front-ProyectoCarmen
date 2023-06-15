@@ -1,6 +1,17 @@
 import { Link } from 'react-router-dom'
 
-const ButtonLink = ({
+interface Props {
+  to: string
+  text: string
+  background?: string
+  textColor?: string
+  showIcon?: boolean
+  icon?: JSX.Element
+  iconPosition?: string
+  extraClasses?: string
+}
+
+function ButtonLink({
   to,
   text,
   background = 'bg-turquoise',
@@ -9,15 +20,16 @@ const ButtonLink = ({
   icon,
   iconPosition,
   extraClasses
-}) => {
+}: Props) {
   return (
     <Link
       to={to}
-      className={`${background ?? ''} ${
-        textColor ?? ''
-      } font-bold rounded-xl px-6 py-2 flex justify-center items-center gap-2 hover:bg-opacity-90 ${
-        extraClasses ?? ''
-      }`}
+      className={`
+        font-bold rounded-xl px-6 py-2 flex justify-center items-center gap-2 hover:bg-opacity-90
+        ${background ?? ''}
+        ${textColor ?? ''}
+        ${extraClasses ?? ''}
+      `}
     >
       {showIcon !== undefined && iconPosition === 'left' && icon}
       <span>{text}</span>

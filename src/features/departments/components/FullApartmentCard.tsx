@@ -6,13 +6,7 @@ import { HiUsers } from 'react-icons/hi'
 import { MdBedroomParent } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 
-
-const FullApartmentCard = ({
-  href,
-  index,
-  imagePath,
-  imageAlt
-}) => {
+const FullApartmentCard = ({ href, index, imagePath, imageAlt }) => {
   const { t } = useLang()
 
   return (
@@ -20,34 +14,13 @@ const FullApartmentCard = ({
       to={href}
       className={`
         h-full flex flex-col rounded-xl overflow-hidden
-        ${
-          index === 0
-            ? 'col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-2'
-            : ''
-        }
-        ${
-          index === 1
-            ? 'col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-1'
-            : ''
-        }
-        ${
-          index === 2
-            ? 'col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-2'
-            : ''
-        }
-        ${
-          index === 3
-            ? 'col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-1'
-            : ''
-        }
+        ${index === 0 ? 'col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-2' : ''}
+        ${index === 1 ? 'col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-1' : ''}
+        ${index === 2 ? 'col-span-6 row-span-2 sm:col-span-3 lg:col-span-2 lg:row-span-2' : ''}
+        ${index === 3 ? 'col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-1' : ''}
       `}
     >
-      <CardHover
-        imagePath={imagePath}
-        alt={imageAlt}
-        score={'4.5'}
-        minHeight="min-h-[220px]"
-      >
+      <CardHover imagePath={imagePath} alt={imageAlt} score={'4.5'} minHeight="min-h-[220px]">
         <article className="flex flex-col gap-2">
           <div className="flex justify-between">
             <p className="text-xl font-bold text-dark">Departamento</p>
@@ -74,11 +47,11 @@ const FullApartmentCard = ({
                 <span>Hasta 8 personas</span>
               </li>
             </ul>
-            <ButtonLinkSm
+            {/* <ButtonLinkSm
               to="/habitaciones/detalle"
               text={t('general.view_more')}
               background="bg-orange"
-            />
+            /> */}
           </div>
         </article>
       </CardHover>

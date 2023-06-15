@@ -1,14 +1,12 @@
 import { BiLoader } from 'react-icons/bi'
 import { BsStarFill } from 'react-icons/bs'
 
-const Comments = () => {
+function Comments() {
   return (
     <>
       <div className="flex flex-col justify-center items-end">
         <select className="rounded-xl border border-gray-400">
-          <option className="inline-block rounded-xl text-red-700">
-            Lo mas reciente
-          </option>
+          <option className="inline-block rounded-xl text-red-700">Lo mas reciente</option>
           <option>Mejor calificacion</option>
           <option>Peor calificacion</option>
         </select>
@@ -31,19 +29,15 @@ const Comments = () => {
                 </div>
               </div>
               <p className="text-dark mb-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                at iste animi dignissimos inventore quo blanditiis voluptate,
-                recusandae nihil vitae eum ducimus porro reiciendis veritatis,
-                aliquid quod cum iure illum? Quo hic maxime error consequatur
-                tempora eum iure, mollitia inventore.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias at iste animi dignissimos inventore quo
+                blanditiis voluptate, recusandae nihil vitae eum ducimus porro reiciendis veritatis, aliquid quod cum
+                iure illum? Quo hic maxime error consequatur tempora eum iure, mollitia inventore.
               </p>
               <p className="text-gray-600 text-sm">
                 <span>Hace 10 horas</span>
               </p>
             </article>
-            {index === array.length - 1 || (
-              <hr className="border-none py-[0.5px] bg-gray-200" />
-            )}
+            {index === array.length - 1 || <hr className="border-none py-[0.5px] bg-gray-200" />}
           </>
         ))}
         <div className="grid place-content-center">

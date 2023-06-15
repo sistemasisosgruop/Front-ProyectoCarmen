@@ -3,10 +3,11 @@ import { useApiGet } from '@hooks/useApiGet'
 import THead from '@components/THead'
 import TableRow from './TableRow'
 import Paginate from '@components/Paginate'
+import { Department } from 'types/department'
 
 const TableDepartments = () => {
   const [pageNumber, setPageNumber] = useState(1)
-  const { data, isLoading } = useApiGet({ url: 'rooms', pageNumber })
+  const { data, isLoading } = useApiGet<Department[]>({ url: 'rooms', pageNumber })
 
   return (
     <div className="rounded">

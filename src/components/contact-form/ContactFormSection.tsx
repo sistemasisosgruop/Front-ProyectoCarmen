@@ -1,7 +1,7 @@
 import Section from '@layouts/Section'
 import ContactForm from './ContactForm'
 
-const ContactFormSection = () => {
+function ContactFormSection() {
   return (
     <Section className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       <ContactForm />

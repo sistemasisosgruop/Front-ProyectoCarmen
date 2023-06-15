@@ -1,8 +1,13 @@
-import { useCallback, useContext } from 'react'
+import { ReactNode, useCallback, useContext } from 'react'
 import { CarouselContext } from './Carousel'
-import s from '@styles/carousel.module.css'
+import s from '@assets/carousel.module.css'
 
-const CarouselItem = ({ children, index }) => {
+interface Props {
+  children: ReactNode
+  index: number
+}
+
+function CarouselItem({ children, index }: Props) {
   const { embla: emblaApi, selectedIndex } = useContext(CarouselContext)
   const isActive = selectedIndex === index
 
@@ -12,10 +17,7 @@ const CarouselItem = ({ children, index }) => {
   }, [emblaApi, index])
 
   return (
-    <div
-      className={`${s.slide} relative space-x-8 ${isActive ? 'active' : ''}`}
-      onClick={handleClick}
-    >
+    <div className={`${s.slide} relative space-x-8 ${isActive ? 'active' : ''}`} onClick={handleClick}>
       {children}
     </div>
   )

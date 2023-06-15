@@ -3,8 +3,13 @@ import { useLang } from '@hooks/useLang'
 import ButtonLink from '@components/ButtonLink'
 import CardHover from '@components/CardHover'
 
+interface Props {
+  href: string
+  imagePath: string
+  imageAlt: string
+}
 
-const PromotionCard = ({ href, imagePath, imageAlt }) => {
+function PromotionCard({ href, imagePath, imageAlt }: Props) {
   const { t } = useLang()
 
   return (
@@ -17,11 +22,7 @@ const PromotionCard = ({ href, imagePath, imageAlt }) => {
           </p>
         </article>
         <h3 className="text-lg font-bold uppercase my-4">Matrimonial</h3>
-        <ButtonLink
-          to="/"
-          text={t('general.view_more')}
-          background="bg-orange"
-        />
+        <ButtonLink to="/" text={t('general.view_more')} background="bg-orange" />
       </CardHover>
     </Link>
   )

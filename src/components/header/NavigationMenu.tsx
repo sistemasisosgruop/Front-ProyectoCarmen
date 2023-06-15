@@ -5,16 +5,19 @@ import { BiHelpCircle, BiBriefcaseAlt } from 'react-icons/bi'
 import { MdSupervisedUserCircle } from 'react-icons/md'
 import { HiOutlineHome } from 'react-icons/hi'
 
-const NavigationMenu = ({ isScrolled }) => {
+interface Props {
+  isScrolled: boolean
+}
+
+function NavigationMenu({ isScrolled }: Props) {
   const { t } = useLang()
 
   return (
     <nav
-      className={`pt-0 grid place-content-center xl:pt-0 ${
-        isScrolled ?? false
-          ? ''
-          : 'xl:absolute xl:bottom-4 xl:left-1/2 xl:-translate-x-1/2 z-20 '
-      }`}
+      className={`
+        pt-0 grid place-content-center xl:pt-0
+        ${isScrolled ?? false ? '' : 'xl:absolute xl:bottom-4 xl:left-1/2 xl:-translate-x-1/2 z-20 '}
+      `}
     >
       <ul className="flex flex-col justify-start items-start gap-4 md:flex-row">
         <li>

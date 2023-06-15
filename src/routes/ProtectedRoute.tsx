@@ -1,16 +1,11 @@
-import { useEffect } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { AuthContext } from '@context/AuthContext'
+import { useContext } from 'react'
+import { Outlet, Navigate } from 'react-router-dom'
 
-const ProtectedRoute = ({ token, redirectTo }) => {
-  const navigate = useNavigate()
+function ProtectedRoute() {
+  const authContext = useContext(AuthContext)
 
-  useEffect(() => {
-    if (!token) {
-      navigate(redirectTo)
-    }
-  }, [])
-
-  return token ? <Outlet /> : null
+  return authContext.accessToken ? <Outlet /> : <Navigate to="/iniciar-sesion" replace={true} />
 }
 
 export default ProtectedRoute

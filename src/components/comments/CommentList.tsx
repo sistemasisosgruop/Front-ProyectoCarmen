@@ -3,11 +3,11 @@ import { useLang } from '@hooks/useLang'
 import { BiLoader } from 'react-icons/bi'
 import { BsStarFill } from 'react-icons/bs'
 
-const CommentList = () => {
-  const [activeComment, setActiveComment] = useState(null)
+function CommentList() {
+  const [activeComment, setActiveComment] = useState<number | null>(null)
   const { t } = useLang()
 
-  const toggleFullComment = commentIndex => {
+  const toggleFullComment = (commentIndex: number) => {
     setActiveComment(commentIndex === activeComment ? null : commentIndex)
   }
 
@@ -15,17 +15,13 @@ const CommentList = () => {
     <>
       <div className="flex flex-col justify-center items-end mb-4 sm:mb-0">
         <select className="rounded-xl bg-white border border-gray-300 px-6 py-2">
-          <option className="inline-block rounded-xl text-red-700">
-            Lo mas reciente
-          </option>
+          <option className="inline-block rounded-xl text-red-700">Lo mas reciente</option>
           <option>Mejor calificacion</option>
           <option>Peor calificacion</option>
         </select>
       </div>
       <div className="mb-8">
-        <p className="text-lg text-dark font-bold">
-          {t('general.comments', { comments: 10 })}
-        </p>
+        <p className="text-lg text-dark font-bold">{t('general.comments', { comments: 10 })}</p>
       </div>
       <div className="flex flex-col gap-8">
         {[...Array(3)].map((_, index, array) => (
@@ -41,21 +37,13 @@ const CommentList = () => {
                   <BsStarFill size={18} />
                 </div>
               </div>
-              <p
-                className={`text-dark mb-2 ${
-                  activeComment === index ? '' : 'line-clamp-4 md:line-clamp-3'
-                }`}
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                at iste animi dignissimos inventore quo blanditiis voluptate,
-                recusandae nihil vitae eum ducimus porro reiciendis veritatis,
-                aliquid quod cum iure illum? Quo hic maxime error consequatur
-                tempora eum iure, mollitia inventore. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Alias at iste animi dignissimos
-                inventore quo blanditiis voluptate, recusandae nihil vitae eum
-                ducimus porro reiciendis veritatis, aliquid quod cum iure illum?
-                Quo hic maxime error consequatur tempora eum iure, mollitia
-                inventore.
+              <p className={`text-dark mb-2 ${activeComment === index ? '' : 'line-clamp-4 md:line-clamp-3'}`}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias at iste animi dignissimos inventore quo
+                blanditiis voluptate, recusandae nihil vitae eum ducimus porro reiciendis veritatis, aliquid quod cum
+                iure illum? Quo hic maxime error consequatur tempora eum iure, mollitia inventore. Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Alias at iste animi dignissimos inventore quo blanditiis voluptate,
+                recusandae nihil vitae eum ducimus porro reiciendis veritatis, aliquid quod cum iure illum? Quo hic
+                maxime error consequatur tempora eum iure, mollitia inventore.
               </p>
               <p className="text-gray-600 text-sm flex justify-between items-center">
                 <button
@@ -65,16 +53,12 @@ const CommentList = () => {
                   }}
                   className="hover:underline"
                 >
-                  {activeComment === index
-                    ? t('general.show_less')
-                    : t('general.show_more')}
+                  {activeComment === index ? t('general.show_less') : t('general.show_more')}
                 </button>
                 <span>{t('general.hours_ago', { time: 10 })}</span>
               </p>
             </article>
-            {index === array.length - 1 || (
-              <hr className="border-none py-[0.5px] bg-gray-200" />
-            )}
+            {index === array.length - 1 || <hr className="border-none py-[0.5px] bg-gray-200" />}
           </div>
         ))}
         <div className="grid place-content-center">

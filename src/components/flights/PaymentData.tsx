@@ -1,4 +1,4 @@
-const PaymentData = () => {
+function PaymentData() {
   return <div></div>
 }
 

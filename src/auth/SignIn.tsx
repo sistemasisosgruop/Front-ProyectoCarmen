@@ -3,35 +3,39 @@ import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { useLang } from '@hooks/useLang'
 import { AuthContext } from '@context/AuthContext'
-import axios from '@api/axios'
+import axios from '@lib/axios'
 import { toast } from 'react-toastify'
 import FormInput from '@forms/FormInput'
 import { GoogleLogin } from '@react-oauth/google'
-import jwtDecode from 'jwt-decode'
+
+interface LoginRequest {
+  email: string
+  password: string
+}
 
 function SignIn() {
+  const navigate = useNavigate()
+  const { t } = useLang()
+  const authContext = useContext(AuthContext)
   const {
     register,
     handleSubmit,
     watch,
     reset,
     formState: { errors }
-  } = useForm()
-  const { t } = useLang()
-  const { login } = useContext(AuthContext)
-  const navigate = useNavigate()
+  } = useForm<LoginRequest>()
 
-  const onSubmit = async data => {
+  const onSubmit = async (data: LoginRequest) => {
     try {
       const response = await axios.post('auth/login', data)
       const token = response?.data?.token
-      console.log(jwtDecode(token))
-      login(token)
+      authContext?.login(`jwt ${token}`)
       toast.success(response.data?.message)
-    } catch (error) {
+    } catch (error: any) {
       toast.error(error.response?.data?.message)
     } finally {
       const token = window.sessionStorage.getItem('token')
+      console.log({ 'Finally token': token })
 
       if (token) {
         navigate('/admin/calendario', { replace: true })

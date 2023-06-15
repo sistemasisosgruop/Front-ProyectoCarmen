@@ -9,7 +9,11 @@ const LANGUAGES = [
   { value: 'en', text: 'EN', icon: '🇺🇸' }
 ]
 
-const HeaderActions = ({ isScrolled }) => {
+interface Props {
+  isScrolled: boolean
+}
+
+function HeaderActions({ isScrolled }: Props) {
   const [saveLang, setSaveLang] = useState(localStorage.getItem('lang') ?? '')
   const { t, toggleLang } = useLang()
 
@@ -22,7 +26,7 @@ const HeaderActions = ({ isScrolled }) => {
     }
   }, [])
 
-  const toggleSaveLang = e => {
+  const toggleSaveLang = (e: any) => {
     const selectedLang = e.target.value
     setSaveLang(selectedLang)
     localStorage.setItem('lang', selectedLang)
@@ -40,17 +44,11 @@ const HeaderActions = ({ isScrolled }) => {
           <AiOutlineWhatsApp size={18} className="text-white" />
           <p className="text-white">WhatsApp 984 748 106</p>
         </article>
-        <Link
-          to="/iniciar-sesion"
-          className="flex justify-content items-center gap-2"
-        >
+        <Link to="/iniciar-sesion" className="flex justify-content items-center gap-2">
           <FaUser size={18} className="text-white" />
           <span className="text-white">{t('components.header.log_in')}</span>
         </Link>
-        <Link
-          to="/mis-compras"
-          className="flex justify-content items-center gap-2"
-        >
+        <Link to="/mis-compras" className="flex justify-content items-center gap-2">
           <FaShoppingBag size={18} className="text-white" />
           <p className="text-white">{t('components.header.my_purchases')}</p>
         </Link>

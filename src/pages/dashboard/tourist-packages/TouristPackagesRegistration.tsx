@@ -4,7 +4,7 @@ import AdminLayout from '@layouts/AdminLayout'
 import AdminSection from '@layouts/AdminSection'
 import THead from '@components/THead'
 import Modal from '@components/Modal'
-import AddTourPackage from '@components/tourist-packages/AddTourPackage'
+import AddTourPackage from '@features/tours/components/AddTourPackage'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
 import { IoMdAdd } from 'react-icons/io'
@@ -20,10 +20,7 @@ const TouristPackagesResgistration = () => {
         <AdminSection>
           <article className="flex flex-col justify-between items-end gap-4 mb-8 sm:flex-row">
             <div className="w-full relative">
-              <label
-                htmlFor="searchClient"
-                className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600"
-              >
+              <label htmlFor="searchClient" className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600">
                 <AiOutlineSearch size={18} />
               </label>
               <input
@@ -68,22 +65,16 @@ const TouristPackagesResgistration = () => {
                 {[...Array(5)].map((_, index) => (
                   <tr key={index} className="text-sm">
                     <td>{index + 1}</td>
-                    <td className="whitespace-nowrap px-4 py-2">
-                      Valle sagrado de los incas
-                    </td>
+                    <td className="whitespace-nowrap px-4 py-2">Valle sagrado de los incas</td>
                     <td className="px-4 py-2">
-                      El servicio blabla blabla blabla blabla blabla blabla
-                      blabla blabla blabla blabla blabla blabla blabla
+                      El servicio blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla
+                      blabla
                     </td>
                     <td className="whitespace-nowrap px-4 py-2">-</td>
-                    <td className="whitespace-nowrap px-4 py-2">
-                      Valle sagrado
-                    </td>
+                    <td className="whitespace-nowrap px-4 py-2">Valle sagrado</td>
                     <td className="whitespace-nowrap px-4 py-2">8 Horas</td>
                     <td className="whitespace-nowrap px-4 py-2">Baja</td>
-                    <td className="whitespace-nowrap px-4 py-2">
-                      Español, Inglés y Portugués
-                    </td>
+                    <td className="whitespace-nowrap px-4 py-2">Español, Inglés y Portugués</td>
                     <td className="px-4 py-2">Máximo 15 personas por grupo</td>
                     <td className="whitespace-nowrap px-4 py-2">1 a 75 años</td>
                     <td className="whitespace-nowrap px-4 py-2">

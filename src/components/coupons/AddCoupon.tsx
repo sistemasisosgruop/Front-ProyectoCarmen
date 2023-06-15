@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import axios from '@api/axios'
+import axios from '@lib/axios'
 import Input from '@forms/Input'
 import Autocomplete from '@forms/Autocomplete'
 import Button from '@components/Button'
 import { toast } from 'react-toastify'
 
-const AddCoupon = ({ closeModal }) => {
+interface Props {
+  closeModal: () => void
+}
+
+function AddCoupon({ closeModal }: Props) {
   const [departments, setDepartments] = useState([])
   const {
     register,
@@ -65,20 +69,8 @@ const AddCoupon = ({ closeModal }) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
       <article className="grid grid-cols-2 gap-4">
-        <Input
-          id="couponCode"
-          label="Código de cupón"
-          register={register}
-          errors={errors}
-          required={true}
-        />
-        <Input
-          id="discount"
-          label="Descuento asignado"
-          register={register}
-          errors={errors}
-          required={true}
-        />
+        <Input id="couponCode" label="Código de cupón" register={register} errors={errors} required={true} />
+        <Input id="discount" label="Descuento asignado" register={register} errors={errors} required={true} />
       </article>
 
       <article>

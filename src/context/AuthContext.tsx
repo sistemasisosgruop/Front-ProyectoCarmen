@@ -1,17 +1,29 @@
-import { createContext, useEffect, useState } from 'react'
+import { User, UserResponse } from 'types/user'
+import { ReactNode, createContext, useEffect, useState } from 'react'
 import jwtDecode from 'jwt-decode'
 import { toast } from 'react-toastify'
 
-const AuthContext = createContext({})
+interface Props {
+  children: ReactNode
+}
 
-function AuthProvider({ children }) {
-  const [user, setUser] = useState(null)
+interface AuthContextType {
+  user: User | null
+  accessToken: string
+  login: (token: string) => void
+  logout: () => void
+}
+
+const AuthContext = createContext<AuthContextType>({} as AuthContextType)
+
+function AuthProvider({ children }: Props) {
+  const [user, setUser] = useState<User>({} as User)
+  const [accessToken, setAccessToken] = useState<string>(window.sessionStorage.getItem('token') ?? '')
 
   useEffect(() => {
     try {
-      const token = window.sessionStorage.getItem('token')
-      if (token) {
-        const userDecode = jwtDecode(token)
+      if (accessToken) {
+        const userDecode: UserResponse = jwtDecode(accessToken)
 
         setUser({
           id: userDecode.id,
@@ -25,23 +37,24 @@ function AuthProvider({ children }) {
     }
   }, [])
 
-  const login = token => {
+  const login = (token: string) => {
+    setAccessToken(token)
     window.sessionStorage.setItem('token', token)
-    const userDecode = jwtDecode(token)
+    const userDecode: UserResponse = jwtDecode(token)
     setUser({
       id: userDecode.id,
       email: userDecode.email,
-      firstName: userDecode.firstName,
-      lastName: userDecode.lastName
+      firstName: userDecode.first_name,
+      lastName: userDecode.last_name
     })
   }
 
   const logout = () => {
-    setUser(null)
+    setUser({} as User)
     window.sessionStorage.removeItem('token')
   }
 
-  return <AuthContext.Provider value={{ user, login, logout }}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={{ user, accessToken, login, logout }}>{children}</AuthContext.Provider>
 }
 
 export { AuthContext, AuthProvider }

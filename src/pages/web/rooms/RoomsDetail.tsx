@@ -2,14 +2,14 @@ import { useNavigate } from 'react-router-dom'
 import { useLang } from '@hooks/useLang'
 import LayoutPage from '@layouts/LayoutPage'
 import Section from '@layouts/Section'
-import GridImages from '@components/rooms/GridImages'
-import RoomDescriptionInDetail from '@components/rooms/RoomDescriptionInDetail'
-import PaymentDetailForm from '@components/rooms/PaymentDetailForm'
+import GridImages from '@features/departments/components/GridImages'
+import RoomDescriptionInDetail from '@features/departments/components/RoomDescriptionInDetail'
+import PaymentDetailForm from '@features/departments/components/PaymentDetailForm'
 import CommentSection from '@components/comments/CommentSection'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 import { AiFillStar } from 'react-icons/ai'
 
-const RoomDetail = () => {
+function RoomDetail() {
   const { t } = useLang()
   const navigate = useNavigate()
 
@@ -27,9 +27,7 @@ const RoomDetail = () => {
       </Section>
 
       <Section>
-        <h1 className="text-4xl text-start text-dark font-bold mb-2">
-          Departamento completo
-        </h1>
+        <h1 className="text-4xl text-start text-dark font-bold mb-2">Departamento completo</h1>
         <div className="flex justify-start items-center gap-2">
           <p className="flex justify-start items-center gap-2">
             <AiFillStar size={22} className="text-orange" />

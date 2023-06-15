@@ -3,22 +3,18 @@ import { useLang } from '@hooks/useLang'
 import { BsStarFill } from 'react-icons/bs'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
-const CommentInput = () => {
+function CommentInput() {
   const [selectedStar, setSelectedStar] = useState(0)
   const { t } = useLang()
 
-  const handleStarClick = index => {
+  const handleStarClick = (index: number) => {
     setSelectedStar(index + 1)
   }
 
   return (
     <form>
-      <h4 className="text-dark text-center text-2xl font-bold">
-        {t('general.add_review')}
-      </h4>
-      <p className="text-dark text-center">
-        {t('general.add_comment_rate_us')}
-      </p>
+      <h4 className="text-dark text-center text-2xl font-bold">{t('general.add_review')}</h4>
+      <p className="text-dark text-center">{t('general.add_comment_rate_us')}</p>
       <div className="mt-8">
         <div className="flex justify-center items-center gap-1 mb-4">
           {[...Array(5)].map((_, index) => (
@@ -28,9 +24,7 @@ const CommentInput = () => {
               onClick={() => {
                 handleStarClick(index)
               }}
-              className={`${
-                index <= selectedStar - 1 ? 'text-orange' : 'text-gray-400'
-              }`}
+              className={`${index <= selectedStar - 1 ? 'text-orange' : 'text-gray-400'}`}
             >
               <BsStarFill size={24} />
             </button>

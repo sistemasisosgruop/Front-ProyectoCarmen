@@ -2,8 +2,11 @@ import { useForm } from 'react-hook-form'
 import Button from '@components/Button'
 import MyFormInput from '@forms/FormInput'
 
+interface Props {
+  closeModal: () => void
+}
 
-const AddRole = ({ closeModal }) => {
+function AddRole({ closeModal }: Props) {
   const {
     register,
     formState: { errors }

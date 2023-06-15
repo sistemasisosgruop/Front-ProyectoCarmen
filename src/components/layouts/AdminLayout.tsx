@@ -1,10 +1,15 @@
-import { useEffect } from 'react'
+import { ReactNode, useEffect } from 'react'
 import { useToggleSidebar } from '@hooks/useToggleSidebar'
 import { motion } from 'framer-motion'
 import Header from '../sidebar/Header'
 import Sidebar from '../sidebar/Sidebar'
 
-const AdminLayout = ({ children, title }) => {
+interface Props {
+  children: ReactNode
+  title: string
+}
+
+function AdminLayout({ children, title }: Props) {
   const { isShowSidebar, openSidebar, closeSidebar } = useToggleSidebar()
 
   useEffect(() => {

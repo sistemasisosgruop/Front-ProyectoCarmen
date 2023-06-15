@@ -1,10 +1,10 @@
 import LayoutPage from '@components/layouts/LayoutPage'
 import Section from '@components/layouts/Section'
-import Recommendation from '@components/rooms/Recommendation'
-import RoomCard from '@components/rooms/RoomCard'
+import Recommendation from '@features/departments/components/Recommendation'
+import RoomCard from '@features/departments/components/RoomCard'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
-const RoomCatalog = () => {
+function RoomCatalog() {
   return (
     <LayoutPage title="Catalogo de habitaciones - Carmen Agencia de Viajes y Turismo">
       <Section className="mt-48">
@@ -30,8 +30,7 @@ const RoomCatalog = () => {
               <h2 className="text-lg text-white font-bold uppercase md:text2xl">
                 ¿Nuevo en Cusco?
                 <br />
-                !Descubre nuestros increibles paquetes para acompañar tu
-                estadia¡
+                !Descubre nuestros increibles paquetes para acompañar tu estadia¡
               </h2>
               <p className="text-xl text-white">Reserva con nosotros</p>
             </div>
@@ -46,8 +45,7 @@ const RoomCatalog = () => {
               <h2 className="text-lg text-white font-bold uppercase md:text2xl">
                 ¿Nuevo en Cusco?
                 <br />
-                !Descubre nuestros increibles paquetes para acompañar tu
-                estadia¡
+                !Descubre nuestros increibles paquetes para acompañar tu estadia¡
               </h2>
               <p className="text-xl text-white">Reserva con nosotros</p>
             </div>

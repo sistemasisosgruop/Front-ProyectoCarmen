@@ -6,7 +6,7 @@ import Information from './Information'
 import { BsBook } from 'react-icons/bs'
 import { TbPointFilled } from 'react-icons/tb'
 
-const Footer = () => {
+function Footer() {
   const { t } = useLang()
 
   return (
@@ -33,13 +33,9 @@ const Footer = () => {
         <article className="flex flex-wrap justify-center items-center gap-2 text-white">
           <Link to="/aviso-legal">{t('components.footer.legal_warning')}</Link>
           <TbPointFilled />
-          <Link to="/politicas-de-privacidad">
-            {t('components.footer.privacy_policies')}
-          </Link>
+          <Link to="/politicas-de-privacidad">{t('components.footer.privacy_policies')}</Link>
           <TbPointFilled />
-          <Link to="/politicas-de-cookies">
-            {t('components.footer.cookie_policies')}
-          </Link>
+          <Link to="/politicas-de-cookies">{t('components.footer.cookie_policies')}</Link>
         </article>
 
         <SocialNetwork />

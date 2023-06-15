@@ -11,7 +11,7 @@ import 'swiper/css/autoplay'
 import 'swiper/css/scrollbar'
 import 'swiper/css/effect-fade'
 
-const SliderDetail = () => {
+function SliderDetail() {
   const { t } = useLang()
 
   return (

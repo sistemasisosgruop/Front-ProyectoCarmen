@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react'
-import axios from '@api/axios'
-import { toast } from 'react-toastify'
+import axios from '@lib/axios'
+// import { toast } from 'react-toastify'
 
-export const useApiGet = ({ url, pageNumber = 1 }) => {
-  const [data, setData] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+interface ApiGetData<T> {
+  url: string
+  pageNumber: number
+}
+
+export const useApiGet = <T>({ url, pageNumber = 1 }: ApiGetData<T>) => {
+  const [data, setData] = useState<T[]>([])
+  const [isLoading, setIsLoading] = useState<boolean>(true)
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -14,18 +19,18 @@ export const useApiGet = ({ url, pageNumber = 1 }) => {
     return () => abortController.abort()
   }, [pageNumber])
 
-  const getData = async abortController => {
+  const getData = async (abortController: AbortController) => {
     try {
       const response = await axios.get(`${url}?page=${pageNumber}`, {
         signal: abortController.signal,
         headers: {
-          Authorization: `jwt ${window.sessionStorage.getItem('token')}`
+          Authorization: window.sessionStorage.getItem('token')
         }
       })
       setData(response.data)
     } catch (error) {
       console.log(error)
-      toast.error(error)
+      // toast.error(error)
     } finally {
       setIsLoading(false)
     }

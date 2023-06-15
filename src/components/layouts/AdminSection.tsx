@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion'
+import { ReactNode } from 'react'
 
+interface Props {
+  children: ReactNode
+}
 
-const AdminSection = ({ children }) => {
+function AdminSection({ children }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0, x: 0, y: 25 }}

@@ -3,7 +3,12 @@ import { useModal } from '@hooks/useModal'
 import { BiEdit, BiTrash } from 'react-icons/bi'
 import EditCoupon from './EditCoupon'
 
-const TableRow = ({ coupon, index }) => {
+interface Props {
+  coupon: any
+  index: number
+}
+
+function TableRow({ coupon, index }: Props) {
   const { isOpenModal, openModal, closeModal } = useModal()
 
   return (
@@ -18,9 +23,7 @@ const TableRow = ({ coupon, index }) => {
             style: 'percent'
           })}
         </td>
-        <td className="whitespace-nowrap px-4 py-2">
-          {coupon.room_id ? 'DEPARTAMENTO' : 'TOUR'}
-        </td>
+        <td className="whitespace-nowrap px-4 py-2">{coupon.room_id ? 'DEPARTAMENTO' : 'TOUR'}</td>
         <td className="whitespace-nowrap px-4 py-2">
           <article className="flex justify-center items-center gap-2">
             <button type="button" onClick={openModal} className="p-1 text-dark">

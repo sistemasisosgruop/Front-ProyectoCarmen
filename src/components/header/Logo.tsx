@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 
+interface Props {
+  isScrolled: boolean
+}
 
-const Logo = ({ isScrolled }) => {
+function Logo({ isScrolled }: Props) {
   return (
     <Link to="/" className="flex flex-col md:ml-16 xl:ml-32">
       <img

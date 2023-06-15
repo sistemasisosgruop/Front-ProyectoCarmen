@@ -1,5 +1,8 @@
+interface Props {
+  index: number
+}
 
-const Related = ({ index }) => {
+function Related({ index }: Props) {
   return (
     <div className="relative bg-white rounded-xl overflow-hidden w-full flex flex-col border border-white shadow-dark group/descripcion">
       <img
@@ -13,9 +16,7 @@ const Related = ({ index }) => {
       <article className="p-4">
         <div>
           <p className="uppercase text-blue text-center">TOUR FULLDAY</p>
-          <h3 className="text-dark text-xl text-center font-bold">
-            Laguna azul
-          </h3>
+          <h3 className="text-dark text-xl text-center font-bold">Laguna azul</h3>
         </div>
         <ul>
           <li>5 (10)</li>
@@ -31,10 +32,7 @@ const Related = ({ index }) => {
               <strong className="text-dark">90.00</strong>
             </span>
           </p>
-          <button
-            type="button"
-            className=" bg-blue rounded-xl px-4 py-1 text-white text-center"
-          >
+          <button type="button" className=" bg-blue rounded-xl px-4 py-1 text-white text-center">
             Ver más
           </button>
         </div>

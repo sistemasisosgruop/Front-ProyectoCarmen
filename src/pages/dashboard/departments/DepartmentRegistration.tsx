@@ -3,8 +3,8 @@ import Heading from '@components/Heading'
 import AdminLayout from '@layouts/AdminLayout'
 import AdminSection from '@layouts/AdminSection'
 import Modal from '@components/Modal'
-import AddForm from '@components/departments/AddForm'
-import TableDepartments from '@components/departments/TableDepartments'
+import AddForm from '@features/departments/components/AddForm'
+import TableDepartments from '@features/departments/components/TableDepartments'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IoMdAdd } from 'react-icons/io'
 
@@ -19,10 +19,7 @@ const DepartmentRegistration = () => {
         <AdminSection>
           <article className="flex flex-col justify-between items-end gap-4 mb-8 sm:flex-row">
             <div className="relative w-full">
-              <label
-                htmlFor="searchClient"
-                className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600"
-              >
+              <label htmlFor="searchClient" className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600">
                 <AiOutlineSearch size={18} />
               </label>
               <input

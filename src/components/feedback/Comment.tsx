@@ -1,6 +1,6 @@
 import { AiFillStar } from 'react-icons/ai'
 
-const Comment = () => {
+function Comment() {
   return (
     <article className="py-4 px-4 bg-blue mr-4 rounded-xl md:px-8 md:mr-8">
       <div className="flex flex-wrap justify-between items-center gap-4 mb-2">
@@ -15,11 +15,10 @@ const Comment = () => {
         </div>
       </div>
       <p className="text-xl text-white text-center">
-        &quot;Scelerisque viverra mauris in aliquam sem fringilla ut morbi
-        tincidunt augue interdum velit euismod in pellentesque massa placerat
-        duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in
-        ante metus dictum at tempor commodo ullamcorper a lacus vestibulum sed
-        arcu non odio euismod lacinia at quis risus sed vulputate.&ldquo;
+        &quot;Scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in
+        pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus
+        dictum at tempor commodo ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia at quis risus sed
+        vulputate.&ldquo;
       </p>
     </article>
   )

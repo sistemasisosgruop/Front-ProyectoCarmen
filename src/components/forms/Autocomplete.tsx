@@ -1,6 +1,13 @@
 import { AiOutlineCaretDown } from 'react-icons/ai'
 
-const Autocomplete = ({ id, label, results, register }) => {
+interface Props {
+  id: string
+  label: string
+  results: string[]
+  register: any
+}
+
+function Autocomplete({ id, label, results, register }: Props) {
   return (
     <div>
       <label htmlFor={id} className="text-gray-600 text-sm inline-block mb-1">

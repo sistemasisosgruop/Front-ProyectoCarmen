@@ -1,19 +1,16 @@
-import { lazy } from 'react'
 import { useLang } from '@hooks/useLang'
 import LayoutPage from '@layouts/LayoutPage'
 import Section from '@layouts/Section'
 import Heading from '@components/Heading'
 import Masthead from '@components/Masthead'
-import ServiceSearch from '@components/home/ServiceSearch'
-import SliderTourPackage from '@components/home/SliderTourPackage'
+import ServiceSearch from '@features/home/components/ServiceSearch'
+import SliderTourPackage from '@features/home/components/SliderTourPackage'
+import PopularCard from '@features/home/components/PopularCard'
 import FeedbackSection from '@components/feedback/FeedbackSection'
-import PopularCard from '@components/home/PopularCard'
 import ButtonLink from '@components/ButtonLink'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
-// const ServiceSearch = lazy(() => import('@components/home/ServiceSearch'))
-
-const Home = () => {
+function Home() {
   const { t } = useLang()
 
   return (
@@ -26,7 +23,7 @@ const Home = () => {
       </section>
 
       <Section className="pt-16 md:pt-32">
-        <Heading title={t('pages.home.popular_rooms')} description={t('pages.home.description_popular_rooms')} />
+        <Heading title={t('pages.home.popular_rooms')} description={t('pages.home.description_popular_rooms') ?? ''} />
         <section className="grid grid-cols-1 gap-8 pb-8 sm:grid-cols-2 xl:grid-cols-4">
           {[...Array(4)].map((_, index) => (
             <PopularCard
@@ -51,7 +48,7 @@ const Home = () => {
       <Section className="pt-32">
         <Heading
           title={t('pages.home.popular_destinations')}
-          description={t('pages.home.description_popular_destinations')}
+          description={t('pages.home.description_popular_destinations') ?? ''}
         />
         <section className="grid grid-cols-1 gap-8 pb-8 sm:grid-cols-2 xl:grid-cols-4">
           {[...Array(4)].map((_, index) => (
@@ -75,7 +72,10 @@ const Home = () => {
       </Section>
 
       <Section className="py-32">
-        <Heading title={t('pages.home.popular_flights')} description={t('pages.home.description_popular_flights')} />
+        <Heading
+          title={t('pages.home.popular_flights')}
+          description={t('pages.home.description_popular_flights') ?? ''}
+        />
         <section className="grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 xl:grid-cols-4">
           {[...Array(4)].map((_, index) => (
             <PopularCard

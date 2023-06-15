@@ -6,19 +6,17 @@ import { BsChevronDown, BsFillHandbagFill } from 'react-icons/bs'
 import { FaPlaneArrival, FaPlaneDeparture } from 'react-icons/fa'
 import { TbPaperBagOff } from 'react-icons/tb'
 
-const SelectFlight = () => {
-  const [numFlight, setNumFlight] = useState(null)
+function SelectFlight() {
+  const [numFlight, setNumFlight] = useState<number | null>(null)
   const navigate = useNavigate()
 
-  const handleToggleSection = index => {
+  const handleToggleSection = (index: number) => {
     setNumFlight(prevState => (prevState === index ? null : index))
   }
 
   const handleTab = () => {
     navigate('/vuelos/completa-tus-datos')
   }
-
-  console.log(navigate)
 
   return (
     <div className="w-full grid grid-cols-3 gap-8">
@@ -36,18 +34,11 @@ const SelectFlight = () => {
                 htmlFor={`r${index}`}
                 className="w-full flex justify-start items-center gap-8 border-b border-b-gray-200 py-2"
               >
-                <input
-                  type="radio"
-                  name="flight"
-                  id={`r${index}`}
-                  className=""
-                />
+                <input type="radio" name="flight" id={`r${index}`} className="" />
                 <article className="w-full flex justify-between items-center gap-8">
                   <p>LATAM</p>
                   <div className="flex flex-col justify-start items-start">
-                    <p className="text-dark text-lg font-bold">
-                      12:00 p.m. - 02:00 p.m.
-                    </p>
+                    <p className="text-dark text-lg font-bold">12:00 p.m. - 02:00 p.m.</p>
                     <p className="text-dark">Duracion: 01h 0min</p>
                   </div>
                   <p className="text-lg text-dark font-bold">Directo</p>
@@ -70,20 +61,13 @@ const SelectFlight = () => {
                   className="py-4 px-8"
                 >
                   <article className="flex justify-between items-center gap-4 mb-4">
-                    <p className="text-dark text-lg font-bold">
-                      Detalles del vuelo:
-                    </p>
-                    <p className="text-gray-600">
-                      JetSmart - Numero de vuelo: 7002 - Clase R
-                    </p>
+                    <p className="text-dark text-lg font-bold">Detalles del vuelo:</p>
+                    <p className="text-gray-600">JetSmart - Numero de vuelo: 7002 - Clase R</p>
                   </article>
                   <article className="space-y-2">
                     <p className="text-gray-600 flex justify-start items-center gap-2">
                       <FaPlaneDeparture size={18} className="text-blue" />
-                      <span>
-                        01 abr. 2023 - 12:00 p.m. - Aeropuerto Rodriguez ballon
-                        (AQP)
-                      </span>
+                      <span>01 abr. 2023 - 12:00 p.m. - Aeropuerto Rodriguez ballon (AQP)</span>
                     </p>
                     <p className="text-gray-600 flex justify-start items-center gap-2">
                       <FaPlaneArrival size={18} className="text-blue" />
@@ -94,15 +78,11 @@ const SelectFlight = () => {
                   <article className="flex justify-center items-center gap-16 text-lg">
                     <p className="flex justify-start items-center gap-2">
                       <BsFillHandbagFill size={32} className="text-blue" />
-                      <span className="text-gray-600">
-                        Incluye un bolso o mochila
-                      </span>
+                      <span className="text-gray-600">Incluye un bolso o mochila</span>
                     </p>
                     <p className="flex justify-start items-center gap-2">
                       <TbPaperBagOff size={32} className="text-gray-400" />
-                      <span className="text-gray-600">
-                        No incluye equipaje de mano o facturado
-                      </span>
+                      <span className="text-gray-600">No incluye equipaje de mano o facturado</span>
                     </p>
                   </article>
                 </motion.section>
@@ -125,18 +105,11 @@ const SelectFlight = () => {
                 htmlFor={`r${index}`}
                 className="w-full flex justify-start items-center gap-8 border-b border-b-gray-200 py-2"
               >
-                <input
-                  type="radio"
-                  name="flight"
-                  id={`r${index}`}
-                  className=""
-                />
+                <input type="radio" name="flight" id={`r${index}`} className="" />
                 <article className="w-full flex justify-between items-center gap-8">
                   <p>LATAM</p>
                   <div className="flex flex-col justify-start items-start">
-                    <p className="text-dark text-lg font-bold">
-                      12:00 p.m. - 02:00 p.m.
-                    </p>
+                    <p className="text-dark text-lg font-bold">12:00 p.m. - 02:00 p.m.</p>
                     <p className="text-dark">Duracion: 01h 0min</p>
                   </div>
                   <p className="text-lg text-dark font-bold">Directo</p>
@@ -159,20 +132,13 @@ const SelectFlight = () => {
                   className="py-4 px-8"
                 >
                   <article className="flex justify-between items-center gap-4 mb-4">
-                    <p className="text-dark text-lg font-bold">
-                      Detalles del vuelo:
-                    </p>
-                    <p className="text-gray-600">
-                      JetSmart - Numero de vuelo: 7002 - Clase R
-                    </p>
+                    <p className="text-dark text-lg font-bold">Detalles del vuelo:</p>
+                    <p className="text-gray-600">JetSmart - Numero de vuelo: 7002 - Clase R</p>
                   </article>
                   <article className="space-y-2">
                     <p className="text-gray-600 flex justify-start items-center gap-2">
                       <FaPlaneDeparture size={18} className="text-blue" />
-                      <span>
-                        01 abr. 2023 - 12:00 p.m. - Aeropuerto Rodriguez ballon
-                        (AQP)
-                      </span>
+                      <span>01 abr. 2023 - 12:00 p.m. - Aeropuerto Rodriguez ballon (AQP)</span>
                     </p>
                     <p className="text-gray-600 flex justify-start items-center gap-2">
                       <FaPlaneArrival size={18} className="text-blue" />
@@ -183,15 +149,11 @@ const SelectFlight = () => {
                   <article className="flex justify-center items-center gap-16 text-lg">
                     <p className="flex justify-start items-center gap-2">
                       <BsFillHandbagFill size={32} className="text-blue" />
-                      <span className="text-gray-600">
-                        Incluye un bolso o mochila
-                      </span>
+                      <span className="text-gray-600">Incluye un bolso o mochila</span>
                     </p>
                     <p className="flex justify-start items-center gap-2">
                       <TbPaperBagOff size={32} className="text-gray-400" />
-                      <span className="text-gray-600">
-                        No incluye equipaje de mano o facturado
-                      </span>
+                      <span className="text-gray-600">No incluye equipaje de mano o facturado</span>
                     </p>
                   </article>
                 </motion.section>
@@ -202,9 +164,7 @@ const SelectFlight = () => {
       </div>
       <div className="col-span-1 bg-white rounded-xl p-4">
         <header className="mb-4">
-          <p className="text-xl text-blue text-end font-bold">
-            Precio por adulto
-          </p>
+          <p className="text-xl text-blue text-end font-bold">Precio por adulto</p>
           <p className="text-2xl text-blue text-end font-bold">$ 90.00</p>
         </header>
         <article>

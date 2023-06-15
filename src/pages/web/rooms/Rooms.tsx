@@ -3,10 +3,10 @@ import LayoutPage from '@components/layouts/LayoutPage'
 import Section from '@components/layouts/Section'
 import Masthead from '@components/Masthead'
 import Heading from '@components/Heading'
-import PromotionCard from '@components/rooms/PromotionCard'
-import PopularRoomCard from '@components/rooms/PopularRoomCard'
+import PromotionCard from '@features/departments/components/PromotionCard'
+import PopularRoomCard from '@features/departments/components/PopularRoomCard'
+import FullApartmentCard from '@features/departments/components/FullApartmentCard'
 import ButtonLink from '@components/ButtonLink'
-import FullApartmentCard from '@components/rooms/FullApartmentCard'
 import ButtonLinkSm from '@components/ButtonLinkSm'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
@@ -20,7 +20,7 @@ const Rooms = () => {
       <Masthead />
 
       <Section className="pt-32">
-        <Heading title={t('pages.rooms.promotions')} description={t('pages.rooms.promotion_description')} />
+        <Heading title={t('pages.rooms.promotions')} description={t('pages.rooms.promotion_description') ?? ''} />
         <section className="grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
           {[...Array(4)].map((_, index) => (
             <PromotionCard
@@ -36,7 +36,7 @@ const Rooms = () => {
       <Section className="pt-32">
         <Heading
           title={t('pages.rooms.the_most_popular')}
-          description={t('pages.rooms.description_the_most_popular')}
+          description={t('pages.rooms.description_the_most_popular') ?? ''}
           textAlign="text-left"
         />
         <section className="grid grid-cols-12 lg:row-span-2 gap-4 pb-8">
@@ -54,7 +54,7 @@ const Rooms = () => {
       <Section className="pt-32">
         <Heading
           title={t('pages.rooms.full_apartment')}
-          description={t('pages.rooms.description_full_apartment')}
+          description={t('pages.rooms.description_full_apartment') ?? ''}
           textAlign="text-left"
         />
         <section className="grid grid-cols-6 grid-rows-2 gap-4">
