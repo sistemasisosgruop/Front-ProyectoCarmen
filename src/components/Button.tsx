@@ -1,6 +1,18 @@
-import Types from 'prop-types'
+import { IconType } from 'react-icons'
 
-const Button = ({
+interface Props {
+  text: string
+  type?: 'button' | 'submit' | 'reset' | undefined
+  background?: string
+  textColor?: string
+  showIcon?: boolean
+  icon?: IconType
+  position?: string
+  extraClasses?: string
+  onClick?: () => void
+}
+
+function Button({
   text,
   type = 'button',
   background = 'bg-blue',
@@ -11,7 +23,7 @@ const Button = ({
   extraClasses,
   onClick,
   ...props
-}) => {
+}: Props) {
   return (
     <button
       type={type}
@@ -26,18 +38,6 @@ const Button = ({
       {showIcon !== undefined && position === 'right' && icon}
     </button>
   )
-}
-
-Button.propTypes = {
-  text: Types.string.isRequired,
-  type: Types.string,
-  background: Types.string,
-  textColor: Types.string,
-  showIcon: Types.bool,
-  icon: Types.element,
-  position: Types.string,
-  extraClasses: Types.string,
-  onClick: Types.func
 }
 
 export default Button

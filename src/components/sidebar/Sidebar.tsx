@@ -7,7 +7,11 @@ import { TbPlane } from 'react-icons/tb'
 import { BiBed, BiBriefcaseAlt2, BiCalendar } from 'react-icons/bi'
 import { AiOutlineClose } from 'react-icons/ai'
 
-const Sidebar = ({ closeSidebar }) => {
+interface Props {
+  closeSidebar: () => void
+}
+
+function Sidebar({ closeSidebar }: Props) {
   return (
     <aside className="w-full bg-white fixed top-0 left-0 z-10 px-6 py-4 flex justify-between items-center border-b border-b-gray-200 shadow xl:relative xl:w-80 xl:h-screen xl:items-start">
       <nav className="w-full flex flex-col justify-center items-center gap-8">
@@ -27,26 +31,14 @@ const Sidebar = ({ closeSidebar }) => {
         <ul className="w-full space-y-2">
           <hr className="w-full border-none bg-gray-200 py-[0.5px] my-4" />
           <li>
-            <NavLink
-              href="/admin/calendario"
-              label="Calendario"
-              icon={<BiCalendar size={18} />}
-            />
+            <NavLink href="/admin/calendario" label="Calendario" icon={<BiCalendar size={18} />} />
           </li>
           <hr className="w-full border-none bg-gray-200 py-[0.5px] my-4" />
           <li>
-            <NavLink
-              href="/admin/vuelos"
-              label="Vuelos"
-              icon={<TbPlane size={18} />}
-            />
+            <NavLink href="/admin/vuelos" label="Vuelos" icon={<TbPlane size={18} />} />
           </li>
           <li>
-            <NavLink
-              href="/admin/departamentos"
-              label="Departamentos"
-              icon={<BiBed size={18} />}
-            />
+            <NavLink href="/admin/departamentos" label="Departamentos" icon={<BiBed size={18} />} />
           </li>
           <li>
             <NavLink
@@ -56,26 +48,14 @@ const Sidebar = ({ closeSidebar }) => {
             />
           </li>
           <li>
-            <NavLink
-              href="/admin/usuarios"
-              label="Usuario"
-              icon={<HiOutlineUsers size={18} />}
-            />
+            <NavLink href="/admin/usuarios" label="Usuario" icon={<HiOutlineUsers size={18} />} />
           </li>
           <li>
-            <NavLink
-              href="/admin/estadisticas"
-              label="Estadísticas"
-              icon={<IoMdStats size={18} />}
-            />
+            <NavLink href="/admin/estadisticas" label="Estadísticas" icon={<IoMdStats size={18} />} />
           </li>
           <hr className="w-full border-none bg-gray-200 py-[0.5px] my-4" />
           <li>
-            <NavLink
-              href="/admin/configuracion"
-              label="Configuración"
-              icon={<FiSettings size={18} />}
-            />
+            <NavLink href="/admin/configuracion" label="Configuración" icon={<FiSettings size={18} />} />
           </li>
         </ul>
       </nav>

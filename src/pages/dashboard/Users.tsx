@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useApiGet } from '@hooks/useApiGet'
 import AdminLayout from '@layouts/AdminLayout'
 import AdminSection from '@layouts/AdminSection'
@@ -5,8 +6,9 @@ import Heading from '@components/Heading'
 import THead from '@components/THead'
 import { BiDownload, BiEdit, BiTrash } from 'react-icons/bi'
 
-const Users = () => {
-  const { data, isLoading, error } = useApiGet('users')
+function Users() {
+  const [pageNumber, setPageNumber] = useState<number>(1)
+  const { data, isLoading } = useApiGet('users', pageNumber)
 
   return (
     <AdminLayout title="Usuarios">
@@ -55,31 +57,15 @@ const Users = () => {
                     {user.first_name} {user.last_name}
                   </td>
                   <td className="whitespace-nowrap px-4 py-2">{user.genre}</td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    {user.document_type}
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    {user.document_number}
-                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">{user.document_type}</td>
+                  <td className="whitespace-nowrap px-4 py-2">{user.document_number}</td>
                   <td className="whitespace-nowrap px-4 py-2">{user.email}</td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    {user.password}
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    {user.birthday}
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    {user.student ? <span>YES</span> : <span>NO</span>}
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    {user.country}
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    {user.phone_number}
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    {user.country_code}
-                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">{user.password}</td>
+                  <td className="whitespace-nowrap px-4 py-2">{user.birthday}</td>
+                  <td className="whitespace-nowrap px-4 py-2">{user.student ? <span>YES</span> : <span>NO</span>}</td>
+                  <td className="whitespace-nowrap px-4 py-2">{user.country}</td>
+                  <td className="whitespace-nowrap px-4 py-2">{user.phone_number}</td>
+                  <td className="whitespace-nowrap px-4 py-2">{user.country_code}</td>
                   <td className="whitespace-nowrap px-4 py-2">
                     <article className="flex justify-center items-center gap-2">
                       <button type="button" className="p-1 text-dark">

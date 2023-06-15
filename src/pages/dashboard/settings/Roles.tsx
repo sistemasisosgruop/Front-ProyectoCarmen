@@ -9,7 +9,7 @@ import Button from '@components/Button'
 import { IoMdAdd } from 'react-icons/io'
 import { BiEdit, BiTrash } from 'react-icons/bi'
 
-const Roles = () => {
+function Roles() {
   const { isOpenModal, openModal, closeModal } = useModal()
 
   return (
@@ -41,9 +41,7 @@ const Roles = () => {
                     <td>
                       <p className="text-center font-bold">{index + 1}</p>
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2">
-                      Administrador
-                    </td>
+                    <td className="whitespace-nowrap px-4 py-2">Administrador</td>
                     <td className="whitespace-nowrap px-4 py-2">Todos</td>
                     <td className="whitespace-nowrap px-4 py-2">
                       <article className="flex justify-center items-center gap-2">

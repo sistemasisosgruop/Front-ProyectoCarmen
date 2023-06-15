@@ -10,9 +10,7 @@ import ButtonLink from '@components/ButtonLink'
 import ButtonLinkSm from '@components/ButtonLinkSm'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
-console.log('Rooms')
-
-const Rooms = () => {
+function Rooms() {
   const { t } = useLang()
 
   return (

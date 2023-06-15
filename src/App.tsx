@@ -11,6 +11,7 @@ import globalEs from './lang/es/global.json'
 import globalEn from './lang/en/global.json'
 
 import 'react-toastify/dist/ReactToastify.css'
+import 'react-datepicker/dist/react-datepicker.css'
 
 i18next.use(initReactI18next).init({
   interpolation: {

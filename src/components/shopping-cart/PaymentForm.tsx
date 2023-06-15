@@ -4,7 +4,7 @@ import Tabs from '@components/Tabs'
 import PaymentCreditCardForm from './PaymentCreditCardForm'
 import PaymentPaypalCard from './PaymentPaypalCard'
 
-const PaymentForm = () => {
+function PaymentForm() {
   const { activeTab, switchTab } = useTabs(0)
 
   return (

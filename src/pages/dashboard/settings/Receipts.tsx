@@ -5,7 +5,7 @@ import THead from '@components/THead'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiDownload } from 'react-icons/bi'
 
-const Receipts = () => {
+function Receipts() {
   return (
     <AdminLayout title="Comprobantes">
       <Heading title="Comprobantes" />
@@ -13,10 +13,7 @@ const Receipts = () => {
       <AdminSection>
         <article className="flex flex-col justify-between items-end gap-4 mb-8 sm:flex-row">
           <div className="w-full relative">
-            <label
-              htmlFor="searchClient"
-              className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600"
-            >
+            <label htmlFor="searchClient" className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600">
               <AiOutlineSearch size={18} />
             </label>
             <input
@@ -52,9 +49,7 @@ const Receipts = () => {
                   </td>
                   <td className="whitespace-nowrap px-4 py-2">0001221</td>
                   <td className="px-4 py-2">Yoel Valverde Polo</td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    Paquete Turístico Valle Sagrado
-                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">Paquete Turístico Valle Sagrado</td>
                   <td className="whitespace-nowrap px-4 py-2">20/03/2023</td>
                   <td className="whitespace-nowrap px-4 py-2">10:00 a.m.</td>
                   <td className="whitespace-nowrap px-4 py-2">PayPal</td>

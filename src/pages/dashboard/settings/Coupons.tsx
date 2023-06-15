@@ -9,7 +9,7 @@ import CouponList from '@components/coupons/CouponList'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IoMdAdd } from 'react-icons/io'
 
-const Coupons = () => {
+function Coupons() {
   const { isOpenModal, openModal, closeModal } = useModal()
 
   return (
@@ -20,10 +20,7 @@ const Coupons = () => {
         <AdminSection>
           <article className="flex flex-col justify-between items-end gap-4 mb-8 sm:flex-row">
             <div className="w-full relative">
-              <label
-                htmlFor="searchClient"
-                className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600"
-              >
+              <label htmlFor="searchClient" className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600">
                 <AiOutlineSearch size={18} />
               </label>
               <input

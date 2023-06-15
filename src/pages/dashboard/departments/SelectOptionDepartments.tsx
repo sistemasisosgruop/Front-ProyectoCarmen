@@ -3,7 +3,7 @@ import Options from '@components/Options'
 import { FaBed } from 'react-icons/fa'
 import { IoMdBed } from 'react-icons/io'
 
-const SelectOptionDepartments = () => {
+function SelectOptionDepartments() {
   return (
     <AdminLayout title="Selecciona la opcion de departamentos">
       <div className="w-full h-full flex justify-center items-center">

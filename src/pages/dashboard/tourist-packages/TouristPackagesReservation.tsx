@@ -5,7 +5,7 @@ import THead from '@components/THead'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
 
-const TouristPackagesReservation = () => {
+function TouristPackagesReservation() {
   return (
     <AdminLayout title="Reserva de paquetes turísticos">
       <Heading title="Reservas" />
@@ -13,10 +13,7 @@ const TouristPackagesReservation = () => {
       <AdminSection>
         <article className="flex justify-start items-center gap-4 mb-8">
           <div className="w-full relative">
-            <label
-              htmlFor="searchClient"
-              className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600"
-            >
+            <label htmlFor="searchClient" className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600">
               <AiOutlineSearch size={18} />
             </label>
             <input
@@ -51,13 +48,9 @@ const TouristPackagesReservation = () => {
                   <td>
                     <p className="text-center font-bold">{index + 1}</p>
                   </td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    Valle sagrado de los Incas
-                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">Valle sagrado de los Incas</td>
                   <td className="whitespace-nowrap px-4 py-2">16/04/2023</td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    08:00 a.m.- 06:30 p.m.
-                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">08:00 a.m.- 06:30 p.m.</td>
                   <td className="whitespace-nowrap px-4 py-2">Valle sagrado</td>
                   <td className="whitespace-nowrap px-4 py-2">20/05/2023</td>
                   <td className="whitespace-nowrap px-4 py-2">12:00 p.m.</td>

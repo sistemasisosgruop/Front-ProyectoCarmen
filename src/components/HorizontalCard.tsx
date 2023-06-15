@@ -3,7 +3,7 @@ import { FiMapPin } from 'react-icons/fi'
 import { BiTimeFive } from 'react-icons/bi'
 import { HiUsers } from 'react-icons/hi'
 
-const HorizontalCard = () => {
+function HorizontalCard() {
   return (
     <Link
       to="/destinos-populares/detalle"
@@ -18,9 +18,7 @@ const HorizontalCard = () => {
         <article className="px-16 py-4 flex flex-col w-full">
           <div className="flex justify-end items-start">***** (12)</div>
           <p className="uppercase text-blue text-lg">Tour full day</p>
-          <h2 className="text-dark text-2xl font-bold">
-            Camino Inca a Macchu Picchu - Inka Trail 104km
-          </h2>
+          <h2 className="text-dark text-2xl font-bold">Camino Inca a Macchu Picchu - Inka Trail 104km</h2>
           <div className="flex justify-between items-end mt-8">
             <div className="flex flex-col justify-start items-start gap-2">
               <p className="flex justify-start items-center gap-2 text-dark">
@@ -44,10 +42,7 @@ const HorizontalCard = () => {
                 </strong>
                 <span>por persona</span>
               </p>
-              <button
-                type="button"
-                className="bg-turquoise text-white font-bold rounded-md px-6 py-1"
-              >
+              <button type="button" className="bg-turquoise text-white font-bold rounded-md px-6 py-1">
                 Comprar
               </button>
             </div>

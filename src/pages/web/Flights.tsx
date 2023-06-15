@@ -8,7 +8,7 @@ import PriceList from '@components/flights/PriceList'
 import SelectFlight from '@components/flights/SelectFlight'
 import ContactFormSection from '@components/contact-form/ContactFormSection'
 
-const Flights = () => {
+function Flights() {
   const { activeTab, switchTab } = useTabs(0)
 
   return (

@@ -2,8 +2,13 @@ import { Link } from 'react-router-dom'
 import CardHover from './CardHover'
 import { AiFillStar } from 'react-icons/ai'
 
+interface Props {
+  href: string
+  imagePath: string
+  imageAlt: string
+}
 
-const Card = ({ href, imagePath, imageAlt }) => {
+function Card({ href, imagePath, imageAlt }: Props) {
   return (
     <Link to={href}>
       <CardHover imagePath={imagePath} alt={imageAlt}>

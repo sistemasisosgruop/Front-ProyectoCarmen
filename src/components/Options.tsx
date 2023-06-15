@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion'
+import { IconType } from 'react-icons'
 import { Link } from 'react-router-dom'
 
+interface Props {
+  options: {
+    path: string
+    label: string
+    icon: IconType
+  }[]
+}
 
-
-const Options = ({ options }) => {
+function Options({ options }: Props) {
   return (
     <motion.section
       initial={{ opacity: 0, x: 0, y: 25 }}

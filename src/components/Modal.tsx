@@ -1,8 +1,15 @@
+import { ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { motion } from 'framer-motion'
 import { IoMdClose } from 'react-icons/io'
 
-const Modal = ({ children, title, closeModal }) => {
+interface Props {
+  children: ReactNode
+  title: string
+  closeModal: () => void
+}
+
+function Modal({ children, title, closeModal }: Props) {
   return createPortal(
     <motion.div
       initial={{ opacity: 0, z: -15, y: 0, x: 0 }}

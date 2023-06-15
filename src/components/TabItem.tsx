@@ -1,5 +1,14 @@
+import { ReactNode } from 'react'
+import { IconType } from 'react-icons'
 
-const TabItem = ({ children, label, icon, text }) => {
+interface Props {
+  children: ReactNode
+  label: string
+  icon?: IconType
+  text?: string
+}
+
+function TabItem({ children, label, icon, text }: Props) {
   return <>{children}</>
 }
 

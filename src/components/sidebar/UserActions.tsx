@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '@context/AuthContext'
 
-const UserActions = () => {
+function UserActions() {
   const { user, logout } = useContext(AuthContext)
   const navigate = useNavigate()
 
@@ -42,7 +42,7 @@ const UserActions = () => {
         </li>
       </ul>
     </section>,
-    document.getElementById('portal')
+    document.getElementById('portal') ?? document.createDocumentFragment()
   )
 }
 

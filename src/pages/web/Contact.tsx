@@ -4,7 +4,7 @@ import LayoutPage from '@components/layouts/LayoutPage'
 import Section from '@components/layouts/Section'
 import Masthead from '@components/Masthead'
 
-const Contact = () => {
+function Contact() {
   return (
     <LayoutPage title="Contactanos">
       <Masthead />
@@ -17,16 +17,12 @@ const Contact = () => {
             className="w-full h-full min-h-[280px] object-cover object-center md:col-span-1"
           />
           <article className="py-4 px-4 sm:px-8 md:col-span-2">
-            <h2 className="text-2xl uppercase text-blue font-bold mb-2">
-              Nuestro equipo
-            </h2>
+            <h2 className="text-2xl uppercase text-blue font-bold mb-2">Nuestro equipo</h2>
             <p className="text-xl text-justify">
-              non pulvinar neque laoreet suspendisse interdum consectetur libero
-              id faucibus nisl tincidunt eget nullam non nisi est sit amet
-              facilisis magna etiam tempor orci eu lobortis elementum nibh
-              tellus molestie nunc non blandit massa enim nec dui nunc mattis
-              enim ut tellus elementum sagittis vitae et leo duis ut diam quam
-              nulla porttitor massa id neque aliquam vestibulum morbi blandit
+              non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam
+              non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc
+              non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo duis ut diam
+              quam nulla porttitor massa id neque aliquam vestibulum morbi blandit
             </p>
             <div className="flex justify-center items-center mt-8">
               <ul className="text-dark text-xl space-y-2">
@@ -57,17 +53,12 @@ const Contact = () => {
               className="h-64 w-full object-cover object-top"
             />
             <div className="px-4 py-4 sm:px-8">
-              <h2 className="uppercase text-2xl text-blue font-bold mb-2">
-                Nuestra vision
-              </h2>
+              <h2 className="uppercase text-2xl text-blue font-bold mb-2">Nuestra vision</h2>
               <p className="text-xl text-justify">
-                non pulvinar neque laoreet suspendisse interdum consectetur
-                libero id faucibus nisl tincidunt eget nullam non nisi est sit
-                amet facilisis magna etiam tempor orci eu lobortis elementum
-                nibh tellus molestie nunc non blandit massa enim nec dui nunc
-                mattis enim ut tellus elementum sagittis vitae et leo duis ut
-                diam quam nulla porttitor massa id neque aliquam vestibulum
-                morbi blandit
+                non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget
+                nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus
+                molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo
+                duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit
               </p>
             </div>
           </article>
@@ -78,17 +69,12 @@ const Contact = () => {
               className="h-64 w-full object-cover object-top"
             />
             <div className="px-4 py-4 sm:px-8">
-              <h2 className="uppercase text-2xl text-blue font-bold mb-2">
-                Nuestra vision
-              </h2>
+              <h2 className="uppercase text-2xl text-blue font-bold mb-2">Nuestra vision</h2>
               <p className="text-xl text-justify">
-                non pulvinar neque laoreet suspendisse interdum consectetur
-                libero id faucibus nisl tincidunt eget nullam non nisi est sit
-                amet facilisis magna etiam tempor orci eu lobortis elementum
-                nibh tellus molestie nunc non blandit massa enim nec dui nunc
-                mattis enim ut tellus elementum sagittis vitae et leo duis ut
-                diam quam nulla porttitor massa id neque aliquam vestibulum
-                morbi blandit
+                non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget
+                nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus
+                molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo
+                duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit
               </p>
             </div>
           </article>
@@ -99,13 +85,9 @@ const Contact = () => {
 
       <Section className="my-32">
         <div className="mb-8">
-          <Heading
-            title="Donde nos encontramos"
-            titleStyles="uppercase text-blue"
-          />
+          <Heading title="Donde nos encontramos" titleStyles="uppercase text-blue" />
           <p className="text-xl text-dark text-center">
-            Av. El Sol, primera cuadra, Galerias ISAAC (oficina 3) 084 Cusco,
-            Peru
+            Av. El Sol, primera cuadra, Galerias ISAAC (oficina 3) 084 Cusco, Peru
           </p>
         </div>
         <div className="rounded-xl overflow-hidden border border-white">

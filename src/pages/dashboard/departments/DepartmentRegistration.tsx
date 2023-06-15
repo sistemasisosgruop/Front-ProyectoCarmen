@@ -8,7 +8,7 @@ import TableDepartments from '@features/departments/components/TableDepartments'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IoMdAdd } from 'react-icons/io'
 
-const DepartmentRegistration = () => {
+function DepartmentRegistration() {
   const { isOpenModal, openModal, closeModal } = useModal()
 
   return (

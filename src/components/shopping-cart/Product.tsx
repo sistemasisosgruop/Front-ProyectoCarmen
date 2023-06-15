@@ -1,4 +1,4 @@
-const Product = () => {
+function Product() {
   return (
     <article className="flex justify-between items-center gap-4">
       <input type="checkbox" name="" />
@@ -12,25 +12,16 @@ const Product = () => {
           <article className="flex justify-between items-center gap-4">
             <div>
               <h3 className="text-dark text-lg font-bold">Habitación doble</h3>
-              <p className="text-base text-gray-600">
-                10 diciembre - 14 diciembre
-              </p>
+              <p className="text-base text-gray-600">10 diciembre - 14 diciembre</p>
             </div>
 
             <p className="flex flex-col">
-              <span className="text-gray-600 text-center text-xs">
-                $100 / 4 días
-              </span>
-              <span className="text-xl text-blue text-center font-bold whitespace-nowrap">
-                $ 500.00
-              </span>
+              <span className="text-gray-600 text-center text-xs">$100 / 4 días</span>
+              <span className="text-xl text-blue text-center font-bold whitespace-nowrap">$ 500.00</span>
             </p>
           </article>
 
-          <button
-            type="button"
-            className="text-sm text-gray-400 underline hover:text-gray-800"
-          >
+          <button type="button" className="text-sm text-gray-400 underline hover:text-gray-800">
             Borrar
           </button>
         </div>

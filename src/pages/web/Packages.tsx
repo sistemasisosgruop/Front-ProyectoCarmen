@@ -8,7 +8,7 @@ import PackagesDestinationCard from '@features/tours/components/PackagesDestinat
 import ButtonLink from '@components/ButtonLink'
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 
-const Packages = () => {
+function Packages() {
   const { t } = useLang()
 
   return (

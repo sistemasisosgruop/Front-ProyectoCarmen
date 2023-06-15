@@ -2,13 +2,9 @@ import AdminLayout from '@layouts/AdminLayout'
 import AdminSection from '@layouts/AdminSection'
 import Heading from '@components/Heading'
 import THead from '@components/THead'
-import {
-  AiFillCheckCircle,
-  AiFillCloseCircle,
-  AiOutlineSearch
-} from 'react-icons/ai'
+import { AiFillCheckCircle, AiFillCloseCircle, AiOutlineSearch } from 'react-icons/ai'
 
-const Comments = () => {
+function Comments() {
   return (
     <AdminLayout title="Registro de comentarios">
       <Heading title="Comentarios" />
@@ -16,10 +12,7 @@ const Comments = () => {
       <AdminSection>
         <article className="flex justify-between items-center gap-4 mb-8">
           <div className="w-full relative">
-            <label
-              htmlFor="searchClient"
-              className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600"
-            >
+            <label htmlFor="searchClient" className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600">
               <AiOutlineSearch size={18} />
             </label>
             <input
@@ -34,13 +27,7 @@ const Comments = () => {
         <div className="overflow-x-scroll rounded-xl">
           <table className="w-full">
             <THead
-              headers={[
-                '#',
-                'Nombre completo',
-                'Contenido del comentario',
-                'Calificación',
-                'Acciones'
-              ]}
+              headers={['#', 'Nombre completo', 'Contenido del comentario', 'Calificación', 'Acciones']}
               rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
             />
             <tbody>
@@ -49,12 +36,8 @@ const Comments = () => {
                   <td>
                     <p className="text-center font-bold">{index + 1}</p>
                   </td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    Yoel Valverde Polo
-                  </td>
-                  <td className="px-4 py-2">
-                    Contenido completo del comentario
-                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">Yoel Valverde Polo</td>
+                  <td className="px-4 py-2">Contenido completo del comentario</td>
                   <td className="whitespace-nowrap px-4 py-2">5.0</td>
                   <td className="whitespace-nowrap px-4 py-2">
                     <article className="flex justify-center items-center gap-2">

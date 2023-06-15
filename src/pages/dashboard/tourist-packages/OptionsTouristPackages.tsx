@@ -3,7 +3,7 @@ import Options from '@components/Options'
 import { FaBed } from 'react-icons/fa'
 import { IoMdBed } from 'react-icons/io'
 
-const OptionsTouristPackages = () => {
+function OptionsTouristPackages() {
   return (
     <AdminLayout title="Paquetes turísticos">
       <div className="w-full h-full flex justify-center items-center">

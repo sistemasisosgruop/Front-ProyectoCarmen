@@ -1,7 +1,12 @@
 import ReactPaginate from 'react-paginate'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
-const Paginate = ({ counter, setCounter }) => {
+interface Props {
+  counter: number
+  setCounter: (counter: number) => void
+}
+
+function Paginate({ counter, setCounter }: Props) {
   return (
     <ReactPaginate
       className="flex items-center"

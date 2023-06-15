@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form'
 import MyFormInput from '@components/forms/FormInput'
 import Button from '@components/Button'
 
-const PaymentPaypalCard = () => {
+function PaymentPaypalCard() {
   const {
     register,
     formState: { errors }
@@ -44,10 +44,7 @@ const PaymentPaypalCard = () => {
         </article>
       </div>
 
-      <label
-        htmlFor="rememberCard"
-        className="flex justify-start items-center gap-2"
-      >
+      <label htmlFor="rememberCard" className="flex justify-start items-center gap-2">
         <input type="checkbox" name="rememberCard" id="rememberCard" />
         <span>Recorda cuenta PayPal</span>
       </label>

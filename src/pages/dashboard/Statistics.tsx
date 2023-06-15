@@ -4,7 +4,7 @@ import HorizontalChart from '@components/statistics/HorizontalChart'
 import VerticalChart from '@components/statistics/VerticalChart'
 import Heading from '@components/Heading'
 
-const Statistics = () => {
+function Statistics() {
   return (
     <AdminLayout title="Estadísticas">
       <Heading title="Estadísticas" />

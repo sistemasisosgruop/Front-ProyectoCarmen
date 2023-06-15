@@ -5,7 +5,7 @@ import { RiCouponFill } from 'react-icons/ri'
 import { IoIosPaper } from 'react-icons/io'
 import { MdComment, MdMessage } from 'react-icons/md'
 
-const Settings = () => {
+function Settings() {
   return (
     <AdminLayout title="Configuraciones">
       <div className="w-full h-full flex justify-center items-center h-options-settings">

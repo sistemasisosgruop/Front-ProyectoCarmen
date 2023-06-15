@@ -4,8 +4,12 @@ import UserActions from './UserActions'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi'
 
-const Header = ({ openSidebar }) => {
-  const [isOpenAction, setIsOpenAction] = useState(false)
+interface Props {
+  openSidebar: () => void
+}
+
+function Header({ openSidebar }: Props) {
+  const [isOpenAction, setIsOpenAction] = useState<boolean>(false)
   const { user } = useContext(AuthContext)
 
   const toggleUserAction = () => {
@@ -23,11 +27,7 @@ const Header = ({ openSidebar }) => {
           <AiOutlineMenu size={18} />
         </button>
 
-        <button
-          type="button"
-          onClick={toggleUserAction}
-          className="flex justify-center items-center gap-2 text-white"
-        >
+        <button type="button" onClick={toggleUserAction} className="flex justify-center items-center gap-2 text-white">
           <p>
             {user?.firstName} {user?.lastName}
           </p>

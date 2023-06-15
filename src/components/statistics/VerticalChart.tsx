@@ -5,13 +5,14 @@ import {
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  ChartOptions
 } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
-const options = {
+const options: ChartOptions = {
   responsive: true,
   plugins: {
     legend: {
@@ -42,7 +43,7 @@ const data = {
   ]
 }
 
-const VerticalChart = () => {
+function VerticalChart() {
   return (
     <article className="w-full h-full p-8 bg-white rounded-xl overflow-hidden">
       <Bar options={options} data={data} />

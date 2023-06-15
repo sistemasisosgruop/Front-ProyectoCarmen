@@ -1,5 +1,18 @@
+import { ReactNode } from 'react'
 
-const Tabs = ({
+interface Props {
+  children: ReactNode
+  tabContainerStyles: string
+  contentContainerStyles?: string
+  tabStyle?: string
+  activeTabStyle?: string
+  inactiveTabStyle?: string
+  textTabStyle?: string
+  activeTab?: string
+  switchTab: (index: number) => void
+}
+
+function Tabs({
   children,
   tabContainerStyles = 'flex justify-start items-center',
   contentContainerStyles = 'bg-white py-8 px-y md:px-8',
@@ -9,7 +22,7 @@ const Tabs = ({
   textTabStyle = 'bg-dark text-white',
   activeTab,
   switchTab
-}) => {
+}: Props) {
   return (
     <section>
       <div className={tabContainerStyles}>
@@ -25,9 +38,7 @@ const Tabs = ({
             }}
           >
             {child.props?.text !== undefined && (
-              <div
-                className={`w-10 h-10 rounded-full grid place-content-center ${textTabStyle}`}
-              >
+              <div className={`w-10 h-10 rounded-full grid place-content-center ${textTabStyle}`}>
                 {child.props?.text}
               </div>
             )}

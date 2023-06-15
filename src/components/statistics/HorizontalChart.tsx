@@ -5,20 +5,15 @@ import {
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  ChartOptions
 } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
-const options = {
+const options: ChartOptions = {
   indexAxis: 'y',
-  // elements: {
-  //   bar: {
-  //     innerHeight: 8,
-  //     innerWidth: 8
-  //   },
-  // },
   responsive: true,
   plugins: {
     legend: {
@@ -67,7 +62,7 @@ const data = {
   ]
 }
 
-const HorizontalChart = () => {
+function HorizontalChart() {
   return (
     <article className="w-full h-full p-8 bg-white rounded-xl overflow-hidden">
       <Bar options={options} data={data} />

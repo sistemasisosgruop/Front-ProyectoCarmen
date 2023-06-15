@@ -1,6 +1,6 @@
 import Product from './Product'
 
-const Products = () => {
+function Products() {
   return (
     <div className="w-full flex flex-col justify-between gap-4">
       {[...Array(2)].map((_, index) => (

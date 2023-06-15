@@ -4,8 +4,8 @@ import DatePicker from 'react-datepicker'
 import MyFormInput from '@forms/FormInput'
 import FormSelect from '@forms/FormSelect'
 
-const InformationForm = () => {
-  const [startDate, setStartDate] = useState(new Date())
+function InformationForm() {
+  const [startDate, setStartDate] = useState<Date>(new Date())
   const {
     register,
     formState: { errors }
@@ -14,20 +14,8 @@ const InformationForm = () => {
   return (
     <>
       <article className="w-full flex flex-col gap-4 sm:flex-row">
-        <MyFormInput
-          label="Nombres"
-          name="names"
-          register={register}
-          rules={{ required: true }}
-          errors={errors}
-        />
-        <MyFormInput
-          label="Apellidos"
-          name="lastName"
-          register={register}
-          rules={{ required: true }}
-          errors={errors}
-        />
+        <MyFormInput label="Nombres" name="names" register={register} rules={{ required: true }} errors={errors} />
+        <MyFormInput label="Apellidos" name="lastName" register={register} rules={{ required: true }} errors={errors} />
       </article>
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="grid grid-cols-3 items-end gap-4 col-span-1">
@@ -53,17 +41,11 @@ const InformationForm = () => {
         <div>
           <p className="text-sm text-gray-600 mb-1">Género</p>
           <div className=" flex justify-start items-center gap-4">
-            <label
-              htmlFor="m"
-              className="flex justify-start items-center gap-2"
-            >
+            <label htmlFor="m" className="flex justify-start items-center gap-2">
               <input type="radio" name="m" />
               <span>Masculino</span>
             </label>
-            <label
-              htmlFor="m"
-              className="flex justify-start items-center gap-2"
-            >
+            <label htmlFor="m" className="flex justify-start items-center gap-2">
               <input type="radio" name="m" />
               <span>Femenino</span>
             </label>
@@ -78,7 +60,7 @@ const InformationForm = () => {
           </label>
           <DatePicker
             selected={startDate}
-            onChange={(date) => {
+            onChange={date => {
               setStartDate(date)
             }}
             className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
@@ -88,17 +70,11 @@ const InformationForm = () => {
         <div>
           <p className="text-sm text-gray-600 mb-1">¿Eres estudiante?</p>
           <div className="flex justify-start items-center gap-4">
-            <label
-              htmlFor="m"
-              className="flex justify-start items-center gap-2"
-            >
+            <label htmlFor="m" className="flex justify-start items-center gap-2">
               <input type="radio" name="m" value="yes" />
               <span>Si</span>
             </label>
-            <label
-              htmlFor="m"
-              className="flex justify-start items-center gap-2"
-            >
+            <label htmlFor="m" className="flex justify-start items-center gap-2">
               <input type="radio" name="m" value="no" />
               <span>No</span>
             </label>

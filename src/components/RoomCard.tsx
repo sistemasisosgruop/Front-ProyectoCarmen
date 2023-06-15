@@ -1,8 +1,12 @@
 import CardHover from './CardHover'
 import ButtonLink from './ButtonLink'
 
+interface Props {
+  imagePath: string
+  alt: string
+}
 
-const RoomCard = ({ imagePath, alt }) => {
+function RoomCard({ imagePath, alt }: Props) {
   return (
     <CardHover imagePath={imagePath} alt={alt}>
       <div className="flex justify-between items-start">

@@ -5,7 +5,7 @@ import THead from '@components/THead'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiTrash } from 'react-icons/bi'
 
-const Messages = () => {
+function Messages() {
   return (
     <AdminLayout title="Lista de mensajes">
       <Heading title="Mensajes" />
@@ -13,10 +13,7 @@ const Messages = () => {
       <AdminSection>
         <article className="flex justify-between items-center gap-4 mb-8">
           <div className="w-full relative">
-            <label
-              htmlFor="searchClient"
-              className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600"
-            >
+            <label htmlFor="searchClient" className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600">
               <AiOutlineSearch size={18} />
             </label>
             <input
@@ -50,19 +47,13 @@ const Messages = () => {
                   <td>
                     <p className="text-center font-bold">{index + 1}</p>
                   </td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    Yoel Valverde Polo
-                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">Yoel Valverde Polo</td>
                   <td className="px-4 py-2">DNI</td>
                   <td className="whitespace-nowrap px-4 py-2">12345678</td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    correo@gmail.com
-                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">correo@gmail.com</td>
                   <td className="whitespace-nowrap px-4 py-2">999 999 999</td>
                   <td className="whitespace-nowrap px-4 py-2">Información</td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    Contenido del mensaje
-                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">Contenido del mensaje</td>
                   <td className="whitespace-nowrap px-4 py-2">
                     <article className="flex justify-center items-center gap-2">
                       <button type="button" className="p-1 text-dark">

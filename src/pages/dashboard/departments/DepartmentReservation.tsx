@@ -5,7 +5,7 @@ import THead from '@components/THead'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
 
-const DepartmentReservation = () => {
+function DepartmentReservation() {
   return (
     <AdminLayout title="Reserva de camas">
       <Heading title="Reservas" />
@@ -13,10 +13,7 @@ const DepartmentReservation = () => {
       <AdminSection>
         <article className="flex justify-start items-center gap-4 mb-8">
           <div className="w-full relative">
-            <label
-              htmlFor="searchClient"
-              className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600"
-            >
+            <label htmlFor="searchClient" className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600">
               <AiOutlineSearch size={18} />
             </label>
             <input
@@ -54,9 +51,7 @@ const DepartmentReservation = () => {
                   <td className="whitespace-nowrap px-4 py-2">Departamento</td>
                   <td className="whitespace-nowrap px-4 py-2">16/04/2023</td>
                   <td className="whitespace-nowrap px-4 py-2">25/04/2023</td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    Urb. Las Rosas F-1 Yanahuara
-                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">Urb. Las Rosas F-1 Yanahuara</td>
                   <td className="whitespace-nowrap px-4 py-2">30/05/2023</td>
                   <td className="whitespace-nowrap px-4 py-2">12:00 p.m.</td>
                   <td className="whitespace-nowrap px-4 py-2">

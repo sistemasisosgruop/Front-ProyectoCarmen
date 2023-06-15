@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form'
 import Button from '@components/Button'
 import MyFormInput from '@forms/FormInput'
 
-const OrderSummary = () => {
+function OrderSummary() {
   const {
     register,
     formState: { errors }
@@ -10,9 +10,7 @@ const OrderSummary = () => {
 
   return (
     <div>
-      <h3 className="text-xl text-dark text-center font-bold mb-4">
-        Resumen del pedido
-      </h3>
+      <h3 className="text-xl text-dark text-center font-bold mb-4">Resumen del pedido</h3>
       <article className="w-full flex flex-col gap-2">
         <p className="flex justify-between items-center gap-4 text-dark">
           <span>Habitación doble</span>

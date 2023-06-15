@@ -7,7 +7,7 @@ import AdminLayout from '@layouts/AdminLayout'
 import AdminSection from '@layouts/AdminSection'
 import Heading from '@components/Heading'
 
-const AdminCalendar = () => {
+function AdminCalendar() {
   return (
     <AdminLayout title="Mi calendario">
       <Heading title="Mi calendario" />

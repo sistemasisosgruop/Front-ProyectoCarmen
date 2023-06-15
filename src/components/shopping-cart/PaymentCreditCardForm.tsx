@@ -4,8 +4,8 @@ import DatePicker from 'react-datepicker'
 import MyFormInput from '@components/forms/FormInput'
 import Button from '@components/Button'
 
-const PaymentCreditCardForm = () => {
-  const [startDate, setStartDate] = useState(new Date())
+function PaymentCreditCardForm() {
+  const [startDate, setStartDate] = useState<Date>(new Date())
   const {
     register,
     formState: { errors }
@@ -44,27 +44,18 @@ const PaymentCreditCardForm = () => {
               </label>
               <DatePicker
                 selected={startDate}
-                onChange={(date) => {
+                onChange={date => {
                   setStartDate(date)
                 }}
                 className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
               />
             </div>
-            <MyFormInput
-              label="CCV"
-              name="expiration"
-              register={register}
-              rules={{ required: true }}
-              errors={errors}
-            />
+            <MyFormInput label="CCV" name="expiration" register={register} rules={{ required: true }} errors={errors} />
           </div>
         </article>
       </div>
 
-      <label
-        htmlFor="rememberCard"
-        className="flex justify-start items-center gap-2"
-      >
+      <label htmlFor="rememberCard" className="flex justify-start items-center gap-2">
         <input type="checkbox" name="rememberCard" id="rememberCard" />
         <span>Recordar tarjeta</span>
       </label>

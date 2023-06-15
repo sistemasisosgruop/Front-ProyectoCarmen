@@ -11,7 +11,7 @@ import { IoReturnDownBack } from 'react-icons/io5'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 import { MdOutlinePayment } from 'react-icons/md'
 
-const ShoppingCart = () => {
+function ShoppingCart() {
   const {
     register,
     formState: { errors }
@@ -21,10 +21,7 @@ const ShoppingCart = () => {
   return (
     <LayoutPage title="Mi carrito de compras">
       <section className="py-8 flex justify-end items-center px-8">
-        <button
-          onClick={() => navigate(-1)}
-          className="flex justify-center items-center gap-2 uppercase text-dark "
-        >
+        <button onClick={() => navigate(-1)} className="flex justify-center items-center gap-2 uppercase text-dark ">
           <span>Seguir comprando</span>
           <IoReturnDownBack size={24} className="text-turquoise" />
         </button>
@@ -51,15 +48,8 @@ const ShoppingCart = () => {
                 Resumen del pedido&nbsp;
                 <span>({'2'})</span>
               </p>
-              <label
-                htmlFor="all"
-                className="flex justify-start items-center gap-2"
-              >
-                <input
-                  type="checkbox"
-                  name="all"
-                  className="checked:bg-turquoise"
-                />
+              <label htmlFor="all" className="flex justify-start items-center gap-2">
+                <input type="checkbox" name="all" className="checked:bg-turquoise" />
                 <span>Todo</span>
               </label>
             </header>
@@ -74,9 +64,7 @@ const ShoppingCart = () => {
           <section className="w-full flex flex-col gap-8">
             <div className="bg-white rounded-xl p-4">
               <header className="mb-4">
-                <h3 className="text-dark text-lg text-center font-bold mb-4">
-                  Resumen del pedido
-                </h3>
+                <h3 className="text-dark text-lg text-center font-bold mb-4">Resumen del pedido</h3>
                 <p className="flex justify-between text-gray-600">
                   <span>Subtotal</span>
                   <span>$ 1000.00</span>
@@ -95,9 +83,7 @@ const ShoppingCart = () => {
                 </div>
 
                 <p className="flex justify-between items-center gap-4 mt-6 mb-1 mx-2">
-                  <span className="text-dark text-sm font-bold uppercase">
-                    Total
-                  </span>
+                  <span className="text-dark text-sm font-bold uppercase">Total</span>
                   <span className="text-gray-600">$ 900.00</span>
                 </p>
 
@@ -113,9 +99,7 @@ const ShoppingCart = () => {
             </div>
 
             <div>
-              <h3 className="text-dark text-center text-xl font-bold mb-4">
-                Método de pago aceptados
-              </h3>
+              <h3 className="text-dark text-center text-xl font-bold mb-4">Método de pago aceptados</h3>
               <article className="w-full flex justify-between items-center gap-4">
                 <img
                   src="/images/icons/visa.png"

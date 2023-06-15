@@ -8,17 +8,13 @@ import Related from '@components/destinations/Related'
 import CommentSection from '@components/comments/CommentSection'
 import { AiFillDashboard, AiFillStar } from 'react-icons/ai'
 import { FaMapMarkerAlt } from 'react-icons/fa'
-import {
-  HiOutlineIdentification,
-  HiUsers,
-  HiOutlineLanguage
-} from 'react-icons/hi2'
+import { HiOutlineIdentification, HiUsers, HiOutlineLanguage } from 'react-icons/hi2'
 import { CgSandClock } from 'react-icons/cg'
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 
 const title = 'Valle sagrado de los Incas'
 
-const DestinationDetail = () => {
+function DestinationDetail() {
   const { t } = useLang()
 
   return (
@@ -37,23 +33,18 @@ const DestinationDetail = () => {
       <Section>
         <div>
           <h2 className="uppercase text-[2.5rem] text-center text-dark font-bold">
-            <span className="text-blue mr-2">
-              {title.split(' ').slice(0, 2).join(' ')}
-            </span>
+            <span className="text-blue mr-2">{title.split(' ').slice(0, 2).join(' ')}</span>
             <span>{title.split(' ').slice(2).join(' ')}</span>
           </h2>
-          <p className="text-dark text-center text-2xl">
-            Explora Cusco a los mejores precios
-          </p>
+          <p className="text-dark text-center text-2xl">Explora Cusco a los mejores precios</p>
         </div>
       </Section>
 
       <Section className="my-16 mx-52">
         <p className="text-dark text-center text-2xl">
-          El servicio es personalizado con atencion inmediata, con valores de
-          protecci&oacute;n al viajero, y complementado el d&iacute;a con un
-          buen bueffet e ingresos a diferentes lugares como Pisac,
-          Ollantaytambo, Chicvhero, entre otros.
+          El servicio es personalizado con atencion inmediata, con valores de protecci&oacute;n al viajero, y
+          complementado el d&iacute;a con un buen bueffet e ingresos a diferentes lugares como Pisac, Ollantaytambo,
+          Chicvhero, entre otros.
         </p>
       </Section>
 
@@ -96,11 +87,9 @@ const DestinationDetail = () => {
               <span>Qu&eacute; har&aacute;s:</span>
             </h2>
             <p className="text-xl ml-4 text-dark font-normal">
-              consequat ac felis donec et odio pellentesque diam volutpat
-              commodo sed egestas egestas fringilla phasellus faucibus
-              scelerisque eleifend donec pretium vulputate sapien nec sagittis
-              aliquam malesuada bibendum arcu vitae elementum curabitur vitae
-              nunc sed velit dignissim sodales ut eu sem
+              consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla
+              phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada
+              bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem
             </p>
           </article>
           <article className="mb-16">
@@ -109,9 +98,8 @@ const DestinationDetail = () => {
               <span>Buena elecci&oacute;n para:</span>
             </h2>
             <p className="text-xl ml-4 text-dark font-normal">
-              El Tour de Valle Sagrado de los Incas es una gran opci&oacute;n
-              para las personas que quieren disfrutar de la belleza de este
-              maravillo para&iacute;so andino.
+              El Tour de Valle Sagrado de los Incas es una gran opci&oacute;n para las personas que quieren disfrutar de
+              la belleza de este maravillo para&iacute;so andino.
             </p>
           </article>
           <article>
@@ -120,8 +108,7 @@ const DestinationDetail = () => {
               <span>Pol&iacute;tica de cancelaci&oacute;n:</span>
             </h2>
             <p className="text-xl ml-4 text-dark font-normal">
-              Para obtener un reembolso total, debes cancelar al menos 24 horas
-              antes del comienzo de la experiencia.
+              Para obtener un reembolso total, debes cancelar al menos 24 horas antes del comienzo de la experiencia.
             </p>
           </article>
         </div>
@@ -130,12 +117,8 @@ const DestinationDetail = () => {
       </Section>
 
       <Section>
-        <h2 className="uppercase text-blue text-center text-[3rem] font-bold">
-          Detalles del Tour
-        </h2>
-        <p className="text-center text-2xl text-dark">
-          Informaci&oacute;n importante a tener en cuenta
-        </p>
+        <h2 className="uppercase text-blue text-center text-[3rem] font-bold">Detalles del Tour</h2>
+        <p className="text-center text-2xl text-dark">Informaci&oacute;n importante a tener en cuenta</p>
 
         <hr className="w-96 border-b-2 border-b-gray-600 mx-auto" />
 
@@ -150,9 +133,7 @@ const DestinationDetail = () => {
         <div className="w-full flex flex-col justify-between items-start mb-4 sm:flex-row sm:items-center">
           <div className="mb-8">
             <h2 className="text-4xl text-dark font-bold">Lo mas relacionado</h2>
-            <p className="text-dark text-xl">
-              No te pierdas nuestras promociones por esta temporada
-            </p>
+            <p className="text-dark text-xl">No te pierdas nuestras promociones por esta temporada</p>
           </div>
           <div className="flex justify-end items-center gap-4 sm:justify-center">
             <HiOutlineArrowSmLeft

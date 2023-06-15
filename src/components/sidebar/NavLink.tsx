@@ -1,6 +1,13 @@
+import { IconType } from 'react-icons'
 import { Link, useLocation } from 'react-router-dom'
 
-const NavLink = ({ href, label, icon }) => {
+interface Props {
+  href: string
+  label: string
+  icon: IconType
+}
+
+function NavLink({ href, label, icon }: Props) {
   const { pathname } = useLocation()
 
   return (

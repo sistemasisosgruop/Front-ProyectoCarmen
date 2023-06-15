@@ -3,13 +3,13 @@ import DatePicker from 'react-datepicker'
 import AdminLayout from '@layouts/AdminLayout'
 import AdminSection from '@layouts/AdminSection'
 import Heading from '@components/Heading'
+import THead from '@components/THead'
 import { BiChevronDown, BiDownload, BiEdit, BiTrash } from 'react-icons/bi'
 
 import 'react-datepicker/dist/react-datepicker.css'
-import THead from '../../components/THead'
 
-const AdminFlights = () => {
-  const [startDate, setStartDate] = useState(new Date())
+function AdminFlights() {
+  const [startDate, setStartDate] = useState<Date>(new Date())
 
   return (
     <AdminLayout title="Vuelos">
@@ -29,7 +29,7 @@ const AdminFlights = () => {
             </select>
             <DatePicker
               selected={startDate}
-              onChange={(date) => {
+              onChange={(date: Date) => {
                 setStartDate(date)
               }}
               showIcon={true}
@@ -66,9 +66,7 @@ const AdminFlights = () => {
               {[...Array(5)].map((_, index) => (
                 <tr key={index} className="text-sm">
                   <td>{index + 1}</td>
-                  <td className="whitespace-nowrap px-4 py-2">
-                    Yoel Valverde Polo
-                  </td>
+                  <td className="whitespace-nowrap px-4 py-2">Yoel Valverde Polo</td>
                   <td className="whitespace-nowrap px-4 py-2">DNI</td>
                   <td className="whitespace-nowrap px-4 py-2">12345678</td>
                   <td className="whitespace-nowrap px-4 py-2">999 999 999</td>

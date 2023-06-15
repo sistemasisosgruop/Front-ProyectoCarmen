@@ -1,11 +1,14 @@
+import { ReactNode } from 'react'
 
-const CardHover = ({
-  children,
-  imagePath,
-  alt,
-  score,
-  minHeight = 'min-h-[380px]'
-}) => {
+interface Props {
+  children: ReactNode
+  imagePath: string
+  alt: string
+  score?: number
+  minHeight: string
+}
+
+function CardHover({ children, imagePath, alt, score, minHeight = 'min-h-[380px]' }: Props) {
   return (
     <div className="inline-block relative h-full w-full rounded-xl border border-white group/description cursor-pointer transition-all overflow-hidden">
       <img

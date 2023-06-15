@@ -15,7 +15,7 @@ import { MdOutlinePayment } from 'react-icons/md'
 import PaymentForm from '@components/shopping-cart/PaymentForm'
 import PurchaseTerms from '@components/shopping-cart/PurchaseTerms'
 
-const TravelerInformation = () => {
+function TravelerInformation() {
   const { activeTab, switchTab } = useTabs(0)
   const navigate = useNavigate()
 
@@ -56,10 +56,7 @@ const TravelerInformation = () => {
           activeTab={activeTab}
           switchTab={switchTab}
         >
-          <TabItem
-            label="Información personal"
-            icon={<AiOutlineInfoCircle size={18} />}
-          >
+          <TabItem label="Información personal" icon={<AiOutlineInfoCircle size={18} />}>
             <section className="grid grid-cols-1 gap-8 lg:grid-cols-5">
               <div className="bg-white rounded-xl py-8 px-4 md:px-8 lg:col-span-3">
                 <MainUserForm />
@@ -71,11 +68,7 @@ const TravelerInformation = () => {
                 <SecondaryUserForm />
               </div>
               <div className="w-full flex justify-end items-center lg:col-span-5">
-                <Button
-                  text="Confirmar datos"
-                  background="bg-blue"
-                  onClick={() => switchTab(1)}
-                />
+                <Button text="Confirmar datos" background="bg-blue" onClick={() => switchTab(1)} />
               </div>
             </section>
           </TabItem>
