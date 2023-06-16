@@ -1,11 +1,9 @@
-import { ReactNode } from 'react'
-
 interface Props {
-  children: ReactNode
+  children: JSX.Element | JSX.Element[]
   imagePath: string
   alt: string
   score?: number
-  minHeight: string
+  minHeight?: string
 }
 
 function CardHover({ children, imagePath, alt, score, minHeight = 'min-h-[380px]' }: Props) {
