@@ -33,8 +33,7 @@
       "@dashboard/*": ["pages/dashboard/*"],
       "@auth/*": ["auth/*"],
       "@context/*": ["context/*"],
-      "@utils/*": ["utils/*"],
-      "@types/*": ["types/*"]
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["src"],

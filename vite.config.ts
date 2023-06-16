@@ -17,8 +17,7 @@ export default defineConfig({
       '@dashboard': '/src/pages/dashboard',
       '@auth': '/src/auth',
       '@context': '/src/context',
-      '@utils': '/src/utils',
-      '@types': '/src/types'
+      '@utils': '/src/utils'
     }
   }
 })
