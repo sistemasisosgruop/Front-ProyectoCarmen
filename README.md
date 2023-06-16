@@ -47,7 +47,7 @@ Página web
 
 ## Imágenes
 
-![Code login](./public/screenshoots/code-login.png)
-![Code homepage](./public/screenshoots/code-home.png)
-![Homepage](./public/screenshoots/home.png)
-![View departments](./public/screenshoots/departments.png)
+![Code login](./public/screenshots/code-login.png)
+![Code homepage](./public/screenshots/code-home.png)
+![Homepage](./public/screenshots/home.png)
+![View departments](./public/screenshots/departments.png)
