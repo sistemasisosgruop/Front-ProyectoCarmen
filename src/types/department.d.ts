@@ -6,6 +6,7 @@ interface Detail {
 }
 
 export interface Department {
+  id: string
   room_type: string
   description: string
   address: string
