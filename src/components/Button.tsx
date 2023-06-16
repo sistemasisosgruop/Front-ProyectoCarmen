@@ -18,7 +18,7 @@ function Button({
   background = 'bg-blue',
   textColor = 'text-white',
   showIcon,
-  icon,
+  icon: Icon,
   position = 'right',
   extraClasses,
   onClick,
@@ -28,14 +28,17 @@ function Button({
     <button
       type={type}
       onClick={onClick}
-      className={`w-full ${background} ${textColor} px-6 py-2 rounded-xl text-center font-bold flex justify-center items-center gap-2 hover:bg-opacity-90 sm:w-auto ${
-        extraClasses ?? ''
-      }`}
+      className={`
+        w-full px-6 py-2 rounded-xl text-center font-bold flex justify-center items-center gap-2 hover:bg-opacity-90 sm:w-auto
+        ${background}
+        ${textColor}
+        ${extraClasses ?? ''}
+     `}
       {...props}
     >
-      {showIcon !== undefined && position === 'left' && icon}
+      {showIcon && position === 'left' && Icon && <Icon size={18} />}
       <span>{text}</span>
-      {showIcon !== undefined && position === 'right' && icon}
+      {showIcon && position === 'right' && Icon && <Icon size={18} />}
     </button>
   )
 }
