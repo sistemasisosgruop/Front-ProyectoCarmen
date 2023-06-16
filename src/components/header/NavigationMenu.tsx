@@ -15,7 +15,7 @@ function NavigationMenu({ isScrolled }: Props) {
   return (
     <nav
       className={`
-        pt-0 grid place-content-center xl:pt-0
+        pt-4 grid place-content-center xl:pt-0
         ${isScrolled ?? false ? '' : 'xl:absolute xl:bottom-4 xl:left-1/2 xl:-translate-x-1/2 z-20 '}
       `}
     >
