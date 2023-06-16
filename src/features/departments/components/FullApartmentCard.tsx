@@ -6,7 +6,14 @@ import { HiUsers } from 'react-icons/hi'
 import { MdBedroomParent } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 
-const FullApartmentCard = ({ href, index, imagePath, imageAlt }) => {
+interface Props {
+  href: string
+  index: number
+  imagePath: string
+  imageAlt: string
+}
+
+function FullApartmentCard({ href, index, imagePath, imageAlt }: Props) {
   const { t } = useLang()
 
   return (
@@ -20,7 +27,7 @@ const FullApartmentCard = ({ href, index, imagePath, imageAlt }) => {
         ${index === 3 ? 'col-span-6 row-span-2 sm:col-span-6 lg:col-span-2 lg:row-span-1' : ''}
       `}
     >
-      <CardHover imagePath={imagePath} alt={imageAlt} score={'4.5'} minHeight="min-h-[220px]">
+      <CardHover imagePath={imagePath} alt={imageAlt} score={4.5} minHeight="min-h-[220px]">
         <article className="flex flex-col gap-2">
           <div className="flex justify-between">
             <p className="text-xl font-bold text-dark">Departamento</p>

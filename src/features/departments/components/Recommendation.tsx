@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 
-const Recommendation = () => {
+function Recommendation() {
   return (
     <div className="mb-8">
       <Link
@@ -13,9 +13,7 @@ const Recommendation = () => {
       </Link>
       <div className="mt-4 flex flex-col gap-2">
         <p>&quot;14 habitaciones encontradas&rdquo;</p>
-        <h4 className="text-xl font-bold text-dark">
-          Tenemos para ti estas habitaciones
-        </h4>
+        <h4 className="text-xl font-bold text-dark">Tenemos para ti estas habitaciones</h4>
       </div>
     </div>
   )

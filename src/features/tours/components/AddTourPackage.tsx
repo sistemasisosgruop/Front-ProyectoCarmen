@@ -1,11 +1,15 @@
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
 import AddFirstForm from './AddFirstForm'
 import AddSecondForm from './AddSecondForm'
 import AddThirdForm from './AddThirdForm'
 
-const SectionForm = ({ children }) => {
+interface Props {
+  children: ReactNode
+}
+
+function SectionForm({ children }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0, z: -25, x: 50 }}

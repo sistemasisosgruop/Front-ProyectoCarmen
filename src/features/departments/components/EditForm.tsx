@@ -13,7 +13,7 @@ interface Props {
   initialValue: any
 }
 
-const EditForm = ({ initialValue }: Props) => {
+function EditForm({ initialValue }: Props) {
   const [files, setFiles] = useState([])
   const [startDate, setStartDate] = useState(new Date())
   const [numOfBathrooms, setNumOfBathrooms] = useState(initialValue.num_bathrooms)

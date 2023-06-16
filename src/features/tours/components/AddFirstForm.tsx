@@ -2,7 +2,14 @@ import Button from '@components/Button'
 import FormInput from '@forms/FormInput'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
-const AddFirstForm = ({ control, errors, handleSubmit, onNextStep }) => {
+interface Props {
+  control: any
+  errors: any
+  handleSubmit: any
+  onNextStep: () => void
+}
+
+function AddFirstForm({ control, errors, handleSubmit, onNextStep }: Props) {
   return (
     <form onSubmit={handleSubmit(onNextStep)} className="w-full flex flex-col gap-4">
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

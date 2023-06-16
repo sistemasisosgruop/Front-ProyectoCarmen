@@ -7,7 +7,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
 import 'swiper/css/effect-fade'
 
-const SliderTourPackage = () => {
+function SliderTourPackage() {
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay, EffectFade]}

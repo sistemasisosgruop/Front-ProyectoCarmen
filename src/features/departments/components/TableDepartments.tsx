@@ -1,13 +1,35 @@
-import { useState } from 'react'
-import { useApiGet } from '@hooks/useApiGet'
+import { useEffect, useState } from 'react'
+// import { useApiGet } from '@hooks/useApiGet'
 import THead from '@components/THead'
 import TableRow from './TableRow'
 import Paginate from '@components/Paginate'
+import axios from '@lib/axios'
 import { Department } from 'types/department'
 
-const TableDepartments = () => {
+function TableDepartments() {
   const [pageNumber, setPageNumber] = useState(1)
-  const { data, isLoading } = useApiGet<Department[]>({ url: 'rooms', pageNumber })
+  const [departments, setDepartments] = useState<Department[]>([])
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  // const { data, isLoading } = useApiGet({ url: 'rooms', pageNumber })
+
+  useEffect(() => {
+    getDepartments()
+  }, [])
+
+  const getDepartments = async () => {
+    try {
+      const response = await axios.get(`rooms?page=${pageNumber}`, {
+        headers: { Authorization: window.sessionStorage.getItem('token') }
+      })
+      setDepartments(response.data?.results)
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setIsLoading(true)
+    }
+  }
+
+  console.log(departments)
 
   return (
     <div className="rounded">
@@ -38,14 +60,14 @@ const TableDepartments = () => {
                 </td>
               </tr>
             )}
-            {data?.results?.map((room, index) => (
+            {departments.map((room, index) => (
               <TableRow key={room.id} room={room} index={index} />
             ))}
           </tbody>
         </table>
       </div>
       <div className="mt-4 flex justify-end items-center">
-        <Paginate counter={data?.results?.totalPages} setCounter={setPageNumber} />
+        <Paginate counter={departments?.totalPages} setCounter={setPageNumber} />
       </div>
     </div>
   )

@@ -7,7 +7,7 @@ import { GiHeatHaze } from 'react-icons/gi'
 import { HiUsers } from 'react-icons/hi'
 import { AiOutlineLike, AiOutlineWifi } from 'react-icons/ai'
 
-const RoomDescriptionInDetail = () => {
+function RoomDescriptionInDetail() {
   const { t } = useLang()
 
   return (
@@ -34,12 +34,10 @@ const RoomDescriptionInDetail = () => {
 
       <div className="my-4">
         <p>
-          in iaculis nunc sed augue lacus viverra vitae congue eu consequat ac
-          felis donec et odio pellentesque diam volutpat commodo sed egestas
-          egestas fringilla phasellus faucibus scelerisque eleifend donec
-          pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu
-          vitae elementum curabitur vitae nunc sed velit dignissim sodales ut eu
-          sem integer vitae justo eget magna fermentum iaculis eu non diam
+          in iaculis nunc sed augue lacus viverra vitae congue eu consequat ac felis donec et odio pellentesque diam
+          volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate
+          sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim
+          sodales ut eu sem integer vitae justo eget magna fermentum iaculis eu non diam
         </p>
         <button>{t('general.view_more')}</button>
       </div>

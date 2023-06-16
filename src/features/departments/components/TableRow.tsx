@@ -6,18 +6,18 @@ import Modal from '@components/Modal'
 import EditForm from './EditForm'
 import { useModal } from '@hooks/useModal'
 
-const TableRow = ({ room, index }) => {
-  const [bedDetails, setBedDetails] = useState(null)
-  const [roomDetails, setRoomDetails] = useState(null)
+function TableRow({ room, index }) {
+  const [bedDetails, setBedDetails] = useState<number | null>(null)
+  const [roomDetails, setRoomDetails] = useState<number | null>(null)
   const { isOpenModal, openModal, closeModal } = useModal()
   const { date: checkIn } = useFormatDay(room.check_in)
   const { date: checkOut } = useFormatDay(room.check_out)
 
-  const handleBedDetails = index => {
+  const handleBedDetails = (index: number) => {
     setBedDetails(prevState => (prevState === index ? null : index))
   }
 
-  const handleRoomDetails = index => {
+  const handleRoomDetails = (index: number) => {
     setRoomDetails(prevState => (prevState === index ? null : index))
   }
 

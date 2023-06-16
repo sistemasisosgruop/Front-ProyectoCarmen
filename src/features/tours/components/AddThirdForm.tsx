@@ -4,13 +4,15 @@ import FormTextArea from '@forms/FormTextArea'
 import { BiSave } from 'react-icons/bi'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 
-const AddThirdForm = ({
-  control,
-  errors,
-  handleSubmit,
-  onPrevStep,
-  onSubmit
-}) => {
+interface Props {
+  control: any
+  errors: any
+  handleSubmit: any
+  onPrevStep: () => void
+  onSubmit: () => void
+}
+
+function AddThirdForm({ control, errors, handleSubmit, onPrevStep, onSubmit }: Props) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2">

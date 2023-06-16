@@ -16,7 +16,7 @@ const OPTIONS = [
   { text: 'Puno', value: 'puno' }
 ]
 
-const SearchTourPackage = () => {
+function SearchTourPackage() {
   const [startDate, setStartDate] = useState(new Date())
   const { t } = useLang()
 
@@ -50,15 +50,15 @@ const SearchTourPackage = () => {
         <div className="w-full grid grid-cols-1 gap-4 sm:grid-cols-3">
           <DatePicker
             selected={startDate}
-            onChange={date => setStartDate(date)}
+            onChange={(date: Date) => setStartDate(date)}
             className="w-full border border-gray-700 rounded-xl px-2 py-1 text-base text-gray-700 focus:outline-none focus:border-blue focus:text-blue"
           />
           <DatePicker
             selected={startDate}
-            onChange={date => setStartDate(date)}
+            onChange={(date: Date) => setStartDate(date)}
             className="w-full border border-gray-700 rounded-xl px-2 py-1 text-base text-gray-700 focus:outline-none focus:border-blue focus:text-blue"
           />
-          <Button text={t('general.search')} showIcon={true} icon={<AiOutlineSearch size={18} />} position="right" />
+          <Button text={t('general.search')} showIcon={true} icon={AiOutlineSearch} position="right" />
         </div>
       </div>
     </div>

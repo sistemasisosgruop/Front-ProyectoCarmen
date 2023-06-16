@@ -6,7 +6,16 @@ import FormTextArea from '@forms/FormTextArea'
 import UploadImages from '@components/UploadImages'
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 
-const AddSecondForm = ({ control, errors, handleSubmit, setFiles, onPrevStep, onNextStep }) => {
+interface Props {
+  control: any
+  errors: any
+  handleSubmit: any
+  setFiles: () => void
+  onPrevStep: () => void
+  onNextStep: () => void
+}
+
+function AddSecondForm({ control, errors, handleSubmit, setFiles, onPrevStep, onNextStep }: Props) {
   const [startDate, setStartDate] = useState(new Date())
 
   return (

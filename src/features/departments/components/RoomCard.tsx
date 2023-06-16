@@ -1,12 +1,9 @@
 import { Link } from 'react-router-dom'
 import { AiFillStar } from 'react-icons/ai'
 
-const RoomCard = () => {
+function RoomCard() {
   return (
-    <Link
-      to=""
-      className="bg-white rounded-xl overflow-hidden flex flex-col w-full"
-    >
+    <Link to="" className="bg-white rounded-xl overflow-hidden flex flex-col w-full">
       <img
         src="https://img.sunset02.com/sites/default/files/image/2016/08/main/luxurious-master-bedroom-sun-1114.jpg"
         alt="habitaciones"
@@ -22,9 +19,7 @@ const RoomCard = () => {
               <span className="text-gray-600">/ dia</span>
             </p>
           </div>
-          <h5 className="text-xl font-bold text-dark">
-            Habitacion matrimonial
-          </h5>
+          <h5 className="text-xl font-bold text-dark">Habitacion matrimonial</h5>
         </article>
         <hr className="border-b border-b-gray-200 my-4" />
         <article className="text-orange flex justify-start items-center gap-1">

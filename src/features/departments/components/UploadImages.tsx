@@ -1,7 +1,10 @@
 import { useState } from 'react'
-import Types from 'prop-types'
 
-const UploadImages = ({ setFiles }) => {
+interface Props {
+  setFiles: () => void
+}
+
+function UploadImages({ setFiles }: Props) {
   const [images, setImages] = useState([])
 
   const handleImageUpload = event => {
@@ -18,16 +21,8 @@ const UploadImages = ({ setFiles }) => {
         Agregar imágenes
       </label>
       <div>
-        <input
-          type="file"
-          multiple
-          onChange={handleImageUpload}
-          accept="image/*"
-          className=""
-        />
-        <span className="text-gray-400 text-sm">
-          *Se acepta un máximo de 10 archivos con un tamaño máximo de 10MB
-        </span>
+        <input type="file" multiple onChange={handleImageUpload} accept="image/*" className="" />
+        <span className="text-gray-400 text-sm">*Se acepta un máximo de 10 archivos con un tamaño máximo de 10MB</span>
         <div className="grid grid-cols-1 gap-8 mt-4 sm:grid-cols-2 md:grid-cols-3">
           {images.map((imageUrl, index) => (
             <img

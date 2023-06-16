@@ -6,7 +6,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { MdOutlineEditCalendar } from 'react-icons/md'
 import { BiDoorOpen } from 'react-icons/bi'
 
-const SearchLodging = () => {
+function SearchLodging() {
   const [startDate, setStartDate] = useState(new Date())
   const { t } = useLang()
 
@@ -27,7 +27,7 @@ const SearchLodging = () => {
           </div>
           <DatePicker
             selected={startDate}
-            onChange={date => setStartDate(date)}
+            onChange={(date: Date) => setStartDate(date)}
             className="w-full border border-gray-700 rounded-xl px-2 py-1 text-base text-gray-700 focus:outline-none focus:border-blue focus:text-blue"
           />
         </div>
@@ -38,11 +38,11 @@ const SearchLodging = () => {
           </div>
           <DatePicker
             selected={startDate}
-            onChange={date => setStartDate(date)}
+            onChange={(date: Date) => setStartDate(date)}
             className="w-full border border-gray-700 rounded-xl px-2 py-1 text-base text-gray-700 focus:outline-none focus:border-blue focus:text-blue"
           />
         </div>
-        <Button text={t('general.search')} showIcon={true} icon={<AiOutlineSearch size={18} />} position="right" />
+        <Button text={t('general.search')} showIcon={true} icon={AiOutlineSearch} position="right" />
       </article>
     </div>
   )

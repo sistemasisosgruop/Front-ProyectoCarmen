@@ -9,7 +9,7 @@ import { FiHome } from 'react-icons/fi'
 import { BsAirplane } from 'react-icons/bs'
 import { BiBriefcaseAlt } from 'react-icons/bi'
 
-const ServiceSearch = () => {
+function ServiceSearch() {
   const { t } = useLang()
   const { activeTab, switchTab } = useTabs(0)
 

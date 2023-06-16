@@ -5,7 +5,7 @@ import ButtonLink from '@components/ButtonLink'
 import { AiFillStar, AiOutlineShoppingCart } from 'react-icons/ai'
 import { SlPresent } from 'react-icons/sl'
 
-const PaymentDetailForm = () => {
+function PaymentDetailForm() {
   const [startDate, setStartDate] = useState(new Date())
   const { t } = useLang()
 
@@ -26,17 +26,13 @@ const PaymentDetailForm = () => {
         <div className="grid grid-cols-2 gap-4 md:grid-cols-1">
           <DatePicker
             selected={startDate}
-            onChange={(date) => {
-              setStartDate(date)
-            }}
+            onChange={(date: Date) => setStartDate(date)}
             showIcon
             className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
           />
           <DatePicker
             selected={startDate}
-            onChange={(date) => {
-              setStartDate(date)
-            }}
+            onChange={(date: Date) => setStartDate(date)}
             showIcon
             className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
           />

@@ -3,7 +3,13 @@ import { useLang } from '@hooks/useLang'
 import CardHover from '@components/CardHover'
 import { AiFillStar } from 'react-icons/ai'
 
-const PopularCard = ({ href, imagePath, imageAlt }) => {
+interface Props {
+  href: string
+  imagePath: string
+  imageAlt: string
+}
+
+function PopularCard({ href, imagePath, imageAlt }: Props) {
   const { t } = useLang()
 
   return (
@@ -23,9 +29,7 @@ const PopularCard = ({ href, imagePath, imageAlt }) => {
                 <AiFillStar key={index} size={18} className="text-orange" />
               ))}
             </div>
-            <span className="text-gray-600">
-              ({t('general.num_reviews', { numReviews: '10' })})
-            </span>
+            <span className="text-gray-600">({t('general.num_reviews', { numReviews: '10' })})</span>
           </article>
         </div>
       </CardHover>
