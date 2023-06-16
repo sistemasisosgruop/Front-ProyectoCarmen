@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 import axios from '@lib/axios'
 // import { toast } from 'react-toastify'
 
-interface ApiGetData<T> {
+interface ApiGetData {
   url: string
   pageNumber: number
 }
 
-export const useApiGet = <T>({ url, pageNumber = 1 }: ApiGetData<T>) => {
-  const [data, setData] = useState<T[]>([])
+export const useApiGet = ({ url, pageNumber = 1 }: ApiGetData) => {
+  const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
   useEffect(() => {
