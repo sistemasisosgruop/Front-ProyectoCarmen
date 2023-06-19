@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import axios from '@lib/axios'
 import DatePicker from 'react-datepicker'
 import Input from '@forms/Input'
@@ -14,21 +14,21 @@ interface Props {
 }
 
 function AddForm({ closeModal }: Props) {
-  const [files, setFiles] = useState([])
-  const [startDate, setStartDate] = useState(new Date())
-  const [numOfBathrooms, setNumOfBathrooms] = useState(1)
-  const [numOfBeds, setNumOfBeds] = useState(1)
-  const [numOfRooms, setNumOfRooms] = useState(1)
+  const [files, setFiles] = useState<FileList | null>()
+  const [startDate, setStartDate] = useState<Date>(new Date())
+  const [numOfBathrooms, setNumOfBathrooms] = useState<number>(1)
+  const [numOfBeds, setNumOfBeds] = useState<number>(1)
+  const [numOfRooms, setNumOfRooms] = useState<number>(1)
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors }
-  } = useForm()
+  } = useForm<FieldValues>()
 
-  const onSubmit = async (data: any) => {
-    try {
-      const response = await axios.post(
+  const onSubmit: SubmitHandler<FieldValues> = async data => {
+    await axios
+      .post(
         'rooms',
         {
           room_type: data.roomType,
@@ -61,31 +61,23 @@ function AddForm({ closeModal }: Props) {
           }
         }
       )
-
-      toast.success(response.statusText)
-      closeModal()
-      reset()
-      onNewRecord({
-        room_type: data.roomType,
-        description: data.description,
-        address: data.address,
-        price: data.price,
-        check_in: '2023-05-15T00:00:00.000Z',
-        check_out: '2023-05-15T00:00:00.000Z',
-        num_bathrooms: numOfBathrooms,
-        num_beds: numOfBeds,
-        extras: ['uno', 'dos', 'tres']
+      .then(response => {
+        toast.success(response.statusText)
+        closeModal()
+        reset()
       })
-    } catch (error) {
-      toast.error(error.response?.data?.message)
-    }
+      .catch(error => {
+        console.log(error)
+        console.log(typeof error)
+        toast.error(error.response?.data?.message)
+      })
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center items-center gap-4">
       <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Input
-          id="roomType"
+          id="room_type"
           label="Tipo de habitación"
           register={register}
           required={true}
@@ -129,13 +121,13 @@ function AddForm({ closeModal }: Props) {
           <div className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2">
             <DatePicker
               selected={startDate}
-              onChange={date => setStartDate(date)}
+              onChange={(date: Date) => setStartDate(date)}
               showIcon
               className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
             />
             <DatePicker
               selected={startDate}
-              onChange={date => setStartDate(date)}
+              onChange={(date: Date) => setStartDate(date)}
               className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
             />
           </div>
@@ -147,16 +139,16 @@ function AddForm({ closeModal }: Props) {
           value={numOfBathrooms}
           onChangeValue={setNumOfBathrooms}
           label="Número de baños"
-          htmlFor="numOfBathrooms"
+          name="numOfBathrooms"
         />
 
-        <NumberPicker value={numOfBeds} onChangeValue={setNumOfBeds} label="Número de camas" htmlFor="numOfBeds" />
+        <NumberPicker value={numOfBeds} onChangeValue={setNumOfBeds} label="Número de camas" name="numOfBeds" />
 
         <NumberPicker
           value={numOfRooms}
           onChangeValue={setNumOfRooms}
           label="Número de habitaciones"
-          htmlFor="numOfRooms"
+          name="numOfRooms"
         />
       </article>
 
