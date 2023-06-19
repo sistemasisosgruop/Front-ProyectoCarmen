@@ -1,27 +1,36 @@
-interface Detail {
-  imagesUrl: File[]
-  amenities: string[]
-  notIncluded: string[]
-  services: string[]
+export interface Departments {
+  results: Result[]
 }
 
-export interface Department {
+export interface Result {
   id: string
-  room_type: string
+  roomType: string
   description: string
   address: string
   price: number
-  check_in: string
-  check_out: string
-  num_bathrooms: number
-  num_beds: number
+  checkIn: Date
+  checkOut: Date
+  numBathrooms: number
+  numBeds: number
   extras: string[]
-  details: Detail
-  num_room: {
-    type_room: string
-    num_bed: number
-    type_bed: string
-    type_bed_2: string
-    images_url: File[]
-  }
+  createdAt: Date
+  updatedAt: Date
+  roomDetails: RoomDetails
+  roomDetails2: RoomDetails2
+  roomImages: any[]
+}
+
+export type Inputs = Result
+
+export interface RoomDetails {
+  typeRoom: string
+  numBed: number
+  typeBed: string
+  typeBed2: string
+}
+
+export interface RoomDetails2 {
+  amenities: string[]
+  notIncluded: string[]
+  services: string[]
 }
