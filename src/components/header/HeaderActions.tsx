@@ -2,7 +2,7 @@ import { useLang } from '@hooks/useLang'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineWhatsApp } from 'react-icons/ai'
-import { FaUser, FaShoppingBag } from 'react-icons/fa'
+import { FaUser, FaShoppingBag, FaShoppingCart } from 'react-icons/fa'
 
 const LANGUAGES = [
   { value: 'es', text: 'ES', icon: '🇪🇸' },
@@ -51,6 +51,10 @@ function HeaderActions({ isScrolled }: Props) {
         <Link to="/mis-compras" className="flex justify-content items-center gap-2">
           <FaShoppingBag size={18} className="text-white" />
           <p className="text-white">{t('components.header.my_purchases')}</p>
+        </Link>
+        <Link to="/carrito-de-compras" className="flex justify-content items-center gap-2">
+          <FaShoppingCart size={18} className="text-white" />
+          <p className="text-white">{t('components.header.shopping_cart')}</p>
         </Link>
         <select
           value={saveLang}
