@@ -1,18 +1,19 @@
-import { useState } from 'react'
+import { type ChangeEvent, useState } from 'react'
 
 interface Props {
-  setFiles: () => void
+  setFiles: (files: FileList) => void
 }
 
 function UploadImages({ setFiles }: Props) {
-  const [images, setImages] = useState([])
+  const [images, setImages] = useState<string[]>([])
 
-  const handleImageUpload = event => {
+  const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files
-    const imagesArray = Array.from(files).slice(0, 10)
-
-    setImages(imagesArray.map(image => URL.createObjectURL(image)))
-    setFiles(files)
+    if (files && files.length > 0) {
+      const imagesArray = Array.from(files).slice(0, 10)
+      setImages(imagesArray.map(image => URL.createObjectURL(image)))
+      setFiles(files)
+    }
   }
 
   return (
@@ -36,10 +37,6 @@ function UploadImages({ setFiles }: Props) {
       </div>
     </article>
   )
-}
-
-UploadImages.propTypes = {
-  setFiles: Types.func
 }
 
 export default UploadImages
