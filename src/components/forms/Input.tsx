@@ -1,7 +1,19 @@
 import { useLang } from '@hooks/useLang'
-import Types from 'prop-types'
+import type { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form'
 
-const Input = ({
+interface Props {
+  id: string
+  label?: string
+  labelStyles?: string
+  containerStyles?: string
+  type?: string
+  placeholder?: string
+  register: UseFormRegister<FieldValues>
+  errors: FieldErrors
+  required?: boolean
+}
+
+function Input({
   id,
   label,
   labelStyles = 'text-sm mb-1',
@@ -11,13 +23,11 @@ const Input = ({
   register,
   errors,
   required
-}) => {
+}: Props) {
   const { t } = useLang()
 
   return (
-    <div
-      className={`w-full flex flex-col justify-start items-start ${containerStyles}`}
-    >
+    <div className={`w-full flex flex-col justify-start items-start ${containerStyles}`}>
       <label
         htmlFor={id}
         className={`
@@ -41,24 +51,11 @@ const Input = ({
       />
       {errors[id] && (
         <p className="text-red-400 text-sm pl-2">
-          {errors[id]?.type === 'required' &&
-            t('errors.required', { name: label })}
+          {errors[id]?.type === 'required' && t('errors.required', { name: label })}
         </p>
       )}
     </div>
   )
-}
-
-Input.propTypes = {
-  id: Types.string,
-  label: Types.string,
-  labelStyles: Types.string,
-  containerStyles: Types.string,
-  type: Types.string,
-  placeholder: Types.string,
-  register: Types.func,
-  errors: Types.object,
-  required: Types.bool
 }
 
 export default Input

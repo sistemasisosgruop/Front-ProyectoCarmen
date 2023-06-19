@@ -1,16 +1,19 @@
+import { IconType } from 'react-icons'
 import { GrSubtractCircle } from 'react-icons/gr'
 import { IoMdAddCircleOutline } from 'react-icons/io'
 
-const NumberPicker = ({
-  value,
-  onChangeValue,
-  label,
-  htmlFor,
-  showIcon,
-  icon,
-  iconPosition,
-  textStyle
-}) => {
+interface Props {
+  value: number
+  name?: string
+  onChangeValue: (value: number) => void
+  label?: string
+  showIcon?: boolean
+  icon?: IconType
+  iconPosition?: string
+  textStyle?: string
+}
+
+function NumberPicker({ value, name, onChangeValue, label, showIcon, icon: Icon, iconPosition, textStyle }: Props) {
   const increaseValue = () => {
     onChangeValue(value + 1)
   }
@@ -21,23 +24,16 @@ const NumberPicker = ({
 
   return (
     <div className="w-full flex flex-col justify-start items-start">
-      <label
-        htmlFor={htmlFor}
-        className={`text-gray-600 mb-1 text-sm flex justify-start items-center gap-2`}
-      >
+      <label htmlFor={name} className={`text-gray-600 mb-1 text-sm flex justify-start items-center gap-2`}>
         <>
-          {showIcon !== undefined && icon}
+          {showIcon && <Icon size={18} />}
           <span className={textStyle}>{label}</span>
-          {showIcon !== undefined && iconPosition === 'right' && icon}
+          {showIcon && iconPosition === 'right' && <Icon size={18} />}
         </>
       </label>
       <div className="w-full flex justify-start items-start gap-2">
         {value > 1 && (
-          <button
-            type="button"
-            onClick={decreaseValue}
-            className="text-gray-600"
-          >
+          <button type="button" onClick={decreaseValue} className="text-gray-600">
             <GrSubtractCircle size={24} />
           </button>
         )}
