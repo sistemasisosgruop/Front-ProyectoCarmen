@@ -9,7 +9,7 @@ import { Department } from 'types/department'
 function TableDepartments() {
   const [pageNumber, setPageNumber] = useState(1)
   const [departments, setDepartments] = useState<Department[]>([])
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
   // const { data, isLoading } = useApiGet({ url: 'rooms', pageNumber })
 
   useEffect(() => {
@@ -21,15 +21,14 @@ function TableDepartments() {
       const response = await axios.get(`rooms?page=${pageNumber}`, {
         headers: { Authorization: window.sessionStorage.getItem('token') }
       })
+      console.log(response)
       setDepartments(response.data?.results)
     } catch (error) {
       console.log(error)
     } finally {
-      setIsLoading(true)
+      setIsLoading(false)
     }
   }
-
-  console.log(departments)
 
   return (
     <div className="rounded">
