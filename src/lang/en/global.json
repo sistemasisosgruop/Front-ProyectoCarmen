@@ -93,7 +93,8 @@
   "components": {
     "header": {
       "log_in": "Log in",
-      "my_purchases": "My purchases"
+      "my_purchases": "My purchases",
+      "shopping_cart": "Shopping cart"
     },
     "masthead": {
       "title": "Book now and enjoy a perfect stay",

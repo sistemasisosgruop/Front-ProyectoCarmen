@@ -93,7 +93,8 @@
   "components": {
     "header": {
       "log_in": "Iniciar sesion",
-      "my_purchases": "Mis compras"
+      "my_purchases": "Mis compras",
+      "shopping_cart": "Carrito de compras"
     },
     "masthead": {
       "title": "Reserva ahora y disfruta de una estadía perfecta",
