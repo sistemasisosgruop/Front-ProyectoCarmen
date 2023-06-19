@@ -16,7 +16,7 @@ interface LoginRequest {
 function SignIn() {
   const navigate = useNavigate()
   const { t } = useLang()
-  const authContext = useContext(AuthContext)
+  const { login } = useContext(AuthContext)
   const {
     register,
     handleSubmit,
@@ -29,7 +29,7 @@ function SignIn() {
     try {
       const response = await axios.post('auth/login', data)
       const token = response?.data?.token
-      authContext?.login(`jwt ${token}`)
+      login(`jwt ${token}`)
       toast.success(response.data?.message)
     } catch (error: any) {
       toast.error(error.response?.data?.message)

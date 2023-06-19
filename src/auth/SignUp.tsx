@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useLang } from '@hooks/useLang'
-import axios from '@api/axios'
+import axios from '@lib/axios'
 import { toast } from 'react-toastify'
 import DatePicker from 'react-datepicker'
 import Button from '@components/Button'
