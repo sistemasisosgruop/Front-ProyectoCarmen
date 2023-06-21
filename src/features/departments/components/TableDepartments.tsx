@@ -1,33 +1,36 @@
 import { useEffect, useState } from 'react'
-// import { useApiGet } from '@hooks/useApiGet'
 import THead from '@components/THead'
 import TableRow from './TableRow'
 import Paginate from '@components/Paginate'
-import axios from '@lib/axios'
-import { Department } from 'types/department'
+import axios from 'axios'
+import { DepartmentResponse } from 'types/department'
+import { API_URL } from '@utils/consts'
+import camelcaseKeys from 'camelcase-keys'
 
 function TableDepartments() {
+  const [departments, setDepartments] = useState<DepartmentResponse>({} as DepartmentResponse)
   const [pageNumber, setPageNumber] = useState(1)
-  const [departments, setDepartments] = useState<Department[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(true)
-  // const { data, isLoading } = useApiGet({ url: 'rooms', pageNumber })
 
   useEffect(() => {
     getDepartments()
-  }, [])
+  }, [pageNumber])
 
   const getDepartments = async () => {
-    try {
-      const response = await axios.get(`rooms?page=${pageNumber}`, {
+    await axios
+      .get(`${API_URL}/rooms?page=${pageNumber}`, {
         headers: { Authorization: window.sessionStorage.getItem('token') }
       })
-      console.log(response)
-      setDepartments(response.data?.results)
-    } catch (error) {
-      console.log(error)
-    } finally {
-      setIsLoading(false)
-    }
+      .then(response => {
+        console.log(response.data)
+        setDepartments(response.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }
 
   return (
@@ -59,14 +62,14 @@ function TableDepartments() {
                 </td>
               </tr>
             )}
-            {departments.map((room, index) => (
-              <TableRow key={room.id} room={room} index={index} />
+            {departments?.results?.map((room, index) => (
+              <TableRow key={room.id} room={camelcaseKeys(room)} index={index} />
             ))}
           </tbody>
         </table>
       </div>
       <div className="mt-4 flex justify-end items-center">
-        <Paginate counter={departments?.totalPages} setCounter={setPageNumber} />
+        <Paginate counter={departments.totalPages} setCounter={setPageNumber} />
       </div>
     </div>
   )
