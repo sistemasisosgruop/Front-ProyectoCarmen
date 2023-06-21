@@ -1,5 +1,8 @@
 interface Props {
-  image: string
+  image: {
+    imagePath: string
+    alt: string
+  }
   index: number
 }
 
