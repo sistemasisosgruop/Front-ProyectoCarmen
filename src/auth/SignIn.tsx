@@ -1,17 +1,16 @@
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { useLang } from '@hooks/useLang'
 import { AuthContext } from '@context/AuthContext'
-import axios from '@lib/axios'
+import axios from 'axios'
 import { toast } from 'react-toastify'
 import FormInput from '@forms/FormInput'
 import { GoogleLogin } from '@react-oauth/google'
-
-interface LoginRequest {
-  email: string
-  password: string
-}
+import { API_URL } from '@utils/consts'
+import jwtDecode from 'jwt-decode'
+import { User } from 'types/user'
+import Input from '@forms/Input'
 
 function SignIn() {
   const navigate = useNavigate()
@@ -23,26 +22,31 @@ function SignIn() {
     watch,
     reset,
     formState: { errors }
-  } = useForm<LoginRequest>()
+  } = useForm<FieldValues>()
 
-  const onSubmit = async (data: LoginRequest) => {
-    try {
-      const response = await axios.post('auth/login', data)
-      const token = response?.data?.token
-      login(`jwt ${token}`)
-      toast.success(response.data?.message)
-    } catch (error: any) {
-      toast.error(error.response?.data?.message)
-    } finally {
-      const token = window.sessionStorage.getItem('token')
-      console.log({ 'Finally token': token })
+  const onSubmit: SubmitHandler<FieldValues> = async data => {
+    await axios
+      .post(`${API_URL}/auth/login`, data)
+      .then(response => {
+        const token = response?.data?.token
+        login(`jwt ${token}`)
+        toast.success(response.data?.message)
+      })
+      .catch(error => {
+        if (axios.isAxiosError(error)) {
+          toast.error(error.response?.data?.message)
+        }
+      })
+      .finally(() => {
+        reset()
+        const token = window.sessionStorage.getItem('token')
+        if (!token) return
+        const user: User = jwtDecode(token.slice(4))
 
-      if (token) {
-        navigate('/admin/calendario', { replace: true })
-      }
-    }
-
-    reset()
+        if (token && user.roleId === 1) {
+          navigate('/admin/calendario', { replace: true })
+        }
+      })
   }
 
   return (
@@ -53,20 +57,13 @@ function SignIn() {
         className="w-full flex flex-col justify-center gap-4 mb-8"
       >
         <article className="flex flex-col justify-center items-start gap-4">
-          <FormInput
-            label={t('login.email')}
-            name="email"
-            register={register}
-            rules={{ required: 'The field is required', minLength: 10 }}
-            errors={errors}
-          />
-
-          <FormInput
-            label={t('login.password')}
-            name="password"
+          <Input id="email" label={t('login.email') ?? ''} register={register} required={true} errors={errors} />
+          <Input
+            id="password"
+            label={t('login.password') ?? ''}
             type="password"
             register={register}
-            rules={{ required: true }}
+            required={true}
             errors={errors}
           />
         </article>
