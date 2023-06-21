@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { useLang } from '@hooks/useLang'
-import axios from '@lib/axios'
+import axios from 'axios'
 import { toast } from 'react-toastify'
 import DatePicker from 'react-datepicker'
 import Button from '@components/Button'
 import Input from '@components/forms/Input'
+import { API_URL } from '@utils/consts'
+import { useNavigate } from 'react-router-dom'
 
 function SignUp() {
   const [startDate, setStartDate] = useState(new Date())
@@ -14,10 +16,11 @@ function SignUp() {
     handleSubmit,
     reset,
     formState: { errors }
-  } = useForm()
+  } = useForm<FieldValues>()
   const { t } = useLang()
+  const navigate = useNavigate()
 
-  const onSubmit = async data => {
+  const onSubmit: SubmitHandler<FieldValues> = async data => {
     const newData = {
       first_name: data.firstName,
       last_name: data.lastName,
@@ -30,25 +33,29 @@ function SignUp() {
       document_number: data.documentNumber,
       birthday: startDate,
       student: data.student,
-      role_id: 1
+      role_id: 2
     }
 
-    try {
-      const response = await axios.post('users', newData)
-      toast.success(response.statusText)
-    } catch (error) {
-      toast.error(error)
-    }
-
-    reset()
+    await axios
+      .post(`${API_URL}/users`, newData)
+      .then(response => {
+        toast.success(response.statusText)
+        navigate('/iniciar-sesion')
+      })
+      .catch(error => {
+        if (axios.isAxiosError(error)) {
+          toast.error(error.response?.statusText)
+        }
+      })
+      .finally(() => reset())
   }
 
   return (
     <section className="rounded-xl overflow-hidden bg-gray-100 px-4 py-8 border border-blue border-opacity-25 md:px-8">
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="false" className="flex flex-col gap-4">
         <article className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <Input id="firstName" label={t('login.name')} register={register} required={true} errors={errors} />
-          <Input label={t('login.last_name')} id="lastName" register={register} required={true} errors={errors} />
+          <Input id="firstName" label={t('login.name') ?? ''} register={register} required={true} errors={errors} />
+          <Input label={t('login.last_name') ?? ''} id="lastName" register={register} required={true} errors={errors} />
         </article>
 
         <article className="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -56,7 +63,7 @@ function SignUp() {
             <label className="text-sm text-gray-600 inline-block mb-1">{t('login.sex')}</label>
             <select
               {...register('gender', {
-                required: t('errors.required', { name: 'gender' })
+                required: t('errors.required', { name: 'gender' }) ?? ''
               })}
               className="w-full bg-white text-gray-600 py-2 px-6 border border-gray-400 rounded-xl focus:border-blue"
             >
@@ -64,7 +71,13 @@ function SignUp() {
               <option value="female">Femenino</option>
             </select>
           </div>
-          <Input id="phoneNumber" label={t('login.phone_number')} register={register} required={true} errors={errors} />
+          <Input
+            id="phoneNumber"
+            label={t('login.phone_number') ?? ''}
+            register={register}
+            required={true}
+            errors={errors}
+          />
         </article>
 
         <article className="grid grid-cols-5 items-end gap-4">
@@ -76,7 +89,7 @@ function SignUp() {
               required
               className="w-full bg-white text-gray-600 py-2 px-6 border border-gray-400 rounded-xl focus:border-blue"
               {...register('documentType', {
-                required: t('errors.required', { name: 'document type' })
+                required: t('errors.required', { name: 'document type' }) ?? ''
               })}
             >
               <option className="w-full" value="dni">
@@ -92,7 +105,7 @@ function SignUp() {
           </div>
           <Input
             id="documentNumber"
-            label={t('login.document_number')}
+            label={t('login.document_number') ?? ''}
             register={register}
             required={true}
             errors={errors}
@@ -107,7 +120,7 @@ function SignUp() {
             </label>
             <DatePicker
               selected={startDate}
-              onChange={date => setStartDate(date)}
+              onChange={(date: Date) => setStartDate(date)}
               className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
             />
           </div>
@@ -115,16 +128,16 @@ function SignUp() {
             <label className="text-sm text-gray-600 inline-block mb-1">{t('login.student')}</label>
             <fieldset
               {...register('student', {
-                required: t('errors.required', { name: 'student' })
+                required: t('errors.required', { name: 'student' }) ?? ''
               })}
               className="flex justify-start items-center gap-4"
             >
               <label>
-                <input type="radio" name="student" value={true} />
+                <input type="radio" name="student" value="true" />
                 &nbsp; Sí
               </label>
               <label>
-                <input type="radio" name="student" value={false} />
+                <input type="radio" name="student" value="false" />
                 &nbsp; No
               </label>
             </fieldset>
@@ -133,10 +146,10 @@ function SignUp() {
 
         <hr className="border-none w-full inline-block py-[0.5px] bg-gray-200 my-2 mx-auto" />
 
-        <Input id="email" label={t('login.email')} register={register} required={true} errors={errors} />
+        <Input id="email" label={t('login.email') ?? ''} register={register} required={true} errors={errors} />
         <Input
           id="password"
-          label={t('login.password')}
+          label={t('login.password') ?? ''}
           type="password"
           register={register}
           required={true}
