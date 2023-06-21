@@ -1,4 +1,14 @@
-import Types from 'prop-types'
+interface Props {
+  name: string
+  label: string
+  type: string
+  placeholder: string
+  register: string
+  rules: string
+  errors: string
+  labelColor: string
+  extraClasses: string
+}
 
 const FormInput = ({
   name,
@@ -10,22 +20,16 @@ const FormInput = ({
   errors,
   labelColor = 'text-gray-600',
   extraClasses
-}) => {
+}: Props) => {
   return (
-    <div
-      className={`w-full flex flex-col justify-start items-start ${extraClasses}`}
-    >
+    <div className={`w-full flex flex-col justify-start items-start ${extraClasses}`}>
       <article className="w-full flex justify-between items-center">
         <label htmlFor={name} className={`${labelColor} text-sm mb-1`}>
           {label}
         </label>
-        {errors[name]?.type === 'required' && (
-          <span className="text-red-400 text-sm">{errors[name]?.message}</span>
-        )}
+        {errors[name]?.type === 'required' && <span className="text-red-400 text-sm">{errors[name]?.message}</span>}
         {errors[name]?.type === 'minLength' && (
-          <span className="text-red-400 text-sm">
-            The min lenght is 10 characters
-          </span>
+          <span className="text-red-400 text-sm">The min lenght is 10 characters</span>
         )}
       </article>
       <input
@@ -36,18 +40,6 @@ const FormInput = ({
       />
     </div>
   )
-}
-
-FormInput.propTypes = {
-  label: Types.string.isRequired,
-  name: Types.string.isRequired,
-  type: Types.string,
-  placeholder: Types.string,
-  register: Types.func.isRequired,
-  rules: Types.object.isRequired,
-  errors: Types.object,
-  labelColor: Types.string,
-  extraClasses: Types.string
 }
 
 export default FormInput
