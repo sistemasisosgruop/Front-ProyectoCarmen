@@ -1,5 +1,15 @@
 import { useLang } from '@hooks/useLang'
-import Types from 'prop-types'
+import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form'
+
+interface Props {
+  id: string
+  label?: string
+  labelStyles?: string
+  containerStyles?: string
+  register: UseFormRegister<FieldValues>
+  errors: FieldErrors
+  required: boolean
+}
 
 const Textarea = ({
   id,
@@ -7,9 +17,9 @@ const Textarea = ({
   labelStyles = 'text-gray-600 text-sm mb-1',
   containerStyles,
   register,
-  required,
-  errors
-}) => {
+  errors,
+  required
+}: Props) => {
   const { t } = useLang()
 
   return (
@@ -37,22 +47,11 @@ const Textarea = ({
       ></textarea>
       {errors[id] && (
         <p className="text-red-400 text-sm ml-2">
-          {errors[id]?.type === 'required' &&
-            t('errors.required', { name: label })}
+          {errors[id]?.type === 'required' && t('errors.required', { name: label })}
         </p>
       )}
     </div>
   )
-}
-
-Textarea.propTypes = {
-  id: Types.string,
-  label: Types.string,
-  labelStyles: Types.string,
-  containerStyles: Types.string,
-  register: Types.func,
-  errors: Types.object,
-  required: Types.bool
 }
 
 export default Textarea
