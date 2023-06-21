@@ -23,19 +23,20 @@ function AuthProvider({ children }: Props) {
   useEffect(() => {
     try {
       if (accessToken) {
-        const userDecode: UserResponse = jwtDecode(accessToken)
+        const userDecode: UserResponse = jwtDecode(accessToken.slice(4))
 
         setUser({
           id: userDecode.id,
           email: userDecode.email,
           firstName: userDecode.first_name,
-          lastName: userDecode.last_name
+          lastName: userDecode.last_name,
+          roleId: userDecode.role_id
         })
       }
     } catch (error) {
       toast.error(`Usted no a iniciado sesión ${error}`)
     }
-  }, [])
+  }, [accessToken])
 
   const login = (token: string) => {
     setAccessToken(token)
@@ -45,7 +46,8 @@ function AuthProvider({ children }: Props) {
       id: userDecode.id,
       email: userDecode.email,
       firstName: userDecode.first_name,
-      lastName: userDecode.last_name
+      lastName: userDecode.last_name,
+      roleId: userDecode.role_id
     })
   }
 
