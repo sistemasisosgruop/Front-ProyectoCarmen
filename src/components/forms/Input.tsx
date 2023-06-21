@@ -3,7 +3,7 @@ import type { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form'
 
 interface Props {
   id: string
-  label?: string
+  label?: string | undefined
   labelStyles?: string
   containerStyles?: string
   type?: string
@@ -11,6 +11,7 @@ interface Props {
   register: UseFormRegister<FieldValues>
   errors: FieldErrors
   required?: boolean
+  extraClasses?: string
 }
 
 function Input({
@@ -20,6 +21,7 @@ function Input({
   containerStyles,
   type = 'text',
   placeholder = ' ',
+  extraClasses,
   register,
   errors,
   required
@@ -27,7 +29,9 @@ function Input({
   const { t } = useLang()
 
   return (
-    <div className={`w-full flex flex-col justify-start items-start ${containerStyles}`}>
+    <div
+      className={`w-full flex flex-col justify-start items-start ${containerStyles} ${extraClasses}`}
+    >
       <label
         htmlFor={id}
         className={`
@@ -51,7 +55,8 @@ function Input({
       />
       {errors[id] && (
         <p className="text-red-400 text-sm pl-2">
-          {errors[id]?.type === 'required' && t('errors.required', { name: label })}
+          {errors[id]?.type === 'required' &&
+            t('errors.required', { name: label })}
         </p>
       )}
     </div>
