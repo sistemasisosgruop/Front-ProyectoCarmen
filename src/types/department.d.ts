@@ -1,8 +1,10 @@
-export interface Departments {
-  results: Result[]
+export interface DepartmentResponse {
+  count: number
+  totalPages: number
+  results: Department[]
 }
 
-export interface Result {
+export interface Department {
   id: string
   roomType: string
   description: string
@@ -13,14 +15,10 @@ export interface Result {
   numBathrooms: number
   numBeds: number
   extras: string[]
-  createdAt: Date
-  updatedAt: Date
   roomDetails: RoomDetails
   roomDetails2: RoomDetails2
   roomImages: any[]
 }
-
-export type Inputs = Result
 
 export interface RoomDetails {
   typeRoom: string
