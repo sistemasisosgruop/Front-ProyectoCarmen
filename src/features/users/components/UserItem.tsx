@@ -1,8 +1,9 @@
+import { User } from 'types/user'
 import Modal from '@components/Modal'
 import { useModal } from '@hooks/useModal'
 import dayjs from 'dayjs'
 import { BiEdit, BiTrash } from 'react-icons/bi'
-import { User } from 'types/user'
+import UserEdit from './UserEdit'
 
 interface Props {
   user: User
@@ -28,23 +29,16 @@ function UserItem({ user }: Props) {
           {dayjs(user.birthday).format('D MMM. YYYY')}
         </td>
         <td className="whitespace-nowrap px-4 py-2 text-center">
-          {user.student ? (
-            <span className="bg-green px-1 py-[1px] text-sm text-white rounded">
-              SÍ
-            </span>
-          ) : (
-            <span className="bg-green px-1 py-[1px] text-sm text-white rounded">
-              NO
-            </span>
+          {user.student && (
+            <span className="bg-green px-1 py-[1px] text-sm text-white rounded">SÍ</span>
+          )}
+          {!user.student && (
+            <span className="bg-green px-1 py-[1px] text-sm text-white rounded">NO</span>
           )}
         </td>
         <td className="whitespace-nowrap px-4 py-2">{user.phoneNumber}</td>
-        <td className="whitespace-nowrap px-4 py-2 text-center">
-          {user.countryCode}
-        </td>
-        <td className="whitespace-nowrap px-4 py-2 text-center">
-          {user.roleId}
-        </td>
+        <td className="whitespace-nowrap px-4 py-2 text-center">{user.countryCode}</td>
+        <td className="whitespace-nowrap px-4 py-2 text-center">{user.roleId}</td>
         <td className="whitespace-nowrap px-4 py-2">
           <article className="flex justify-center items-center gap-2">
             <button type="button" onClick={openModal} className="p-1 text-dark">
@@ -58,7 +52,7 @@ function UserItem({ user }: Props) {
       </tr>
       {isOpenModal && (
         <Modal title="Editar usuario" closeModal={closeModal}>
-          <h2>Editando el usuairo</h2>
+          <UserEdit user={user} />
         </Modal>
       )}
     </>
