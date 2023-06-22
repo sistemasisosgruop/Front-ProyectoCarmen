@@ -2,6 +2,7 @@ import { AuthProvider } from '@context/AuthContext'
 import { BrowserRouter } from 'react-router-dom'
 import { I18nextProvider, initReactI18next } from 'react-i18next'
 import i18next from 'i18next'
+import dayjs from 'dayjs'
 import { ToastContainer } from 'react-toastify'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import Routes from './routes/Routes'
@@ -12,12 +13,13 @@ import globalEn from './lang/en/global.json'
 
 import 'react-toastify/dist/ReactToastify.css'
 import 'react-datepicker/dist/react-datepicker.css'
+import 'dayjs/locale/es'
 
 i18next.use(initReactI18next).init({
   interpolation: {
     escapeValue: false
   },
-  lng: localStorage.getItem('lang') ?? 'es',
+  lng: window.localStorage.getItem('lang') ?? 'es',
   resources: {
     es: {
       global: globalEs
@@ -27,6 +29,8 @@ i18next.use(initReactI18next).init({
     }
   }
 })
+
+dayjs.locale('es')
 
 function App() {
   return (
