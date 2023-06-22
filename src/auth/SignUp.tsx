@@ -54,8 +54,20 @@ function SignUp() {
     <section className="rounded-xl overflow-hidden bg-gray-100 px-4 py-8 border border-blue border-opacity-25 md:px-8">
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="false" className="flex flex-col gap-4">
         <article className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <Input id="firstName" label={t('login.name') ?? ''} register={register} required={true} errors={errors} />
-          <Input label={t('login.last_name') ?? ''} id="lastName" register={register} required={true} errors={errors} />
+          <Input
+            id="firstName"
+            label={t('login.name') ?? ''}
+            register={register}
+            required={true}
+            errors={errors}
+          />
+          <Input
+            label={t('login.last_name') ?? ''}
+            id="lastName"
+            register={register}
+            required={true}
+            errors={errors}
+          />
         </article>
 
         <article className="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -146,7 +158,13 @@ function SignUp() {
 
         <hr className="border-none w-full inline-block py-[0.5px] bg-gray-200 my-2 mx-auto" />
 
-        <Input id="email" label={t('login.email') ?? ''} register={register} required={true} errors={errors} />
+        <Input
+          id="email"
+          label={t('login.email') ?? ''}
+          register={register}
+          required={true}
+          errors={errors}
+        />
         <Input
           id="password"
           label={t('login.password') ?? ''}
