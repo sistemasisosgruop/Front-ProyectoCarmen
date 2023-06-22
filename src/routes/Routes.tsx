@@ -8,6 +8,7 @@ const RoomsDetail = lazy(() => import('@web/rooms/RoomsDetail'))
 const RoomCatalog = lazy(() => import('@web/rooms/RoomCatalog'))
 const Packages = lazy(() => import('@web/Packages'))
 const Flights = lazy(() => import('@web/Flights'))
+const AboutUs = lazy(() => import('@web/AboutUs'))
 const Contact = lazy(() => import('@web/Contact'))
 const DestinationsCatalog = lazy(() => import('@web/destination/DestinationsCatalog'))
 const DestinationDetail = lazy(() => import('@web/destination/DestinationDetail'))
@@ -48,7 +49,7 @@ function Routing() {
         <Route path="/paquetes" element={<Packages />} />
         <Route path="/vuelos" element={<Flights />} />
         <Route path="/contactanos" element={<Contact />} />
-        <Route path="/sobre-nosotros" element={<Contact />} />
+        <Route path="/sobre-nosotros" element={<AboutUs />} />
         <Route path="/destinos-populares" element={<DestinationsCatalog />} />
         <Route path="/destinos-populares/detalle" element={<DestinationDetail />} />
         <Route path="/mis-compras" element={<MyPurchases />} />
