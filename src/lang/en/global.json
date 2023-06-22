@@ -93,7 +93,8 @@
   "components": {
     "header": {
       "log_in": "Log in",
-      "my_purchases": "My purchases"
+      "my_purchases": "My purchases",
+      "shopping_cart": "Shopping cart"
     },
     "masthead": {
       "title": "Book now and enjoy a perfect stay",
@@ -111,18 +112,35 @@
     }
   },
   "login": {
-    "title": "Main User Data",
+    "title": "Main User Information",
     "email": "Email",
+    "password": "Password",
     "continue": "Continue",
+    "register": "Register",
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up",
     "recover_account": "Recover Account",
     "other_options": "Other Options",
-    "password": "Password",
-    "sign_in": "Sign in",
-    "sign_up": "Sign up"
+    "name": "First Name",
+    "last_name": "Last Name",
+    "sex": "Sex",
+    "phone_number": "Phone Number",
+    "country": "Country",
+    "document_type": "Document Type",
+    "document_number": "Document Number",
+    "birthday": "Date of Birth",
+    "student": "Student",
+    "sign_in_title": "Sign In / Register",
+    "sign_in_description": "Explore a world of possibilities. Sign in if you already have an account or register to discover everything you can do with us.",
+    "already_have_account": "Already have an account?"
   },
   "not_found": {
     "not_found": "Not found",
     "page_not_found": "The page you are looking for was not found.",
     "return_home": "Return home"
+  },
+  "errors": {
+    "required": "The field {{name}} is required",
+    "min_length": "Enter a minimum of {{min}} characters"
   }
 }

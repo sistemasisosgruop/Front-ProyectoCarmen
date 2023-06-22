@@ -93,7 +93,8 @@
   "components": {
     "header": {
       "log_in": "Iniciar sesion",
-      "my_purchases": "Mis compras"
+      "my_purchases": "Mis compras",
+      "shopping_cart": "Carrito de compras"
     },
     "masthead": {
       "title": "Reserva ahora y disfruta de una estadía perfecta",
@@ -113,16 +114,33 @@
   "login": {
     "title": "Datos del usuario principal",
     "email": "Correo electrónico",
-    "password": "Contrasela",
+    "password": "Contraseña",
     "continue": "Continuar",
+    "register": "Registrar",
     "sign_in": "Iniciar sesión",
     "sign_up": "Registrate",
     "recover_account": "Recuperar cuenta",
-    "other_options": "Otras opciones"
+    "other_options": "Otras opciones",
+    "name": "Nombres",
+    "last_name": "Apellidos",
+    "sex": "Sexo",
+    "phone_number": "Número de teléfono",
+    "country": "País",
+    "document_type": "Tipo de docuemento",
+    "document_number": "Número de documento",
+    "birthday": "Fecha de nacimiento",
+    "student": "Estudiante",
+    "sign_in_title": "Iniciar sesión / Registrarse",
+    "sign_in_description": "Explora un mundo de posibilidades. Inicia sesión si ya tienes una cuenta o regístrate para descubrir todo lo que puedes hacer con nosotros.",
+    "already_have_account": "¿Ya tienes una cuenta?"
   },
   "not_found": {
     "not_found": "No se encuentra",
     "page_not_found": "La página que buscas no se ha encontrado.",
     "return_home": "Regresa a casa"
+  },
+  "errors": {
+    "required": "El campo {{name}} es requerido",
+    "min_length": "Ingrese un mínimo de {{min}} carácteres"
   }
 }

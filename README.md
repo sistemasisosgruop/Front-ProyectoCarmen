@@ -44,3 +44,10 @@ Página web
 - **[@fullcalendar/core @fullcalendar/interaction @fullcalendar/daygrid]():** Un conjunto de bibliotecas para React que permiten la creación de calendarios interactivos y flexibles, con opciones de navegación, selección de fechas y eventos personalizados.
 - **[chart.js](https://www.chartjs.org/):** Una librería de gráficos altamente personalizable que permite la creación de diferentes tipos de gráficos, como gráficos de barras, de líneas y de pastel, para visualizar datos en aplicaciones web.
 - **[react-chartjs-2](https://react-chartjs-2.js.org):** Una integración de Chart.js específicamente diseñada para React, que facilita el uso de Chart.js en componentes de React y proporciona opciones adicionales de configuración y personalización.
+
+## Imágenes
+
+![Code login](./public/screenshots/code-login.png)
+![Code homepage](./public/screenshots/code-home.png)
+![Homepage](./public/screenshots/home.png)
+![View departments](./public/screenshots/departments.png)
