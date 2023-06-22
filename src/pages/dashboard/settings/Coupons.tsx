@@ -31,13 +31,7 @@ function Coupons() {
               />
             </div>
 
-            <Button
-              text="Agregar"
-              onClick={openModal}
-              background="bg-orange"
-              showIcon={true}
-              icon={<IoMdAdd size={18} />}
-            />
+            <Button text="Agregar" onClick={openModal} background="bg-orange" showIcon={true} icon={IoMdAdd} />
           </article>
 
           <CouponList isOpenModal={isOpenModal} />
