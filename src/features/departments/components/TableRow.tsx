@@ -5,13 +5,19 @@ import { BiChevronDown, BiEdit, BiTrash } from 'react-icons/bi'
 import Modal from '@components/Modal'
 import EditForm from './EditForm'
 import { useModal } from '@hooks/useModal'
+import { Department } from 'types/department'
 
-function TableRow({ room, index }) {
+interface Props {
+  room: Department
+  index: number
+}
+
+function TableRow({ room, index }: Props) {
   const [bedDetails, setBedDetails] = useState<number | null>(null)
   const [roomDetails, setRoomDetails] = useState<number | null>(null)
   const { isOpenModal, openModal, closeModal } = useModal()
-  const { date: checkIn } = useFormatDay(room.check_in)
-  const { date: checkOut } = useFormatDay(room.check_out)
+  const { date: checkIn } = useFormatDay(room.checkIn)
+  const { date: checkOut } = useFormatDay(room.checkOut)
 
   const handleBedDetails = (index: number) => {
     setBedDetails(prevState => (prevState === index ? null : index))
@@ -25,18 +31,18 @@ function TableRow({ room, index }) {
     <>
       <tr className="text-sm">
         <td>{index + 1}</td>
-        <td className="whitespace-nowrap px-4 py-2">{room.room_type}</td>
+        <td className="whitespace-nowrap px-4 py-2">{room.roomType}</td>
         <td className="whitespace-nowrap px-4 py-2">{room.description}</td>
         <td className="whitespace-nowrap px-4 py-2">{room.address}</td>
         <td className="whitespace-nowrap px-4 py-2">S/. {room.price}</td>
         <td className="whitespace-nowrap px-4 py-2">
           {checkIn} - {checkOut}
         </td>
-        <td className="whitespace-nowrap px-4 py-2">{room.num_bathrooms}</td>
-        <td className="whitespace-nowrap px-4 py-2">{room.num_beds}</td>
+        <td className="whitespace-nowrap px-4 py-2">{room.numBathrooms}</td>
+        <td className="whitespace-nowrap px-4 py-2">{room.numBeds}</td>
         <td className="whitespace-nowrap px-4 py-2">
           <div className="flex justify-center items-center gap-4">
-            <span>{room.num_beds}</span>
+            <span>{room.numBeds}</span>
             <button type="button" onClick={() => handleBedDetails(index)} className="p-1 text-dark">
               <BiChevronDown size={24} />
             </button>
@@ -111,7 +117,7 @@ function TableRow({ room, index }) {
               <tbody className="bg-gray-100">
                 <tr>
                   <td>
-                    {room.Room_Details?.images_url?.map((image, index) => (
+                    {room.roomImages?.map((image, index) => (
                       <div key={image} className="w-full flex">
                         <img src={image} alt={`Image of the room ${index + 1}`} className="border-md w-20" />
                       </div>
