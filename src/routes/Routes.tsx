@@ -24,9 +24,9 @@ const AdminFlights = lazy(() => import('@dashboard/AdminFlights'))
 const SelectOptionDepartments = lazy(() => import('@dashboard/departments/SelectOptionDepartments'))
 const DepartmentReservation = lazy(() => import('@dashboard/departments/DepartmentReservation'))
 const DepartmentRegistration = lazy(() => import('@dashboard/departments/DepartmentRegistration'))
-const OptionsTouristPackages = lazy(() => import('@dashboard/tourist-packages/OptionsTouristPackages'))
-const TouristpackagesRegistration = lazy(() => import('@dashboard/tourist-packages/TouristPackagesRegistration'))
-const TouristPackagesReservation = lazy(() => import('@dashboard/tourist-packages/TouristPackagesReservation'))
+const TourOptions = lazy(() => import('@dashboard/tours/TourOptions'))
+const TourRegistration = lazy(() => import('@dashboard/tours/TourRegistration'))
+const TourReservation = lazy(() => import('@dashboard/tours/TourReservation'))
 const Users = lazy(() => import('@dashboard/Users'))
 const Statistics = lazy(() => import('@dashboard/Statistics'))
 const OptionSettings = lazy(() => import('@dashboard/settings/OptionSettings'))
@@ -63,9 +63,9 @@ function Routing() {
           <Route path="/admin/departamentos" element={<SelectOptionDepartments />} />
           <Route path="/admin/departamentos/registro" element={<DepartmentRegistration />} />
           <Route path="/admin/departamentos/reservas" element={<DepartmentReservation />} />
-          <Route path="/admin/paquetes-turisticos" element={<OptionsTouristPackages />} />
-          <Route path="/admin/paquetes-turisticos/registro" element={<TouristpackagesRegistration />} />
-          <Route path="/admin/paquetes-turisticos/reservas" element={<TouristPackagesReservation />} />
+          <Route path="/admin/paquetes-turisticos" element={<TourOptions />} />
+          <Route path="/admin/paquetes-turisticos/registro" element={<TourRegistration />} />
+          <Route path="/admin/paquetes-turisticos/reservas" element={<TourReservation />} />
           <Route path="/admin/usuarios" element={<Users />} />
           <Route path="/admin/estadisticas" element={<Statistics />} />
           <Route path="/admin/configuracion" element={<OptionSettings />} />
