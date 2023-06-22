@@ -16,7 +16,7 @@ function Login() {
           <article className="mt-8">
             <div className="flex justify-between items-center">
               <Link
-                to="/"
+                to="/recuperacion"
                 className="inline-block text-blue underline hover:text-opacity-90 hover:decoration-wavy hover:transition-all duration-300"
               >
                 {t('login.recover_account')}
