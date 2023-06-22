@@ -18,6 +18,7 @@ const TravelerInformation = lazy(() => import('@web/shopping-cart/TravelerInform
 const Login = lazy(() => import('@auth/Login'))
 const Register = lazy(() => import('@auth/Register'))
 const RecoverPassword = lazy(() => import('@auth/RecoverPassword'))
+const NewPassword = lazy(() => import('@auth/NewPassword'))
 const PageNotFound = lazy(() => import('@web/PageNotFound'))
 
 const AdminCalendar = lazy(() => import('@dashboard/AdminCalendar'))
@@ -57,6 +58,7 @@ function Routing() {
         <Route path="/iniciar-sesion" element={<Login />} />
         <Route path="/registrate" element={<Register />} />
         <Route path="/recuperacion" element={<RecoverPassword />} />
+        <Route path="/recuperacion/nueva-contrasena/:token" element={<NewPassword />} />
         <Route path="*" element={<PageNotFound />} />
 
         <Route element={<ProtectedRoute />}>
