@@ -1,5 +1,5 @@
 import { ReactNode, useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
 import AddFirstForm from './AddFirstForm'
 import AddSecondForm from './AddSecondForm'
@@ -24,12 +24,12 @@ function SectionForm({ children }: Props) {
 
 const AddTourPackage = () => {
   const [currentStep, setCurrentStep] = useState(1)
-  const [files, setFiles] = useState([])
+  const [files, setFiles] = useState<FileList | null>(null)
   const {
     control,
     handleSubmit,
     formState: { errors }
-  } = useForm()
+  } = useForm<FieldValues>()
 
   const onNextStep = () => {
     setCurrentStep(currentStep + 1)
@@ -39,8 +39,8 @@ const AddTourPackage = () => {
     setCurrentStep(currentStep - 1)
   }
 
-  const onSubmit = async data => {
-    console.log(data)
+  const onSubmit: SubmitHandler<FieldValues> = async data => {
+    console.log({ ...data, files })
     // try {
     //   const response = await axios.post(
     //     'tours',

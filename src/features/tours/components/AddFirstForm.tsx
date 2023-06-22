@@ -1,88 +1,97 @@
 import Button from '@components/Button'
-import FormInput from '@forms/FormInput'
+import Input from '@forms/Input'
+import {
+  Control,
+  FieldErrors,
+  FieldValues,
+  UseFormHandleSubmit
+} from 'react-hook-form'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
 interface Props {
-  control: any
-  errors: any
-  handleSubmit: any
+  control: Control
+  errors: FieldErrors
+  handleSubmit: UseFormHandleSubmit<FieldValues>
   onNextStep: () => void
 }
 
 function AddFirstForm({ control, errors, handleSubmit, onNextStep }: Props) {
   return (
-    <form onSubmit={handleSubmit(onNextStep)} className="w-full flex flex-col gap-4">
+    <form
+      onSubmit={handleSubmit(onNextStep)}
+      className="w-full flex flex-col gap-4"
+    >
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <FormInput
-          register={control.register}
-          rules={{ required: true }}
-          errors={errors}
+        <Input
+          id="tourName"
           label="Nombre del tour"
-          name="tourName"
+          register={control.register}
+          required={true}
+          errors={errors}
           extraClasses="lg:col-span-1"
         />
-        <FormInput
-          register={control.register}
-          rules={{ required: true }}
-          errors={errors}
+        <Input
+          id="tourDescription"
           label="Descripción del tour"
-          name="tourDescription"
+          register={control.register}
+          required={true}
+          errors={errors}
           extraClasses="lg:col-span-2"
         />
       </article>
 
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <FormInput
-          register={control.register}
-          rules={{ required: true }}
-          errors={errors}
+        <Input
+          id="extras"
           label="Extras"
-          name="extras"
-        />
-        <FormInput
           register={control.register}
-          rules={{ required: true }}
+          required={true}
           errors={errors}
+        />
+        <Input
+          id="location"
           label="Ubicación"
-          name="location"
-        />
-        <FormInput
           register={control.register}
-          rules={{ required: true }}
+          required={true}
           errors={errors}
+        />
+        <Input
+          id="duration"
           label="Duración"
-          name="duration"
-        />
-        <FormInput
           register={control.register}
-          rules={{ required: true }}
+          required={true}
           errors={errors}
+        />
+        <Input
+          id="difficulty"
           label="Dificultad"
-          name="difficulty"
+          register={control.register}
+          required={true}
+          errors={errors}
         />
       </article>
 
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <FormInput
-          register={control.register}
-          rules={{ required: true }}
-          errors={errors}
+        <Input
+          id="languages"
           label="Idiomas"
-          name="languages"
-        />
-        <FormInput
           register={control.register}
-          rules={{ required: true }}
+          required={true}
           errors={errors}
+        />
+        <Input
+          id="numOfPeople"
           label="Número de personas"
-          name="numOfPeople"
-        />
-        <FormInput
           register={control.register}
-          rules={{ required: true }}
+          required={true}
           errors={errors}
+        />
+        <Input
+          id="numOfChildren"
           label="Número de niños"
-          name="numOfChildren"
+          register={control.register}
+          required={true}
+          errors={errors}
         />
       </article>
 
@@ -92,7 +101,7 @@ function AddFirstForm({ control, errors, handleSubmit, onNextStep }: Props) {
           onClick={onNextStep}
           background="bg-orange"
           showIcon={true}
-          icon={<HiOutlineArrowSmRight size={18} />}
+          icon={HiOutlineArrowSmRight}
         />
       </article>
     </form>

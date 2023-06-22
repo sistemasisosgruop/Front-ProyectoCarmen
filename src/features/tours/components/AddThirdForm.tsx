@@ -1,71 +1,84 @@
 import Button from '@components/Button'
-import MyFormInput from '@forms/FormInput'
-import FormTextArea from '@forms/FormTextArea'
+import Input from '@forms/Input'
+import Textarea from '@forms/Textarea'
+import {
+  Control,
+  FieldErrors,
+  FieldValues,
+  SubmitHandler,
+  UseFormHandleSubmit
+} from 'react-hook-form'
 import { BiSave } from 'react-icons/bi'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 
 interface Props {
-  control: any
-  errors: any
-  handleSubmit: any
+  control: Control
+  errors: FieldErrors<FieldValues>
+  handleSubmit: UseFormHandleSubmit<FieldValues>
   onPrevStep: () => void
-  onSubmit: () => void
+  onSubmit: SubmitHandler<FieldValues>
 }
 
-function AddThirdForm({ control, errors, handleSubmit, onPrevStep, onSubmit }: Props) {
+function AddThirdForm({
+  control,
+  errors,
+  handleSubmit,
+  onPrevStep,
+  onSubmit
+}: Props) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <FormTextArea
-          register={control.register}
-          rules={{ required: true }}
-          errors={errors}
-          name="included"
+        <Textarea
+          id="included"
           label="Qué está incluido"
-        />
-        <FormTextArea
           register={control.register}
-          rules={{ required: true }}
+          required={true}
           errors={errors}
-          name="notIncluded"
+        />
+        <Textarea
+          id="notIncluded"
           label="Qué no está incluido"
+          register={control.register}
+          required={true}
+          errors={errors}
         />
       </article>
 
       <article className="grid grid-cols-1 gap-4">
-        <FormTextArea
-          register={control.register}
-          rules={{ required: true }}
-          errors={errors}
-          name="itenerary"
+        <Textarea
+          id="itenerary"
           label="Itinerario: Día 01"
+          register={control.register}
+          required={true}
+          errors={errors}
         />
       </article>
 
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <MyFormInput
-          register={control.register}
-          rules={{ required: true }}
-          errors={errors}
-          name="departureDetails"
+        <Input
+          id="departureDetails"
           label="Detalles de salida"
-        />
-        <MyFormInput
           register={control.register}
-          rules={{ required: true }}
+          required={true}
           errors={errors}
-          name="returnDetails"
+        />
+        <Input
+          id="returnDetails"
           label="Detalles de regreso"
+          register={control.register}
+          required={true}
+          errors={errors}
         />
       </article>
 
       <article className="grid grid-cols-1 gap-4">
-        <MyFormInput
-          register={control.register}
-          rules={{ required: true }}
-          errors={errors}
-          name="accessibility"
+        <Input
+          id="accessibility"
           label="Accesibilidad"
+          register={control.register}
+          required={true}
+          errors={errors}
         />
       </article>
 
@@ -76,7 +89,7 @@ function AddThirdForm({ control, errors, handleSubmit, onPrevStep, onSubmit }: P
           background="bg-orange"
           showIcon={true}
           position="left"
-          icon={<HiOutlineArrowSmLeft size={18} />}
+          icon={HiOutlineArrowSmLeft}
         />
         <button
           type="submit"

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import axios from '@lib/axios'
 import DatePicker from 'react-datepicker'
@@ -14,7 +14,7 @@ interface Props {
 }
 
 function AddForm({ closeModal }: Props) {
-  const [files, setFiles] = useState<FileList | null>()
+  const [files, setFiles] = useState()
   const [startDate, setStartDate] = useState<Date>(new Date())
   const [numOfBathrooms, setNumOfBathrooms] = useState<number>(1)
   const [numOfBeds, setNumOfBeds] = useState<number>(1)
@@ -27,33 +27,59 @@ function AddForm({ closeModal }: Props) {
   } = useForm<FieldValues>()
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
+    console.log(data)
     await axios
       .post(
         'rooms',
         {
-          room_type: data.roomType,
-          description: data.description,
-          address: data.address,
-          price: data.price,
+          room_type: 'Deluxe Suite 1',
+          description:
+            'Spacious and luxurious suite with a stunning view of the city.',
+          address: '123 Main Street, Cityville',
+          price: 200,
           check_in: '2023-05-15T00:00:00.000Z',
-          check_out: '2023-05-15T00:00:00.000Z',
-          num_bathrooms: numOfBathrooms,
-          num_beds: numOfBeds,
-          extras: ['uno', 'dos', 'tres'],
+          check_out: '2023-05-20T00:00:00.000Z',
+          num_bathrooms: 2,
+          num_beds: 1,
+          extras: ['Breakfast included', 'Free Wi-Fi', 'Gym access'],
           details: {
             images_url: files,
-            amenities: ['uno', 'dos', 'tres'],
-            not_included: ['uno', 'dos', 'tres'],
-            services: ['uno', 'dos', 'tres']
+            amenities: ['Swimming pool', 'Restaurant', 'Room service'],
+            not_included: ['Pets not allowed', 'Smoking not allowed'],
+            services: ['24/7 concierge', 'Laundry service']
           },
           num_room: {
-            type_room: 'Type room',
+            type_room: 'Deluxe Suite 2',
             num_bed: 1,
-            type_bed: 'Type bed',
-            type_bed_2: 'Type bed 2',
+            type_bed: 'King Bed',
+            type_bed_2: 'Sofa Bed',
             images_url: files
           }
         },
+        // {
+        //   room_type: data.roomType,
+        //   description: data.description,
+        //   address: data.address,
+        //   price: data.price,
+        //   check_in: '2023-05-15T00:00:00.000Z',
+        //   check_out: '2023-05-15T00:00:00.000Z',
+        //   num_bathrooms: numOfBathrooms,
+        //   num_beds: numOfBeds,
+        //   extras: ['uno', 'dos', 'tres'],
+        //   details: {
+        //     images_url: files,
+        //     amenities: ['uno', 'dos', 'tres'],
+        //     not_included: ['uno', 'dos', 'tres'],
+        //     services: ['uno', 'dos', 'tres']
+        //   },
+        //   num_room: {
+        //     type_room: 'Type room',
+        //     num_bed: 1,
+        //     type_bed: 'Type bed',
+        //     type_bed_2: 'Type bed 2',
+        //     images_url: files
+        //   }
+        // },
         {
           headers: {
             Authorization: sessionStorage.getItem('token'),
@@ -74,10 +100,14 @@ function AddForm({ closeModal }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center items-center gap-4">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col justify-center items-center gap-4"
+    >
+      {/*
       <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Input
-          id="room_type"
+          id="roomType"
           label="Tipo de habitación"
           register={register}
           required={true}
@@ -142,7 +172,12 @@ function AddForm({ closeModal }: Props) {
           name="numOfBathrooms"
         />
 
-        <NumberPicker value={numOfBeds} onChangeValue={setNumOfBeds} label="Número de camas" name="numOfBeds" />
+        <NumberPicker
+          value={numOfBeds}
+          onChangeValue={setNumOfBeds}
+          label="Número de camas"
+          name="numOfBeds"
+        />
 
         <NumberPicker
           value={numOfRooms}
@@ -153,11 +188,22 @@ function AddForm({ closeModal }: Props) {
       </article>
 
       <hr className="border-none w-full bg-gray-200 py-[0.5px] mx-8" />
-
+      */}
       {/* Add images */}
-      <UploadImages setFiles={setFiles} />
+      {/* <UploadImages setFiles={setFiles} /> */}
+
+      <input
+        type="file"
+        multiple
+        onChange={(event: ChangeEvent<HTMLInputElement>) =>
+          setFiles(event.target.files)
+        }
+        accept="image/*"
+        className=""
+      />
 
       {/* Description */}
+      {/*
       <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:grid-rows-2">
         <Textarea
           id="included"
@@ -195,6 +241,7 @@ function AddForm({ closeModal }: Props) {
           containerStyles="lg:col-span-1 lg:row-span-1"
         />
       </article>
+      */}
 
       {/* Button */}
       <div>
