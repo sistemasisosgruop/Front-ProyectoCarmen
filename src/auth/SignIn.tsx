@@ -46,6 +46,10 @@ function SignIn() {
         if (token && user.roleId === 1) {
           navigate('/admin/calendario', { replace: true })
         }
+
+        if (token && user.roleId === 2) {
+          navigate('/', { replace: true })
+        }
       })
   }
 
