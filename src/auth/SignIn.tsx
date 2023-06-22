@@ -1,16 +1,16 @@
+import { User } from 'types/user'
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
+import jwtDecode from 'jwt-decode'
 import { useLang } from '@hooks/useLang'
 import { AuthContext } from '@context/AuthContext'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import FormInput from '@forms/FormInput'
 import { GoogleLogin } from '@react-oauth/google'
 import { API_URL } from '@utils/consts'
-import jwtDecode from 'jwt-decode'
-import { User } from 'types/user'
 import Input from '@forms/Input'
+import camelcaseKeys from 'camelcase-keys'
 
 function SignIn() {
   const navigate = useNavigate()
@@ -41,7 +41,7 @@ function SignIn() {
         reset()
         const token = window.sessionStorage.getItem('token')
         if (!token) return
-        const user: User = jwtDecode(token.slice(4))
+        const user: User = camelcaseKeys(jwtDecode(token.slice(4)))
 
         if (token && user.roleId === 1) {
           navigate('/admin/calendario', { replace: true })
@@ -57,7 +57,13 @@ function SignIn() {
         className="w-full flex flex-col justify-center gap-4 mb-8"
       >
         <article className="flex flex-col justify-center items-start gap-4">
-          <Input id="email" label={t('login.email') ?? ''} register={register} required={true} errors={errors} />
+          <Input
+            id="email"
+            label={t('login.email') ?? ''}
+            register={register}
+            required={true}
+            errors={errors}
+          />
           <Input
             id="password"
             label={t('login.password') ?? ''}
