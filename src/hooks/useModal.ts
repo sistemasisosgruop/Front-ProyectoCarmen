@@ -1,15 +1,21 @@
 import { useState } from 'react'
 
-export const useModal = () => {
-  const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
+interface HomeStore {
+  isOpen: boolean
+  onOpen: () => void
+  onClose: () => void
+}
 
-  const openModal = () => {
-    setIsOpenModal(true)
+export function useModal(): HomeStore {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+
+  const onOpen = () => {
+    setIsOpen(true)
   }
 
-  const closeModal = () => {
-    setIsOpenModal(false)
+  const onClose = () => {
+    setIsOpen(false)
   }
 
-  return { isOpenModal, openModal, closeModal }
+  return { isOpen, onOpen, onClose }
 }
