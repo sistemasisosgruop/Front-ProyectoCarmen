@@ -2,14 +2,14 @@ import { useModal } from '@hooks/useModal'
 import Heading from '@components/Heading'
 import AdminLayout from '@layouts/AdminLayout'
 import AdminSection from '@layouts/AdminSection'
-import Modal from '@components/Modal'
-import AddForm from '@features/departments/components/AddForm'
-import TableDepartments from '@features/departments/components/TableDepartments'
+import DepartmentList from '@features/departments/components/DepartmentList'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IoMdAdd } from 'react-icons/io'
+import Modal from '@components/modal/Modal'
+import AddDepartment from './components/AddDepartment'
 
 function DepartmentRegistration() {
-  const { isOpenModal, openModal, closeModal } = useModal()
+  const addDepartmentModal = useModal()
 
   return (
     <>
@@ -19,7 +19,10 @@ function DepartmentRegistration() {
         <AdminSection>
           <article className="flex flex-col justify-between items-end gap-4 mb-8 sm:flex-row">
             <div className="relative w-full">
-              <label htmlFor="searchClient" className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600">
+              <label
+                htmlFor="searchClient"
+                className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600"
+              >
                 <AiOutlineSearch size={18} />
               </label>
               <input
@@ -32,7 +35,7 @@ function DepartmentRegistration() {
 
             <button
               type="button"
-              onClick={openModal}
+              onClick={addDepartmentModal.onOpen}
               className="bg-orange px-6 py-2 rounded-xl text-white font-bold flex justify-center items-center gap-2 hover:bg-opacity-90"
             >
               <span>Agregar</span>
@@ -40,15 +43,19 @@ function DepartmentRegistration() {
             </button>
           </article>
 
-          <TableDepartments />
+          <DepartmentList />
         </AdminSection>
       </AdminLayout>
 
-      {isOpenModal && (
-        <Modal title="Agregar una cama" closeModal={closeModal}>
-          <AddForm closeModal={closeModal} />
-        </Modal>
-      )}
+      <Modal
+        title="Crear departamento"
+        actionLabel="Crear"
+        isOpen={addDepartmentModal.isOpen}
+        disabled={false}
+        onClose={addDepartmentModal.onClose}
+        onSubmit={() => console.log('Send')}
+        body={<AddDepartment onClose={addDepartmentModal.onClose} />}
+      />
     </>
   )
 }
