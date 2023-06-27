@@ -1,7 +1,16 @@
-export interface DepartmentResponse {
-  count: number
-  totalPages: number
-  results: Department[]
+import { BaseResponse } from './baseResponse'
+
+export interface RoomDetails {
+  typeRoom: string
+  numBed: number
+  typeBed: string
+  typeBed2: string
+}
+
+export interface RoomDetails2 {
+  amenities: string[]
+  notIncluded: string[]
+  services: string[]
 }
 
 export interface Department {
@@ -20,15 +29,4 @@ export interface Department {
   roomImages: any[]
 }
 
-export interface RoomDetails {
-  typeRoom: string
-  numBed: number
-  typeBed: string
-  typeBed2: string
-}
-
-export interface RoomDetails2 {
-  amenities: string[]
-  notIncluded: string[]
-  services: string[]
-}
+export type DepartmentResponse = BaseResponse<Department>

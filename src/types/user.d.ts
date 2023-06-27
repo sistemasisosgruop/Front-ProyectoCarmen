@@ -1,9 +1,4 @@
-export interface UserResponse {
-  count: number
-  totalPages: number
-  currentPage: number
-  results: User[]
-}
+import { BaseResponse } from './baseResponse'
 
 export interface User {
   id: string
@@ -19,6 +14,14 @@ export interface User {
   birthday: Date
   student: boolean
   roleId: number
-  createdAt: Date
-  updatedAt: Date
 }
+
+export interface UserToken {
+  id: string
+  firstName: string
+  lastName: string
+  email: string
+  roleId: number
+}
+
+export type UserResponse = BaseResponse<User>

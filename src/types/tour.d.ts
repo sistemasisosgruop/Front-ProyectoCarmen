@@ -1,25 +1,4 @@
-export interface Tour {
-  id: string
-  tourName: string
-  tourDescription: string
-  extras: string[]
-  location: string
-  duration: string
-  difficulty: string
-  languages: string[]
-  numberOfPeople: string
-  ages: string
-  toursDetails: ToursDetails
-  toursInfo: ToursInfo
-  tourImages: TourImages
-}
-
-export interface TourImages {
-  id: null
-  tourID: null
-  imageURL: null
-  order: null
-}
+import { BaseResponse } from './baseResponse'
 
 export interface ToursDetails {
   whatIsIncluded: string
@@ -38,3 +17,28 @@ export interface ToursInfo {
   availableDates: string[]
   schedule: string
 }
+
+export interface TourImages {
+  id: null
+  tourID: null
+  imageURL: null
+  order: null
+}
+
+export interface Tour {
+  id: string
+  tourName: string
+  tourDescription: string
+  extras: string[]
+  location: string
+  duration: string
+  difficulty: string
+  languages: string[]
+  numberOfPeople: string
+  ages: string
+  toursDetails: ToursDetails
+  toursInfo: ToursInfo
+  tourImages: TourImages
+}
+
+export type TourResponse = BaseResponse<Tour>
