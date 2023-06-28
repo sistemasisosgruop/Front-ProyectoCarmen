@@ -14,6 +14,7 @@ import globalEn from './lang/en/global.json'
 import 'react-toastify/dist/ReactToastify.css'
 import 'react-datepicker/dist/react-datepicker.css'
 import 'dayjs/locale/es'
+import { DepartmentCartProvider } from '@context/DepartmentCartContext'
 
 i18next.use(initReactI18next).init({
   interpolation: {
@@ -35,12 +36,14 @@ dayjs.locale('es')
 function App() {
   return (
     <I18nextProvider i18n={i18next}>
+      <ToastContainer />
       <GoogleOAuthProvider clientId={CLIENT_ID}>
         <AuthProvider>
-          <ToastContainer />
-          <BrowserRouter>
-            <Routes />
-          </BrowserRouter>
+          <DepartmentCartProvider>
+            <BrowserRouter>
+              <Routes />
+            </BrowserRouter>
+          </DepartmentCartProvider>
         </AuthProvider>
       </GoogleOAuthProvider>
     </I18nextProvider>
