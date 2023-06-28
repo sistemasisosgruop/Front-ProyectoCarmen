@@ -1,24 +1,24 @@
+import { Department } from 'types/department'
+import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useLang } from '@hooks/useLang'
+import axios from 'axios'
+import camelcaseKeys from 'camelcase-keys'
 import LayoutPage from '@layouts/LayoutPage'
 import Section from '@layouts/Section'
 import GridImages from './components/GridImages'
 import RoomDescriptionInDetail from './components/RoomDescriptionInDetail'
 import PaymentDetailForm from './components/PaymentDetailForm'
 import CommentSection from '@components/comments/CommentSection'
-import axios from 'axios'
-import { API_URL } from '@utils/consts'
-import { useEffect, useState } from 'react'
-import { Department } from 'types/department'
-import camelcaseKeys from 'camelcase-keys'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 import { AiFillStar } from 'react-icons/ai'
+import { API_URL } from '@utils/consts'
 
 function DepartmentDetails() {
   const [department, setDepartment] = useState<Department>({} as Department)
-  const { t } = useLang()
   const navigate = useNavigate()
   const { id } = useParams()
+  const { t } = useLang()
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -36,7 +36,8 @@ function DepartmentDetails() {
         signal: abortController.signal
       })
       .then(response => {
-        setDepartment(camelcaseKeys(response.data))
+        console.log(response.data)
+        setDepartment(response.data)
       })
       .catch(error => {
         throw new Error(error)
@@ -66,7 +67,7 @@ function DepartmentDetails() {
           <p className="text-gray-600">
             ({'10'} {t('general.reviews')})
           </p>
-          <p className="underline">{department.room?.address}</p>
+          <p className="underline">{department.address}</p>
         </div>
       </Section>
       <Section className="my-8">
@@ -79,13 +80,13 @@ function DepartmentDetails() {
           ]}
         />
       </Section>
-      <Section className="grid grid-cols-1 gap-8 mb-4 md:grid-cols-3">
-        <div className="md:col-span-2 mb-8 lg:mb-0">
+      <Section className="grid grid-cols-1 gap-8 mb-4 md:grid-cols-5">
+        <div className="md:col-span-3 mb-8 lg:mb-0">
           <RoomDescriptionInDetail department={camelcaseKeys(department)} />
         </div>
 
-        <div className="bg-white rounded-xl p-4 md:col-span-1">
-          <PaymentDetailForm />
+        <div className="bg-white rounded-xl p-4 md:col-span-2">
+          <PaymentDetailForm department={camelcaseKeys(department)} />
         </div>
       </Section>
 

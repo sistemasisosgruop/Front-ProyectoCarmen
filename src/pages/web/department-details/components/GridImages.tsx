@@ -30,7 +30,7 @@ function GridImages({ images }: Props) {
       ))}
       <article className="absolute bottom-4 left-4">
         <Button
-          text={t('pages.rooms.show_more_photos')}
+          text={t('pages.rooms.show_more_photos') ?? ''}
           background="bg-white"
           textColor="text-dark"
           showIcon={true}
