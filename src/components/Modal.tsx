@@ -1,37 +1,89 @@
-import { ReactNode } from 'react'
+import Button from '@components/Button'
+import { ReactElement, useCallback } from 'react'
 import { createPortal } from 'react-dom'
-import { motion } from 'framer-motion'
 import { IoMdClose } from 'react-icons/io'
+import { ThreeDots } from 'react-loader-spinner'
 
 interface Props {
-  children: ReactNode
   title: string
-  closeModal: () => void
+  actionLabel: string
+  secondaryActionLabel?: string
+  secondaryAction?: () => void
+  body: ReactElement
+  footer?: ReactElement
+  disabled: boolean
+  isOpen: boolean
+  onClose: () => void
+  onSubmit: () => void
 }
 
-function Modal({ children, title, closeModal }: Props) {
+function Modal({
+  title,
+  actionLabel,
+  secondaryAction,
+  secondaryActionLabel,
+  body,
+  footer,
+  disabled,
+  isOpen,
+  onClose,
+  onSubmit
+}: Props) {
+  const handleClose = useCallback(() => {
+    if (disabled) return
+
+    setTimeout(() => {
+      onClose()
+    }, 250)
+  }, [onClose, disabled])
+
+  const handleSubmit = useCallback(() => {
+    if (disabled) return
+
+    onSubmit()
+  }, [onSubmit, disabled])
+
+  const handleSecondaryAction = useCallback(() => {
+    if (disabled || !secondaryAction) return
+
+    secondaryAction()
+  }, [secondaryAction, disabled])
+
+  const loader = (
+    <div className="flex justify-center items-center gap-2">
+      {actionLabel} <ThreeDots color="#ffffff" width={20} height={20} visible={true} />
+    </div>
+  )
+
+  if (!isOpen) return null
+
   return createPortal(
-    <motion.div
-      initial={{ opacity: 0, z: -15, y: 0, x: 0 }}
-      animate={{ opacity: 1, z: 0, y: 0, x: 0 }}
-      transition={{ duration: 0.3, type: 'easeInOut' }}
-      className="w-screen h-screen bg-dark/80 fixed top-0 left-0 z-20 px-8 py-4 md:px-16 md:py-8 xl:grid xl:place-content-center"
-    >
-      <motion.div
-        initial={{ opacity: 0, z: -15, y: 0, x: 0 }}
-        animate={{ opacity: 1, z: 0, y: 0, x: 0 }}
-        transition={{ duration: 0.7, type: 'easeInOut' }}
-        className="w-full min-w-full max-h-full bg-white rounded-xl overflow-x-hidden overflow-y-scroll"
-      >
-        <header className="h-14 flex justify-between items-center gap-8 px-4 border-b border-b-gray-200">
-          <h4 className="text-xl text-dark font-bold">{title}</h4>
-          <button type="button" onClick={closeModal} className="p-4">
+    <div className="w-full h-full bg-black/60 fixed inset-0 z-50 flex justify-center items-center py-4 px-8">
+      <div className="w-full max-h-full bg-white rounded-xl mx-auto overflow-y-scroll sm:w-4/5 md:w-3/5 lg:w-3/5 xl:w-2/4">
+        <header className="flex justify-between items-center gap-8 py-4 px-6">
+          <h4 className="text-lg font-bold">{title}</h4>
+          <button
+            type="button"
+            onClick={handleClose}
+            className="p-1 rounded-md hover:bg-gray-200/80"
+          >
             <IoMdClose size={18} />
           </button>
         </header>
-        <section className="w-full p-4 overflow-y-scroll">{children}</section>
-      </motion.div>
-    </motion.div>,
+
+        <div className="w-full h-full mt-4">
+          <div className="px-6 ">{body}</div>
+        </div>
+
+        <div className="flex justify-end items-center mt-8 py-4 px-6">
+          {secondaryAction && secondaryActionLabel && (
+            <Button text={secondaryActionLabel} onClick={handleSecondaryAction} />
+          )}
+          <Button text={disabled ? loader : actionLabel} onClick={handleSubmit} />
+          <div className="mt-6">{footer}</div>
+        </div>
+      </div>
+    </div>,
     document.getElementById('portal') ?? document.createDocumentFragment()
   )
 }
