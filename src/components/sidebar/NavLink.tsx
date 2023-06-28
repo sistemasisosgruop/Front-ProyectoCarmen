@@ -7,7 +7,7 @@ interface Props {
   icon: IconType
 }
 
-function NavLink({ href, label, icon }: Props) {
+function NavLink({ href, label, icon: Icon }: Props) {
   const { pathname } = useLocation()
 
   return (
@@ -17,7 +17,7 @@ function NavLink({ href, label, icon }: Props) {
         href === pathname ? 'bg-orange text-white' : ''
       } hover:bg-orange hover:text-white transition-colors duration-300`}
     >
-      {icon}
+      {<Icon size={18} />}
       <span>{label}</span>
     </Link>
   )
