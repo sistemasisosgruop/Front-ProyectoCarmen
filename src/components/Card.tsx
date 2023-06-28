@@ -1,38 +1,35 @@
-import { Link } from 'react-router-dom'
-import CardHover from './CardHover'
-import { AiFillStar } from 'react-icons/ai'
+import { ReactNode } from 'react'
 
 interface Props {
-  href: string
+  children: ReactNode | ReactNode[]
   imagePath: string
   imageAlt: string
+  score?: number
+  minHeight?: string
 }
 
-function Card({ href, imagePath, imageAlt }: Props) {
+function Card({ children, imagePath, imageAlt, score, minHeight = 'min-h-[380px]' }: Props) {
   return (
-    <Link to={href}>
-      <CardHover imagePath={imagePath} alt={imageAlt}>
-        <div className="flex justify-between items-start">
-          <span className="uppercase text-sm text-gray-600">Alojamiento</span>
-          <p className="text-lg font-bold text-dark">
-            desde $45 / <span className="text-gray-600">día</span>
-          </p>
+    <div className="inline-block relative h-full w-full rounded-xl border border-white group/description cursor-pointer transition-all overflow-hidden">
+      <img
+        src={imagePath}
+        alt={imageAlt}
+        loading="lazy"
+        className={`
+          w-full h-full object-cover object-center group-hover/description:scale-110 duration-500
+          ${minHeight ?? ''}
+        `}
+      />
+      {score && (
+        <div className="invisible absolute top-2 right-2 bg-white px-2 py-1 rounded-xl group-hover/description:visible">
+          <p className="text-dark font-bold">{score}</p>
         </div>
-        <div className="flex flex-col items-start gap-4">
-          <p className="text-2xl text-dark font-bold">Habitación matrimonial</p>
-          <div className="flex justify-start items-center gap-2">
-            <p className="flex justify-start items-center gap-1">
-              <AiFillStar size={18} className="text-green" />
-              <AiFillStar size={18} className="text-green" />
-              <AiFillStar size={18} className="text-green" />
-              <AiFillStar size={18} className="text-green" />
-              <AiFillStar size={18} className="text-green" />
-            </p>
-            <span className="text-gray-600">(10 reseñas)</span>
-          </div>
-        </div>
-      </CardHover>
-    </Link>
+      )}
+
+      <div className="md:hidden absolute z-20 bg-white bottom-0 left-0 px-4 py-4 w-full md:group-hover/description:inline-block hover:transition-all hover:duration-500 rounded-b-md">
+        {children}
+      </div>
+    </div>
   )
 }
 
