@@ -13,6 +13,12 @@ export interface RoomDetails2 {
   services: string[]
 }
 
+export interface RoomImages {
+  id: string
+  imageUrl: string
+  order: number
+}
+
 export interface Department {
   id: string
   roomType: string
@@ -26,7 +32,7 @@ export interface Department {
   extras: string[]
   roomDetails: RoomDetails
   roomDetails2: RoomDetails2
-  roomImages: any[]
+  roomImages: RoomImages[]
 }
 
 export type DepartmentResponse = BaseResponse<Department>
