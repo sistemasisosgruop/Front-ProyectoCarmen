@@ -22,9 +22,9 @@ import PageNotFound from '@web/PageNotFound'
 
 import AdminCalendar from '@dashboard/AdminCalendar'
 import AdminFlights from '@dashboard/AdminFlights'
-import SelectOptionDepartments from '@dashboard/departments/SelectOptionDepartments'
-import DepartmentReservation from '@dashboard/departments/DepartmentReservation'
-import DepartmentRegistration from '@dashboard/departments/DepartmentRegistration'
+import Departments from '@dashboard/departments/Departments'
+import DepartmentReservation from '@dashboard/department-reservation/DepartmentReservation'
+import DepartmentOption from '@dashboard/departments-option/DepartmentsOption'
 import TourOptions from '@dashboard/tours/TourOptions'
 import TourRegistration from '@dashboard/tours/TourRegistration'
 import TourReservation from '@dashboard/tours/TourReservation'
@@ -60,8 +60,8 @@ function Routing() {
       <Route element={<ProtectedRoute />}>
         <Route path="/admin/calendario" element={<AdminCalendar />} />
         <Route path="/admin/vuelos" element={<AdminFlights />} />
-        <Route path="/admin/departamentos" element={<SelectOptionDepartments />} />
-        <Route path="/admin/departamentos/registro" element={<DepartmentRegistration />} />
+        <Route path="/admin/departamentos" element={<Departments />} />
+        <Route path="/admin/departamentos/opciones" element={<DepartmentOption />} />
         <Route path="/admin/departamentos/reservas" element={<DepartmentReservation />} />
         <Route path="/admin/paquetes-turisticos" element={<TourOptions />} />
         <Route path="/admin/paquetes-turisticos/registro" element={<TourRegistration />} />
