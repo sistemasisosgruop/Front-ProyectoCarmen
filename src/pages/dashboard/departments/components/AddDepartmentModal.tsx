@@ -1,7 +1,7 @@
 import DatePicker from 'react-datepicker'
 import Modal from '@components/Modal'
 import Input from '@components/forms/Input'
-import { useModal } from '@hooks/useModal'
+import { UseModalStore } from '@hooks/useModal'
 import { API_URL } from '@utils/consts'
 import axios from 'axios'
 import { useState } from 'react'
@@ -10,18 +10,22 @@ import { toast } from 'react-toastify'
 import Textarea from '@components/forms/Textarea'
 import NumberPicker from '@components/forms/NumberPicker'
 
-function AddDepartmentModal() {
-  const [startDate, setStartDate] = useState<Date>(new Date())
-  const [numOfBathrooms, setNumOfBathrooms] = useState<number>(1)
-  const [numOfBeds, setNumOfBeds] = useState<number>(1)
-  const [numOfRooms, setNumOfRooms] = useState<number>(1)
+interface Props {
+  createModal: UseModalStore
+}
+
+function AddDepartmentModal({ createModal }: Props) {
+  const [startDateCheckIn, setStartDateCheckIn] = useState<Date>(new Date())
+  const [startDateCheckOut, setStartDateCheckOut] = useState<Date>(new Date())
+  const [numBathrooms, setNumBathrooms] = useState<number>(1)
+  const [numBeds, setNumBeds] = useState<number>(1)
+  const [numRooms, setNumRooms] = useState<number>(1)
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors }
   } = useForm<FieldValues>()
-  const modal = useModal()
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
     await axios
@@ -32,10 +36,10 @@ function AddDepartmentModal() {
           description: data.description,
           address: data.address,
           price: data.price,
-          check_in: '2023-05-15T00:00:00.000Z',
-          check_out: '2023-05-20T00:00:00.000Z',
-          num_bathrooms: numOfBathrooms,
-          num_beds: numOfBeds,
+          check_in: startDateCheckIn,
+          check_out: startDateCheckOut,
+          num_bathrooms: numBathrooms,
+          num_beds: numBeds,
           extras: ['Breakfast included', 'Free Wi-Fi', 'Gym access'],
           details: {
             amenities: ['Swimming pool', 'Restaurant', 'Room service'],
@@ -44,7 +48,7 @@ function AddDepartmentModal() {
           },
           num_room: {
             type_room: data.roomType,
-            num_bed: numOfBeds,
+            num_bed: numBeds,
             type_bed: 'King Bed 8',
             type_bed_2: 'Sofa Bed 8'
           }
@@ -58,7 +62,7 @@ function AddDepartmentModal() {
       )
       .then(response => {
         toast.success(response.statusText)
-        modal.onClose()
+        createModal.onClose()
         reset()
       })
       .catch(error => {
@@ -119,14 +123,14 @@ function AddDepartmentModal() {
           </label>
           <div className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2">
             <DatePicker
-              selected={startDate}
-              onChange={(date: Date) => setStartDate(date)}
+              selected={startDateCheckIn}
+              onChange={(date: Date) => setStartDateCheckIn(date)}
               showIcon
               className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
             />
             <DatePicker
-              selected={startDate}
-              onChange={(date: Date) => setStartDate(date)}
+              selected={startDateCheckOut}
+              onChange={(date: Date) => setStartDateCheckOut(date)}
               className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
             />
           </div>
@@ -135,22 +139,22 @@ function AddDepartmentModal() {
 
       <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-3">
         <NumberPicker
-          value={numOfBathrooms}
-          onChangeValue={setNumOfBathrooms}
+          value={numBathrooms}
+          onChangeValue={setNumBathrooms}
           label="Número de baños"
           name="numOfBathrooms"
         />
 
         <NumberPicker
-          value={numOfBeds}
-          onChangeValue={setNumOfBeds}
+          value={numBeds}
+          onChangeValue={setNumBeds}
           label="Número de camas"
           name="numOfBeds"
         />
 
         <NumberPicker
-          value={numOfRooms}
-          onChangeValue={setNumOfRooms}
+          value={numRooms}
+          onChangeValue={setNumRooms}
           label="Número de habitaciones"
           name="numOfRooms"
         />
@@ -204,9 +208,12 @@ function AddDepartmentModal() {
 
   return (
     <Modal
-      isOpen={modal.isOpen}
-      title="Registrar nuevo departamento"
-      onClose={modal.onClose}
+      title="Crear departamento"
+      actionLabel="Crear"
+      isOpen={createModal.isOpen}
+      disabled={false}
+      onClose={createModal.onClose}
+      onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}
     />
   )

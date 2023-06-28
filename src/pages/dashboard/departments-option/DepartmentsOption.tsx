@@ -11,13 +11,13 @@ function SelectOptionDepartments() {
           options={[
             {
               label: 'Departamentos',
-              path: '/admin/departamentos/registro',
-              icon: <IoMdBed size={80} />
+              path: '/admin/departamentos',
+              icon: IoMdBed
             },
             {
               label: 'Reservas',
               path: '/admin/departamentos/reservas',
-              icon: <FaBed size={80} />
+              icon: FaBed
             }
           ]}
         />

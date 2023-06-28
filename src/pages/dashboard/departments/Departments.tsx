@@ -2,14 +2,13 @@ import { useModal } from '@hooks/useModal'
 import Heading from '@components/Heading'
 import AdminLayout from '@layouts/AdminLayout'
 import AdminSection from '@layouts/AdminSection'
-import DepartmentList from '@features/departments/components/DepartmentList'
+import DepartmentList from './components/DepartmentList'
+import AddDepartmentModal from './components/AddDepartmentModal'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IoMdAdd } from 'react-icons/io'
-import Modal from '@components/modal/Modal'
-import AddDepartment from './components/AddDepartment'
 
-function DepartmentRegistration() {
-  const addDepartmentModal = useModal()
+function Departments() {
+  const createModal = useModal()
 
   return (
     <>
@@ -35,7 +34,7 @@ function DepartmentRegistration() {
 
             <button
               type="button"
-              onClick={addDepartmentModal.onOpen}
+              onClick={createModal.onOpen}
               className="bg-orange px-6 py-2 rounded-xl text-white font-bold flex justify-center items-center gap-2 hover:bg-opacity-90"
             >
               <span>Agregar</span>
@@ -47,17 +46,9 @@ function DepartmentRegistration() {
         </AdminSection>
       </AdminLayout>
 
-      <Modal
-        title="Crear departamento"
-        actionLabel="Crear"
-        isOpen={addDepartmentModal.isOpen}
-        disabled={false}
-        onClose={addDepartmentModal.onClose}
-        onSubmit={() => console.log('Send')}
-        body={<AddDepartment onClose={addDepartmentModal.onClose} />}
-      />
+      <AddDepartmentModal createModal={createModal} />
     </>
   )
 }
 
-export default DepartmentRegistration
+export default Departments

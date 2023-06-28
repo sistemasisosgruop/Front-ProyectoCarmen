@@ -5,12 +5,12 @@ import Modal from '@components/Modal'
 import Heading from '@components/Heading'
 import Button from '@components/Button'
 import AddCoupon from '@components/coupons/AddCoupon'
-import CouponList from '@components/coupons/CouponList'
+import CouponList from '@features/coupons/components/CouponList'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IoMdAdd } from 'react-icons/io'
 
 function Coupons() {
-  const { isOpenModal, openModal, closeModal } = useModal()
+  const addModal = useModal()
 
   return (
     <>
@@ -20,7 +20,10 @@ function Coupons() {
         <AdminSection>
           <article className="flex flex-col justify-between items-end gap-4 mb-8 sm:flex-row">
             <div className="w-full relative">
-              <label htmlFor="searchClient" className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600">
+              <label
+                htmlFor="searchClient"
+                className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-600"
+              >
                 <AiOutlineSearch size={18} />
               </label>
               <input
@@ -31,18 +34,28 @@ function Coupons() {
               />
             </div>
 
-            <Button text="Agregar" onClick={openModal} background="bg-orange" showIcon={true} icon={IoMdAdd} />
+            <Button
+              text="Agregar"
+              onClick={addModal.onOpen}
+              background="bg-orange"
+              showIcon={true}
+              icon={IoMdAdd}
+            />
           </article>
 
-          <CouponList isOpenModal={isOpenModal} />
+          <CouponList isOpenModal={addModal.onOpen} />
         </AdminSection>
       </AdminLayout>
 
-      {isOpenModal && (
-        <Modal title="Crear cupón" closeModal={closeModal}>
-          <AddCoupon closeModal={closeModal} />
-        </Modal>
-      )}
+      <Modal
+        isOpen={addModal.isOpen}
+        title="Crear nuevo cupón"
+        onClose={addModal.onClose}
+        onSubmit={() => {
+          console.log('Sended')
+        }}
+        body={<AddCoupon />}
+      />
     </>
   )
 }
