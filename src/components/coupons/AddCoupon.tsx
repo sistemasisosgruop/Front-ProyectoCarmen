@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
-import axios from '@lib/axios'
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
+import axios from 'axios'
 import Input from '@forms/Input'
 import Autocomplete from '@forms/Autocomplete'
 import Button from '@components/Button'
 import { toast } from 'react-toastify'
+import { DepartmentResponse } from 'types/department'
+import { API_URL } from '@utils/consts'
 
-interface Props {
-  closeModal: () => void
-}
-
-function AddCoupon({ closeModal }: Props) {
-  const [departments, setDepartments] = useState([])
+function AddCoupon() {
+  const [departmentsResponse, setDepartmentsResponse] = useState<DepartmentResponse>(
+    {} as DepartmentResponse
+  )
   const {
     register,
     handleSubmit,
@@ -23,25 +23,30 @@ function AddCoupon({ closeModal }: Props) {
   }, [])
 
   const getDepartments = async () => {
-    try {
-      const response = await axios.get('rooms', {
+    await axios
+      .get(`${API_URL}/rooms`, {
         headers: {
-          Authorization: `jwt ${window.sessionStorage.getItem('token')}`,
-          'Content-Type': 'application/json'
+          Authorization: window.sessionStorage.getItem('token')
         }
       })
-      setDepartments(response.data)
-    } catch (error) {
-      toast.error(error.response?.statusText)
-    }
+      .then(response => {
+        console.log(response.data)
+        setDepartmentsResponse(response.data)
+      })
+      .catch(error => {
+        if (axios.isAxiosError(error)) {
+          console.log(error)
+          toast.error(error.response?.statusText)
+        }
+      })
   }
 
-  const departmentValues = departments.results?.results.map(department => ({
-    text: department.room_type,
+  const departmentValues = departmentsResponse.results.map(department => ({
+    text: department.roomType,
     value: department.id
   }))
 
-  const onSubmit = async data => {
+  const onSubmit: SubmitHandler<FieldValues> = async data => {
     try {
       const response = await axios.post(
         'coupons',
@@ -69,8 +74,20 @@ function AddCoupon({ closeModal }: Props) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
       <article className="grid grid-cols-2 gap-4">
-        <Input id="couponCode" label="Código de cupón" register={register} errors={errors} required={true} />
-        <Input id="discount" label="Descuento asignado" register={register} errors={errors} required={true} />
+        <Input
+          id="couponCode"
+          label="Código de cupón"
+          register={register}
+          errors={errors}
+          required={true}
+        />
+        <Input
+          id="discount"
+          label="Descuento asignado"
+          register={register}
+          errors={errors}
+          required={true}
+        />
       </article>
 
       <article>
