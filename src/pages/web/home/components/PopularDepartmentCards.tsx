@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Department } from 'types/department'
 import { AiFillStar } from 'react-icons/ai'
-import camelcaseKeys from 'camelcase-keys'
 
 function PopularDepartmentCards() {
   const [departments, setDepartments] = useState<Department[]>([])
@@ -26,7 +25,7 @@ function PopularDepartmentCards() {
         signal: abortController.signal
       })
       .then(response => {
-        setDepartments(camelcaseKeys(response.data?.results))
+        setDepartments(response.data?.results)
       })
       .catch(error => {
         console.log(error)
@@ -38,13 +37,11 @@ function PopularDepartmentCards() {
       {departments.slice(0, 4).map((department, index) => (
         <Link
           key={index}
-          to={`/departamento/${department.roomType.toLowerCase().split(' ').join('-')}/${
-            department.id
-          }`}
+          to={`/departamento/${department.roomType.toLowerCase().split(' ').join('-')}/${department.id}`}
           className="w-full h-full inline-block"
         >
           <Card
-            imagePath={department.roomImages[0]?.image_url}
+            imagePath={department.roomImages[0]?.imageUrl}
             imageAlt={`Popular room ${index + 1}`}
           >
             <div className="flex justify-between items-start">

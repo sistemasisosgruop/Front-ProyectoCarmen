@@ -10,7 +10,6 @@ import FeedbackSection from '@components/feedback/FeedbackSection'
 import ButtonLink from '@components/ButtonLink'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 import PopularDepartmentCards from './components/PopularDepartmentCards'
-import Modal from '@components/Modal'
 
 function Home() {
   const { t } = useLang()
