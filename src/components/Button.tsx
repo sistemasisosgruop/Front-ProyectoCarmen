@@ -1,7 +1,8 @@
+import { ReactElement } from 'react'
 import { IconType } from 'react-icons'
 
 interface Props {
-  text: string
+  text: string | ReactElement
   type?: 'button' | 'submit' | 'reset' | undefined
   background?: string
   textColor?: string
