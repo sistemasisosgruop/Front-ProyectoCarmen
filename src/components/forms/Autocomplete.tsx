@@ -1,10 +1,14 @@
+import { FieldValues, UseFormRegister } from 'react-hook-form'
 import { AiOutlineCaretDown } from 'react-icons/ai'
 
 interface Props {
   id: string
   label: string
-  results: string[]
-  register: any
+  results: {
+    text: string
+    value: string
+  }[]
+  register: UseFormRegister<FieldValues>
 }
 
 function Autocomplete({ id, label, results, register }: Props) {
