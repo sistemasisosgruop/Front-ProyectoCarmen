@@ -44,7 +44,7 @@ function HeaderActions({ isScrolled }: Props) {
           <AiOutlineWhatsApp size={18} className="text-white" />
           <p className="text-white">WhatsApp 984 748 106</p>
         </article>
-        <Link to="/iniciar-sesion" className="flex justify-content items-center gap-2">
+        <Link to="/login" className="flex justify-content items-center gap-2">
           <FaUser size={18} className="text-white" />
           <span className="text-white">{t('components.header.log_in')}</span>
         </Link>
