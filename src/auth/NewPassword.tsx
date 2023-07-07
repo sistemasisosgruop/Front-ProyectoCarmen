@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useLang } from '@hooks/useLang'
 import LayoutPage from '@layouts/LayoutPage'
 import Section from '@layouts/Section'
@@ -9,38 +8,20 @@ function NewPassword() {
 
   return (
     <LayoutPage title="Ingresa tu nueva contraseña">
-      <Section className="bg-white py-16 grid grid-cols-1 gap-8 sm:grid-cols-2 md:gap-16">
-        <div>
+      <Section className="py-24 grid grid-cols-1 gap-8 md:grid-cols-5 md:gap-8">
+        <div className='md:col-span-3'>
           <EnterNewPassword />
-
-          <article className="mt-8">
-            <div className="flex justify-between items-center">
-              <Link
-                to="/iniciar-sesion"
-                className="inline-block text-blue underline hover:text-opacity-90 hover:decoration-wavy hover:transition-all duration-300"
-              >
-                {t('login.sign_in')}
-              </Link>
-              <Link
-                to="/registrate"
-                className="inline-block text-orange font-bold underline hover:text-opacity-90 hover:decoration-wavy hover:transition-all duration-300"
-              >
-                {t('login.sign_up')}
-              </Link>
-            </div>
-          </article>
         </div>
 
-        <div className="row-start-1 sm:row-start-auto">
-          <picture className="inline-block w-full mb-8">
-            <img src="/images/illustrations/login.svg" alt="login file" className="w-full" />
+        <div className="md:col-span-2 flex flex-col justify-center items-center gap-4 sm:flex-row md:flex-col">
+          <picture className="inline-block w-auto mb-8">
+            <img
+              src="/images/illustrations/login.svg"
+              alt="login file"
+              className="w-full sm:w-full mx-auto md:w-full"
+            />
           </picture>
-          <article className="space-y-2">
-            <h1 className="text-blue text-center text-2xl font-bold flex flex-col justify-center items-center">
-              {t('login.enterYourNewPassword')}
-            </h1>
-            <p className="text-center text-xl">{t('login.enterYourNewPasswordDescription')}</p>
-          </article>
+          <p className="text-justify text-xl">{t('login.enterYourNewPasswordDescription')}</p>
         </div>
       </Section>
     </LayoutPage>
