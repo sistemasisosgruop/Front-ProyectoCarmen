@@ -1,5 +1,5 @@
-import { useNavigate, useParams } from 'react-router-dom'
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { type FieldValues, type SubmitHandler, useForm } from 'react-hook-form'
 import { useLang } from '@hooks/useLang'
 import axios from 'axios'
 import { toast } from 'react-toastify'
@@ -18,9 +18,9 @@ function EnterNewPassword() {
     formState: { errors }
   } = useForm<FieldValues>()
 
-  const onSubmit: SubmitHandler<FieldValues> = async data => {
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     await axios
-      .post(`${API_URL}/auth/recovery-password/${token}`, data)
+      .post(`${API_URL}/auth/recovery-password/${token ?? ''}`, data)
       .then(response => {
         toast.success(response.data.message)
       })
@@ -36,7 +36,10 @@ function EnterNewPassword() {
   }
 
   return (
-    <section className="rounded-xl overflow-hidden bg-gray-100 px-4 py-2 border border-blue border-opacity-25">
+    <section className="rounded-xl bg-white p-8 border border-gray-100">
+      <h2 className="text-blue text-center text-2xl font-bold mb-8">
+        {t('login.enterYourNewPassword')}
+      </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
         autoComplete="false"
@@ -44,7 +47,7 @@ function EnterNewPassword() {
       >
         <article className="flex flex-col justify-center items-start gap-4">
           <Input
-            id="password"
+            name="password"
             label={t('login.newPassword') ?? ''}
             register={register}
             required={true}
@@ -62,6 +65,21 @@ function EnterNewPassword() {
           {t('login.changePassword')}
         </button>
       </form>
+
+      <div className="flex justify-between items-center">
+        <Link
+          to="/login"
+          className="inline-block text-blue underline hover:text-opacity-90 hover:decoration-wavy hover:transition-all duration-300"
+        >
+          {t('login.sign_in')}
+        </Link>
+        <Link
+          to="/register"
+          className="inline-block text-orange font-bold underline hover:text-opacity-90 hover:decoration-wavy hover:transition-all duration-300"
+        >
+          {t('login.sign_up')}
+        </Link>
+      </div>
     </section>
   )
 }

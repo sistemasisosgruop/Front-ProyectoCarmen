@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom'
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
+import { Link, useNavigate } from 'react-router-dom'
+import { type FieldValues, type SubmitHandler, useForm } from 'react-hook-form'
 import { useLang } from '@hooks/useLang'
 import axios from 'axios'
 import { toast } from 'react-toastify'
@@ -35,7 +35,10 @@ function EnterRecoveryEmail() {
   }
 
   return (
-    <section className="rounded-xl overflow-hidden bg-gray-100 px-4 py-2 border border-blue border-opacity-25">
+    <section className="rounded-xl bg-white p-8 border border-gray-100">
+      <h2 className='text-2xl text-center text-blue mb-8 font-bold'>
+        {t('login.recoveryYourAccount')}
+      </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
         autoComplete="false"
@@ -43,7 +46,7 @@ function EnterRecoveryEmail() {
       >
         <article className="flex flex-col justify-center items-start gap-4">
           <Input
-            id="email"
+            name="email"
             label={t('login.email') ?? ''}
             register={register}
             required={true}
@@ -61,6 +64,13 @@ function EnterRecoveryEmail() {
           {t('login.sendCode')}
         </button>
       </form>
+
+      <Link
+        to="/login"
+        className="inline-block text-blue font-bold underline hover:text-opacity-90 hover:decoration-wavy hover:transition-all duration-300"
+      >
+        {t('login.sign_in')}
+      </Link>
     </section>
   )
 }
