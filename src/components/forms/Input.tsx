@@ -1,64 +1,69 @@
-import { useLang } from '@hooks/useLang'
+import { useState } from 'react'
 import type { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form'
+import { type IconType } from 'react-icons'
+import s from '@assets/input.module.css'
+
+type InputType = 'text' | 'number' | 'email' | 'password'
 
 interface Props {
-  id: string
+  name: string
   label?: string | undefined
-  labelStyles?: string
-  containerStyles?: string
-  type?: string
-  placeholder?: string
+  type?: InputType
   register: UseFormRegister<FieldValues>
   errors: FieldErrors
   required?: boolean
-  extraClasses?: string
+  showIcon?: boolean
+  icon?: IconType
 }
 
 function Input({
-  id,
+  name,
   label,
-  labelStyles = 'text-sm mb-1',
-  containerStyles,
   type = 'text',
-  placeholder = ' ',
-  extraClasses,
   register,
   errors,
-  required
+  required,
+  showIcon,
+  icon: Icon
 }: Props) {
-  const { t } = useLang()
+  const [inputClicked, setInputClicked] = useState(false)
 
   return (
     <div
-      className={`w-full flex flex-col justify-start items-start ${containerStyles} ${extraClasses}`}
+      className={`
+        w-full flex justify-start items-center gap-1 border rounded-xl
+        ${inputClicked ? 'border-blue' : 'border-gray-400'}
+        ${errors[name] ? 'border-red-400' : ''}
+        ${errors[name] ? 'text-red-400' : 'text-blue'}
+        ${errors[name] ? 'focus:border-red-400' : 'focus:border-blue'}
+      `}
     >
-      <label
-        htmlFor={id}
-        className={`
-          ${labelStyles}
-          ${errors[id] ? 'text-red-400' : 'text-gray-600'}
-        `}
-      >
-        {label}
-      </label>
-      <input
-        type={type}
-        id={id}
-        placeholder={placeholder}
-        {...register(id, { required })}
-        className={`
-          w-full border text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:text-blue
-          ${errors[id] ? 'focus:border-red-400' : 'focus:border-blue'}
-          ${errors[id] ? 'border-red-400' : 'border-gray-400'}
-          ${errors[id] ? 'text-red-400' : 'text-blue'}
-        `}
-      />
-      {errors[id] && (
-        <p className="text-red-400 text-sm pl-2">
-          {errors[id]?.type === 'required' &&
-            t('errors.required', { name: label })}
-        </p>
-      )}
+      {showIcon && Icon && <Icon size={20} className='ml-2' />}
+      <div className={`relative w-full ${s.wrapper}`}>
+        <input
+          type={type}
+          id={name}
+          placeholder=' '
+          {...register(name, { required })}
+          onClick={() => setInputClicked(true)}
+          onBlur={() => setInputClicked(false)}
+          className={`
+            pt-[1.05rem] pr-4 pb-[0.2rem]
+            ${showIcon ? 'pl-2' : 'pl-4'}
+            ${s.input}
+          `}
+        />
+        <label
+          htmlFor={name}
+          className={`
+            ${s.label}
+            ${showIcon ? 'left-2' : 'left-4'}
+            ${errors[name] ? 'text-red-400' : 'text-gray-600'}
+          `}
+        >
+          {label}
+        </label>
+      </div>
     </div>
   )
 }

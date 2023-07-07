@@ -1,13 +1,29 @@
+import { type IconType } from 'react-icons'
+
+interface Props {
+  label: string
+  labelStyles?: string
+  name: string
+  showIcon?: boolean
+  icon?: IconType
+  iconPosition?: string
+  options?: Array<{
+    text: string
+    value: string
+  }>
+  placeholder?: string
+}
+
 const FormSelect = ({
   label,
   labelStyles = 'text-base font-bold text-gray-800',
   name,
   showIcon,
-  icon,
+  icon: Icon,
   iconPosition,
   options,
   placeholder
-}) => {
+}: Props) => {
   const formatedPlaceholder =
     placeholder?.toLowerCase().replace(/ /g, '-') ?? ''
 
@@ -19,13 +35,13 @@ const FormSelect = ({
           className="text-gray-400 flex justify-center items-center gap-2"
         >
           {showIcon !== undefined && iconPosition === 'left' && (
-            <span>{icon}</span>
+            <Icon size={18} />
           )}
           <span className={`${labelStyles ?? ''} lg:text-lg whitespace-nowrap`}>
             {label}
           </span>
           {showIcon !== undefined && iconPosition === 'right' && (
-            <span>{icon}</span>
+            <Icon size={18} />
           )}
         </label>
       )}
