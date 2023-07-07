@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import Button from '@components/Button'
-import MyFormInput from '@components/forms/FormInput'
-import FormTextArea from '@components/forms/FormTextArea'
+import Input from '@components/forms/Input'
+import Textarea from '@components/forms/Textarea'
 import { BsSend } from 'react-icons/bs'
 
 function ContactForm() {
@@ -15,13 +15,12 @@ function ContactForm() {
       <h2 className="text-2xl font-bold uppercase mb-6 text-center text-white sm:text-3xl">Contactanos</h2>
       <form className="flex flex-col gap-4">
         <article className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <MyFormInput
+          <Input
+            id="names"
             label="Nombres y apellidos"
-            name="names"
             register={register}
-            rules={{ required: true }}
+            required={true}
             errors={errors}
-            labelColor="text-white"
           />
           <div className="flex flex-col">
             <label htmlFor="phone" className="text-white text-sm mb-1">
@@ -62,39 +61,36 @@ function ContactForm() {
               />
             </div>
           </div>
-          <MyFormInput
+          <Input
             label="Correo electrónico"
-            name="email"
+            id="email"
             register={register}
-            rules={{ required: true }}
+            required={true}
             errors={errors}
-            labelColor="text-white"
           />
         </article>
 
         <article className="flex flex-col gap-2">
-          <MyFormInput
+          <Input
             label="Asunto"
-            name="subject"
+            id="subject"
             register={register}
-            rules={{ required: true }}
+            required={true}
             errors={errors}
-            labelColor="text-white"
           />
         </article>
 
         <article className="flex flex-col gap-2">
-          <FormTextArea
+          <Textarea
+            id="content"
             label="Contenido del mensaje"
-            labelColor="text-white"
-            name="content"
             register={register}
-            rules={{ required: true }}
+            required={true}
             errors={errors}
           />
         </article>
         <div className="flex justify-center items-center">
-          <Button text="Enviar" isIcon icon={<BsSend />} />
+          <Button text="Enviar" showIcon icon={BsSend} />
         </div>
       </form>
     </div>
