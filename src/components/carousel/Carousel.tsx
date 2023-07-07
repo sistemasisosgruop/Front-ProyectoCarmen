@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useCallback, useEffect, useState } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
+import useEmblaCarousel, { type EmblaCarouselType } from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import ClassNames from 'embla-carousel-class-names'
 import s from '../../assets/carousel.module.css'
@@ -9,7 +9,10 @@ interface Props {
   className: string
 }
 
-export const CarouselContext = createContext({
+export const CarouselContext = createContext<{
+  embla?: EmblaCarouselType | undefined,
+  selectedIndex: number
+}>({
   embla: undefined,
   selectedIndex: -1
 })
