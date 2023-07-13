@@ -1,208 +1,226 @@
+import { useState } from 'react'
+import { type FieldValues, type SubmitHandler, useForm } from 'react-hook-form'
 import DatePicker from 'react-datepicker'
 import Modal from '@components/Modal'
-import Input from '@components/forms/Input'
-import { UseModalStore } from '@hooks/useModal'
-import { API_URL } from '@utils/consts'
-import axios from 'axios'
-import { useState } from 'react'
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
-import { toast } from 'react-toastify'
-import Textarea from '@components/forms/Textarea'
+import Input from '@forms/Input'
 import NumberPicker from '@components/forms/NumberPicker'
+import { useCreateDepartment } from '@hooks/useCreateDepartment'
+import InputAddText from '@components/forms/InputAddText'
+import { BiDollar } from 'react-icons/bi'
+import AddRoomForm from './AddRoomForm'
+import { type DepartmentRoom } from 'types/department'
 
-interface Props {
-  createModal: UseModalStore
-}
+function AddDepartmentModal() {
+  const [checkIn, setCheckIn] = useState(new Date())
+  const [checkOut, setCheckOut] = useState(new Date())
+  const [numRooms, setNumRooms] = useState(1)
+  const [numBeds, setNumBeds] = useState(1)
+  const [numBathrooms, setNumBathrooms] = useState(1)
+  const [included, setIncluded] = useState<string[]>([])
+  const [notIncluded, setNotIncluded] = useState<string[]>([])
+  const [extras, setExtras] = useState<string[]>([])
+  const [services, setServices] = useState<string[]>([])
+  const [departmentRooms, setDepartmentRooms] = useState<DepartmentRoom[]>([])
+  const createDepartment = useCreateDepartment()
+  const { register, handleSubmit, getValues, formState: { errors } } = useForm<FieldValues>()
+  // const { onSubmit } = usePostRequest({ url: 'departments', modal: createDepartment })
 
-function AddDepartmentModal({ createModal }: Props) {
-  const [startDateCheckIn, setStartDateCheckIn] = useState<Date>(new Date())
-  const [startDateCheckOut, setStartDateCheckOut] = useState<Date>(new Date())
-  const [numBathrooms, setNumBathrooms] = useState<number>(1)
-  const [numBeds, setNumBeds] = useState<number>(1)
-  const [numRooms, setNumRooms] = useState<number>(1)
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors }
-  } = useForm<FieldValues>()
-
-  const onSubmit: SubmitHandler<FieldValues> = async data => {
-    await axios
-      .post(
-        `${API_URL}/rooms`,
-        {
-          room_type: data.roomType,
-          description: data.description,
-          address: data.address,
-          price: data.price,
-          check_in: startDateCheckIn,
-          check_out: startDateCheckOut,
-          num_bathrooms: numBathrooms,
-          num_beds: numBeds,
-          extras: ['Breakfast included', 'Free Wi-Fi', 'Gym access'],
-          details: {
-            amenities: ['Swimming pool', 'Restaurant', 'Room service'],
-            not_included: ['Pets not allowed', 'Smoking not allowed'],
-            services: ['27/7 concierge', 'Laundry service']
-          },
-          num_room: {
-            type_room: data.roomType,
-            num_bed: numBeds,
-            type_bed: 'King Bed 8',
-            type_bed_2: 'Sofa Bed 8'
-          }
-        },
-        {
-          headers: {
-            Authorization: window.sessionStorage.getItem('token'),
-            'Content-Type': 'application/json'
-          }
-        }
-      )
-      .then(response => {
-        toast.success(response.statusText)
-        createModal.onClose()
-        reset()
-      })
-      .catch(error => {
-        if (axios.isAxiosError(error)) {
-          console.log(error)
-          toast.error(error.response?.data?.message)
-        }
-      })
+  const onHandleSubmit: SubmitHandler<FieldValues> = (data) => {
+    const formData = {
+      ...data,
+      checkIn,
+      checkOut,
+      numBathrooms,
+      numBeds,
+      numRooms: departmentRooms.length,
+      extras,
+      details: {
+        amenities: included,
+        notIncluded,
+        services
+      },
+      departmentRooms
+    }
+    console.log({ formData })
+    getValues('departmentRoom.typeRoom')
+    // onSubmit(formData)
   }
 
   const bodyContent = (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(onHandleSubmit)}
       className="flex flex-col justify-center items-center gap-4"
     >
-      <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <Input
-          id="roomType"
-          label="Tipo de habitación"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="lg:col-span-1"
-        />
+      <article className="w-full grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <div className='lg:col-span-1'>
+          <Input
+            name="departmentType"
+            label="Tipo de habitación"
+            register={register}
+            required={true}
+            errors={errors}
+          />
+        </div>
 
-        <Input
-          id="description"
-          label="Descripción general"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="lg:col-span-2"
-        />
+        <div className='lg:col-span-2'>
+          <Input
+            name="description"
+            label="Descripción general"
+            register={register}
+            required={true}
+            errors={errors}
+          />
+        </div>
       </article>
 
-      <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Input
-          id="address"
-          label="Dirección"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="col-span-1"
-        />
+      <article className="w-full grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <div className='lg:col-span-2'>
+          <Input
+            name="address"
+            label="Dirección"
+            register={register}
+            required={true}
+            errors={errors}
+          />
+        </div>
 
-        <Input
-          id="price"
-          label="Precio por noche"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="col-span-1"
-        />
+        <div className='lg:col-span-1'>
+          <Input
+            name="price"
+            label="Precio por noche"
+            register={register}
+            required={true}
+            errors={errors}
+            showIcon
+            icon={BiDollar}
+          />
+        </div>
 
         <div className="flex flex-col justify-start items-start sm:col-span-2">
           <label htmlFor="availableDate" className="text-gray-600 text-sm mb-1">
             Fechas disponibles
           </label>
           <div className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <DatePicker
-              selected={startDateCheckIn}
-              onChange={(date: Date) => setStartDateCheckIn(date)}
-              showIcon
-              className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
-            />
-            <DatePicker
-              selected={startDateCheckOut}
-              onChange={(date: Date) => setStartDateCheckOut(date)}
-              className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
-            />
+            <div>
+              <DatePicker
+                selected={checkIn}
+                onChange={(date: Date) => setCheckIn(date)}
+                showIcon
+                className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
+              />
+            </div>
+            <div>
+              <DatePicker
+                selected={checkOut}
+                onChange={(date: Date) => setCheckOut(date)}
+                className="w-full border border-gray-400 text-gray-600 rounded-xl px-4 py-2 focus:outline-none focus:border-blue focus:text-blue"
+              />
+            </div>
           </div>
         </div>
       </article>
 
-      <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <NumberPicker
-          value={numBathrooms}
-          onChangeValue={setNumBathrooms}
-          label="Número de baños"
-          name="numOfBathrooms"
-        />
-
-        <NumberPicker
-          value={numBeds}
-          onChangeValue={setNumBeds}
-          label="Número de camas"
-          name="numOfBeds"
-        />
-
-        <NumberPicker
-          value={numRooms}
-          onChangeValue={setNumRooms}
-          label="Número de habitaciones"
-          name="numOfRooms"
-        />
-      </article>
-
-      <hr className="border-none w-full bg-gray-200 py-[0.5px] mx-8" />
-
-      {/* Add images */}
-      {/* <UploadImages setFiles={setFiles} /> */}
-
       {/* Description */}
-      <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:grid-rows-2">
-        <Textarea
-          id="included"
-          label="Qué está incluido"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="lg:col-span-2 lg:row-span-2"
-        />
+      <article className="w-full grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <div>
+          <label htmlFor='included' className='text-gray-600 text-sm mb-1'>
+            Que está incluido
+          </label>
+          <InputAddText
+            name='details.amenities'
+            placeholder='Ingresa lo que incluye'
+            data={included}
+            setData={setIncluded}
+          />
+        </div>
 
-        <Textarea
-          id="notIncluded"
-          label="Qué no está incluido"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="lg:col-span-2 lg:row-span-2"
-        />
+        <div>
+          <label htmlFor='notIncluded' className='text-gray-600 text-sm mb-1'>
+            Que no está incluido
+          </label>
+          <InputAddText
+            name='details.notIncluded'
+            placeholder='Ingresa lo que no incluye'
+            data={notIncluded}
+            setData={setNotIncluded}
+          />
+        </div>
 
-        <Input
-          id="freeCancellation"
-          label="Cancelación gratis"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="lg:col-span-1 lg:row-span-1"
-        />
+        <div>
+          <label htmlFor='services' className='text-gray-600 text-sm mb-1'>
+            Servicios
+          </label>
+          <InputAddText
+            name='details.services'
+            placeholder='Ingresa los servicios'
+            data={services}
+            setData={setServices}
+          />
+        </div>
 
-        <Input
-          id="additionalCharge"
-          label="Cobro adicional"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="lg:col-span-1 lg:row-span-1"
-        />
+        <div>
+          <label htmlFor='services' className='text-gray-600 text-sm mb-1'>
+            Extras
+          </label>
+          <InputAddText
+            name='extras'
+            placeholder='Ingresa los extras'
+            data={extras}
+            setData={setExtras}
+          />
+        </div>
       </article>
+
+      <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div>
+          <span className='text-gray-600 mb-1 text-sm flex justify-start items-center gap-2'>
+            Número de habitaciones
+          </span>
+          <NumberPicker
+            value={numRooms}
+            onChangeValue={setNumRooms}
+          />
+        </div>
+        <div>
+          <span className='text-gray-600 mb-1 text-sm flex justify-start items-center gap-2'>
+            Número de camas
+          </span>
+          <NumberPicker
+            value={numBeds}
+            onChangeValue={setNumBeds}
+          />
+        </div>
+        <div>
+          <span className='text-gray-600 mb-1 text-sm flex justify-start items-center gap-2'>
+            Número de baños
+          </span>
+          <NumberPicker
+            value={numBathrooms}
+            onChangeValue={setNumBathrooms}
+          />
+        </div>
+      </article>
+
+      {/* Room details */}
+      <h4 className='w-full text-blue text-lg font-bold text-start mb-2 mt-4'>
+        Detalles de cada habitación
+      </h4>
+
+      {numRooms >= 1 && [...Array(numRooms)].map((_, index) => (
+        <div key={index}>
+          <div className='w-full flex items-center'>
+            <span className='whitespace-nowrap mr-4 text-blue text-md font-bold'>
+              Habitación {index + 1}
+            </span>
+            <hr className="border-none w-full bg-gray-200 py-[0.5px]" />
+          </div>
+          <AddRoomForm
+            register={register}
+            errors={errors}
+            setDepartmentRooms={setDepartmentRooms}
+          />
+        </div>
+      ))}
     </form>
   )
 
@@ -210,10 +228,10 @@ function AddDepartmentModal({ createModal }: Props) {
     <Modal
       title="Crear departamento"
       actionLabel="Crear"
-      isOpen={createModal.isOpen}
+      isOpen={createDepartment.isOpen}
       disabled={false}
-      onClose={createModal.onClose}
-      onSubmit={handleSubmit(onSubmit)}
+      onClose={createDepartment.onClose}
+      onSubmit={handleSubmit(onHandleSubmit)}
       body={bodyContent}
     />
   )

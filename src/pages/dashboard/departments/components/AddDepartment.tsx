@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
+import { type FieldValues, type SubmitHandler, useForm } from 'react-hook-form'
 import axios from 'axios'
 import DatePicker from 'react-datepicker'
 import Input from '@forms/Input'

@@ -1,45 +1,20 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { useGetRequest } from '@hooks/useGetRequest'
+import { useCreateDepartment } from '../hooks/useCreateDepartment'
 import THead from '@components/THead'
 import Paginate from '@components/Paginate'
-import axios from 'axios'
-import { DepartmentResponse } from 'types/department'
-import { API_URL } from '@utils/consts'
-import camelcaseKeys from 'camelcase-keys'
 import DepartmentItem from './DepartmentItem'
-import { toast } from 'react-toastify'
+
+import { type DepartmentResponse } from 'types/department'
 
 function DepartmentList() {
-  const [departments, setDepartments] = useState<DepartmentResponse>({} as DepartmentResponse)
   const [pageNumber, setPageNumber] = useState(1)
-  const [isLoading, setIsLoading] = useState<boolean>(true)
-
-  useEffect(() => {
-    const abortController = new AbortController()
-    getDepartments(abortController)
-
-    return () => {
-      abortController.abort()
-    }
-  }, [pageNumber])
-
-  const getDepartments = async (abortController: AbortController) => {
-    await axios
-      .get(`${API_URL}/rooms`, {
-        headers: { Authorization: window.sessionStorage.getItem('token') },
-        signal: abortController.signal
-      })
-      .then(response => {
-        setDepartments(response.data)
-      })
-      .catch(error => {
-        if (axios.isAxiosError(error)) {
-          toast.error(error.response?.data?.message)
-        }
-      })
-      .finally(() => {
-        setIsLoading(false)
-      })
-  }
+  const createDepartment = useCreateDepartment()
+  const { data, isLoading } = useGetRequest<DepartmentResponse>({
+    url: 'departments',
+    pageNumber,
+    modal: createDepartment
+  })
 
   return (
     <div className="rounded">
@@ -70,10 +45,10 @@ function DepartmentList() {
                 </td>
               </tr>
             )}
-            {departments?.results?.map((department, index) => (
+            {data?.results?.map((department, index) => (
               <DepartmentItem
                 key={department.id}
-                department={camelcaseKeys(department)}
+                department={department}
                 index={index}
               />
             ))}
@@ -81,7 +56,7 @@ function DepartmentList() {
         </table>
       </div>
       <div className="mt-4 flex justify-end items-center">
-        <Paginate counter={departments.totalPages} setCounter={setPageNumber} />
+        <Paginate counter={data?.totalPages} setCounter={setPageNumber} />
       </div>
     </div>
   )

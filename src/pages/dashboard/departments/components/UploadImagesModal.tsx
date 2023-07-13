@@ -1,4 +1,4 @@
-import { UseModalStore } from '@hooks/useModal'
+import { type UseModalStore } from '@hooks/useModal'
 import { useState } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
