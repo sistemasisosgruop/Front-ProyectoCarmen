@@ -1,83 +1,90 @@
 import { Routes, Route } from 'react-router-dom'
-import ProtectedRoute from './ProtectedRoute'
+// import ProtectedRoute from './ProtectedRoute'
 
 import Home from '@web/home/Home'
-import LazyRooms from '@web/rooms/Rooms'
+import DepartmentsPage from '@web/departments/DepartmentsPage'
 import DepartmentDetails from '@web/department-details/DepartmentDetails'
-import RoomCatalog from '@web/rooms/RoomCatalog'
-import Packages from '@web/Packages'
-import Flights from '@web/Flights'
+import DepartmentsCatalog from '@web/departments-catalog/DepartmentsCatalog'
+import ToursPage from '@web/tours/ToursPage'
+import Flights from '@web/flights/Flights'
 import AboutUs from '@web/AboutUs'
 import Contact from '@web/Contact'
 import DestinationsCatalog from '@web/destination/DestinationsCatalog'
 import DestinationDetail from '@web/destination/DestinationDetail'
 import MyPurchases from '@web/MyPurchases'
-import ShoppingCart from '@web/shopping-cart/ShoppingCart'
-import TravelerInformation from '@web/shopping-cart/TravelerInformation'
+import Cart from '@web/cart/Cart'
+import CartInformation from '@web/cart-information/CartInformation'
 import Login from '@auth/Login'
 import Register from '@auth/Register'
 import RecoverPassword from '@auth/RecoverPassword'
 import NewPassword from '@auth/NewPassword'
 import PageNotFound from '@web/PageNotFound'
 
-import AdminCalendar from '@dashboard/AdminCalendar'
-import AdminFlights from '@dashboard/AdminFlights'
+import AdminCalendar from '@dashboard/calendar/AdminCalendar'
+import AdminFlights from '@dashboard/flights/AdminFlights'
 import Departments from '@dashboard/departments/Departments'
 import DepartmentReservation from '@dashboard/department-reservation/DepartmentReservation'
 import DepartmentOption from '@dashboard/departments-option/DepartmentsOption'
-import TourOptions from '@dashboard/tours/TourOptions'
-import TourRegistration from '@dashboard/tours/TourRegistration'
-import TourReservation from '@dashboard/tours/TourReservation'
-import Users from '@dashboard/Users'
-import Statistics from '@dashboard/Statistics'
+import TourOptions from '@dashboard/tour-options/TourOptions'
+import Tours from '@dashboard/tours/Tours'
+import TourReservations from '@dashboard/tour-reservations/TourReservations'
+import Users from '@dashboard/users/Users'
+import Statistics from '@dashboard/statistics/Statistics'
 import OptionSettings from '@dashboard/settings/OptionSettings'
-import Roles from '@dashboard/settings/Roles'
-import Coupons from '@dashboard/settings/Coupons'
-import Receipts from '@dashboard/settings/Receipts'
-import Messages from '@dashboard/settings/Messages'
-import Comments from '@dashboard/settings/Comments'
+import Roles from '@dashboard/roles/Roles'
+import Coupons from '@dashboard/coupons/Coupons'
+import Receipts from '@dashboard/receipts/Receipts'
+import Messages from '@dashboard/messages/Messages'
+import Comments from '@dashboard/comments/Comments'
 
 function Routing() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/habitaciones" element={<LazyRooms />} />
-      <Route path="/departamento/:slug/:id" element={<DepartmentDetails />} />
-      <Route path="/catalogo-habitaciones" element={<RoomCatalog />} />
-      <Route path="/paquetes" element={<Packages />} />
-      <Route path="/vuelos" element={<Flights />} />
-      <Route path="/contactanos" element={<Contact />} />
-      <Route path="/sobre-nosotros" element={<AboutUs />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/recover-account" element={<RecoverPassword />} />
+      <Route path="/recover-account/new-password/:token" element={<NewPassword />} />
+
+      <Route path="/departments" element={<DepartmentsPage />} />
+      <Route path="/department/:slug/:id" element={<DepartmentDetails />} />
+      <Route path="/catalogo-habitaciones" element={<DepartmentsCatalog />} />
+      <Route path="/tours" element={<ToursPage />} />
+      <Route path="/flight" element={<Flights />} />
+      <Route path="/contact-us" element={<Contact />} />
+      <Route path="/about-us" element={<AboutUs />} />
       <Route path="/destinos-populares" element={<DestinationsCatalog />} />
       <Route path="/destinos-populares/detalle" element={<DestinationDetail />} />
       <Route path="/mis-compras" element={<MyPurchases />} />
-      <Route path="/iniciar-sesion" element={<Login />} />
-      <Route path="/registrate" element={<Register />} />
-      <Route path="/recuperacion" element={<RecoverPassword />} />
-      <Route path="/recuperacion/nueva-contrasena/:token" element={<NewPassword />} />
+
       <Route path="*" element={<PageNotFound />} />
 
-      <Route element={<ProtectedRoute />}>
-        <Route path="/admin/calendario" element={<AdminCalendar />} />
-        <Route path="/admin/vuelos" element={<AdminFlights />} />
-        <Route path="/admin/departamentos" element={<Departments />} />
-        <Route path="/admin/departamentos/opciones" element={<DepartmentOption />} />
-        <Route path="/admin/departamentos/reservas" element={<DepartmentReservation />} />
-        <Route path="/admin/paquetes-turisticos" element={<TourOptions />} />
-        <Route path="/admin/paquetes-turisticos/registro" element={<TourRegistration />} />
-        <Route path="/admin/paquetes-turisticos/reservas" element={<TourReservation />} />
-        <Route path="/admin/usuarios" element={<Users />} />
-        <Route path="/admin/estadisticas" element={<Statistics />} />
-        <Route path="/admin/configuracion" element={<OptionSettings />} />
-        <Route path="/admin/configuracion/roles" element={<Roles />} />
-        <Route path="/admin/configuracion/cupones" element={<Coupons />} />
-        <Route path="/admin/configuracion/comprobantes" element={<Receipts />} />
-        <Route path="/admin/configuracion/mensajes" element={<Messages />} />
-        <Route path="/admin/configuracion/comentarios" element={<Comments />} />
+      <Route path="/admin/calendar" element={<AdminCalendar />} />
+      <Route path="/admin/flights" element={<AdminFlights />} />
+      <Route path="/admin/options/departments" element={<DepartmentOption />} />
+      <Route path="/admin/departments" element={<Departments />} />
+      <Route path="/admin/departments/bookings" element={<DepartmentReservation />} />
+      <Route path="/admin/options/tours" element={<TourOptions />} />
+      <Route path="/admin/tours" element={<Tours />} />
+      <Route path="/admin/tours/bookings" element={<TourReservations />} />
+      <Route path="/admin/users" element={<Users />} />
+      <Route path="/admin/statistics" element={<Statistics />} />
+      <Route path="/admin/settings" element={<OptionSettings />} />
+      <Route path="/admin/settings/roles" element={<Roles />} />
+      <Route path="/admin/settings/cuopons" element={<Coupons />} />
+      <Route path="/admin/settings/receipts" element={<Receipts />} />
+      <Route path="/admin/settings/messages" element={<Messages />} />
+      <Route path="/admin/settings/comments" element={<Comments />} />
 
-        <Route path="/carrito-de-compras" element={<ShoppingCart />} />
-        <Route path="/carrito-de-compras/confirmar-datos" element={<TravelerInformation />} />
-      </Route>
+      <Route path="/carrito-de-compras" element={<Cart />} />
+      <Route path="/carrito-de-compras/confirmar-datos" element={<CartInformation />} />
+
+      {/*
+      */}
+
+      {/* <Route element={<ProtectedRoute />}>
+
+      </Route> */}
     </Routes>
   )
 }

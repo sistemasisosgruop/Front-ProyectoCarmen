@@ -1,7 +1,7 @@
-import { ChangeEvent, useState } from 'react'
+import { type ChangeEvent, useState } from 'react'
 
 interface Props {
-  setFiles: (files: FileList) => void
+  setFiles: (files: FileList | File) => void
 }
 
 function UploadImages({ setFiles }: Props) {

@@ -1,47 +1,43 @@
 import { useContext } from 'react'
-import { type FieldValues, type SubmitHandler, useForm } from 'react-hook-form'
-import jwtDecode from 'jwt-decode'
 import { useLang } from '@hooks/useLang'
 import { AuthContext } from '@context/AuthContext'
-import axios from 'axios'
+import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { GoogleLogin } from '@react-oauth/google'
 import { API_URL } from '@utils/consts'
+import axios from 'axios'
+import jwtDecode from 'jwt-decode'
 import Input from '@forms/Input'
-import { Link } from 'react-router-dom'
+
+import { type FieldValues, type SubmitHandler, useForm } from 'react-hook-form'
 
 function SignIn() {
+  const authContext = useContext(AuthContext)
+  const { register, handleSubmit, watch, reset, formState: { errors } } = useForm<FieldValues>()
+  const navigate = useNavigate()
   const { t } = useLang()
-  const { login } = useContext(AuthContext)
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<FieldValues>()
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
     try {
       const response = await axios.post(`${API_URL}/auth/login`, data)
-      console.log(response.data)
-
       const token: string = response.data.token
-      login(token)
+      authContext?.login(token)
       toast.success(response.data?.message)
     } catch (error) {
       if (axios.isAxiosError(error)) {
         toast.error(error.response?.data?.message)
       }
+    } finally {
+      reset()
+
+      if (authContext?.accessToken && (authContext?.role?.name === 'admin' || authContext?.role?.name === 'ADMIN')) {
+        navigate('/admin/calendario', { replace: true })
+      }
+
+      if (authContext?.accessToken && (authContext.role?.name === 'user' || authContext.role?.name === 'USER')) {
+        navigate('/', { replace: true })
+      }
     }
-    // finally {
-    //   reset()
-    //   const token = window.sessionStorage.getItem('token')
-    //   if (!token) return
-    //   const user: User = camelcaseKeys(jwtDecode(token.slice(4)))
-    //
-    //   if (token && user.roleId === 1) {
-    //     navigate('/admin/calendario', { replace: true })
-    //   }
-    //
-    //   if (token && user.roleId === 2) {
-    //     navigate('/', { replace: true })
-    //   }
-    // }
   }
 
   return (

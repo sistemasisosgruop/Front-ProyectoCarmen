@@ -1,5 +1,5 @@
-import { ReactElement } from 'react'
-import { IconType } from 'react-icons'
+import { type ReactElement } from 'react'
+import { type IconType } from 'react-icons'
 
 interface Props {
   text: string | ReactElement

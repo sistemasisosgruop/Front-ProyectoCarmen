@@ -6,7 +6,6 @@ import FormSelect from '@forms/FormSelect'
 import Button from '@components/Button'
 import { MdFlightLand } from 'react-icons/md'
 import { AiOutlineSearch } from 'react-icons/ai'
-import { HiUserGroup } from 'react-icons/hi'
 import { GiPerson } from 'react-icons/gi'
 import { FaCalendarAlt } from 'react-icons/fa'
 import { IoMdWalk } from 'react-icons/io'
@@ -23,10 +22,10 @@ function SearchFlights() {
         <FormSelect
           label={t('pages.home.flight_type')}
           name="typeFlight"
-          placeholder={t('pages.home.select_tour_package')}
+          placeholder={t('pages.home.select_tour_package') ?? ''}
           showIcon={true}
           iconPosition="left"
-          icon={<MdFlightLand size={18} />}
+          icon={MdFlightLand}
           options={[
             { text: 'Múltiples destinos', value: 'multiples-destinos' },
             { text: 'Ida y vuela', value: 'ida-y-vuelta' },
@@ -34,22 +33,12 @@ function SearchFlights() {
           ]}
         />
         <NumberPicker
-          label={t('pages.home.adults_number')}
-          htmlFor="adultPassengers"
           value={numAdultPassengers}
           onChangeValue={setNumAdultPassengers}
-          textStyle="text-base font-bold text-gray-800 lg:text-lg"
-          showIcon={true}
-          icon={<HiUserGroup size={18} className="text-gray-400" />}
         />
         <NumberPicker
-          label={t('pages.home.children_number')}
-          htmlFor="childPassengers"
           value={numChildPassengers}
           onChangeValue={setNumChildPassengers}
-          textStyle="text-base font-bold text-gray-800 lg:text-lg"
-          showIcon={true}
-          icon={<HiUserGroup size={18} className="text-gray-400" />}
         />
       </article>
 
@@ -58,19 +47,19 @@ function SearchFlights() {
         <FormSelect
           label={t('pages.home.origin')}
           name="origen"
-          placeholder={t('pages.home.select_place_origin')}
+          placeholder={t('pages.home.select_place_origin') ?? ''}
           showIcon={true}
           iconPosition="left"
-          icon={<IoMdWalk size={18} />}
+          icon={IoMdWalk}
           options={[{ text: 'Cusco', value: 'cusco' }]}
         />
         <FormSelect
           label={t('pages.home.destination_in_Peru')}
           name="destination"
-          placeholder={t('pages.home.select_place_destination')}
+          placeholder={t('pages.home.select_place_destination') ?? ''}
           showIcon={true}
           iconPosition="left"
-          icon={<GiPerson size={18} />}
+          icon={GiPerson}
           options={[{ text: 'Cusco', value: 'cusco' }]}
         />
 
@@ -90,7 +79,7 @@ function SearchFlights() {
               onChange={(date: Date) => setStartDate(date)}
               className="w-full border border-gray-700 rounded-xl px-2 py-1 text-base text-gray-700 focus:outline-none focus:border-blue focus:text-blue"
             />
-            <Button text={t('general.search')} showIcon={true} icon={AiOutlineSearch} position="right" />
+            <Button text={t('general.search') ?? ''} showIcon={true} icon={AiOutlineSearch} position="right" />
           </div>
         </div>
       </article>

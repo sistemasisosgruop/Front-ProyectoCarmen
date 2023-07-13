@@ -25,7 +25,7 @@ function Options({ options }: Props) {
           className="bg-white w-64 h-48 rounded-xl text-dark text-center font-bold flex flex-col justify-center items-center gap-1 shadow"
         >
           <span className="uppercase text-2xl">{option.label}</span>
-          {option.icon}
+          {<option.icon size={80} />}
         </Link>
       ))}
     </motion.section>

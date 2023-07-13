@@ -1,7 +1,16 @@
 import { motion } from 'framer-motion'
+import { type IconType } from 'react-icons'
 import { Link } from 'react-router-dom'
 
-const Options = ({ options }) => {
+interface Props {
+  options: Array<{
+    path: string
+    label: string
+    icon: IconType
+  }>
+}
+
+const Options = ({ options }: Props) => {
   return (
     <motion.section
       initial={{ opacity: 0, x: 0, y: 25 }}
@@ -15,8 +24,10 @@ const Options = ({ options }) => {
           to={option.path}
           className="bg-white w-64 h-48 rounded-xl text-dark text-center font-bold flex flex-col justify-center items-center gap-1 shadow"
         >
-          <span className="uppercase text-2xl">{option.label}</span>
-          {option.icon}
+          <span className="uppercase text-2xl">
+            {option.label}
+          </span>
+          {option.icon && <option.icon size={18} />}
         </Link>
       ))}
     </motion.section>

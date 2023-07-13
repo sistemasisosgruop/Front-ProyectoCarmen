@@ -14,7 +14,7 @@ import { BiDownload, BiSearch } from 'react-icons/bi'
 import { FaUserPlus } from 'react-icons/fa'
 
 import { type UserResponse } from 'types/user'
-import { type Role, type RoleResponse } from 'types/role'
+import { type RoleResponse } from 'types/role'
 
 function UsersPage() {
   const [pageNumber, setPageNumber] = useState(1)

@@ -42,7 +42,7 @@ function SearchLodging() {
             className="w-full border border-gray-700 rounded-xl px-2 py-1 text-base text-gray-700 focus:outline-none focus:border-blue focus:text-blue"
           />
         </div>
-        <Button text={t('general.search')} showIcon={true} icon={AiOutlineSearch} position="right" />
+        <Button text={t('general.search') ?? ''} showIcon={true} icon={AiOutlineSearch} position="right" />
       </article>
     </div>
   )

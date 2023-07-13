@@ -25,9 +25,9 @@ function UploadImagesModal({ modal, departmentId }: Props) {
     }
 
     await axios
-      .post(`${API_URL}/rooms/${departmentId}/images`, data, {
+      .post(`${API_URL}/departments/${departmentId}/images`, data, {
         headers: {
-          Authorization: window.sessionStorage.getItem('token')
+          Authorization: window.localStorage.getItem('token')
         }
       })
       .then(() => {

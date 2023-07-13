@@ -14,7 +14,7 @@ function PackagesDestinationCard({ href, imagePath, imageAlt }: Props) {
 
   return (
     <Link to={href} className="w-full h-full inline-block">
-      <CardHover imagePath={imagePath} alt={imageAlt}>
+      <CardHover imagePath={imagePath} imageAlt={imageAlt}>
         <article className="flex justify-between items-center">
           <p className="uppercase text-xs">Descubre</p>
           <p className="fon-bold text-lg">

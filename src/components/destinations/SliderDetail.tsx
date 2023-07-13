@@ -1,6 +1,6 @@
+import { Pagination, Autoplay, Navigation, EffectFade } from 'swiper/modules'
 import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Autoplay, Navigation, EffectFade } from 'swiper'
 import { useLang } from '@hooks/useLang'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 

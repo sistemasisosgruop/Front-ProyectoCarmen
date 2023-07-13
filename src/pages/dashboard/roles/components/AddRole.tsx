@@ -15,7 +15,7 @@ function AddRole({ closeModal }: Props) {
   return (
     <form>
       <Input
-        id="roleName"
+        name="roleName"
         label="Ej: area_jefe, area_usuario"
         register={register}
         errors={errors}

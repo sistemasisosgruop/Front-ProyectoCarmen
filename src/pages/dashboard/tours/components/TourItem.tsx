@@ -1,9 +1,10 @@
-import { Tour } from 'types/tour'
 import camelcaseKeys from 'camelcase-keys'
 import { useState } from 'react'
 import TourInformation from './TourInformation'
 import TourDetails from './TourDetails'
 import { BiChevronDown, BiChevronUp, BiEdit, BiTrash } from 'react-icons/bi'
+
+import { type Tour } from 'types/tour'
 
 interface Props {
   index: number

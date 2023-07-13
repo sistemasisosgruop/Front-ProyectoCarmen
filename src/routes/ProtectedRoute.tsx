@@ -5,7 +5,7 @@ import { Outlet, Navigate } from 'react-router-dom'
 function ProtectedRoute() {
   const authContext = useContext(AuthContext)
 
-  return authContext.accessToken ? <Outlet /> : <Navigate to="/iniciar-sesion" replace={true} />
+  return authContext?.accessToken ? <Outlet /> : <Navigate to="/iniciar-sesion" replace={true} />
 }
 
 export default ProtectedRoute

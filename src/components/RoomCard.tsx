@@ -8,7 +8,7 @@ interface Props {
 
 function RoomCard({ imagePath, alt }: Props) {
   return (
-    <CardHover imagePath={imagePath} alt={alt}>
+    <CardHover imagePath={imagePath} imageAlt={alt}>
       <div className="flex justify-between items-start">
         <span className="uppercase text-sm text-gray-600">Habitación</span>
         <p className="text-lg font-bold text-dark">

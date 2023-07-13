@@ -1,17 +1,16 @@
-import { TourResponse } from 'types/tour'
-import { useState } from 'react'
 import { useCreateTours } from '../hooks/useCreateTours'
 import { useGetRequest } from '@hooks/useGetRequest'
 import THead from '@components/THead'
 import TourItem from './TourItem'
 import camelcaseKeys from 'camelcase-keys'
 
+import { type TourResponse } from 'types/tour'
+
 function Tours() {
-  const [pageNumber, setPageNumber] = useState<number>(1)
+  // const [pageNumber, setPageNumber] = useState<number>(1)
   const createModal = useCreateTours()
   const { data, isLoading } = useGetRequest<TourResponse>({
     url: 'tours',
-    pageNumber,
     modal: createModal
   })
 
@@ -42,7 +41,7 @@ function Tours() {
               rowCellStyles="bg-blue text-white px-2 py-2 whitespace-nowrap"
             />
             <tbody>
-              {data.map((tour, index) => (
+              {data?.results?.map((tour, index) => (
                 <TourItem
                   key={tour.id}
                   index={index}

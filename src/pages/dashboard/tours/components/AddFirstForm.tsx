@@ -1,10 +1,10 @@
 import Button from '@components/Button'
 import Input from '@forms/Input'
 import {
-  Control,
-  FieldErrors,
-  FieldValues,
-  UseFormHandleSubmit
+  type Control,
+  type FieldErrors,
+  type FieldValues,
+  type UseFormHandleSubmit
 } from 'react-hook-form'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
@@ -22,48 +22,51 @@ function AddFirstForm({ control, errors, handleSubmit, onNextStep }: Props) {
       className="w-full flex flex-col gap-4"
     >
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <Input
-          id="tourName"
-          label="Nombre del tour"
-          register={control.register}
-          required={true}
-          errors={errors}
-          extraClasses="lg:col-span-1"
-        />
-        <Input
-          id="tourDescription"
-          label="Descripción del tour"
-          register={control.register}
-          required={true}
-          errors={errors}
-          extraClasses="lg:col-span-2"
-        />
+        <div className='lg:col-span-1'>
+          <Input
+            name="tourName"
+            label="Nombre del tour"
+            register={control.register}
+            required={true}
+            errors={errors}
+          />
+        </div>
+
+        <div className='lg:col-span-2'>
+          <Input
+            name="tourDescription"
+            label="Descripción del tour"
+            register={control.register}
+            required={true}
+            errors={errors}
+          />
+        </div>
       </article>
 
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Input
-          id="extras"
+          name="extras"
           label="Extras"
           register={control.register}
           required={true}
           errors={errors}
         />
         <Input
-          id="location"
+          name="location"
           label="Ubicación"
           register={control.register}
           required={true}
           errors={errors}
         />
         <Input
-          id="duration"
+          name="duration"
           label="Duración"
           register={control.register}
           required={true}
           errors={errors}
         />
         <Input
-          id="difficulty"
+          name="difficulty"
           label="Dificultad"
           register={control.register}
           required={true}
@@ -73,21 +76,21 @@ function AddFirstForm({ control, errors, handleSubmit, onNextStep }: Props) {
 
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <Input
-          id="languages"
+          name="languages"
           label="Idiomas"
           register={control.register}
           required={true}
           errors={errors}
         />
         <Input
-          id="numOfPeople"
+          name="numOfPeople"
           label="Número de personas"
           register={control.register}
           required={true}
           errors={errors}
         />
         <Input
-          id="numOfChildren"
+          name="numOfChildren"
           label="Número de niños"
           register={control.register}
           required={true}

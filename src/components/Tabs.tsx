@@ -1,14 +1,14 @@
-import { ReactNode } from 'react'
+import { type ReactElement } from 'react'
 
 interface Props {
-  children: ReactNode
+  children: ReactElement[]
   tabContainerStyles: string
   contentContainerStyles?: string
   tabStyle?: string
   activeTabStyle?: string
   inactiveTabStyle?: string
   textTabStyle?: string
-  activeTab?: string
+  activeTab?: string | number
   switchTab: (index: number) => void
 }
 
@@ -30,12 +30,12 @@ function Tabs({
           <button
             key={index}
             type="button"
-            className={`min-h-full flex justify-center items-center gap-2 ${tabStyle} ${
-              activeTab === index ? activeTabStyle : inactiveTabStyle
-            } hover:bg-opacity-90`}
-            onClick={() => {
-              switchTab(index)
-            }}
+            className={`
+              min-h-full flex justify-center items-center gap-2 hover:bg-opacity-90
+              ${tabStyle} 
+              ${activeTab === index ? activeTabStyle : inactiveTabStyle}
+            `}
+            onClick={() => switchTab(index)}
           >
             {child.props?.text !== undefined && (
               <div className={`w-10 h-10 rounded-full grid place-content-center ${textTabStyle}`}>
@@ -47,7 +47,9 @@ function Tabs({
           </button>
         ))}
       </div>
-      <div className={`${contentContainerStyles}`}>{children[activeTab]}</div>
+      <div className={`${contentContainerStyles}`}>
+        {children[activeTab]}
+      </div>
     </section>
   )
 }

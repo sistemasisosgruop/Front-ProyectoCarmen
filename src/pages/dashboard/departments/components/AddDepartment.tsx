@@ -79,43 +79,49 @@ function AddDepartment({ onClose }: Props) {
       className="flex flex-col justify-center items-center gap-4"
     >
       <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <Input
-          id="roomType"
-          label="Tipo de habitación"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="lg:col-span-1"
-        />
+        <div className='lg:col-span-1'>
 
-        <Input
-          id="description"
-          label="Descripción general"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="lg:col-span-2"
-        />
+          <Input
+            name="roomType"
+            label="Tipo de habitación"
+            register={register}
+            required={true}
+            errors={errors}
+          />
+        </div>
+
+        <div className='lg:col-span-2'>
+
+          <Input
+            name="description"
+            label="Descripción general"
+            register={register}
+            required={true}
+            errors={errors}
+          />
+        </div>
       </article>
 
       <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Input
-          id="address"
-          label="Dirección"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="col-span-1"
-        />
+        <div className='col-span-1'>
+          <Input
+            name="address"
+            label="Dirección"
+            register={register}
+            required={true}
+            errors={errors}
+          />
+        </div>
 
-        <Input
-          id="price"
-          label="Precio por noche"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="col-span-1"
-        />
+        <div className='col-span-1'>
+          <Input
+            name="price"
+            label="Precio por noche"
+            register={register}
+            required={true}
+            errors={errors}
+          />
+        </div>
 
         <div className="flex flex-col justify-start items-start sm:col-span-2">
           <label htmlFor="availableDate" className="text-gray-600 text-sm mb-1">
@@ -141,22 +147,16 @@ function AddDepartment({ onClose }: Props) {
         <NumberPicker
           value={numOfBathrooms}
           onChangeValue={setNumOfBathrooms}
-          label="Número de baños"
-          name="numOfBathrooms"
         />
 
         <NumberPicker
           value={numOfBeds}
           onChangeValue={setNumOfBeds}
-          label="Número de camas"
-          name="numOfBeds"
         />
 
         <NumberPicker
           value={numOfRooms}
           onChangeValue={setNumOfRooms}
-          label="Número de habitaciones"
-          name="numOfRooms"
         />
       </article>
 
@@ -168,7 +168,7 @@ function AddDepartment({ onClose }: Props) {
       {/* Description */}
       <article className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:grid-rows-2">
         <Textarea
-          id="included"
+          name="included"
           label="Qué está incluido"
           register={register}
           required={true}
@@ -177,7 +177,7 @@ function AddDepartment({ onClose }: Props) {
         />
 
         <Textarea
-          id="notIncluded"
+          name="notIncluded"
           label="Qué no está incluido"
           register={register}
           required={true}
@@ -185,23 +185,25 @@ function AddDepartment({ onClose }: Props) {
           containerStyles="lg:col-span-2 lg:row-span-2"
         />
 
-        <Input
-          id="freeCancellation"
-          label="Cancelación gratis"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="lg:col-span-1 lg:row-span-1"
-        />
+        <div className='lg:col-span-1 lg:row-span-1'>
+          <Input
+            name="freeCancellation"
+            label="Cancelación gratis"
+            register={register}
+            required={true}
+            errors={errors}
+          />
+        </div>
 
-        <Input
-          id="additionalCharge"
-          label="Cobro adicional"
-          register={register}
-          required={true}
-          errors={errors}
-          containerStyles="lg:col-span-1 lg:row-span-1"
-        />
+        <div className='lg:col-span-1 lg:row-span-1'>
+          <Input
+            name="additionalCharge"
+            label="Cobro adicional"
+            register={register}
+            required={true}
+            errors={errors}
+          />
+        </div>
       </article>
 
       {/* Button */}

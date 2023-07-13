@@ -1,5 +1,5 @@
-import { ReactNode, useState } from 'react'
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
+import { type ReactNode, useState } from 'react'
+import { type FieldValues, type SubmitHandler, useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
 import AddFirstForm from './AddFirstForm'
 import AddSecondForm from './AddSecondForm'

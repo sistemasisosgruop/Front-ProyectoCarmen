@@ -1,5 +1,5 @@
 import Button from '@components/Button'
-import { ReactElement, useCallback } from 'react'
+import { type ReactElement, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { IoMdClose } from 'react-icons/io'
 import { ThreeDots } from 'react-loader-spinner'
@@ -58,7 +58,7 @@ function Modal({
   if (!isOpen) return null
 
   return createPortal(
-    <div className="w-full h-full bg-black/60 fixed inset-0 z-50 flex justify-center items-center py-4 px-8">
+    <div className="w-full h-full bg-black/20 fixed inset-0 z-50 flex justify-center items-center py-4 px-8">
       <div className="w-full max-h-full bg-white rounded-xl mx-auto overflow-y-scroll sm:w-4/5 md:w-3/5 lg:w-3/5 xl:w-2/4">
         <header className="flex justify-between items-center gap-8 py-4 px-6">
           <h4 className="text-lg font-bold">{title}</h4>

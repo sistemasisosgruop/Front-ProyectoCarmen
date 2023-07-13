@@ -1,4 +1,4 @@
-import { keyStorage } from '@utils/consts'
+import { KeyStorage } from '@utils/consts'
 import { ReactNode, createContext, useState } from 'react'
 import { Department } from 'types/department'
 
@@ -19,7 +19,7 @@ export function DepartmentCartProvider({ children }: Props) {
 
   const addToCart = (product: Department) => {
     setCart([...cart, product])
-    window.localStorage.setItem(keyStorage.DEPARTMENTS_CART, JSON.stringify(cart))
+    window.localStorage.setItem(KeyStorage.DEPARTMENTS_CART, JSON.stringify(cart))
   }
 
   const clearCart = () => {

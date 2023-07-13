@@ -28,8 +28,8 @@ function SearchTourPackage() {
         options={OPTIONS}
         showIcon={true}
         iconPosition="left"
-        placeholder={t('pages.home.place_to_visit')}
-        icon={<IoMdWalk size={18} />}
+        placeholder={t('pages.home.place_to_visit') ?? ''}
+        icon={IoMdWalk}
       />
 
       <FormSelect
@@ -38,8 +38,8 @@ function SearchTourPackage() {
         options={OPTIONS}
         showIcon={true}
         iconPosition="left"
-        placeholder={t('general.tour_packages')}
-        icon={<GiPerson size={18} />}
+        placeholder={t('general.tour_packages') ?? ''}
+        icon={GiPerson}
       />
 
       <div className="w-full flex flex-col justify-center items-start gap-4 sm:col-span-2">
@@ -58,7 +58,7 @@ function SearchTourPackage() {
             onChange={(date: Date) => setStartDate(date)}
             className="w-full border border-gray-700 rounded-xl px-2 py-1 text-base text-gray-700 focus:outline-none focus:border-blue focus:text-blue"
           />
-          <Button text={t('general.search')} showIcon={true} icon={AiOutlineSearch} position="right" />
+          <Button text={t('general.search') ?? ''} showIcon={true} icon={AiOutlineSearch} position="right" />
         </div>
       </div>
     </div>

@@ -4,8 +4,12 @@ import { BiTimer } from 'react-icons/bi'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { HiUsers } from 'react-icons/hi'
 
+interface Props {
+  imagePath: string
+  alt: string
+}
 
-const PromotionCard = ({ imagePath, alt }) => {
+const PromotionCard = ({ imagePath, alt }: Props) => {
   const { t } = useLang()
 
   return (

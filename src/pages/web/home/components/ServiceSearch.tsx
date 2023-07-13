@@ -23,13 +23,13 @@ function ServiceSearch() {
         activeTab={activeTab}
         switchTab={switchTab}
       >
-        <TabItem icon={<FiHome />} label={t('general.lodging')}>
+        <TabItem icon={FiHome} label={t('general.lodging')}>
           <SearchLodging />
         </TabItem>
-        <TabItem icon={<BsAirplane />} label={t('general.flights')}>
+        <TabItem icon={BsAirplane} label={t('general.flights')}>
           <SearchFlights />
         </TabItem>
-        <TabItem icon={<BiBriefcaseAlt />} label={t('general.tour_packages')}>
+        <TabItem icon={BiBriefcaseAlt} label={t('general.tour_packages')}>
           <SearchTourPackage />
         </TabItem>
       </Tabs>

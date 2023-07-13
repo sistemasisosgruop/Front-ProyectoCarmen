@@ -6,10 +6,10 @@ import Textarea from '@forms/Textarea'
 import UploadImages from '@components/UploadImages'
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 import {
-  Control,
-  FieldErrors,
-  FieldValues,
-  UseFormHandleSubmit
+  type Control,
+  type FieldErrors,
+  type FieldValues,
+  type UseFormHandleSubmit
 } from 'react-hook-form'
 
 interface Props {
@@ -41,21 +41,21 @@ function AddSecondForm({
 
       <article className="grid grid-cols-1 gap-4">
         <Textarea
-          id="whatWillYouDo"
+          name="whatWillYouDo"
           label="Qué harás"
           register={control.register}
           required={true}
           errors={errors}
         />
         <Input
-          id="goodChoice"
+          name="goodChoice"
           label="Buena elección para"
           register={control.register}
           required={true}
           errors={errors}
         />
         <Input
-          id="cancellationPolicy"
+          name="cancellationPolicy"
           label="Pólitica de cancelación"
           register={control.register}
           required={true}
@@ -65,14 +65,14 @@ function AddSecondForm({
 
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Input
-          id="pricePerPerson"
+          name="pricePerPerson"
           label="Precio por persona"
           register={control.register}
           required={true}
           errors={errors}
         />
         <Input
-          id="schedule"
+          name="schedule"
           label="Horario"
           register={control.register}
           required={true}

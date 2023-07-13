@@ -2,11 +2,11 @@ import Button from '@components/Button'
 import Input from '@forms/Input'
 import Textarea from '@forms/Textarea'
 import {
-  Control,
-  FieldErrors,
-  FieldValues,
-  SubmitHandler,
-  UseFormHandleSubmit
+  type Control,
+  type FieldErrors,
+  type FieldValues,
+  type SubmitHandler,
+  type UseFormHandleSubmit
 } from 'react-hook-form'
 import { BiSave } from 'react-icons/bi'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
@@ -30,14 +30,14 @@ function AddThirdForm({
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Textarea
-          id="included"
+          name="included"
           label="Qué está incluido"
           register={control.register}
           required={true}
           errors={errors}
         />
         <Textarea
-          id="notIncluded"
+          name="notIncluded"
           label="Qué no está incluido"
           register={control.register}
           required={true}
@@ -47,7 +47,7 @@ function AddThirdForm({
 
       <article className="grid grid-cols-1 gap-4">
         <Textarea
-          id="itenerary"
+          name="itenerary"
           label="Itinerario: Día 01"
           register={control.register}
           required={true}
@@ -57,14 +57,14 @@ function AddThirdForm({
 
       <article className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Input
-          id="departureDetails"
+          name="departureDetails"
           label="Detalles de salida"
           register={control.register}
           required={true}
           errors={errors}
         />
         <Input
-          id="returnDetails"
+          name="returnDetails"
           label="Detalles de regreso"
           register={control.register}
           required={true}
@@ -74,7 +74,7 @@ function AddThirdForm({
 
       <article className="grid grid-cols-1 gap-4">
         <Input
-          id="accessibility"
+          name="accessibility"
           label="Accesibilidad"
           register={control.register}
           required={true}

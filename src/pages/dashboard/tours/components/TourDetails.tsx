@@ -1,4 +1,4 @@
-import { ToursDetails } from 'types/tour'
+import { type ToursDetails } from 'types/tour'
 
 interface Props {
   tourDetails: ToursDetails
