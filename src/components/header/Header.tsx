@@ -62,7 +62,7 @@ function Header() {
 
             <HeaderActions isScrolled={isScrolled} />
 
-            <NavigationMenu />
+            <NavigationMenu isScrolled={isScrolled} />
           </motion.div>
         </AnimatePresence>
       )}

@@ -22,7 +22,7 @@ function NavigationMenu({ isScrolled }: Props) {
       <ul className="flex flex-col justify-start items-start gap-4 md:flex-row">
         <li>
           <NavLink
-            path="/habitaciones"
+            path="/departments"
             text={t('general.rooms')}
             customClass="flex-row md:flex-col"
             icon={<HiOutlineHome />}
@@ -30,7 +30,7 @@ function NavigationMenu({ isScrolled }: Props) {
         </li>
         <li>
           <NavLink
-            path="/vuelos"
+            path="/fligths"
             text={t('general.flights')}
             customClass="flex-row md:flex-col"
             icon={<BsAirplane />}
@@ -38,7 +38,7 @@ function NavigationMenu({ isScrolled }: Props) {
         </li>
         <li>
           <NavLink
-            path="/paquetes"
+            path="/tours"
             text={t('general.packages')}
             customClass="flex-row md:flex-col"
             icon={<BiBriefcaseAlt />}
@@ -46,7 +46,7 @@ function NavigationMenu({ isScrolled }: Props) {
         </li>
         <li>
           <NavLink
-            path="/contactanos"
+            path="/contact-us"
             text={t('general.contact')}
             customClass="flex-row md:flex-col"
             icon={<BiHelpCircle />}
@@ -54,7 +54,7 @@ function NavigationMenu({ isScrolled }: Props) {
         </li>
         <li>
           <NavLink
-            path="/sobre-nosotros"
+            path="/about-us"
             text={t('general.about_us')}
             customClass="flex-row md:flex-col"
             icon={<MdSupervisedUserCircle />}
