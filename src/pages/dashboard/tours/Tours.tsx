@@ -1,15 +1,14 @@
-import { useModal } from '@hooks/useModal'
+import { useCreateTours } from './hooks/useCreateTours'
 import Heading from '@components/Heading'
 import AdminLayout from '@layouts/AdminLayout'
 import AdminSection from '@layouts/AdminSection'
-import Modal from '@components/Modal'
-import AddTourPackage from '@features/tours/components/AddTourPackage'
+import AddTourModal from './components/AddTourModal'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IoMdAdd } from 'react-icons/io'
-import Tours from '@features/tours/components/Tours'
+import Tours from './components/Tours'
 
-function TouristPackagesResgistration() {
-  const { isOpenModal, openModal, closeModal } = useModal()
+function ToursPage() {
+  const createTour = useCreateTours()
 
   return (
     <>
@@ -32,7 +31,7 @@ function TouristPackagesResgistration() {
 
             <button
               type="button"
-              onClick={openModal}
+              onClick={createTour.onOpen}
               className="bg-orange px-6 py-2 rounded-xl text-white font-bold flex justify-center items-center gap-2 hover:bg-opacity-90"
             >
               <span>Agregar</span>
@@ -44,13 +43,9 @@ function TouristPackagesResgistration() {
         </AdminSection>
       </AdminLayout>
 
-      {isOpenModal && (
-        <Modal title="Agregar un paquete turístico" closeModal={closeModal}>
-          <AddTourPackage />
-        </Modal>
-      )}
+      <AddTourModal />
     </>
   )
 }
 
-export default TouristPackagesResgistration
+export default ToursPage
