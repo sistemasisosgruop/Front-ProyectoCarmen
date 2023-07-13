@@ -1,9 +1,6 @@
-import { Department } from 'types/department'
-import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useLang } from '@hooks/useLang'
-import axios from 'axios'
-import camelcaseKeys from 'camelcase-keys'
+import { useGetByIdRequest } from '@hooks/useGetByRequest'
 import LayoutPage from '@layouts/LayoutPage'
 import Section from '@layouts/Section'
 import GridImages from './components/GridImages'
@@ -12,37 +9,16 @@ import PaymentDetailForm from './components/PaymentDetailForm'
 import CommentSection from '@components/comments/CommentSection'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 import { AiFillStar } from 'react-icons/ai'
-import { API_URL } from '@utils/consts'
+
+import { type Department } from 'types/department'
 
 function DepartmentDetails() {
-  const [department, setDepartment] = useState<Department>({} as Department)
   const navigate = useNavigate()
-  const { id } = useParams()
+  const params = useParams()
   const { t } = useLang()
-
-  useEffect(() => {
-    const abortController = new AbortController()
-
-    getDepartmentById(abortController)
-
-    return () => {
-      abortController.abort()
-    }
-  }, [])
-
-  const getDepartmentById = async (abortController: AbortController) => {
-    await axios
-      .get(`${API_URL}/rooms/${id}`, {
-        signal: abortController.signal
-      })
-      .then(response => {
-        console.log(response.data)
-        setDepartment(response.data)
-      })
-      .catch(error => {
-        throw new Error(error)
-      })
-  }
+  const { data } = useGetByIdRequest<Department>({
+    url: `departments/${params.id ?? ''}`
+  })
 
   return (
     <LayoutPage title="Detalle de habitación">
@@ -58,7 +34,9 @@ function DepartmentDetails() {
       </Section>
 
       <Section>
-        <h1 className="text-4xl text-start text-dark font-bold mb-2">{department?.roomType}</h1>
+        <h1 className="text-4xl text-start text-dark font-bold mb-2">
+          {data?.departmentType}
+        </h1>
         <div className="flex justify-start items-center gap-2">
           <p className="flex justify-start items-center gap-2">
             <AiFillStar size={22} className="text-orange" />
@@ -67,7 +45,7 @@ function DepartmentDetails() {
           <p className="text-gray-600">
             ({'10'} {t('general.reviews')})
           </p>
-          <p className="underline">{department.address}</p>
+          <p className="underline">{data?.address}</p>
         </div>
       </Section>
       <Section className="my-8">
@@ -82,11 +60,11 @@ function DepartmentDetails() {
       </Section>
       <Section className="grid grid-cols-1 gap-8 mb-4 md:grid-cols-5">
         <div className="md:col-span-3 mb-8 lg:mb-0">
-          <RoomDescriptionInDetail department={camelcaseKeys(department)} />
+          <RoomDescriptionInDetail department={data} />
         </div>
 
         <div className="bg-white rounded-xl p-4 md:col-span-2">
-          <PaymentDetailForm department={camelcaseKeys(department)} />
+          <PaymentDetailForm department={data} />
         </div>
       </Section>
 

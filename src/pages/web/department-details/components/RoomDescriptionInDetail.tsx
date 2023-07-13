@@ -1,10 +1,11 @@
-import { Department } from 'types/department'
 import { useLang } from '@hooks/useLang'
 import Button from '@components/Button'
 import { MdBedroomParent } from 'react-icons/md'
 import { RiHotelBedFill } from 'react-icons/ri'
 import { FaBath } from 'react-icons/fa'
 import { HiUsers } from 'react-icons/hi'
+
+import { type Department } from 'types/department'
 
 interface Props {
   department: Department
@@ -44,7 +45,7 @@ function RoomDescriptionInDetail({ department }: Props) {
       <div className="flex flex-col justify-start items-start gap-4 mb-8">
         <h4 className="text-xl font-bold">{t('pages.rooms.what_it_offers')}</h4>
         <ul className="">
-          {department?.roomDetails2?.amenities?.map((amenitie, index) => (
+          {department?.details?.amenities?.map((amenitie, index) => (
             <li key={index} className="text-blue list-item list-disc list-inside">
               {amenitie}
             </li>
@@ -62,7 +63,7 @@ function RoomDescriptionInDetail({ department }: Props) {
       <div>
         <h4 className="text-xl font-bold">{t('pages.rooms.services')}</h4>
         <ul className="">
-          {department?.roomDetails2?.services?.map((service, index) => (
+          {department?.details?.services?.map((service, index) => (
             <li key={index} className="text-orange text-lg font-bold list-disc list-inside">
               {service}
             </li>

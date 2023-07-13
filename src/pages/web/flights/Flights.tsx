@@ -4,9 +4,9 @@ import Section from '@layouts/Section'
 import Masthead from '@components/Masthead'
 import Tabs from '@components/Tabs'
 import TabItem from '@components/TabItem'
-import PriceList from '@components/flights/PriceList'
-import SelectFlight from '@components/flights/SelectFlight'
 import ContactFormSection from '@components/contact-form/ContactFormSection'
+import PriceList from './components/PriceList'
+import SelectFlight from './components/SelectFlight'
 
 function Flights() {
   const { activeTab, switchTab } = useTabs(0)

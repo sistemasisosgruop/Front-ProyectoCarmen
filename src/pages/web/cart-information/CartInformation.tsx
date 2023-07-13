@@ -5,17 +5,17 @@ import Section from '@layouts/Section'
 import Tabs from '@components/Tabs'
 import TabItem from '@components/TabItem'
 import Button from '@components/Button'
-import OrderSummary from '@components/shopping-cart/OrderSummary'
-import MainUserForm from '@components/shopping-cart/MainUserForm'
-import SecondaryUserForm from '@components/shopping-cart/SecondaryUserForm'
+import OrderSummary from './components/OrderSummary'
+import MainUserForm from './components/MainUserForm'
+import SecondaryUserForm from './components/SecondaryUserForm'
+import PaymentForm from './components/PaymentForm'
+import PurchaseTerms from './components/PurchaseTerms'
 import { IoReturnDownBack } from 'react-icons/io5'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { MdOutlinePayment } from 'react-icons/md'
-import PaymentForm from '@components/shopping-cart/PaymentForm'
-import PurchaseTerms from '@components/shopping-cart/PurchaseTerms'
 
-function TravelerInformation() {
+function CartInformation() {
   const { activeTab, switchTab } = useTabs(0)
   const navigate = useNavigate()
 
@@ -56,7 +56,7 @@ function TravelerInformation() {
           activeTab={activeTab}
           switchTab={switchTab}
         >
-          <TabItem label="Información personal" icon={<AiOutlineInfoCircle size={18} />}>
+          <TabItem label="Información personal" icon={AiOutlineInfoCircle}>
             <section className="grid grid-cols-1 gap-8 lg:grid-cols-5">
               <div className="bg-white rounded-xl py-8 px-4 md:px-8 lg:col-span-3">
                 <MainUserForm />
@@ -72,7 +72,7 @@ function TravelerInformation() {
               </div>
             </section>
           </TabItem>
-          <TabItem label="Realizar pago" icon={<MdOutlinePayment size={18} />}>
+          <TabItem label="Realizar pago" icon={MdOutlinePayment}>
             <section className="grid grid-cols-1 gap-8 lg:grid-cols-5">
               <div className="bg-white rounded-xl py-8 px-4 md:px-8 lg:col-span-3">
                 <PaymentForm />
@@ -89,7 +89,7 @@ function TravelerInformation() {
                   background="bg-blue"
                   onClick={() => switchTab(2)}
                   showIcon={true}
-                  icon={<MdOutlinePayment size={18} />}
+                  icon={MdOutlinePayment}
                   extraClasses="uppercase"
                 />
               </div>
@@ -101,4 +101,4 @@ function TravelerInformation() {
   )
 }
 
-export default TravelerInformation
+export default CartInformation

@@ -3,15 +3,15 @@ import { useForm } from 'react-hook-form'
 import LayoutPage from '@layouts/LayoutPage'
 import Section from '@layouts/Section'
 import Heading from '@components/Heading'
-import Products from '@components/shopping-cart/Products'
-import MyFormInput from '@forms/FormInput'
 import Button from '@components/Button'
 import ButtonLink from '@components/ButtonLink'
+import Input from '@forms/Input'
+import Products from './components/Products'
 import { IoReturnDownBack } from 'react-icons/io5'
 import { HiOutlineArrowSmLeft } from 'react-icons/hi'
 import { MdOutlinePayment } from 'react-icons/md'
 
-function ShoppingCart() {
+function Cart() {
   const {
     register,
     formState: { errors }
@@ -72,11 +72,11 @@ function ShoppingCart() {
               </header>
               <article>
                 <div className="flex flex-col justify-center items-end gap-4 sm:flex-row">
-                  <MyFormInput
+                  <Input
                     name="coupon"
                     label="Código de cupón"
                     register={register}
-                    rules={{ required: true }}
+                    required={true }
                     errors={errors}
                   />
                   <Button text="Hecho" />
@@ -125,4 +125,4 @@ function ShoppingCart() {
   )
 }
 
-export default ShoppingCart
+export default Cart

@@ -3,13 +3,12 @@ import LayoutPage from '@layouts/LayoutPage'
 import Section from '@layouts/Section'
 import Heading from '@components/Heading'
 import Masthead from '@components/Masthead'
-import ServiceSearch from '@features/home/components/ServiceSearch'
-import SliderTourPackage from '@features/home/components/SliderTourPackage'
-import PopularCard from '@features/home/components/PopularCard'
 import FeedbackSection from '@components/feedback/FeedbackSection'
 import ButtonLink from '@components/ButtonLink'
-import { HiOutlineArrowSmRight } from 'react-icons/hi'
 import PopularDepartmentCards from './components/PopularDepartmentCards'
+import ServiceSearch from './components/ServiceSearch'
+import SliderTourPackage from './components/SliderTourPackage'
+import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
 function Home() {
   const { t } = useLang()
@@ -49,13 +48,15 @@ function Home() {
         />
         <section className="grid grid-cols-1 gap-8 pb-8 sm:grid-cols-2 xl:grid-cols-4">
           {[...Array(4)].map((_, index) => (
-            <PopularCard
+            <p key={index}>Destinos populares</p>
+          ))}
+          {/* <PopularCard
               key={index}
               href="/destinos-populares/detalle"
               imagePath="https://img.europapress.es/fotoweb/fotonoticia_20171009090720_1024.jpg"
               imageAlt={`image popular destination ${index + 1}`}
-            />
-          ))}
+              department={data}
+            /> */}
         </section>
         <div className="flex justify-center items-center">
           <ButtonLink
@@ -75,13 +76,14 @@ function Home() {
         />
         <section className="grid grid-cols-1 gap-4 pb-8 sm:grid-cols-2 xl:grid-cols-4">
           {[...Array(4)].map((_, index) => (
-            <PopularCard
+            <p key={index}>Vuelos populares</p>
+          ))}
+          {/* <PopularCard
               key={index}
               href="/vuelos"
               imagePath="http://www.subturismo.gob.cl/wp-content/uploads/2017/10/TREKKING-LAGUNAS-COTACOTANI-3.jpg"
               imageAlt={`image popular flights ${index + 1}`}
-            />
-          ))}
+            /> */}
         </section>
         <div className="flex justify-center items-center">
           <ButtonLink

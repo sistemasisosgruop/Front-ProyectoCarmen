@@ -3,14 +3,14 @@ import LayoutPage from '@components/layouts/LayoutPage'
 import Section from '@components/layouts/Section'
 import Masthead from '@components/Masthead'
 import Heading from '@components/Heading'
-import PromotionCard from '@features/departments/components/PromotionCard'
-import PopularRoomCard from '@features/departments/components/PopularRoomCard'
-import FullApartmentCard from '@features/departments/components/FullApartmentCard'
 import ButtonLink from '@components/ButtonLink'
 import ButtonLinkSm from '@components/ButtonLinkSm'
+import PromotionCard from './components/PromotionCard'
+import PopularRoomCard from './components/PopularRoomCard'
+import FullApartmentCard from './components/FullApartmentCard'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
-function Rooms() {
+function DepartmentsPage() {
   const { t } = useLang()
 
   return (
@@ -101,4 +101,4 @@ function Rooms() {
   )
 }
 
-export default Rooms
+export default DepartmentsPage

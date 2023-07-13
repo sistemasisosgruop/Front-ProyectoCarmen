@@ -1,10 +1,10 @@
 import LayoutPage from '@components/layouts/LayoutPage'
 import Section from '@components/layouts/Section'
-import Recommendation from '@features/departments/components/Recommendation'
-import RoomCard from '@features/departments/components/RoomCard'
+import Recommendation from './components/Recommendation'
+import RoomCard from './components/RoomCard'
 import { HiOutlineArrowSmRight } from 'react-icons/hi'
 
-function RoomCatalog() {
+function DepartmentsCatalog() {
   return (
     <LayoutPage title="Catalogo de habitaciones - Carmen Agencia de Viajes y Turismo">
       <Section className="mt-48">
@@ -84,4 +84,4 @@ function RoomCatalog() {
   )
 }
 
-export default RoomCatalog
+export default DepartmentsCatalog

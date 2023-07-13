@@ -3,12 +3,12 @@ import LayoutPage from '@layouts/LayoutPage'
 import Section from '@layouts/Section'
 import Heading from '@components/Heading'
 import Masthead from '@components/Masthead'
-import PromotionCard from '@features/tours/components/PromotionCard'
-import PackagesDestinationCard from '@features/tours/components/PackagesDestinationCard'
+import PromotionCard from './components/PromotionCard'
+import PackagesDestinationCard from './components/PackagesDestinationCard'
 import ButtonLink from '@components/ButtonLink'
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 
-function Packages() {
+function ToursPage() {
   const { t } = useLang()
 
   return (
@@ -90,4 +90,4 @@ function Packages() {
   )
 }
 
-export default Packages
+export default ToursPage
