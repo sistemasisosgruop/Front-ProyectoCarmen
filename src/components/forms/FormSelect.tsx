@@ -34,13 +34,13 @@ const FormSelect = ({
           htmlFor={name}
           className="text-gray-400 flex justify-center items-center gap-2"
         >
-          {showIcon !== undefined && iconPosition === 'left' && (
+          {!showIcon && iconPosition === 'left' && Icon && (
             <Icon size={18} />
           )}
           <span className={`${labelStyles ?? ''} lg:text-lg whitespace-nowrap`}>
             {label}
           </span>
-          {showIcon !== undefined && iconPosition === 'right' && (
+          {!showIcon && iconPosition === 'right' && Icon && (
             <Icon size={18} />
           )}
         </label>
@@ -56,7 +56,7 @@ const FormSelect = ({
             {placeholder}
           </option>
         )}
-        {options.map((option, index) => (
+        {options?.map((option, index) => (
           <option key={index} className="w-full">
             {option.text}
           </option>

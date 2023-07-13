@@ -35,7 +35,7 @@ function InputAddText({
   return (
     <div
       className={`
-        w-full border text-gray-600 rounded-xl px-4 py-2 flex flex-row flex-wrap justify-start items-center focus:border-blue
+        w-full border text-gray-600 rounded-xl px-4 py-2 inline-flex flex-row flex-wrap justify-start items-center focus:border-blue
         ${required ? 'border-red-400' : 'border-gray-400'}
       `}
     >
@@ -54,7 +54,7 @@ function InputAddText({
           name={name}
           placeholder={data.length > 0 ? '' : placeholder}
           onKeyDown={(event) => handleKeyDown(event, setData)}
-          className='inline-block w-auto border-none focus:outline-none focus:text-blue'
+          className='border-none focus:outline-none focus:text-blue'
         />
       </div>
     </div>
