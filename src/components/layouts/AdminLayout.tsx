@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react'
+import { type ReactNode, useEffect } from 'react'
 import { useToggleSidebar } from '@hooks/useToggleSidebar'
 import { motion } from 'framer-motion'
 import Header from '../sidebar/Header'
@@ -28,7 +28,7 @@ function AdminLayout({ children, title }: Props) {
         </motion.div>
       )}
       <div className="hidden xl:inline-block xl:h-screen">
-        <Sidebar />
+        <Sidebar closeSidebar={closeSidebar} />
       </div>
 
       <div className="w-full h-full bg-gray-300">
