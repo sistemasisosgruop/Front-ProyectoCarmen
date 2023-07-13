@@ -1,4 +1,4 @@
-import { BaseResponse } from './baseResponse'
+import { type BaseResponse } from './baseResponse'
 
 export interface User {
   id: string
@@ -13,14 +13,6 @@ export interface User {
   documentNumber: number
   birthday: Date
   student: boolean
-  roleId: number
-}
-
-export interface UserToken {
-  id: string
-  firstName: string
-  lastName: string
-  email: string
   roleId: number
 }
 
