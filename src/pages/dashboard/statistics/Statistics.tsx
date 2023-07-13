@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import AdminLayout from '@layouts/AdminLayout'
-import HorizontalChart from '@components/statistics/HorizontalChart'
-import VerticalChart from '@components/statistics/VerticalChart'
+import HorizontalChart from './components/HorizontalChart'
+import VerticalChart from './components/VerticalChart'
 import Heading from '@components/Heading'
 
 function Statistics() {

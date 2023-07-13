@@ -1,16 +1,16 @@
-import { useModal } from '@hooks/useModal'
 import AdminLayout from '@layouts/AdminLayout'
 import AdminSection from '@layouts/AdminSection'
 import Heading from '@components/Heading'
 import THead from '@components/THead'
-import Modal from '@components/Modal'
-import AddRole from '@components/roles/AddRole'
+// import Modal from '@components/Modal'
+// import AddRole from './components/AddRole'
 import Button from '@components/Button'
 import { IoMdAdd } from 'react-icons/io'
 import { BiEdit, BiTrash } from 'react-icons/bi'
+import { useCreateRole } from './hooks/useCreateRole'
 
 function Roles() {
-  const { isOpenModal, openModal, closeModal } = useModal()
+  const createModal = useCreateRole()
 
   return (
     <>
@@ -22,9 +22,9 @@ function Roles() {
             <Button
               text="Agregar"
               background="bg-orange"
-              onClick={openModal}
-              isIcon={true}
-              icon={<IoMdAdd size={18} />}
+              onClick={createModal.onOpen}
+              showIcon
+              icon={IoMdAdd}
               position="right"
             />
           </article>
@@ -60,11 +60,12 @@ function Roles() {
           </div>
         </AdminSection>
       </AdminLayout>
-      {isOpenModal && (
+
+      {/* isOpenModal && (
         <Modal title="Agregar nuevo rol" closeModal={closeModal}>
           <AddRole closeModal={closeModal} />
         </Modal>
-      )}
+      ) */}
     </>
   )
 }

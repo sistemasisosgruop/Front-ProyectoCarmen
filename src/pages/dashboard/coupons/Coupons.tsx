@@ -4,8 +4,8 @@ import AdminSection from '@layouts/AdminSection'
 import Modal from '@components/Modal'
 import Heading from '@components/Heading'
 import Button from '@components/Button'
-import AddCoupon from '@components/coupons/AddCoupon'
-import CouponList from '@features/coupons/components/CouponList'
+import CouponList from './components/CouponList'
+import AddCoupon from './components/AddCoupon'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IoMdAdd } from 'react-icons/io'
 
@@ -43,13 +43,15 @@ function Coupons() {
             />
           </article>
 
-          <CouponList isOpenModal={addModal.onOpen} />
+          <CouponList />
         </AdminSection>
       </AdminLayout>
 
       <Modal
         isOpen={addModal.isOpen}
         title="Crear nuevo cupón"
+        actionLabel='Crear'
+        disabled={false}
         onClose={addModal.onClose}
         onSubmit={() => {
           console.log('Sended')

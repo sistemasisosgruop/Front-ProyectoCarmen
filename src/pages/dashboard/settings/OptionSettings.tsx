@@ -13,28 +13,28 @@ function Settings() {
           options={[
             {
               label: 'Roles',
-              path: '/admin/configuracion/roles',
-              icon: <HiUsers size={80} />
+              path: '/admin/settings/roles',
+              icon: HiUsers
             },
             {
               label: 'Cupones',
-              path: '/admin/configuracion/cupones',
-              icon: <RiCouponFill size={80} />
+              path: '/admin/settings/coupons',
+              icon: RiCouponFill
             },
             {
               label: 'Comprobantes',
-              path: '/admin/configuracion/comprobantes',
-              icon: <IoIosPaper size={80} />
+              path: '/admin/settings/receipts',
+              icon: IoIosPaper
             },
             {
               label: 'Mensajes',
-              path: '/admin/configuracion/mensajes',
-              icon: <MdMessage size={80} />
+              path: '/admin/settings/messages',
+              icon: MdMessage
             },
             {
               label: 'Comentarios',
-              path: '/admin/configuracion/comentarios',
-              icon: <MdComment size={80} />
+              path: '/admin/settings/comments',
+              icon: MdComment
             }
           ]}
         />
