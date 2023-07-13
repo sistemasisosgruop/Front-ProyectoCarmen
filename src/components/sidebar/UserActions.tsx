@@ -4,11 +4,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '@context/AuthContext'
 
 function UserActions() {
-  const { user, logout } = useContext(AuthContext)
+  const authContext = useContext(AuthContext)
   const navigate = useNavigate()
 
   const logoutUser = () => {
-    logout()
+    authContext?.logout()
     navigate('/')
   }
 
@@ -17,9 +17,11 @@ function UserActions() {
       <ul className="w-full">
         <li>
           <h4 className="text-lg text-dark font-bold">
-            {user?.firstName} {user?.lastName}
+            {authContext?.user?.firstName} {authContext?.user?.lastName}
           </h4>
-          <span className="text-gray-600 text-sm">ADMINISTRADOR</span>
+          <span className="text-gray-600 text-sm uppercase">
+            {authContext?.role?.name}
+          </span>
         </li>
         <hr className="border-none w-full bg-gray-200 py-[0.5px] my-1" />
         <li>

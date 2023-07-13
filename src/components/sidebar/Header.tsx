@@ -10,7 +10,7 @@ interface Props {
 
 function Header({ openSidebar }: Props) {
   const [isOpenAction, setIsOpenAction] = useState<boolean>(false)
-  const { user } = useContext(AuthContext)
+  const authContext = useContext(AuthContext)
 
   const toggleUserAction = () => {
     setIsOpenAction(!isOpenAction)
@@ -29,7 +29,7 @@ function Header({ openSidebar }: Props) {
 
         <button type="button" onClick={toggleUserAction} className="flex justify-center items-center gap-2 text-white">
           <p>
-            {user?.firstName} {user?.lastName}
+            {authContext?.user?.firstName} {authContext?.user?.lastName}
           </p>
           {isOpenAction && <BiChevronUp size={18} />}
           {!isOpenAction && <BiChevronDown size={18} />}

@@ -31,31 +31,55 @@ function Sidebar({ closeSidebar }: Props) {
         <ul className="w-full space-y-2">
           <hr className="w-full border-none bg-gray-200 py-[0.5px] my-4" />
           <li>
-            <NavLink href="/admin/calendario" label="Calendario" icon={BiCalendar} />
+            <NavLink
+              href="/admin/calendar"
+              label="Calendario"
+              icon={BiCalendar}
+            />
           </li>
           <hr className="w-full border-none bg-gray-200 py-[0.5px] my-4" />
           <li>
-            <NavLink href="/admin/vuelos" label="Vuelos" icon={TbPlane} />
-          </li>
-          <li>
-            <NavLink href="/admin/departamentos/opciones" label="Departamentos" icon={BiBed} />
+            <NavLink
+              href="/admin/flights"
+              label="Vuelos"
+              icon={TbPlane}
+            />
           </li>
           <li>
             <NavLink
-              href="/admin/paquetes-turisticos"
+              href="/admin/options/departments"
+              label="Departamentos"
+              icon={BiBed}
+            />
+          </li>
+          <li>
+            <NavLink
+              href="/admin/options/tours"
               label="Paquetes turísticos"
               icon={BiBriefcaseAlt2}
             />
           </li>
           <li>
-            <NavLink href="/admin/usuarios" label="Usuario" icon={HiOutlineUsers} />
+            <NavLink
+              href="/admin/users"
+              label="Usuario"
+              icon={HiOutlineUsers}
+            />
           </li>
           <li>
-            <NavLink href="/admin/estadisticas" label="Estadísticas" icon={IoMdStats} />
+            <NavLink
+              href="/admin/statistics"
+              label="Estadísticas"
+              icon={IoMdStats}
+            />
           </li>
           <hr className="w-full border-none bg-gray-200 py-[0.5px] my-4" />
           <li>
-            <NavLink href="/admin/configuracion" label="Configuración" icon={FiSettings} />
+            <NavLink
+              href="/admin/settings"
+              label="Configuración"
+              icon={FiSettings}
+            />
           </li>
         </ul>
       </nav>
