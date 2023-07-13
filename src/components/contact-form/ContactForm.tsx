@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import Button from '@components/Button'
-import Input from '@components/forms/Input'
-import Textarea from '@components/forms/Textarea'
+import Input from '@forms/Input'
+import Textarea from '@forms/Textarea'
 import { BsSend } from 'react-icons/bs'
 
 function ContactForm() {
@@ -16,7 +16,7 @@ function ContactForm() {
       <form className="flex flex-col gap-4">
         <article className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <Input
-            id="names"
+            name="names"
             label="Nombres y apellidos"
             register={register}
             required={true}
@@ -63,7 +63,7 @@ function ContactForm() {
           </div>
           <Input
             label="Correo electrónico"
-            id="email"
+            name="email"
             register={register}
             required={true}
             errors={errors}
@@ -73,7 +73,7 @@ function ContactForm() {
         <article className="flex flex-col gap-2">
           <Input
             label="Asunto"
-            id="subject"
+            name="subject"
             register={register}
             required={true}
             errors={errors}
